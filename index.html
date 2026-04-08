@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevPath — Study Planner</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════════ -->
+<nav class="nav">
+
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">✓</div>
+    Dev<em>Path</em>
+  </a>
+
+  <div class="nav-tabs" id="nav-tabs">
+
+    <!-- ─────────────────────────────────────────────────
+         ADDING A NEW PLAN:
+         1. Create  study/your-plan.html
+         2. Copy one <a> block below, update data-src,
+            the label, and pick a dot color:
+            --green  --blue  --purple  --red  --accent
+    ───────────────────────────────────────────────── -->
+
+    <a class="nav-tab active" data-src="study/java-60day.html">
+      <span class="tab-dot" style="background: var(--green);"></span>
+      ☕ Java 60-Day
+    </a>
+
+    <a class="nav-tab" data-src="study/lwc-30day.html">
+      <span class="tab-dot" style="background: #00d4ff;"></span>
+      ⚡ LWC 30-Day
+    </a>
+
+    <a class="nav-tab" data-src="study/apex-30day.html">
+      <span class="tab-dot" style="background: #7b61ff;"></span>
+      ☁️ Apex 30-Day
+    </a>
+
+    <!-- <a class="nav-tab" data-src="study/python-30day.html">
+      <span class="tab-dot" style="background: var(--blue);"></span>
+      🐍 Python 30-Day
+    </a> -->
+
+  </div>
+
+  <span class="nav-hint">click a day card → details</span>
+
+</nav>
+
+<!-- ══════════════════════════════════════════════════
+     CONTENT FRAME  (study pages load here)
+══════════════════════════════════════════════════ -->
+<div class="frame-shell">
+  <iframe class="content-frame" id="content-frame" src="study/java-60day.html"></iframe>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════
+     TAB SWITCHING  (nothing else needed here)
+══════════════════════════════════════════════════ -->
+<script>
+  document.getElementById('nav-tabs').addEventListener('click', function (e) {
+    const tab = e.target.closest('.nav-tab');
+    if (!tab) return;
+    e.preventDefault();
+
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('content-frame').src = tab.dataset.src;
+  });
+</script>
+
+</body>
+</html>
