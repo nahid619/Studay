@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLDS Reference Guide</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">&#x26A1; Salesforce Lightning Design System &#x2014; Reference Guide</div>
+  <h1 class="hero-title">SLDS &#x2014; <span>Classes, Patterns &amp; SLDS 2</span></h1>
+  <p class="hero-desc">A complete visual reference for SLDS utility classes, component blueprints, and SLDS 2 styling hooks. Every entry shows the custom CSS you would have written, the SLDS equivalent, and exactly when to use each. Covers SLDS 2 design tokens, styling hooks, accessibility, and anti-patterns.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">19</div><div class="stat-label">Modules</div></div>
+    <div class="stat"><div class="stat-val">49</div><div class="stat-label">Entries</div></div>
+    <div class="stat"><div class="stat-val">3</div><div class="stat-label">Levels</div></div>
+    <div class="stat"><div class="stat-val">SLDS 2</div><div class="stat-label">Spring &#39;25+</div></div>
+    <div class="stat"><div class="stat-val">LWC</div><div class="stat-label">Focused</div></div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">level:</span>
+  <button class="filter-btn active" onclick="setFilter('all', this)"><span class="filter-dot dot-all"></span>all</button>
+  <button class="filter-btn" onclick="setFilter('beginner', this)"><span class="filter-dot" style="background:#00d4ff;"></span>beginner</button>
+  <button class="filter-btn" onclick="setFilter('intermediate', this)"><span class="filter-dot" style="background:#7b61ff;"></span>intermediate</button>
+  <button class="filter-btn" onclick="setFilter('advanced', this)"><span class="filter-dot" style="background:#ff6b6b;"></span>advanced</button>
+  <div class="week-jump">
+    <span class="week-jump-label">jump:</span>
+    <select onchange="jumpTo(this.value)">
+      <option value="m1">M1 — SLDS Foundations</option>
+      <option value="m2">M2 — Spacing — Padding &amp; Margin</option>
+      <option value="m3">M3 — Grid System — Layout</option>
+      <option value="m4">M4 — Typography</option>
+      <option value="m5">M5 — Visibility, Display &amp; Floats</option>
+      <option value="m6">M6 — Borders, Boxes &amp; Themes</option>
+      <option value="m7">M7 — Component Blueprints — Cards</option>
+      <option value="m8">M8 — Buttons</option>
+      <option value="m9">M9 — Forms &amp; Input Blueprints</option>
+      <option value="m10">M10 — Media Objects &amp; Lists</option>
+      <option value="m11">M11 — Badges, Pills &amp; Labels</option>
+      <option value="m12">M12 — Icons</option>
+      <option value="m13">M13 — Tables</option>
+      <option value="m14">M14 — Modals &amp; Overlays</option>
+      <option value="m15">M15 — Notifications, Toasts &amp; Spinners</option>
+      <option value="m16">M16 — Tabs &amp; Navigation</option>
+      <option value="m17">M17 — SLDS 2 — Styling Hooks &amp; CSS Custom Properties</option>
+      <option value="m18">M18 — Accessibility (a11y) Patterns</option>
+      <option value="m19">M19 — Anti-Patterns, Migration &amp; SLDS Linter</option>
+    </select>
+  </div>
+</div>
+
+<!-- SEARCH BAR -->
+<div class="search-bar">
+  <input class="search-input" id="search-input" type="text"
+         placeholder="Search topics, classes, patterns&#x2026; (e.g. slds-grid, truncate, modal)"
+         oninput="handleSearch(this.value)" />
+  <span class="search-count" id="search-count">49 entries</span>
+</div>
+
+<!-- PLAN BODY -->
+<div class="plan-body" id="plan-body">
+
+  <!-- MODULE 1 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(0,212,255,0.1);color:#00d4ff;">M1</span>
+      <span class="phase-title">SLDS Foundations</span>
+      <span class="phase-meta">Beginner &middot; 4 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Understand what SLDS is, how it works in LWC, how classes are named, and why you should always reach for SLDS before writing custom CSS.</div>
+    <div class="week-group" id="m1">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="What is SLDS and Why It Exists"
+          data-entry-id="1-1"
+          data-mod-title="SLDS Foundations"
+          data-mod-num="1"
+          data-color="#00d4ff"
+          data-scenario='"You are new to Salesforce development and wonder: why not just write regular CSS like Bootstrap or Tailwind?"'
+          data-custom-css='"/* You write everything from scratch — spacing, colors, font sizes, component layouts. Every developer invents their own style. UI looks different across the org. */"'
+          data-css-na='false'
+          data-slds-code='"<!-- SLDS just works in LWC. No import needed.\n     It is already injected by the Salesforce runtime.\n     Just add classes to your HTML. -->\n<template>\n  <div class=\"slds-box slds-theme_default\">\n    <p class=\"slds-text-heading_medium\">Hello, SLDS!</p>\n  </div>\n</template>"'
+          data-notes='"SLDS stands for Salesforce Lightning Design System. It is Salesforce&#39;s official CSS framework — think of it like Bootstrap but built specifically for Salesforce. It guarantees your component looks identical to the native Salesforce UI. In LWC you never import it — it is auto-injected by the platform. On external sites (Visualforce, Heroku) you can load it via CDN."'
+          data-slds-classes='[]'
+          data-gains='["What SLDS is", "Why not Bootstrap/Tailwind", "Auto-injection in LWC", "Design consistency"]'
+          data-sources='[{"t": "LWC Docs — Style with SLDS", "u": "https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-slds.html", "b": "docs"}, {"t": "SLDS 2 Official Site", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/85bd85-lightning-design-system-2", "b": "docs"}]'>
+          <div class="entry-id">1-1</div>
+          <div class="day-topic">What is SLDS and Why It Exists</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 1</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="BEM Naming Convention"
+          data-entry-id="1-2"
+          data-mod-title="SLDS Foundations"
+          data-mod-num="1"
+          data-color="#00d4ff"
+          data-scenario='"You see class names like slds-card__header and slds-button_brand and wonder why they look different from normal CSS class names."'
+          data-custom-css='"/* Normal CSS: .card .card-header .card-header-title */\n/* You have to memorize your own naming. Teams diverge. */"'
+          data-css-na='false'
+          data-slds-code='"<!-- BEM: Block__Element_Modifier -->\n<!-- slds-card          = Block (the component) -->\n<!-- slds-card__header  = Element (part of the block, uses double underscore) -->\n<!-- slds-button_brand  = Modifier (variant of the block, uses single underscore) -->\n\n<div class=\"slds-card\">\n  <div class=\"slds-card__header\">\n    <h2 class=\"slds-card__header-title\">My Card</h2>\n  </div>\n  <div class=\"slds-card__body\">Content here</div>\n</div>"'
+          data-notes='"SLDS uses BEM (Block-Element-Modifier) syntax. Double underscore (__) separates a block from its child element. Single underscore (_) separates a block or element from its modifier/variant. All classes are prefixed with slds- to avoid conflicts with other frameworks."'
+          data-slds-classes='["slds-card", "slds-card__header", "slds-card__header-title", "slds-button_brand"]'
+          data-gains='["BEM syntax", "__ vs _ difference", "slds- prefix purpose", "Reading SLDS class names"]'
+          data-sources='[{"t": "BEM Methodology Docs", "u": "https://getbem.com/naming/", "b": "article"}, {"t": "SLDS Naming Conventions Guide", "u": "https://github.com/Gurenax/salesforce-training-notes/blob/master/42-LIGHTNING-DESIGN-SYSTEM.md", "b": "article"}]'>
+          <div class="entry-id">1-2</div>
+          <div class="day-topic">BEM Naming Convention</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 1</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="SLDS 1 vs SLDS 2 — What Changed"
+          data-entry-id="1-3"
+          data-mod-title="SLDS Foundations"
+          data-mod-num="1"
+          data-color="#00d4ff"
+          data-scenario='"You see two different SLDS documentation sites and classes that look slightly different. You need to know which one to use."'
+          data-custom-css='"/* Not applicable — this is about SLDS versions, not custom CSS */"'
+          data-css-na='true'
+          data-slds-code='"<!-- SLDS 1 used hard-coded pixel values internally.\n     SLDS 2 (Spring 2025+) uses CSS custom properties (tokens).\n     The class names are the same — the internals changed.\n     SLDS 2 is available at lightningdesignsystem.com\n     SLDS 1 is now at v1.lightningdesignsystem.com -->\n\n<!-- SLDS 2 button — class name unchanged -->\n<button class=\"slds-button slds-button_brand\">Save</button>\n\n<!-- SLDS 2 introduces styling hooks for overrides -->\n<!-- :host { --slds-c-button-brand-color-background: #your-color; } -->"'
+          data-notes='"SLDS 2 was introduced in Spring &#39;25. The class names are largely the same — your existing knowledge transfers. The key difference is that SLDS 2 powers its internal styles through CSS custom properties (design tokens) instead of hard-coded values. This makes theming and customization far cleaner. Always use the lightningdesignsystem.com site (SLDS 2) for new development."'
+          data-slds-classes='["slds-scope"]'
+          data-gains='["SLDS 2 vs SLDS 1", "CSS custom properties in SLDS 2", "Spring &#39;25 upgrade", "Class name compatibility"]'
+          data-sources='[{"t": "LWC Docs — Transition to SLDS 2", "u": "https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-slds.html", "b": "docs"}, {"t": "SLDS 1 Archive Site", "u": "https://v1.lightningdesignsystem.com/", "b": "docs"}]'>
+          <div class="entry-id">1-3</div>
+          <div class="day-topic">SLDS 1 vs SLDS 2 — What Changed</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 1</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="Design Tokens — The Foundation of SLDS"
+          data-entry-id="1-4"
+          data-mod-title="SLDS Foundations"
+          data-mod-num="1"
+          data-color="#00d4ff"
+          data-scenario='"You want to use Salesforce brand colors, approved font sizes, or standard spacing values without hardcoding hex codes or pixel values."'
+          data-custom-css='"/* Custom CSS hardcodes values — brittle, breaks with Salesforce updates */\n.my-header { color: #032d60; font-size: 1.5rem; margin-bottom: 16px; }"'
+          data-css-na='false'
+          data-slds-code='"/* SLDS 2 tokens are CSS custom properties.\n   Global tokens start with --slds-g-\n   Component tokens start with --slds-c-\n\n   Use them in your own CSS file within a component: */\n\n.my-custom-header {\n  color: var(--slds-g-color-brand-base-50);      /* Salesforce blue */\n  font-size: var(--slds-g-font-scale-5);          /* Standard heading size */\n  margin-bottom: var(--slds-g-spacing-medium);    /* Standard spacing */\n}\n\n/* Your component now automatically respects\n   org-level theme changes. Future-proof! */"'
+          data-notes='"Design tokens are the DNA of SLDS. Instead of hardcoding #032d60, you reference --slds-g-color-brand-base-50. When Salesforce or an admin changes the org theme, your component updates automatically. In SLDS 2, all visual values (colors, spacing, fonts, radii, shadows) are exposed as CSS custom properties. Always prefer tokens over hardcoded values."'
+          data-slds-classes='[]'
+          data-gains='["Design tokens concept", "--slds-g-* global tokens", "--slds-c-* component tokens", "Future-proof styling"]'
+          data-sources='[{"t": "SLDS 2 — Design Tokens Overview", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/85bd85-lightning-design-system-2", "b": "docs"}, {"t": "LWC CSS Custom Properties Guide", "u": "https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-slds.html", "b": "docs"}]'>
+          <div class="entry-id">1-4</div>
+          <div class="day-topic">Design Tokens — The Foundation of SLDS</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 2 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(123,97,255,0.1);color:#7b61ff;">M2</span>
+      <span class="phase-title">Spacing — Padding &amp; Margin</span>
+      <span class="phase-meta">Beginner &middot; 4 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Every layout starts with spacing. SLDS gives you a complete, consistent set of padding and margin utility classes so you never need to write p: 16px or margin: 8px ever again.</div>
+    <div class="week-group" id="m2">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="Padding — All Sides"
+          data-entry-id="2-1"
+          data-mod-title="Spacing — Padding &amp; Margin"
+          data-mod-num="2"
+          data-color="#7b61ff"
+          data-scenario='"You want to add padding inside a container on all four sides."'
+          data-custom-css='"/* Custom CSS */\n.container { padding: 8px; }    /* x-small */\n.container { padding: 12px; }   /* small */\n.container { padding: 16px; }   /* medium */\n.container { padding: 24px; }   /* large */"'
+          data-css-na='false'
+          data-slds-code='"<!-- Scale: xx-small | x-small | small | medium | large | x-large | xx-large -->\n\n<div class=\"slds-p-around_small\">Small padding all sides</div>\n<div class=\"slds-p-around_medium\">Medium padding all sides</div>\n<div class=\"slds-p-around_large\">Large padding all sides</div>\n\n<!-- Most common in real LWC work: -->\n<lightning-card title=\"My Component\">\n  <div class=\"slds-p-around_medium\">\n    <!-- card body content here -->\n  </div>\n</lightning-card>"'
+          data-notes='"slds-p-around_medium is by far the most used class in LWC development. Always wrap card body content in a div with slds-p-around_medium for the standard Salesforce padding look. The scale maps roughly to: xx-small=2px, x-small=4px, small=8px, medium=12px, large=16px, x-large=24px, xx-large=32px."'
+          data-slds-classes='["slds-p-around_xx-small", "slds-p-around_x-small", "slds-p-around_small", "slds-p-around_medium", "slds-p-around_large", "slds-p-around_x-large", "slds-p-around_xx-large"]'
+          data-gains='["slds-p-around_*", "Padding scale", "Card body padding pattern"]'
+          data-sources='[{"t": "SLDS — Spacing Utilities", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/05098e-utility-classes", "b": "docs"}, {"t": "SLDS Padding Reference", "u": "https://v1.lightningdesignsystem.com/utilities/padding/", "b": "docs"}]'>
+          <div class="entry-id">2-1</div>
+          <div class="day-topic">Padding — All Sides</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module">Module 2</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="Padding — Directional"
+          data-entry-id="2-2"
+          data-mod-title="Spacing — Padding &amp; Margin"
+          data-mod-num="2"
+          data-color="#7b61ff"
+          data-scenario='"You want padding on only one side, or only on horizontal/vertical axes."'
+          data-custom-css='"/* Custom CSS */\n.top    { padding-top: 16px; }\n.bottom { padding-bottom: 16px; }\n.left   { padding-left: 16px; }\n.right  { padding-right: 16px; }\n.horiz  { padding-left: 16px; padding-right: 16px; }\n.vert   { padding-top: 16px; padding-bottom: 16px; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Directional padding — combine the direction with any size -->\n<div class=\"slds-p-top_medium\">Padding top only</div>\n<div class=\"slds-p-bottom_small\">Padding bottom only</div>\n<div class=\"slds-p-horizontal_medium\">Padding left and right</div>\n<div class=\"slds-p-vertical_small\">Padding top and bottom</div>\n\n<!-- Real-world: section separator -->\n<div class=\"slds-p-top_medium slds-p-bottom_small\">\n  <h3 class=\"slds-text-heading_small\">Section Title</h3>\n</div>"'
+          data-notes='"Direction keywords: top, bottom, left, right, horizontal (left+right), vertical (top+bottom). You can chain multiple padding classes on the same element. All directions support the full size scale."'
+          data-slds-classes='["slds-p-top_medium", "slds-p-bottom_medium", "slds-p-left_medium", "slds-p-right_medium", "slds-p-horizontal_medium", "slds-p-vertical_medium"]'
+          data-gains='["Directional padding", "slds-p-horizontal_*", "slds-p-vertical_*", "Chaining classes"]'
+          data-sources='[{"t": "SLDS — Padding Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/padding/", "b": "docs"}, {"t": "SLDS — Spacing Utilities", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/05098e-utility-classes", "b": "docs"}]'>
+          <div class="entry-id">2-2</div>
+          <div class="day-topic">Padding — Directional</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module">Module 2</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="Margin — All Sides and Directional"
+          data-entry-id="2-3"
+          data-mod-title="Spacing — Padding &amp; Margin"
+          data-mod-num="2"
+          data-color="#7b61ff"
+          data-scenario='"You want to add space outside an element — between it and its neighbors."'
+          data-custom-css='"/* Custom CSS */\n.card   { margin: 16px; }\n.btn    { margin-top: 8px; }\n.inline { margin-left: 8px; margin-right: 8px; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Margin classes follow the exact same pattern as padding -->\n<!-- Replace slds-p- with slds-m- -->\n\n<div class=\"slds-m-around_medium\">Margin all sides medium</div>\n<div class=\"slds-m-top_small\">Margin top small</div>\n<div class=\"slds-m-horizontal_medium\">Margin left and right</div>\n\n<!-- Real-world: space between buttons -->\n<div>\n  <lightning-button label=\"Cancel\" class=\"slds-m-right_small\"></lightning-button>\n  <lightning-button variant=\"brand\" label=\"Save\"></lightning-button>\n</div>\n\n<!-- Real-world: section spacing inside a card -->\n<div class=\"slds-p-around_medium\">\n  <div class=\"slds-m-bottom_medium\">\n    <lightning-input label=\"Name\"></lightning-input>\n  </div>\n  <div class=\"slds-m-bottom_medium\">\n    <lightning-input label=\"Email\"></lightning-input>\n  </div>\n</div>"'
+          data-notes='"Margin and padding use identical naming patterns — just swap slds-p- with slds-m-. A very common pattern is wrapping each form input in a div with slds-m-bottom_medium to create vertical spacing between fields."'
+          data-slds-classes='["slds-m-around_medium", "slds-m-top_small", "slds-m-bottom_medium", "slds-m-left_small", "slds-m-right_small", "slds-m-horizontal_small", "slds-m-vertical_medium"]'
+          data-gains='["slds-m-around_*", "Margin direction keywords", "Button spacing pattern", "Form field spacing pattern"]'
+          data-sources='[{"t": "SLDS — Margin Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/margin/", "b": "docs"}, {"t": "SLDS 2 Spacing Tokens", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/05098e-utility-classes", "b": "docs"}]'>
+          <div class="entry-id">2-3</div>
+          <div class="day-topic">Margin — All Sides and Directional</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module">Module 2</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="Removing Spacing — _none modifier"
+          data-entry-id="2-4"
+          data-mod-title="Spacing — Padding &amp; Margin"
+          data-mod-num="2"
+          data-color="#7b61ff"
+          data-scenario='"A parent component adds default padding but you want to remove it for a specific child element."'
+          data-custom-css='"/* Custom CSS — dangerous override */\n.no-pad { padding: 0 !important; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Use _none to explicitly remove spacing -->\n<div class=\"slds-p-around_none\">No padding</div>\n<div class=\"slds-m-top_none\">No top margin</div>\n\n<!-- Real-world: remove default padding from a card header -->\n<div class=\"slds-card\">\n  <div class=\"slds-card__header slds-p-bottom_none\">\n    <h2>Tight Header</h2>\n  </div>\n</div>"'
+          data-notes='"Using _none is far safer than writing padding: 0 or margin: 0 in custom CSS because it stays within the SLDS token system and will not accidentally break other rules. Prefer _none over custom overrides."'
+          data-slds-classes='["slds-p-around_none", "slds-m-around_none", "slds-p-horizontal_none", "slds-m-top_none"]'
+          data-gains='["_none modifier", "Removing default spacing", "Avoiding !important"]'
+          data-sources='[{"t": "SLDS — Spacing Reference", "u": "https://v1.lightningdesignsystem.com/utilities/padding/", "b": "docs"}, {"t": "SLDS Anti-Patterns Guide", "u": "https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-slds.html", "b": "docs"}]'>
+          <div class="entry-id">2-4</div>
+          <div class="day-topic">Removing Spacing — _none modifier</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module">Module 2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 3 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(0,212,255,0.1);color:#00d4ff;">M3</span>
+      <span class="phase-title">Grid System — Layout</span>
+      <span class="phase-meta">Beginner → Intermediate &middot; 6 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; The SLDS grid is a Flexbox-based layout system. It replaces display:flex, flex-wrap, flex-direction, justify-content, and align-items entirely with readable utility classes.</div>
+    <div class="week-group" id="m3">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Basic Grid — Side-by-Side Columns"
+          data-entry-id="3-1"
+          data-mod-title="Grid System — Layout"
+          data-mod-num="3"
+          data-color="#00d4ff"
+          data-scenario='"You want to place two or more elements side by side in a row."'
+          data-custom-css='"/* Custom CSS */\n.row    { display: flex; }\n.col    { flex: 1; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- slds-grid = display:flex on the container -->\n<!-- slds-col  = flex child that grows to fill available space -->\n\n<div class=\"slds-grid\">\n  <div class=\"slds-col\">Column 1</div>\n  <div class=\"slds-col\">Column 2</div>\n  <div class=\"slds-col\">Column 3</div>\n</div>\n\n<!-- Real-world: two-column form layout -->\n<div class=\"slds-grid slds-gutters slds-p-around_medium\">\n  <div class=\"slds-col\">\n    <lightning-input label=\"First Name\"></lightning-input>\n  </div>\n  <div class=\"slds-col\">\n    <lightning-input label=\"Last Name\"></lightning-input>\n  </div>\n</div>"'
+          data-notes='"slds-grid alone creates a flex row. All direct children with slds-col share the space equally. Add slds-gutters to put standard spacing between columns (use slds-gutters_small for tighter gaps)."'
+          data-slds-classes='["slds-grid", "slds-col"]'
+          data-gains='["slds-grid", "slds-col", "Flex row layout", "slds-gutters"]'
+          data-sources='[{"t": "SLDS Grid Docs", "u": "https://v1.lightningdesignsystem.com/utilities/grid/", "b": "docs"}, {"t": "SLDS 2 Grid Reference", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/61d07d-grid", "b": "docs"}]'>
+          <div class="entry-id">3-1</div>
+          <div class="day-topic">Basic Grid — Side-by-Side Columns</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 3</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Fixed Column Widths — slds-size_n-of-n"
+          data-entry-id="3-2"
+          data-mod-title="Grid System — Layout"
+          data-mod-num="3"
+          data-color="#00d4ff"
+          data-scenario='"You want one column to be 2/3 of the width and another to be 1/3."'
+          data-custom-css='"/* Custom CSS */\n.main   { flex: 0 0 66.66%; width: 66.66%; }\n.side   { flex: 0 0 33.33%; width: 33.33%; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Size classes use fractions: slds-size_{numerator}-of-{denominator} -->\n<!-- Supports: 1/2, 1/3, 2/3, 1/4, 2/4, 3/4, 1/6, 2/6, ... up to 12 -->\n\n<div class=\"slds-grid\">\n  <div class=\"slds-col slds-size_2-of-3\">Main Content (66%)</div>\n  <div class=\"slds-col slds-size_1-of-3\">Sidebar (33%)</div>\n</div>\n\n<!-- 4-column layout -->\n<div class=\"slds-grid slds-gutters_x-small\">\n  <div class=\"slds-col slds-size_1-of-4\">Card 1</div>\n  <div class=\"slds-col slds-size_1-of-4\">Card 2</div>\n  <div class=\"slds-col slds-size_1-of-4\">Card 3</div>\n  <div class=\"slds-col slds-size_1-of-4\">Card 4</div>\n</div>"'
+          data-notes='"Size fractions go up to 12ths. Most common: 1-of-2, 1-of-3, 2-of-3, 1-of-4, 3-of-4. Always pair slds-size_* with slds-col on the same element. Without a size class, slds-col fills remaining space equally."'
+          data-slds-classes='["slds-size_1-of-2", "slds-size_2-of-3", "slds-size_1-of-3", "slds-size_1-of-4", "slds-size_3-of-4", "slds-size_1-of-1"]'
+          data-gains='["slds-size_n-of-n", "Column proportions", "12-column grid", "Fraction system"]'
+          data-sources='[{"t": "SLDS Grid — Column Spans", "u": "https://v1.lightningdesignsystem.com/utilities/grid/", "b": "docs"}, {"t": "Sfdc Pulse — SLDS Grid Examples", "u": "https://sfdcpulse.wordpress.com/2024/03/21/salesforce-lwc-useful-slds-classes/", "b": "article"}]'>
+          <div class="entry-id">3-2</div>
+          <div class="day-topic">Fixed Column Widths — slds-size_n-of-n</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 3</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Wrapping Columns — slds-wrap"
+          data-entry-id="3-3"
+          data-mod-title="Grid System — Layout"
+          data-mod-num="3"
+          data-color="#00d4ff"
+          data-scenario='"You have more columns than fit in one row and want them to wrap to the next line, like CSS flex-wrap."'
+          data-custom-css='"/* Custom CSS */\n.row { display: flex; flex-wrap: wrap; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- slds-wrap = flex-wrap: wrap -->\n<!-- Without it, columns shrink to fit on one row -->\n\n<div class=\"slds-grid slds-wrap slds-gutters\">\n  <div class=\"slds-col slds-size_1-of-2\">Row 1, Col 1</div>\n  <div class=\"slds-col slds-size_1-of-2\">Row 1, Col 2</div>\n  <div class=\"slds-col slds-size_1-of-2\">Row 2, Col 1</div>\n  <div class=\"slds-col slds-size_1-of-2\">Row 2, Col 2</div>\n</div>\n\n<!-- Card grid pattern — wraps at 1-of-3 -->\n<div class=\"slds-grid slds-wrap slds-gutters_small\">\n  <template for:each={items} for:item=\"item\" key={item.id}>\n    <div key={item.id} class=\"slds-col slds-size_1-of-3 slds-m-bottom_small\">\n      <div class=\"slds-box\">...</div>\n    </div>\n  </template>\n</div>"'
+          data-notes='"slds-wrap is essential whenever you are rendering dynamic lists of cards or tiles. Without it, items shrink until they all fit on one line."'
+          data-slds-classes='["slds-wrap"]'
+          data-gains='["slds-wrap", "flex-wrap equivalent", "Card grid pattern", "Dynamic list layout"]'
+          data-sources='[{"t": "SLDS Grid — Wrap", "u": "https://v1.lightningdesignsystem.com/utilities/grid/", "b": "docs"}, {"t": "SLDS Grid Playground", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/61d07d-grid", "b": "docs"}]'>
+          <div class="entry-id">3-3</div>
+          <div class="day-topic">Wrapping Columns — slds-wrap</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 3</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Alignment — Horizontal Axis"
+          data-entry-id="3-4"
+          data-mod-title="Grid System — Layout"
+          data-mod-num="3"
+          data-color="#00d4ff"
+          data-scenario='"You want to control how columns are distributed horizontally: centered, spread out, pushed to the right, etc."'
+          data-custom-css='"/* Custom CSS */\n.center  { justify-content: center; }\n.right   { justify-content: flex-end; }\n.spread  { justify-content: space-between; }\n.evenly  { justify-content: space-around; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Horizontal alignment modifiers on the grid container -->\n\n<!-- Center all columns -->\n<div class=\"slds-grid slds-grid_align-center\">\n  <div class=\"slds-col slds-size_1-of-4\">Centered</div>\n</div>\n\n<!-- Push items to the right -->\n<div class=\"slds-grid slds-grid_align-end\">\n  <button class=\"slds-button slds-button_neutral\">Cancel</button>\n  <button class=\"slds-button slds-button_brand\">Save</button>\n</div>\n\n<!-- Spread items with space between (like space-between) -->\n<div class=\"slds-grid slds-grid_align-spread\">\n  <span>Left Label</span>\n  <span>Right Action</span>\n</div>"'
+          data-notes='"slds-grid_align-spread is very commonly used in card headers to push a title to the left and an action button to the right. slds-grid_align-center is great for centering a single button or loader on a page."'
+          data-slds-classes='["slds-grid_align-center", "slds-grid_align-end", "slds-grid_align-spread", "slds-grid_align-space"]'
+          data-gains='["slds-grid_align-center", "slds-grid_align-end", "slds-grid_align-spread", "justify-content equivalent"]'
+          data-sources='[{"t": "SLDS Grid Alignment", "u": "https://v1.lightningdesignsystem.com/utilities/grid/", "b": "docs"}, {"t": "SLDS Grid — Full Reference", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/61d07d-grid", "b": "docs"}]'>
+          <div class="entry-id">3-4</div>
+          <div class="day-topic">Alignment — Horizontal Axis</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 3</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Alignment — Vertical Axis"
+          data-entry-id="3-5"
+          data-mod-title="Grid System — Layout"
+          data-mod-num="3"
+          data-color="#00d4ff"
+          data-scenario='"You have columns of different heights and want to control how they align vertically within the row."'
+          data-custom-css='"/* Custom CSS */\n.top    { align-items: flex-start; }\n.middle { align-items: center; }\n.bottom { align-items: flex-end; }\n.stretch { align-items: stretch; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Vertical alignment on the grid container -->\n\n<!-- Vertically center content in the row -->\n<div class=\"slds-grid slds-grid_vertical-align-center\" style=\"min-height: 100px;\">\n  <div class=\"slds-col\">Short content</div>\n  <div class=\"slds-col\">Tall content<br/>Second line</div>\n</div>\n\n<!-- Perfect center (both horizontal AND vertical) -->\n<div class=\"slds-grid slds-grid_align-center slds-grid_vertical-align-center\"\n     style=\"height: 200px;\">\n  <div class=\"slds-col slds-grow-none\">Perfectly Centered</div>\n</div>\n\n<!-- Shortcut for centering absolutely -->\n<div class=\"slds-align_absolute-center\" style=\"height: 200px;\">\n  <lightning-spinner alternative-text=\"Loading\"></lightning-spinner>\n</div>"'
+          data-notes='"slds-align_absolute-center is the fastest way to center something both horizontally and vertically. It uses position:absolute so the parent needs a set height or position:relative. Perfect for loading spinners inside a container."'
+          data-slds-classes='["slds-grid_vertical-align-start", "slds-grid_vertical-align-center", "slds-grid_vertical-align-end", "slds-grid_vertical-align-stretch", "slds-align_absolute-center"]'
+          data-gains='["slds-grid_vertical-align-*", "align-items equivalent", "slds-align_absolute-center", "Perfect centering pattern"]'
+          data-sources='[{"t": "SLDS Grid — Vertical Alignment", "u": "https://v1.lightningdesignsystem.com/utilities/grid/", "b": "docs"}, {"t": "SLDS Alignment Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/alignment/", "b": "docs"}]'>
+          <div class="entry-id">3-5</div>
+          <div class="day-topic">Alignment — Vertical Axis</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 3</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Responsive Grid — Breakpoints"
+          data-entry-id="3-6"
+          data-mod-title="Grid System — Layout"
+          data-mod-num="3"
+          data-color="#00d4ff"
+          data-scenario='"You want columns to be side-by-side on desktop but stack vertically on mobile."'
+          data-custom-css='"/* Custom CSS */\n@media (max-width: 768px) { .col { flex: 0 0 100%; width: 100%; } }\n@media (min-width: 769px) { .col { flex: 0 0 50%;  width: 50%;  } }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Responsive size classes: -->\n<!-- No prefix         = applies always (mobile-first base) -->\n<!-- slds-small-size_  = applies at 480px+ -->\n<!-- slds-medium-size_ = applies at 768px+ -->\n<!-- slds-large-size_  = applies at 1024px+ -->\n\n<div class=\"slds-grid slds-wrap slds-gutters\">\n  <div class=\"slds-col\n              slds-size_1-of-1\n              slds-small-size_1-of-2\n              slds-medium-size_1-of-3\">\n    <!-- Full width on mobile, half on tablet, third on desktop -->\n    <div class=\"slds-box\">Card</div>\n  </div>\n</div>"'
+          data-notes='"SLDS uses mobile-first breakpoints: the unprefixed slds-size_* is the base (mobile). Prefix with slds-small-size_, slds-medium-size_, slds-large-size_ to override at progressively larger screens. Combine with slds-wrap to allow wrapping."'
+          data-slds-classes='["slds-size_1-of-1", "slds-small-size_1-of-2", "slds-medium-size_1-of-3", "slds-large-size_1-of-4"]'
+          data-gains='["Responsive breakpoints", "slds-small-size_*", "slds-medium-size_*", "Mobile-first grid"]'
+          data-sources='[{"t": "SLDS Grid — Responsive", "u": "https://v1.lightningdesignsystem.com/utilities/grid/", "b": "docs"}, {"t": "SLDS 2 — Responsive Design", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/61d07d-grid", "b": "docs"}]'>
+          <div class="entry-id">3-6</div>
+          <div class="day-topic">Responsive Grid — Breakpoints</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 4 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,209,102,0.1);color:#ffd166;">M4</span>
+      <span class="phase-title">Typography</span>
+      <span class="phase-meta">Beginner &middot; 4 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; SLDS provides a full typographic scale so you never write font-size, font-weight, or line-height by hand. Every heading, body text, and label size has a named class.</div>
+    <div class="week-group" id="m4">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="Headings"
+          data-entry-id="4-1"
+          data-mod-title="Typography"
+          data-mod-num="4"
+          data-color="#ffd166"
+          data-scenario='"You need page titles, section headers, and sub-section headers at consistent sizes."'
+          data-custom-css='"/* Custom CSS */\nh1 { font-size: 2rem; font-weight: bold; }\nh2 { font-size: 1.5rem; font-weight: bold; }\nh3 { font-size: 1.25rem; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- The three main heading levels in SLDS -->\n<h1 class=\"slds-text-heading_large\">Page Title (largest)</h1>\n<h2 class=\"slds-text-heading_medium\">Section Header</h2>\n<h3 class=\"slds-text-heading_small\">Sub-section Header</h3>\n\n<!-- You can apply these to any element — not just h1/h2/h3 -->\n<p class=\"slds-text-heading_small\">This paragraph looks like a heading</p>\n\n<!-- Real-world: dashboard component header -->\n<div class=\"slds-grid slds-grid_align-spread slds-p-around_medium\">\n  <h2 class=\"slds-text-heading_medium\">Opportunities</h2>\n  <lightning-button label=\"View All\" variant=\"base\"></lightning-button>\n</div>"'
+          data-notes='"SLDS heading classes are applied to the element you choose — they are not tied to semantic HTML tags. Always choose the correct semantic tag (h1, h2, h3) for accessibility, then add the SLDS class for visual size."'
+          data-slds-classes='["slds-text-heading_large", "slds-text-heading_medium", "slds-text-heading_small"]'
+          data-gains='["slds-text-heading_*", "3 heading levels", "Semantic HTML + SLDS class", "Dashboard header pattern"]'
+          data-sources='[{"t": "SLDS Typography", "u": "https://v1.lightningdesignsystem.com/utilities/text/", "b": "docs"}, {"t": "SLDS 2 Text Utilities", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/05098e-utility-classes", "b": "docs"}]'>
+          <div class="entry-id">4-1</div>
+          <div class="day-topic">Headings</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module">Module 4</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="Body Text &amp; Labels"
+          data-entry-id="4-2"
+          data-mod-title="Typography"
+          data-mod-num="4"
+          data-color="#ffd166"
+          data-scenario='"You need regular paragraph text, small helper text below fields, or tiny uppercase labels."'
+          data-custom-css='"/* Custom CSS */\n.body-regular { font-size: 0.875rem; }\n.body-small   { font-size: 0.75rem; color: #3e3e3c; }\n.label-caps   { font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.1em; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Body text variants -->\n<p class=\"slds-text-body_regular\">Standard paragraph text</p>\n<p class=\"slds-text-body_small\">Smaller supporting text</p>\n\n<!-- Title and label -->\n<span class=\"slds-text-title\">Section title (medium weight)</span>\n<span class=\"slds-text-title_caps\">UPPERCASE LABEL</span>\n\n<!-- Real-world: form field helper text -->\n<div class=\"slds-form-element\">\n  <label class=\"slds-form-element__label\">Account Name</label>\n  <div class=\"slds-form-element__control\">\n    <input type=\"text\" class=\"slds-input\" />\n  </div>\n  <p class=\"slds-form-element__help slds-text-body_small\">Enter the legal company name</p>\n</div>"'
+          data-notes='"slds-text-title_caps is often used for section labels, column headers, and data category labels — anywhere you need a small, all-caps, high-contrast label that gives hierarchy without being a heading."'
+          data-slds-classes='["slds-text-body_regular", "slds-text-body_small", "slds-text-title", "slds-text-title_caps"]'
+          data-gains='["slds-text-body_*", "slds-text-title_caps", "Helper text pattern", "Form label styling"]'
+          data-sources='[{"t": "SLDS Text Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/text/", "b": "docs"}, {"t": "SLDS Typography Scale", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/05098e-utility-classes", "b": "docs"}]'>
+          <div class="entry-id">4-2</div>
+          <div class="day-topic">Body Text &amp; Labels</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module">Module 4</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="Text Color"
+          data-entry-id="4-3"
+          data-mod-title="Typography"
+          data-mod-num="4"
+          data-color="#ffd166"
+          data-scenario='"You want to use Salesforce-approved colors for text — success green, error red, warning, muted, or inverse (white) text."'
+          data-custom-css='"/* Custom CSS — hardcoded, breaks with theme changes */\n.success { color: #2e844a; }\n.error   { color: #ea001e; }\n.muted   { color: #3e3e3c; }\n.inverse { color: #ffffff; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Use semantic color names — they respect theme changes -->\n<p class=\"slds-text-color_success\">✓ Record saved successfully</p>\n<p class=\"slds-text-color_error\">✗ Something went wrong</p>\n<p class=\"slds-text-color_weak\">Optional helper text in muted tone</p>\n\n<!-- Inverse for dark backgrounds -->\n<div class=\"slds-theme_inverse slds-p-around_medium\">\n  <p class=\"slds-text-color_inverse\">White text on dark background</p>\n</div>"'
+          data-notes='"Prefer semantic color class names over hardcoded values. They automatically honor the org&#39;s Salesforce theme. slds-text-color_weak is ideal for placeholder-like text, metadata, and timestamps."'
+          data-slds-classes='["slds-text-color_success", "slds-text-color_error", "slds-text-color_destructive", "slds-text-color_default", "slds-text-color_weak", "slds-text-color_inverse"]'
+          data-gains='["slds-text-color_*", "Semantic color names", "Inverse text", "Theme-safe colors"]'
+          data-sources='[{"t": "SLDS Text Color Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/text/", "b": "docs"}, {"t": "SLDS Color Tokens", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/05098e-utility-classes", "b": "docs"}]'>
+          <div class="entry-id">4-3</div>
+          <div class="day-topic">Text Color</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module">Module 4</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openEntry(this)"
+          data-level="beginner"
+          data-topic="Text Alignment &amp; Truncation"
+          data-entry-id="4-4"
+          data-mod-title="Typography"
+          data-mod-num="4"
+          data-color="#ffd166"
+          data-scenario='"You want to center text, align it right, or truncate overflow text with an ellipsis."'
+          data-custom-css='"/* Custom CSS */\n.center   { text-align: center; }\n.right    { text-align: right; }\n.truncate { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Text alignment -->\n<p class=\"slds-text-align_center\">Centered text</p>\n<p class=\"slds-text-align_right\">Right-aligned text</p>\n\n<!-- Truncate with ellipsis -- parent must have a fixed width -->\n<div style=\"width: 200px;\">\n  <p class=\"slds-truncate\" title=\"Full long text that will be truncated\">\n    Full long text that will be truncated\n  </p>\n</div>\n\n<!-- Real-world: table cell that truncates long names -->\n<td class=\"slds-truncate\" title={record.Name}>{record.Name}</td>"'
+          data-notes='"When using slds-truncate, always add a title attribute with the full text so users can hover to see the complete content. This is both an accessibility and UX requirement."'
+          data-slds-classes='["slds-text-align_left", "slds-text-align_center", "slds-text-align_right", "slds-truncate"]'
+          data-gains='["slds-text-align_*", "slds-truncate", "Ellipsis overflow", "title attribute pattern"]'
+          data-sources='[{"t": "SLDS Text Truncation", "u": "https://v1.lightningdesignsystem.com/utilities/truncate/", "b": "docs"}, {"t": "SLDS Text Alignment", "u": "https://v1.lightningdesignsystem.com/utilities/text/", "b": "docs"}]'>
+          <div class="entry-id">4-4</div>
+          <div class="day-topic">Text Alignment &amp; Truncation</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module">Module 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 5 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(6,214,160,0.1);color:#06d6a0;">M5</span>
+      <span class="phase-title">Visibility, Display &amp; Floats</span>
+      <span class="phase-meta">Beginner → Intermediate &middot; 4 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Control what is visible, hidden, or positioned on screen — including the accessibility-friendly way to hide elements from visual view while keeping them for screen readers.</div>
+    <div class="week-group" id="m5">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Show and Hide Elements"
+          data-entry-id="5-1"
+          data-mod-title="Visibility, Display &amp; Floats"
+          data-mod-num="5"
+          data-color="#06d6a0"
+          data-scenario='"You want to show or hide elements — either with CSS display:none or visibility:hidden."'
+          data-custom-css='"/* Custom CSS */\n.hidden   { display: none; }\n.visible  { display: block; }\n.invisible { visibility: hidden; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- slds-hide = display: none (removed from layout) -->\n<!-- slds-hidden = visibility: hidden (takes space but invisible) -->\n\n<div class=\"slds-hide\">This is completely hidden</div>\n<div class=\"slds-hidden\">This takes space but is invisible</div>\n\n<!-- In LWC — toggle visibility based on JS state -->\n<div class={errorContainerClass}>\n  <p class=\"slds-text-color_error\">{errorMessage}</p>\n</div>\n\n<!-- In JS -->\n<!-- get errorContainerClass() { -->\n<!--   return this.hasError ? &#39;slds-show&#39; : &#39;slds-hide&#39;; -->\n<!-- } -->"'
+          data-notes='"slds-hide removes the element from document flow (like display:none). slds-hidden makes it invisible but keeps its space (like visibility:hidden). In LWC, the preferred approach is lwc:if for conditional rendering rather than toggling slds-hide — but slds-hide is useful for CSS transitions."'
+          data-slds-classes='["slds-hide", "slds-show", "slds-hidden", "slds-visible"]'
+          data-gains='["slds-hide", "slds-hidden", "show/hide toggle", "display vs visibility"]'
+          data-sources='[{"t": "SLDS Visibility Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/visibility/", "b": "docs"}, {"t": "LWC Docs — Conditional Rendering", "u": "https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_directives", "b": "docs"}]'>
+          <div class="entry-id">5-1</div>
+          <div class="day-topic">Show and Hide Elements</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module">Module 5</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Assistive Text — Accessibility-Only Content"
+          data-entry-id="5-2"
+          data-mod-title="Visibility, Display &amp; Floats"
+          data-mod-num="5"
+          data-color="#06d6a0"
+          data-scenario='"You want text that screen readers can read but is visually hidden from sighted users (like a label for an icon-only button)."'
+          data-custom-css='"/* Custom CSS — the screen reader only hack */\n.sr-only {\n  position: absolute;\n  width: 1px; height: 1px;\n  padding: 0; margin: -1px;\n  overflow: hidden; clip: rect(0,0,0,0);\n  white-space: nowrap; border: 0;\n}"'
+          data-css-na='false'
+          data-slds-code='"<!-- slds-assistive-text = visually hidden but readable by screen readers -->\n<!-- ALWAYS use this for icon-only buttons -->\n\n<button class=\"slds-button slds-button_icon\" title=\"Delete\">\n  <lightning-icon icon-name=\"utility:delete\" size=\"small\"></lightning-icon>\n  <span class=\"slds-assistive-text\">Delete Record</span>\n</button>\n\n<!-- Spinner label -->\n<div class=\"slds-spinner slds-spinner_medium\" role=\"status\">\n  <span class=\"slds-assistive-text\">Loading...</span>\n</div>"'
+          data-notes='"slds-assistive-text is the SLDS equivalent of the sr-only class from Bootstrap or Tailwind. It is required for WCAG 2.1 accessibility compliance. Any interactive element with only an icon must have an assistive text label."'
+          data-slds-classes='["slds-assistive-text"]'
+          data-gains='["slds-assistive-text", "Screen reader support", "WCAG compliance", "Icon button accessibility"]'
+          data-sources='[{"t": "SLDS Accessibility Overview", "u": "https://v1.lightningdesignsystem.com/guidelines/accessibility-overview/", "b": "docs"}, {"t": "SLDS Assistive Text", "u": "https://v1.lightningdesignsystem.com/utilities/visibility/", "b": "docs"}]'>
+          <div class="entry-id">5-2</div>
+          <div class="day-topic">Assistive Text — Accessibility-Only Content</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module">Module 5</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Float Utilities"
+          data-entry-id="5-3"
+          data-mod-title="Visibility, Display &amp; Floats"
+          data-mod-num="5"
+          data-color="#06d6a0"
+          data-scenario='"You want to push an element to the right or left side of its container — like a timestamp in the top-right of a card."'
+          data-custom-css='"/* Custom CSS */\n.right { float: right; }\n.left  { float: left; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Float classes -->\n<div class=\"slds-clearfix\">\n  <span class=\"slds-float_left\">Left label</span>\n  <span class=\"slds-float_right\">Right action</span>\n</div>\n\n<!-- Real-world: card header with title left and button right -->\n<div class=\"slds-card__header slds-clearfix\">\n  <h2 class=\"slds-float_left slds-text-heading_small\">Recent Contacts</h2>\n  <a class=\"slds-float_right\">View All</a>\n</div>"'
+          data-notes='"Always add slds-clearfix to the parent container when using float children, otherwise the parent collapses in height. In modern LWC layouts, prefer slds-grid with slds-grid_align-spread over floats — it is more reliable and flex-based."'
+          data-slds-classes='["slds-float_right", "slds-float_left", "slds-clearfix"]'
+          data-gains='["slds-float_right", "slds-float_left", "slds-clearfix", "Float vs Flex trade-offs"]'
+          data-sources='[{"t": "SLDS Float Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/floats/", "b": "docs"}, {"t": "SLDS Utility Classes Overview", "u": "https://v1.lightningdesignsystem.com/utilities/overview/", "b": "docs"}]'>
+          <div class="entry-id">5-3</div>
+          <div class="day-topic">Float Utilities</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module">Module 5</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Responsive Visibility"
+          data-entry-id="5-4"
+          data-mod-title="Visibility, Display &amp; Floats"
+          data-mod-num="5"
+          data-color="#06d6a0"
+          data-scenario='"You want certain content visible on desktop but hidden on mobile, or vice versa."'
+          data-custom-css='"/* Custom CSS */\n@media (max-width: 480px) { .desktop-only { display: none; } }\n@media (min-width: 481px) { .mobile-only  { display: none; } }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Hide on small screens (mobile), show on desktop -->\n<div class=\"slds-hide_small\">Desktop Only Column</div>\n\n<!-- Show on mobile only -->\n<div class=\"slds-show_small-down\">Mobile nav icon</div>\n\n<!-- Hide on medium and below -->\n<div class=\"slds-hide_medium\">Only on large screens</div>"'
+          data-notes='"Responsive visibility classes follow the pattern slds-hide_{breakpoint} and slds-show_{breakpoint}-down. Breakpoints: small (480px), medium (768px), large (1024px). These are rarely needed in most Salesforce contexts since the app runs inside the Salesforce shell, but useful for Experience Cloud sites."'
+          data-slds-classes='["slds-hide_small", "slds-show_small-down", "slds-hide_medium", "slds-hide_large"]'
+          data-gains='["Responsive visibility", "slds-hide_small", "Breakpoint suffixes", "Mobile-only content"]'
+          data-sources='[{"t": "SLDS Visibility Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/visibility/", "b": "docs"}, {"t": "SLDS Responsive Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/grid/", "b": "docs"}]'>
+          <div class="entry-id">5-4</div>
+          <div class="day-topic">Responsive Visibility</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module">Module 5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 6 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,107,107,0.1);color:#ff6b6b;">M6</span>
+      <span class="phase-title">Borders, Boxes &amp; Themes</span>
+      <span class="phase-meta">Beginner → Intermediate &middot; 3 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; SLDS gives you pre-built box styles, border utilities, and theme classes for background colors — replacing manual box-shadow, border, and background-color rules.</div>
+    <div class="week-group" id="m6">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Box — Container Styles"
+          data-entry-id="6-1"
+          data-mod-title="Borders, Boxes &amp; Themes"
+          data-mod-num="6"
+          data-color="#ff6b6b"
+          data-scenario='"You want a simple bordered box container with standard SLDS styling instead of writing border and padding by hand."'
+          data-custom-css='"/* Custom CSS */\n.box {\n  border: 1px solid #dddbda;\n  border-radius: 4px;\n  padding: 16px;\n  background: #fff;\n}"'
+          data-css-na='false'
+          data-slds-code='"<!-- slds-box = bordered container with padding and rounded corners -->\n<div class=\"slds-box\">\n  <p>Default box with medium padding</p>\n</div>\n\n<!-- Compact box -->\n<div class=\"slds-box slds-box_small\">\n  <p>Tighter padding</p>\n</div>\n\n<!-- Box with theme -->\n<div class=\"slds-box slds-theme_shade\">\n  <p>Gray background box</p>\n</div>\n\n<!-- Real-world: info panel inside a card -->\n<div class=\"slds-box slds-box_x-small slds-m-bottom_medium\">\n  <p class=\"slds-text-body_small slds-text-color_weak\">\n    ℹ️ Fill in all required fields before submitting.\n  </p>\n</div>"'
+          data-notes='"slds-box automatically applies Salesforce border color, border-radius, and background. The size modifier controls padding inside the box. Combine with slds-theme_* classes to change the background color."'
+          data-slds-classes='["slds-box", "slds-box_small", "slds-box_x-small", "slds-box_xx-small"]'
+          data-gains='["slds-box", "slds-box_small", "Box sizing variants", "Box + theme combo"]'
+          data-sources='[{"t": "SLDS Box Utility", "u": "https://v1.lightningdesignsystem.com/utilities/box/", "b": "docs"}, {"t": "SLDS Themes", "u": "https://v1.lightningdesignsystem.com/utilities/themes/", "b": "docs"}]'>
+          <div class="entry-id">6-1</div>
+          <div class="day-topic">Box — Container Styles</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module">Module 6</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Directional Borders"
+          data-entry-id="6-2"
+          data-mod-title="Borders, Boxes &amp; Themes"
+          data-mod-num="6"
+          data-color="#ff6b6b"
+          data-scenario='"You want to add a border to only one side of an element — like a bottom border on a section header."'
+          data-custom-css='"/* Custom CSS */\n.section-header { border-bottom: 1px solid #dddbda; padding-bottom: 8px; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Add individual borders to any element -->\n<div class=\"slds-border_bottom slds-p-bottom_small slds-m-bottom_medium\">\n  <h2 class=\"slds-text-heading_small\">Section Header</h2>\n</div>\n\n<!-- Left accent border — timeline item style -->\n<div class=\"slds-border_left slds-p-left_medium\">\n  <p>Activity log entry</p>\n  <p class=\"slds-text-body_small slds-text-color_weak\">2 hours ago</p>\n</div>\n\n<!-- Table-like dividers between items in a list -->\n<ul>\n  <li class=\"slds-border_bottom slds-p-vertical_small\">Item 1</li>\n  <li class=\"slds-border_bottom slds-p-vertical_small\">Item 2</li>\n</ul>"'
+          data-notes='"Border utilities use the Salesforce standard border color token so they stay consistent with the overall UI. These are much safer than writing border: 1px solid #dddbda because they update automatically with theme changes."'
+          data-slds-classes='["slds-border_top", "slds-border_bottom", "slds-border_left", "slds-border_right"]'
+          data-gains='["slds-border_*", "Directional borders", "Section separator pattern", "Timeline/list dividers"]'
+          data-sources='[{"t": "SLDS Border Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/borders/", "b": "docs"}, {"t": "SLDS Box Reference", "u": "https://v1.lightningdesignsystem.com/utilities/box/", "b": "docs"}]'>
+          <div class="entry-id">6-2</div>
+          <div class="day-topic">Directional Borders</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module">Module 6</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Theme Classes — Background Colors"
+          data-entry-id="6-3"
+          data-mod-title="Borders, Boxes &amp; Themes"
+          data-mod-num="6"
+          data-color="#ff6b6b"
+          data-scenario='"You want a section with a gray background, a dark (inverse) header bar, or a colored alert panel."'
+          data-custom-css='"/* Custom CSS — fragile, breaks with org theme updates */\n.gray-bg   { background-color: #f3f2f2; }\n.dark-bg   { background-color: #032d60; color: white; }\n.success-bg { background-color: #ecfce5; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Theme classes set background color + appropriate text color -->\n\n<div class=\"slds-theme_shade slds-p-around_medium\">\n  Gray background (form sections, sidebars)\n</div>\n\n<div class=\"slds-theme_inverse slds-p-around_medium\">\n  Dark background (page headers, banners)\n</div>\n\n<!-- Status-based themes for alerts and banners -->\n<div class=\"slds-theme_success slds-p-around_small slds-border_left\">\n  ✓ Record saved successfully\n</div>\n<div class=\"slds-theme_error slds-p-around_small slds-border_left\">\n  ✗ Validation failed\n</div>\n<div class=\"slds-theme_warning slds-p-around_small slds-border_left\">\n  ⚠ Review before submitting\n</div>"'
+          data-notes='"Theme classes not only set background color but also ensure the correct foreground (text) contrast. Never set a dark background manually and then try to manually set text to white — use slds-theme_inverse and it handles both together."'
+          data-slds-classes='["slds-theme_default", "slds-theme_shade", "slds-theme_inverse", "slds-theme_alt-inverse", "slds-theme_success", "slds-theme_info", "slds-theme_warning", "slds-theme_error"]'
+          data-gains='["slds-theme_*", "Background themes", "Status themes (success/error/warning)", "Contrast auto-handling"]'
+          data-sources='[{"t": "SLDS Theme Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/themes/", "b": "docs"}, {"t": "SLDS Color System", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/05098e-utility-classes", "b": "docs"}]'>
+          <div class="entry-id">6-3</div>
+          <div class="day-topic">Theme Classes — Background Colors</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module">Module 6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 7 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(123,97,255,0.1);color:#7b61ff;">M7</span>
+      <span class="phase-title">Component Blueprints — Cards</span>
+      <span class="phase-meta">Intermediate &middot; 2 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Cards are the most common UI container in Salesforce. Learn when to use the lightning-card base component vs building a raw SLDS card blueprint manually for full control.</div>
+    <div class="week-group" id="m7">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="lightning-card vs Raw SLDS Card Blueprint"
+          data-entry-id="7-1"
+          data-mod-title="Component Blueprints — Cards"
+          data-mod-num="7"
+          data-color="#7b61ff"
+          data-scenario='"You need a card — when do you use the lightning-card LWC component vs building the HTML structure manually with SLDS classes?"'
+          data-custom-css='"/* Not applicable — this is an architectural decision */"'
+          data-css-na='true'
+          data-slds-code='"<!-- OPTION A: Use lightning-card base component (recommended for most cases) -->\n<lightning-card title=\"My Component\" icon-name=\"standard:account\">\n  <div class=\"slds-p-around_medium\">\n    <!-- body content -->\n  </div>\n  <div slot=\"footer\">Footer content</div>\n</lightning-card>\n\n<!-- OPTION B: Raw SLDS card blueprint (use when you need full HTML control) -->\n<article class=\"slds-card\">\n  <div class=\"slds-card__header slds-grid\">\n    <header class=\"slds-media slds-media_center slds-has-flexi-truncate\">\n      <div class=\"slds-media__body\">\n        <h2 class=\"slds-card__header-title\">\n          <span class=\"slds-text-heading_small\">My Component</span>\n        </h2>\n      </div>\n    </header>\n  </div>\n  <div class=\"slds-card__body slds-card__body_inner\">\n    <!-- body content -->\n  </div>\n  <footer class=\"slds-card__footer\">Footer</footer>\n</article>"'
+          data-notes='"Use lightning-card for 90% of cases — it handles ARIA, keyboard navigation, and responsive behavior automatically. Use raw SLDS blueprint only when you need to inject non-standard elements into the header, or when you are building a highly custom layout that the base component cannot support."'
+          data-slds-classes='["slds-card", "slds-card__header", "slds-card__body", "slds-card__footer", "slds-card__header-title"]'
+          data-gains='["lightning-card vs blueprint", "slds-card__*", "When to use each", "Card body inner"]'
+          data-sources='[{"t": "SLDS Card Blueprint", "u": "https://v1.lightningdesignsystem.com/components/cards/", "b": "docs"}, {"t": "Component Ref — lightning-card", "u": "https://developer.salesforce.com/docs/component-library/bundle/lightning-card/documentation", "b": "docs"}]'>
+          <div class="entry-id">7-1</div>
+          <div class="day-topic">lightning-card vs Raw SLDS Card Blueprint</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module">Module 7</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Narrow Card &amp; Card Boundary"
+          data-entry-id="7-2"
+          data-mod-title="Component Blueprints — Cards"
+          data-mod-num="7"
+          data-color="#7b61ff"
+          data-scenario='"You want a card without a shadow (for nested content) or a narrower width card."'
+          data-custom-css='"/* Custom CSS */\n.flat-card { box-shadow: none; border: 1px solid #dddbda; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- slds-card_boundary: replaces the default card shadow with a flat border -->\n<!-- Use inside another card or on a flat background -->\n\n<article class=\"slds-card slds-card_boundary\">\n  <div class=\"slds-card__header\">\n    <h2 class=\"slds-card__header-title slds-text-heading_small\">Nested Card</h2>\n  </div>\n  <div class=\"slds-card__body slds-card__body_inner\">\n    Content inside a flat card\n  </div>\n</article>\n\n<!-- slds-card__body_inner: adds consistent horizontal padding to the card body -->\n<!-- Always use this instead of manually adding slds-p-horizontal_medium -->\n<div class=\"slds-card__body slds-card__body_inner\">\n  Properly padded content\n</div>"'
+          data-notes='"slds-card_boundary is the right choice when nesting cards inside another card or inside a box with a background color. slds-card__body_inner is the standard way to add horizontal padding to a card body without disrupting the card&#39;s internal layout."'
+          data-slds-classes='["slds-card_boundary", "slds-card__body_inner"]'
+          data-gains='["slds-card_boundary", "slds-card__body_inner", "Flat vs shadow card", "Card nesting"]'
+          data-sources='[{"t": "SLDS Cards — Variations", "u": "https://v1.lightningdesignsystem.com/components/cards/", "b": "docs"}, {"t": "SLDS Card Blueprint Docs", "u": "https://v1.lightningdesignsystem.com/components/cards/", "b": "docs"}]'>
+          <div class="entry-id">7-2</div>
+          <div class="day-topic">Narrow Card &amp; Card Boundary</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module">Module 7</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 8 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(0,212,255,0.1);color:#00d4ff;">M8</span>
+      <span class="phase-title">Buttons</span>
+      <span class="phase-meta">Beginner → Intermediate &middot; 2 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; SLDS has a complete button system covering brand, neutral, destructive, icon, stateful, and grouped buttons. Learn when to use each variant and the correct HTML structure.</div>
+    <div class="week-group" id="m8">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Base Button Variants"
+          data-entry-id="8-1"
+          data-mod-title="Buttons"
+          data-mod-num="8"
+          data-color="#00d4ff"
+          data-scenario='"You need buttons for different actions: primary save, secondary cancel, delete, and a plain text link-style button."'
+          data-custom-css='"/* Custom CSS */\n.btn-primary     { background: #1b96ff; color: white; border: none; padding: 8px 16px; }\n.btn-secondary   { background: white; color: #0070d2; border: 1px solid #0070d2; }\n.btn-destructive { background: #c23934; color: white; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- ALWAYS start with slds-button, then add the variant modifier -->\n\n<button class=\"slds-button slds-button_brand\">Save</button>\n<button class=\"slds-button slds-button_neutral\">Cancel</button>\n<button class=\"slds-button slds-button_destructive\">Delete</button>\n<button class=\"slds-button slds-button_success\">Approve</button>\n<button class=\"slds-button slds-button_text-destructive\">Remove (subtle)</button>\n<button class=\"slds-button\">Base (no style)</button>\n\n<!-- In LWC, prefer lightning-button for auto-focus and keyboard behavior -->\n<lightning-button variant=\"brand\" label=\"Save\" onclick={handleSave}></lightning-button>\n<lightning-button variant=\"neutral\" label=\"Cancel\" onclick={handleCancel}></lightning-button>\n<lightning-button variant=\"destructive\" label=\"Delete\" onclick={handleDelete}></lightning-button>"'
+          data-notes='"In LWC development always prefer lightning-button over a raw <button> with SLDS classes — the base component handles focus management, loading states, and disabled styling automatically. Use raw slds-button HTML only when building a blueprint component."'
+          data-slds-classes='["slds-button", "slds-button_brand", "slds-button_neutral", "slds-button_destructive", "slds-button_success", "slds-button_text-destructive", "slds-button_base"]'
+          data-gains='["slds-button_brand", "slds-button_neutral", "slds-button_destructive", "lightning-button variants", "Raw vs base component"]'
+          data-sources='[{"t": "SLDS Button Blueprint", "u": "https://v1.lightningdesignsystem.com/components/buttons/", "b": "docs"}, {"t": "Component Ref — lightning-button", "u": "https://developer.salesforce.com/docs/component-library/bundle/lightning-button/documentation", "b": "docs"}]'>
+          <div class="entry-id">8-1</div>
+          <div class="day-topic">Base Button Variants</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 8</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Icon Buttons &amp; Button Groups"
+          data-entry-id="8-2"
+          data-mod-title="Buttons"
+          data-mod-num="8"
+          data-color="#00d4ff"
+          data-scenario='"You need an icon-only action button (like an edit pencil or a delete trash), or a group of segmented buttons."'
+          data-custom-css='"/* Custom CSS */\n.icon-btn { background: none; border: none; cursor: pointer; padding: 4px; }\n.btn-group { display: flex; border: 1px solid #dddbda; border-radius: 4px; overflow: hidden; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Icon-only button — MUST include slds-assistive-text for accessibility -->\n<button class=\"slds-button slds-button_icon slds-button_icon-border-filled\"\n        title=\"Edit Record\">\n  <lightning-icon icon-name=\"utility:edit\" size=\"x-small\"></lightning-icon>\n  <span class=\"slds-assistive-text\">Edit</span>\n</button>\n\n<!-- Or use the LWC component -->\n<lightning-button-icon\n  icon-name=\"utility:edit\"\n  variant=\"border-filled\"\n  alternative-text=\"Edit\"\n  onclick={handleEdit}>\n</lightning-button-icon>\n\n<!-- Button group (segmented) -->\n<div class=\"slds-button-group\" role=\"group\">\n  <button class=\"slds-button slds-button_neutral\">List</button>\n  <button class=\"slds-button slds-button_neutral\">Grid</button>\n  <button class=\"slds-button slds-button_brand\">Map</button>\n</div>"'
+          data-notes='"slds-button_icon-border-filled is the most common icon button variant — it has a visible border and fill, making it clearly actionable. slds-button_icon-border is a subtle outline variant. Always add title and slds-assistive-text for icon buttons."'
+          data-slds-classes='["slds-button_icon", "slds-button_icon-border", "slds-button_icon-border-filled", "slds-button-group"]'
+          data-gains='["slds-button_icon", "slds-button-group", "lightning-button-icon", "Icon button accessibility"]'
+          data-sources='[{"t": "SLDS Button Icons", "u": "https://v1.lightningdesignsystem.com/components/button-icons/", "b": "docs"}, {"t": "SLDS Button Groups", "u": "https://v1.lightningdesignsystem.com/components/button-groups/", "b": "docs"}]'>
+          <div class="entry-id">8-2</div>
+          <div class="day-topic">Icon Buttons &amp; Button Groups</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 9 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,209,102,0.1);color:#ffd166;">M9</span>
+      <span class="phase-title">Forms &amp; Input Blueprints</span>
+      <span class="phase-meta">Intermediate &middot; 2 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; When lightning-input is not enough, learn the raw SLDS form blueprint so you can build any form layout — stacked, horizontal, compound — with consistent spacing and labels.</div>
+    <div class="week-group" id="m9">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Form Element Structure"
+          data-entry-id="9-1"
+          data-mod-title="Forms &amp; Input Blueprints"
+          data-mod-num="9"
+          data-color="#ffd166"
+          data-scenario='"You need to style a raw HTML input with a label and error message in the Salesforce look — not using lightning-input."'
+          data-custom-css='"/* Custom CSS */\n.form-group { margin-bottom: 16px; }\n.form-label { display: block; font-size: 0.75rem; margin-bottom: 4px; }\n.form-input { width: 100%; border: 1px solid #dddbda; padding: 6px 12px; }\n.form-error { color: red; font-size: 0.75rem; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Standard SLDS form element structure -->\n<div class=\"slds-form-element\">\n  <label class=\"slds-form-element__label\" for=\"account-name\">\n    <abbr class=\"slds-required\" title=\"required\">*</abbr>\n    Account Name\n  </label>\n  <div class=\"slds-form-element__control\">\n    <input type=\"text\"\n           id=\"account-name\"\n           class=\"slds-input\"\n           placeholder=\"Enter account name\" />\n  </div>\n</div>\n\n<!-- With error state -->\n<div class=\"slds-form-element slds-has-error\">\n  <label class=\"slds-form-element__label\" for=\"email\">Email</label>\n  <div class=\"slds-form-element__control\">\n    <input type=\"email\" id=\"email\" class=\"slds-input\" />\n  </div>\n  <p class=\"slds-form-element__help\">Please enter a valid email address.</p>\n</div>"'
+          data-notes='"The slds-form-element pattern is the atomic unit for all SLDS forms. Adding slds-has-error to the outer div automatically turns the border red and styles the help text as an error. The <abbr> with slds-required renders the standard red asterisk."'
+          data-slds-classes='["slds-form-element", "slds-form-element__label", "slds-form-element__control", "slds-form-element__help", "slds-has-error", "slds-input", "slds-textarea", "slds-select"]'
+          data-gains='["slds-form-element", "slds-has-error", "slds-required asterisk", "slds-input", "Form error pattern"]'
+          data-sources='[{"t": "SLDS Form Element Blueprint", "u": "https://v1.lightningdesignsystem.com/components/forms/", "b": "docs"}, {"t": "SLDS Input Blueprint", "u": "https://v1.lightningdesignsystem.com/components/input/", "b": "docs"}]'>
+          <div class="entry-id">9-1</div>
+          <div class="day-topic">Form Element Structure</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module">Module 9</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Form Layouts — Stacked vs Horizontal"
+          data-entry-id="9-2"
+          data-mod-title="Forms &amp; Input Blueprints"
+          data-mod-num="9"
+          data-color="#ffd166"
+          data-scenario='"You want a multi-field form where labels are above the inputs (stacked) or side-by-side with inputs (horizontal)."'
+          data-custom-css='"/* Custom CSS for horizontal layout */\n.form-row  { display: flex; align-items: center; margin-bottom: 12px; }\n.form-label { flex: 0 0 120px; text-align: right; padding-right: 12px; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Stacked form (default): labels above inputs -->\n<div class=\"slds-form slds-form_stacked\">\n  <div class=\"slds-form-element\">\n    <label class=\"slds-form-element__label\">First Name</label>\n    <div class=\"slds-form-element__control\">\n      <input type=\"text\" class=\"slds-input\" />\n    </div>\n  </div>\n  <div class=\"slds-form-element\">\n    <label class=\"slds-form-element__label\">Last Name</label>\n    <div class=\"slds-form-element__control\">\n      <input type=\"text\" class=\"slds-input\" />\n    </div>\n  </div>\n</div>\n\n<!-- Horizontal form: labels on the left, inputs on the right -->\n<div class=\"slds-form slds-form_horizontal\">\n  <div class=\"slds-form-element\">\n    <label class=\"slds-form-element__label\">Account Name</label>\n    <div class=\"slds-form-element__control\">\n      <input type=\"text\" class=\"slds-input\" />\n    </div>\n  </div>\n</div>"'
+          data-notes='"slds-form_stacked is the most common form layout in mobile-first Salesforce UIs. slds-form_horizontal works well for desktop-only record detail views or settings panels with many short fields. slds-form_compound is used for multi-column compound fields like Name (prefix + first + last)."'
+          data-slds-classes='["slds-form_stacked", "slds-form_horizontal", "slds-form_compound"]'
+          data-gains='["slds-form_stacked", "slds-form_horizontal", "slds-form_compound", "Form layout choice"]'
+          data-sources='[{"t": "SLDS Form Layout Docs", "u": "https://v1.lightningdesignsystem.com/components/forms/", "b": "docs"}, {"t": "SLDS Form Guidelines", "u": "https://v1.lightningdesignsystem.com/guidelines/forms/", "b": "docs"}]'>
+          <div class="entry-id">9-2</div>
+          <div class="day-topic">Form Layouts — Stacked vs Horizontal</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module">Module 9</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 10 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(6,214,160,0.1);color:#06d6a0;">M10</span>
+      <span class="phase-title">Media Objects &amp; Lists</span>
+      <span class="phase-meta">Intermediate &middot; 2 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Media objects are the SLDS pattern for combining an image/icon with text — like a user avatar next to a name, or an icon next to a description. Lists cover structured vertical stacks of items.</div>
+    <div class="week-group" id="m10">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Media Object — Icon + Text Side by Side"
+          data-entry-id="10-1"
+          data-mod-title="Media Objects &amp; Lists"
+          data-mod-num="10"
+          data-color="#06d6a0"
+          data-scenario='"You want to place an icon or avatar to the left of text content — like a user tile, activity entry, or notification item."'
+          data-custom-css='"/* Custom CSS */\n.media      { display: flex; align-items: flex-start; gap: 12px; }\n.media-img  { flex-shrink: 0; }\n.media-body { flex: 1; min-width: 0; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- slds-media: flex container for icon/image + content -->\n<!-- slds-media__figure: the left column (icon/image) -->\n<!-- slds-media__body:   the right column (text content) -->\n\n<div class=\"slds-media slds-media_center\">\n  <div class=\"slds-media__figure\">\n    <lightning-icon icon-name=\"standard:account\" size=\"medium\"></lightning-icon>\n  </div>\n  <div class=\"slds-media__body\">\n    <h3 class=\"slds-text-heading_small\">Acme Corporation</h3>\n    <p class=\"slds-text-body_small slds-text-color_weak\">Technology · San Francisco</p>\n  </div>\n</div>\n\n<!-- Media with figure on the right side too -->\n<div class=\"slds-media slds-media_center\">\n  <div class=\"slds-media__figure\">\n    <lightning-avatar src={avatarUrl} fallback-icon-name=\"standard:user\"></lightning-avatar>\n  </div>\n  <div class=\"slds-media__body\">\n    <p class=\"slds-text-body_regular\">{contact.Name}</p>\n    <p class=\"slds-text-body_small slds-text-color_weak\">{contact.Title}</p>\n  </div>\n  <div class=\"slds-media__figure slds-media__figure_reverse\">\n    <lightning-button-icon icon-name=\"utility:edit\"></lightning-button-icon>\n  </div>\n</div>"'
+          data-notes='"slds-media_center vertically centers the figure with the body content. Use slds-media_small or slds-media_large to control the gap between figure and body. The media object pattern is one of the most versatile in SLDS — it powers list items, user tiles, activity feeds, and notification rows."'
+          data-slds-classes='["slds-media", "slds-media__figure", "slds-media__body", "slds-media_center", "slds-media_small", "slds-media_large"]'
+          data-gains='["slds-media", "slds-media__figure", "slds-media__body", "slds-media_center", "User tile pattern"]'
+          data-sources='[{"t": "SLDS Media Object Blueprint", "u": "https://v1.lightningdesignsystem.com/utilities/media-objects/", "b": "docs"}, {"t": "SLDS List Builder", "u": "https://v1.lightningdesignsystem.com/components/lists/", "b": "docs"}]'>
+          <div class="entry-id">10-1</div>
+          <div class="day-topic">Media Object — Icon + Text Side by Side</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module">Module 10</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="SLDS Lists — Vertical Lists with Dividers"
+          data-entry-id="10-2"
+          data-mod-title="Media Objects &amp; Lists"
+          data-mod-num="10"
+          data-color="#06d6a0"
+          data-scenario='"You want a vertical list of items with consistent spacing and optional dividers between them."'
+          data-custom-css='"/* Custom CSS */\n.list     { list-style: none; padding: 0; margin: 0; }\n.list li  { padding: 8px 0; border-bottom: 1px solid #dddbda; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Vertical list with top dividers between items -->\n<ul class=\"slds-has-dividers_top-space\">\n  <li class=\"slds-item\">\n    <div class=\"slds-media slds-media_center\">\n      <div class=\"slds-media__body\">Contact Name 1</div>\n    </div>\n  </li>\n  <li class=\"slds-item\">\n    <div class=\"slds-media slds-media_center\">\n      <div class=\"slds-media__body\">Contact Name 2</div>\n    </div>\n  </li>\n</ul>\n\n<!-- Dotted bullet list -->\n<ul class=\"slds-list_dotted\">\n  <li>Feature one</li>\n  <li>Feature two</li>\n  <li>Feature three</li>\n</ul>"'
+          data-notes='"slds-has-dividers_top-space is the standard for building item lists in sidebars or cards. slds-item is placed on each list item. The divider classes handle spacing AND borders together — never add manual padding-top or border-top on li elements when using these classes."'
+          data-slds-classes='["slds-has-dividers_top-space", "slds-has-dividers_bottom-space", "slds-has-dividers_around-space", "slds-list_dotted", "slds-list_ordered"]'
+          data-gains='["slds-has-dividers_*", "slds-item", "slds-list_dotted", "List divider patterns"]'
+          data-sources='[{"t": "SLDS Lists Blueprint", "u": "https://v1.lightningdesignsystem.com/components/lists/", "b": "docs"}, {"t": "SLDS Divider Utilities", "u": "https://v1.lightningdesignsystem.com/utilities/dividers/", "b": "docs"}]'>
+          <div class="entry-id">10-2</div>
+          <div class="day-topic">SLDS Lists — Vertical Lists with Dividers</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module">Module 10</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 11 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,107,107,0.1);color:#ff6b6b;">M11</span>
+      <span class="phase-title">Badges, Pills &amp; Labels</span>
+      <span class="phase-meta">Intermediate &middot; 2 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Badges show counts or statuses. Pills show removable tags. These are common in search results, record lists, and filter UIs.</div>
+    <div class="week-group" id="m11">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Badges — Status Indicators"
+          data-entry-id="11-1"
+          data-mod-title="Badges, Pills &amp; Labels"
+          data-mod-num="11"
+          data-color="#ff6b6b"
+          data-scenario='"You want to display a colored status label on a record — like &#39;Active&#39;, &#39;Closed&#39;, &#39;High Priority&#39; — similar to a colored tag."'
+          data-custom-css='"/* Custom CSS */\n.badge         { display: inline-block; padding: 2px 8px; border-radius: 99px;\n                  font-size: 0.75rem; font-weight: bold; }\n.badge-success { background: #ecfce5; color: #2e844a; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- slds-badge: pill-shaped inline label -->\n<span class=\"slds-badge\">Default</span>\n\n<!-- Colored badges using theme classes -->\n<span class=\"slds-badge slds-theme_success\">Active</span>\n<span class=\"slds-badge slds-theme_warning\">Pending</span>\n<span class=\"slds-badge slds-theme_error\">Overdue</span>\n<span class=\"slds-badge slds-theme_shade\">Closed</span>\n<span class=\"slds-badge slds-theme_inverse\">New</span>\n\n<!-- With an icon inside the badge -->\n<span class=\"slds-badge\">\n  <lightning-icon icon-name=\"utility:priority\"\n                  size=\"xx-small\"\n                  class=\"slds-m-right_xx-small\">\n  </lightning-icon>\n  High Priority\n</span>"'
+          data-notes='"Combine slds-badge with any slds-theme_* class to get a colored badge. For Opportunity stage labels, Lead status, or Case priority — this is the go-to pattern. In lightning-datatable, you can render custom badge cells using template columns."'
+          data-slds-classes='["slds-badge", "slds-theme_success", "slds-theme_warning", "slds-theme_error", "slds-theme_shade"]'
+          data-gains='["slds-badge", "slds-badge + theme", "Status indicator pattern", "Badge with icon"]'
+          data-sources='[{"t": "SLDS Badges Blueprint", "u": "https://v1.lightningdesignsystem.com/components/badges/", "b": "docs"}, {"t": "SLDS Badge Reference", "u": "https://v1.lightningdesignsystem.com/components/badges/", "b": "docs"}]'>
+          <div class="entry-id">11-1</div>
+          <div class="day-topic">Badges — Status Indicators</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module">Module 11</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Pills — Removable Tags"
+          data-entry-id="11-2"
+          data-mod-title="Badges, Pills &amp; Labels"
+          data-mod-num="11"
+          data-color="#ff6b6b"
+          data-scenario='"You want to display a tag that users can remove — like a selected filter chip or a chosen category."'
+          data-custom-css='"/* Custom CSS */\n.tag { display: inline-flex; align-items: center; background: #e4f0fc;\n       padding: 4px 8px; border-radius: 99px; font-size: 0.75rem; }\n.tag-remove { margin-left: 4px; cursor: pointer; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Basic pill -->\n<span class=\"slds-pill\">\n  <a class=\"slds-pill__action\" href=\"#\" title=\"Account: Acme Corp\">\n    <span class=\"slds-pill__label\">Acme Corp</span>\n  </a>\n  <button class=\"slds-button slds-button_icon slds-button_icon slds-pill__remove\"\n          title=\"Remove Acme Corp\">\n    <lightning-icon icon-name=\"utility:close\" size=\"xx-small\"></lightning-icon>\n    <span class=\"slds-assistive-text\">Remove Acme Corp</span>\n  </button>\n</span>\n\n<!-- Container for multiple pills (like a multi-select field) -->\n<div class=\"slds-pill-container\">\n  <template for:each={selectedItems} for:item=\"item\" key={item.id}>\n    <span key={item.id} class=\"slds-pill\">\n      <span class=\"slds-pill__label\">{item.label}</span>\n      <button class=\"slds-button slds-button_icon slds-pill__remove\"\n              data-id={item.id} onclick={handleRemove}>\n        <lightning-icon icon-name=\"utility:close\" size=\"xx-small\"></lightning-icon>\n        <span class=\"slds-assistive-text\">Remove {item.label}</span>\n      </button>\n    </span>\n  </template>\n</div>"'
+          data-notes='"Pills are perfect for multi-select lookups and tag/filter UI. Always include the remove button with slds-assistive-text for accessibility. The lightning-lookup and lightning-combobox components handle pills automatically, but knowing the raw blueprint lets you build fully custom multi-select fields."'
+          data-slds-classes='["slds-pill", "slds-pill__label", "slds-pill__remove", "slds-pill-container"]'
+          data-gains='["slds-pill", "slds-pill__remove", "slds-pill-container", "Multi-select tag UI"]'
+          data-sources='[{"t": "SLDS Pills Blueprint", "u": "https://v1.lightningdesignsystem.com/components/pills/", "b": "docs"}, {"t": "SLDS Pill Container", "u": "https://v1.lightningdesignsystem.com/components/pill-container/", "b": "docs"}]'>
+          <div class="entry-id">11-2</div>
+          <div class="day-topic">Pills — Removable Tags</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module">Module 11</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 12 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(0,212,255,0.1);color:#00d4ff;">M12</span>
+      <span class="phase-title">Icons</span>
+      <span class="phase-meta">Beginner → Intermediate &middot; 1 entry</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; SLDS provides thousands of icons across 5 categories. Learn how to use lightning-icon in LWC vs raw SVG sprites, size variants, and how to color icons correctly.</div>
+    <div class="week-group" id="m12">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Icon Categories &amp; lightning-icon"
+          data-entry-id="12-1"
+          data-mod-title="Icons"
+          data-mod-num="12"
+          data-color="#00d4ff"
+          data-scenario='"You want to add an icon to a button, heading, or list item."'
+          data-custom-css='"/* No custom CSS equivalent — icons are SVG-based */"'
+          data-css-na='true'
+          data-slds-code='"<!-- In LWC, always use lightning-icon — it handles SVG sprites automatically -->\n\n<!-- 5 icon categories -->\n<!-- utility:   General UI icons (edit, delete, search, home, etc.) -->\n<!-- standard:  Salesforce object icons (account, contact, opportunity) -->\n<!-- action:    Action icons (new, edit, delete — colorful circles) -->\n<!-- custom:    Custom object icons (custom1-custom113) -->\n<!-- doctype:   File type icons (pdf, excel, word, etc.) -->\n\n<lightning-icon icon-name=\"utility:edit\"         size=\"small\"></lightning-icon>\n<lightning-icon icon-name=\"standard:account\"     size=\"medium\"></lightning-icon>\n<lightning-icon icon-name=\"action:new\"           size=\"medium\"></lightning-icon>\n<lightning-icon icon-name=\"doctype:pdf\"          size=\"medium\"></lightning-icon>\n\n<!-- Sizes: xx-small, x-small, small, medium (default), large -->\n<lightning-icon icon-name=\"utility:info\" size=\"xx-small\"></lightning-icon>\n<lightning-icon icon-name=\"utility:info\" size=\"large\"></lightning-icon>\n\n<!-- With a container (adds colored background circle) -->\n<span class=\"slds-icon_container slds-icon-standard-account\">\n  <lightning-icon icon-name=\"standard:account\"></lightning-icon>\n</span>"'
+          data-notes='"Always use lightning-icon in LWC — never manually import SVG sprites. The icon name format is always category:name (e.g., utility:search, standard:contact). Browse all available icons at the SLDS icon library. standard: and action: icons already have colored backgrounds built in."'
+          data-slds-classes='["slds-icon", "slds-icon_small", "slds-icon_medium", "slds-icon_large", "slds-icon-utility-*", "slds-icon_container"]'
+          data-gains='["5 icon categories", "lightning-icon", "Icon sizes", "slds-icon_container"]'
+          data-sources='[{"t": "SLDS Icon Library", "u": "https://v1.lightningdesignsystem.com/icons/", "b": "docs"}, {"t": "Component Ref — lightning-icon", "u": "https://developer.salesforce.com/docs/component-library/bundle/lightning-icon/documentation", "b": "docs"}]'>
+          <div class="entry-id">12-1</div>
+          <div class="day-topic">Icon Categories &amp; lightning-icon</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 12</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 13 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(123,97,255,0.1);color:#7b61ff;">M13</span>
+      <span class="phase-title">Tables</span>
+      <span class="phase-meta">Intermediate &middot; 1 entry</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; When you need a raw HTML table styled in Salesforce style — or when you need to understand how lightning-datatable works under the hood.</div>
+    <div class="week-group" id="m13">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="SLDS Table Blueprint"
+          data-entry-id="13-1"
+          data-mod-title="Tables"
+          data-mod-num="13"
+          data-color="#7b61ff"
+          data-scenario='"You want to render a data table that looks like Salesforce without using lightning-datatable."'
+          data-custom-css='"/* Custom CSS */\ntable { width: 100%; border-collapse: collapse; }\nth    { background: #f3f2f2; border-bottom: 2px solid #dddbda; text-align: left; padding: 8px; }\ntd    { border-bottom: 1px solid #dddbda; padding: 8px; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- slds-table: base class -->\n<!-- slds-table_cell-buffer: adds standard padding to all cells -->\n<!-- slds-table_bordered: adds borders between rows -->\n<!-- slds-table_striped: alternating row backgrounds -->\n\n<table class=\"slds-table slds-table_cell-buffer slds-table_bordered\">\n  <thead>\n    <tr class=\"slds-line-height_reset\">\n      <th scope=\"col\" class=\"slds-text-title_caps\">Name</th>\n      <th scope=\"col\" class=\"slds-text-title_caps\">Stage</th>\n      <th scope=\"col\" class=\"slds-text-title_caps slds-text-align_right\">Amount</th>\n    </tr>\n  </thead>\n  <tbody>\n    <template for:each={opportunities} for:item=\"opp\" key={opp.Id}>\n      <tr key={opp.Id}>\n        <td>\n          <div class=\"slds-truncate\" title={opp.Name}>{opp.Name}</div>\n        </td>\n        <td>\n          <span class=\"slds-badge\">{opp.StageName}</span>\n        </td>\n        <td class=\"slds-text-align_right\">\n          <lightning-formatted-number value={opp.Amount}\n            format-style=\"currency\" currency-code=\"USD\">\n          </lightning-formatted-number>\n        </td>\n      </tr>\n    </template>\n  </tbody>\n</table>"'
+          data-notes='"In almost all LWC cases, use lightning-datatable instead of a raw SLDS table — it gives you sorting, row selection, inline editing, and row actions for free. Only build a raw SLDS table when you need a completely custom cell renderer that lightning-datatable templates cannot support."'
+          data-slds-classes='["slds-table", "slds-table_bordered", "slds-table_cell-buffer", "slds-table_striped", "slds-table_fixed-layout", "slds-text-title_caps"]'
+          data-gains='["slds-table_*", "slds-table_bordered", "slds-table_cell-buffer", "slds-table_striped", "Raw vs lightning-datatable"]'
+          data-sources='[{"t": "SLDS Data Table Blueprint", "u": "https://v1.lightningdesignsystem.com/components/data-tables/", "b": "docs"}, {"t": "Component Ref — lightning-datatable", "u": "https://developer.salesforce.com/docs/component-library/bundle/lightning-datatable/documentation", "b": "docs"}]'>
+          <div class="entry-id">13-1</div>
+          <div class="day-topic">SLDS Table Blueprint</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module">Module 13</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 14 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,209,102,0.1);color:#ffd166;">M14</span>
+      <span class="phase-title">Modals &amp; Overlays</span>
+      <span class="phase-meta">Intermediate &middot; 1 entry</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Modals are essential for confirmation dialogs, detail pop-ups, and form overlays. Learn the SLDS modal blueprint and when to use lightning-modal vs raw HTML.</div>
+    <div class="week-group" id="m14">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="SLDS Modal Blueprint"
+          data-entry-id="14-1"
+          data-mod-title="Modals &amp; Overlays"
+          data-mod-num="14"
+          data-color="#ffd166"
+          data-scenario='"You need a confirmation dialog or a form that opens as an overlay on top of the current page."'
+          data-custom-css='"/* Custom CSS — lots of boilerplate */\n.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9000; }\n.modal-box     { position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);\n                  background: white; border-radius: 4px; width: 600px; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- The backdrop (dark overlay behind the modal) -->\n<div class=\"slds-backdrop slds-backdrop_open\"></div>\n\n<!-- The modal -->\n<div role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"modal-heading\"\n     class=\"slds-modal slds-fade-in-open slds-modal_medium\">\n  <div class=\"slds-modal__container\">\n\n    <!-- Header -->\n    <div class=\"slds-modal__header\">\n      <h1 id=\"modal-heading\" class=\"slds-modal__title slds-hyphenate\">\n        Confirm Delete\n      </h1>\n      <button class=\"slds-button slds-button_icon slds-modal__close\"\n              onclick={handleClose} title=\"Close\">\n        <lightning-icon icon-name=\"utility:close\" size=\"small\"></lightning-icon>\n        <span class=\"slds-assistive-text\">Close</span>\n      </button>\n    </div>\n\n    <!-- Body -->\n    <div class=\"slds-modal__content slds-p-around_medium\">\n      <p>Are you sure you want to delete this record? This cannot be undone.</p>\n    </div>\n\n    <!-- Footer -->\n    <div class=\"slds-modal__footer\">\n      <lightning-button label=\"Cancel\" onclick={handleClose}></lightning-button>\n      <lightning-button variant=\"destructive\" label=\"Delete\"\n                        onclick={handleConfirm}></lightning-button>\n    </div>\n  </div>\n</div>"'
+          data-notes='"In LWC, you can also use the newer lightning-modal base component (available since Winter &#39;23) which handles focus trapping, ARIA, and ESC-to-close automatically. Use the raw blueprint when you need full control over transitions or custom z-index stacking. Modal sizes: slds-modal_small (340px), default (640px), slds-modal_medium (768px), slds-modal_large (90vw)."'
+          data-slds-classes='["slds-modal", "slds-modal__container", "slds-modal__header", "slds-modal__content", "slds-modal__footer", "slds-backdrop", "slds-backdrop_open", "slds-fade-in-open", "slds-modal_small", "slds-modal_medium", "slds-modal_large"]'
+          data-gains='["slds-modal__*", "slds-backdrop", "slds-fade-in-open", "Modal sizes", "lightning-modal alternative"]'
+          data-sources='[{"t": "SLDS Modal Blueprint", "u": "https://v1.lightningdesignsystem.com/components/modals/", "b": "docs"}, {"t": "Component Ref — lightning-modal", "u": "https://developer.salesforce.com/docs/component-library/bundle/lightning-modal/documentation", "b": "docs"}]'>
+          <div class="entry-id">14-1</div>
+          <div class="day-topic">SLDS Modal Blueprint</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module">Module 14</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 15 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(6,214,160,0.1);color:#06d6a0;">M15</span>
+      <span class="phase-title">Notifications, Toasts &amp; Spinners</span>
+      <span class="phase-meta">Intermediate &middot; 2 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Status feedback is critical in Salesforce UIs. Learn the SLDS patterns for inline notifications, page-level alerts, toasts, and loading spinners.</div>
+    <div class="week-group" id="m15">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Inline Notifications &amp; Alerts"
+          data-entry-id="15-1"
+          data-mod-title="Notifications, Toasts &amp; Spinners"
+          data-mod-num="15"
+          data-color="#06d6a0"
+          data-scenario='"You want to show an inline error, warning, info, or success message inside a component — not a floating toast."'
+          data-custom-css='"/* Custom CSS */\n.alert-error   { background: #fce0e0; border-left: 4px solid #c23934;\n                  padding: 12px; display: flex; align-items: center; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Inline alert bar (sticks to top of a section) -->\n<div class=\"slds-notify slds-notify_alert slds-theme_error\" role=\"alert\">\n  <span class=\"slds-assistive-text\">Error</span>\n  <lightning-icon icon-name=\"utility:error\" size=\"x-small\"\n                  class=\"slds-m-right_x-small\"\n                  alternative-text=\"Error\">\n  </lightning-icon>\n  <h2>Your changes could not be saved. Please check all required fields.</h2>\n</div>\n\n<!-- Info alert -->\n<div class=\"slds-notify slds-notify_alert slds-theme_info\" role=\"status\">\n  <span class=\"slds-assistive-text\">Info</span>\n  <h2>This record is read-only in your current permission set.</h2>\n</div>\n\n<!-- For floating toasts in LWC, use ShowToastEvent instead:\n     this.dispatchEvent(new ShowToastEvent({ title, message, variant })); -->"'
+          data-notes='"For FLOATING toast notifications in LWC, always use ShowToastEvent — never build toast HTML manually. Use the slds-notify_alert blueprint for INLINE status banners that are a permanent part of the component UI (not temporary popups)."'
+          data-slds-classes='["slds-notify_alert", "slds-notify_toast", "slds-theme_error", "slds-theme_warning", "slds-theme_success", "slds-theme_info", "slds-notify__content"]'
+          data-gains='["slds-notify_alert", "Inline error/success/warning", "vs ShowToastEvent", "Alert vs Toast distinction"]'
+          data-sources='[{"t": "SLDS Notifications Blueprint", "u": "https://v1.lightningdesignsystem.com/components/notifications/", "b": "docs"}, {"t": "LWC Docs — ShowToastEvent", "u": "https://developer.salesforce.com/docs/component-library/bundle/lightning-platform-show-toast-event/documentation", "b": "docs"}]'>
+          <div class="entry-id">15-1</div>
+          <div class="day-topic">Inline Notifications &amp; Alerts</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module">Module 15</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Spinners — Loading States"
+          data-entry-id="15-2"
+          data-mod-title="Notifications, Toasts &amp; Spinners"
+          data-mod-num="15"
+          data-color="#06d6a0"
+          data-scenario='"You want to show a loading animation while data is fetching or an operation is in progress."'
+          data-custom-css='"/* Custom CSS — complex animation to implement from scratch */\n.spinner { border: 3px solid #f3f3f3; border-top: 3px solid #0070d2;\n            border-radius: 50%; width: 40px; height: 40px;\n            animation: spin 1s linear infinite; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- Inline spinner (inside a container of fixed height) -->\n<template lwc:if={isLoading}>\n  <div class=\"slds-spinner_container\">\n    <div class=\"slds-spinner slds-spinner_medium slds-spinner_brand\" role=\"status\">\n      <span class=\"slds-assistive-text\">Loading...</span>\n    </div>\n  </div>\n</template>\n\n<!-- Or use lightning-spinner base component (recommended) -->\n<template lwc:if={isLoading}>\n  <lightning-spinner alternative-text=\"Loading\" size=\"medium\"></lightning-spinner>\n</template>\n\n<!-- Spinner variants -->\n<!-- slds-spinner_brand: Salesforce blue -->\n<!-- slds-spinner_inverse: white (for dark backgrounds) -->\n<!-- Sizes: x-small, small, medium (default), large -->"'
+          data-notes='"lightning-spinner is recommended in LWC — it handles the ARIA role and animation automatically. Use slds-spinner_container to center the spinner within a relatively-positioned parent. The brand variant (blue) is standard for most use cases. Use inverse (white) on dark backgrounds."'
+          data-slds-classes='["slds-spinner", "slds-spinner_medium", "slds-spinner_brand", "slds-spinner_small", "slds-spinner_large", "slds-spinner_container"]'
+          data-gains='["slds-spinner", "slds-spinner_container", "lightning-spinner", "Spinner sizes/variants"]'
+          data-sources='[{"t": "SLDS Spinners Blueprint", "u": "https://v1.lightningdesignsystem.com/components/spinners/", "b": "docs"}, {"t": "Component Ref — lightning-spinner", "u": "https://developer.salesforce.com/docs/component-library/bundle/lightning-spinner/documentation", "b": "docs"}]'>
+          <div class="entry-id">15-2</div>
+          <div class="day-topic">Spinners — Loading States</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module">Module 15</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 16 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(0,212,255,0.1);color:#00d4ff;">M16</span>
+      <span class="phase-title">Tabs &amp; Navigation</span>
+      <span class="phase-meta">Intermediate &middot; 1 entry</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Tabs and navigation components let you build multi-panel UIs. Learn when raw SLDS tab blueprints are needed vs using lightning-tabset.</div>
+    <div class="week-group" id="m16">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openEntry(this)"
+          data-level="intermediate"
+          data-topic="Tabs — Default and Scoped"
+          data-entry-id="16-1"
+          data-mod-title="Tabs &amp; Navigation"
+          data-mod-num="16"
+          data-color="#00d4ff"
+          data-scenario='"You want a tabbed layout where users can switch between different content panels."'
+          data-custom-css='"/* Custom CSS */\n.tab-bar     { display: flex; border-bottom: 1px solid #dddbda; }\n.tab         { padding: 8px 16px; cursor: pointer; }\n.tab.active  { border-bottom: 2px solid #0070d2; font-weight: bold; }\n.tab-content { padding: 16px; }"'
+          data-css-na='false'
+          data-slds-code='"<!-- In LWC, use lightning-tabset first (handles keyboard nav, ARIA, active state) -->\n<lightning-tabset>\n  <lightning-tab label=\"Details\">\n    <p class=\"slds-p-around_medium\">Details content</p>\n  </lightning-tab>\n  <lightning-tab label=\"Activity\">\n    <p class=\"slds-p-around_medium\">Activity content</p>\n  </lightning-tab>\n  <lightning-tab label=\"Related\">\n    <p class=\"slds-p-around_medium\">Related content</p>\n  </lightning-tab>\n</lightning-tabset>\n\n<!-- Raw SLDS tabs blueprint (use only for full custom control) -->\n<div class=\"slds-tabs_default\">\n  <ul class=\"slds-tabs__nav\" role=\"tablist\">\n    <li class=\"slds-tabs__item slds-is-active\" role=\"presentation\">\n      <a class=\"slds-tabs__link\" role=\"tab\">Details</a>\n    </li>\n    <li class=\"slds-tabs__item\" role=\"presentation\">\n      <a class=\"slds-tabs__link\" role=\"tab\">Activity</a>\n    </li>\n  </ul>\n  <div class=\"slds-tabs__content slds-show\" role=\"tabpanel\">Details content</div>\n  <div class=\"slds-tabs__content slds-hide\" role=\"tabpanel\">Activity content</div>\n</div>"'
+          data-notes='"slds-tabs_default uses underline-style tabs (most common in Salesforce record pages). slds-tabs_scoped uses boxed tabs with a visible border around content — used inside cards and panels. lightning-tabset handles all the JS toggling automatically."'
+          data-slds-classes='["slds-tabs_default", "slds-tabs_scoped", "slds-tabs__item", "slds-tabs__content", "slds-tabs__link", "slds-is-active"]'
+          data-gains='["slds-tabs_default", "slds-tabs_scoped", "slds-is-active", "lightning-tabset", "Tab vs Scoped tabs"]'
+          data-sources='[{"t": "SLDS Tabs Blueprint", "u": "https://v1.lightningdesignsystem.com/components/tabs/", "b": "docs"}, {"t": "Component Ref — lightning-tabset", "u": "https://developer.salesforce.com/docs/component-library/bundle/lightning-tabset/documentation", "b": "docs"}]'>
+          <div class="entry-id">16-1</div>
+          <div class="day-topic">Tabs — Default and Scoped</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module">Module 16</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 17 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(123,97,255,0.1);color:#7b61ff;">M17</span>
+      <span class="phase-title">SLDS 2 — Styling Hooks &amp; CSS Custom Properties</span>
+      <span class="phase-meta">Advanced &middot; 3 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; SLDS 2 introduces CSS custom properties (styling hooks) for overriding base component styles without writing unsafe CSS. This replaces the old practice of overriding internal classes.</div>
+    <div class="week-group" id="m17">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openEntry(this)"
+          data-level="advanced"
+          data-topic="Global Tokens — --slds-g-*"
+          data-entry-id="17-1"
+          data-mod-title="SLDS 2 — Styling Hooks &amp; CSS Custom Properties"
+          data-mod-num="17"
+          data-color="#7b61ff"
+          data-scenario='"You want to use Salesforce brand colors, spacing values, or font sizes in your own custom CSS without hardcoding values."'
+          data-custom-css='"/* Custom CSS — brittle hardcoded values */\n.custom-header {\n  color: #032d60;\n  font-size: 1.5rem;\n  margin-bottom: 16px;\n  border-bottom: 1px solid #dddbda;\n}"'
+          data-css-na='false'
+          data-slds-code='"/* SLDS 2 Global tokens — use in your component&#39;s .css file */\n/* Prefix: --slds-g- = global token (shared across all components) */\n\n.custom-header {\n  color: var(--slds-g-color-brand-base-50);         /* Brand blue */\n  font-size: var(--slds-g-font-scale-6);             /* Standard large heading */\n  margin-bottom: var(--slds-g-spacing-medium);       /* Standard medium spacing */\n  border-bottom: 1px solid var(--slds-g-color-border-base-1); /* Standard border */\n}\n\n/* Other useful global tokens */\n/*\n  Colors:\n  --slds-g-color-neutral-base-100    (white)\n  --slds-g-color-neutral-base-95     (light gray bg)\n  --slds-g-color-brand-base-50       (Salesforce blue)\n  --slds-g-color-error-base-40       (error red)\n  --slds-g-color-success-base-40     (success green)\n  --slds-g-color-warning-base-50     (warning yellow)\n\n  Spacing:\n  --slds-g-spacing-xx-small  (2px)\n  --slds-g-spacing-x-small   (4px)\n  --slds-g-spacing-small     (8px)\n  --slds-g-spacing-medium    (12px)\n  --slds-g-spacing-large     (16px)\n  --slds-g-spacing-x-large   (24px)\n  --slds-g-spacing-xx-large  (32px)\n*/"'
+          data-notes='"Global tokens (--slds-g-*) are the foundational design values. They automatically update when Salesforce releases theme changes or when the org admin changes the brand color. Always prefer them over hardcoded values in any custom CSS you write."'
+          data-slds-classes='[]'
+          data-gains='["--slds-g-* tokens", "Color tokens", "Spacing tokens", "Font scale tokens", "Theme-safe custom CSS"]'
+          data-sources='[{"t": "SLDS 2 Design Tokens", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/85bd85-lightning-design-system-2", "b": "docs"}, {"t": "LWC CSS Custom Properties", "u": "https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-slds.html", "b": "docs"}]'>
+          <div class="entry-id">17-1</div>
+          <div class="day-topic">Global Tokens — --slds-g-*</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module">Module 17</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openEntry(this)"
+          data-level="advanced"
+          data-topic="Component Styling Hooks — --slds-c-*"
+          data-entry-id="17-2"
+          data-mod-title="SLDS 2 — Styling Hooks &amp; CSS Custom Properties"
+          data-mod-num="17"
+          data-color="#7b61ff"
+          data-scenario='"You want to change the background color of a lightning-button_brand to match your company&#39;s brand color, without overriding internal CSS classes."'
+          data-custom-css='"/* WRONG — overrides internal CSS, breaks in future releases, violates SLDS rules */\n.slds-button_brand { background-color: #FF6B6B !important; }"'
+          data-css-na='false'
+          data-slds-code='"/* CORRECT — use styling hooks in your component&#39;s .css file */\n/* Prefix: --slds-c- = component-level hook (for a specific component) */\n\n/* In myComponent.css */\n:host {\n  /* Override brand button background */\n  --slds-c-button-brand-color-background: #FF6B6B;\n  --slds-c-button-brand-color-background-hover: #e05555;\n  --slds-c-button-brand-color-border: #FF6B6B;\n\n  /* Override card border radius */\n  --slds-c-card-radius-border: 8px;\n\n  /* Override input focus ring color */\n  --slds-c-input-color-border-focus: #FF6B6B;\n}\n\n/* Scoped to a specific element rather than :host */\n.my-section {\n  --slds-c-button-brand-color-background: #00d4ff;\n}"'
+          data-notes='"This is the ONLY supported way to restyle lightning base components in SLDS 2. Overriding internal CSS classes (like .slds-button_brand directly) is explicitly listed as an anti-pattern in the docs and will break when Salesforce updates their internal markup. Always check the component&#39;s documentation page for its available styling hooks."'
+          data-slds-classes='[]'
+          data-gains='["--slds-c-* component hooks", ":host overrides", "Supported customization method", "Anti-pattern: internal CSS override"]'
+          data-sources='[{"t": "LWC Docs — Styling Hooks", "u": "https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-slds.html", "b": "docs"}, {"t": "SLDS 2 Transition Guide", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/85bd85-lightning-design-system-2", "b": "docs"}]'>
+          <div class="entry-id">17-2</div>
+          <div class="day-topic">Component Styling Hooks — --slds-c-*</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module">Module 17</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openEntry(this)"
+          data-level="advanced"
+          data-topic=":host and :host() Selectors in LWC"
+          data-entry-id="17-3"
+          data-mod-title="SLDS 2 — Styling Hooks &amp; CSS Custom Properties"
+          data-mod-num="17"
+          data-color="#7b61ff"
+          data-scenario='"You want to add styles that apply to the LWC component itself (the custom element wrapper) rather than elements inside it."'
+          data-custom-css='"/* Custom CSS on a regular website */\n.my-widget { display: block; padding: 16px; }"'
+          data-css-na='false'
+          data-slds-code='"/* In LWC, :host refers to the component&#39;s custom element itself.\n   The component renders as <c-my-component> in the DOM.\n   Styles you write in the component&#39;s .css file are SCOPED to the shadow root.\n   To style the outer element (<c-my-component>), use :host */\n\n/* myComponent.css */\n\n:host {\n  display: block;           /* Make the component block-level */\n  --slds-c-button-brand-color-background: #7b61ff;  /* Override for this component */\n}\n\n/* :host() with a condition — style when a specific attribute is present */\n:host([data-variant=&#39;compact&#39;]) {\n  --slds-c-card-radius-border: 0;\n  padding: 0;\n}\n\n/* DO NOT style children from outside the component */\n/* This breaks Shadow DOM encapsulation */\n/* c-my-component p { color: red; } ← WRONG in a parent CSS file */"'
+          data-notes='"In LWC, :host is the entry point for component-level theming. Setting display: block on :host is important because custom elements are inline by default, which causes layout issues. Use :host() with attribute conditions to support variant-based styling."'
+          data-slds-classes='[]'
+          data-gains='[":host selector", ":host() with conditions", "Shadow DOM scoping", "display:block on :host", "Component-level tokens"]'
+          data-sources='[{"t": "LWC Docs — CSS Scoping", "u": "https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-slds.html", "b": "docs"}, {"t": "MDN — :host Selector", "u": "https://developer.mozilla.org/en-US/docs/Web/CSS/:host", "b": "docs"}]'>
+          <div class="entry-id">17-3</div>
+          <div class="day-topic">:host and :host() Selectors in LWC</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module">Module 17</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 18 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,107,107,0.1);color:#ff6b6b;">M18</span>
+      <span class="phase-title">Accessibility (a11y) Patterns</span>
+      <span class="phase-meta">Advanced &middot; 2 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; SLDS is built for WCAG 2.1 AA compliance. Learn the ARIA attributes, focus management patterns, and keyboard interaction classes that make your LWC components accessible.</div>
+    <div class="week-group" id="m18">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openEntry(this)"
+          data-level="advanced"
+          data-topic="ARIA Roles &amp; Attributes with SLDS"
+          data-entry-id="18-1"
+          data-mod-title="Accessibility (a11y) Patterns"
+          data-mod-num="18"
+          data-color="#ff6b6b"
+          data-scenario='"You want your custom interactive components to be readable by screen readers and keyboard navigable."'
+          data-custom-css='"/* ARIA is not CSS — these are HTML attributes */"'
+          data-css-na='true'
+          data-slds-code='"<!-- ARIA roles pair with SLDS components -->\n\n<!-- Tabs need role=\"tablist\", \"tab\", \"tabpanel\" -->\n<ul class=\"slds-tabs__nav\" role=\"tablist\">\n  <li class=\"slds-tabs__item slds-is-active\" role=\"presentation\">\n    <a role=\"tab\"\n       tabindex=\"0\"\n       aria-selected=\"true\"\n       aria-controls=\"tab-panel-1\"\n       id=\"tab-1\">Details</a>\n  </li>\n</ul>\n<div role=\"tabpanel\" id=\"tab-panel-1\" aria-labelledby=\"tab-1\">...</div>\n\n<!-- Dialogs need role=\"dialog\" + aria-modal -->\n<div role=\"dialog\"\n     aria-modal=\"true\"\n     aria-labelledby=\"modal-heading\"\n     class=\"slds-modal slds-fade-in-open\">\n  <div class=\"slds-modal__container\">\n    <h1 id=\"modal-heading\">Delete Confirmation</h1>\n    ...\n  </div>\n</div>\n\n<!-- Live regions for dynamic content updates -->\n<div aria-live=\"polite\" aria-atomic=\"true\">\n  <template lwc:if={statusMessage}>\n    <p class=\"slds-assistive-text\">{statusMessage}</p>\n  </template>\n</div>"'
+          data-notes='"SLDS blueprints always show you the required ARIA attributes alongside the CSS classes. Never just copy the CSS — always include the role, aria-*, and tabindex attributes too. aria-live=&#39;polite&#39; is essential for any content that updates dynamically (search results, status messages) so screen reader users are notified."'
+          data-slds-classes='["slds-assistive-text", "slds-has-focus"]'
+          data-gains='["ARIA roles with SLDS", "aria-modal", "aria-live", "role=tablist/tab/tabpanel", "Screen reader support"]'
+          data-sources='[{"t": "SLDS Accessibility Guidelines", "u": "https://v1.lightningdesignsystem.com/guidelines/accessibility-overview/", "b": "docs"}, {"t": "WCAG 2.1 Quick Reference", "u": "https://www.w3.org/WAI/WCAG21/quickref/", "b": "article"}]'>
+          <div class="entry-id">18-1</div>
+          <div class="day-topic">ARIA Roles &amp; Attributes with SLDS</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module">Module 18</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openEntry(this)"
+          data-level="advanced"
+          data-topic="Focus Management"
+          data-entry-id="18-2"
+          data-mod-title="Accessibility (a11y) Patterns"
+          data-mod-num="18"
+          data-color="#ff6b6b"
+          data-scenario='"You opened a modal dialog. When it closes, the focus should return to the button that opened it. When it opens, focus should move to the first interactive element inside."'
+          data-custom-css='"/* Not a CSS problem — this is JavaScript + SLDS structural pattern */"'
+          data-css-na='true'
+          data-slds-code='"// Focus management in LWC — must be done in JavaScript\n\n// In a modal component:\nconnectedCallback() {\n  // When modal opens, focus the first focusable element inside\n  // Use setTimeout because DOM may not be ready immediately\n  setTimeout(() => {\n    const firstInput = this.template.querySelector(&#39;input, button, [href], select, textarea&#39;);\n    if (firstInput) firstInput.focus();\n  }, 0);\n}\n\n// In the opener component:\n// Store reference to the trigger button\nhandleOpenModal() {\n  this.triggerButton = this.template.querySelector(&#39;.open-modal-btn&#39;);\n  this.isModalOpen = true;\n}\n\n// When modal fires a close event, return focus to trigger\nhandleCloseModal() {\n  this.isModalOpen = false;\n  if (this.triggerButton) {\n    this.triggerButton.focus();\n  }\n}\n\n// ESC key to close modal\nhandleKeyDown(event) {\n  if (event.key === &#39;Escape&#39;) this.handleCloseModal();\n}"'
+          data-notes='"Focus management is a mandatory part of accessible modal dialogs per WCAG 2.1. The lightning-modal base component handles this automatically. If you build a custom modal, you must implement: (1) move focus IN when opening, (2) trap focus inside the modal, (3) return focus OUT when closing."'
+          data-slds-classes='["slds-has-focus", "slds-modal"]'
+          data-gains='["Focus management", "Modal focus pattern", "ESC to close", "Focus trapping", "connectedCallback timing"]'
+          data-sources='[{"t": "SLDS Accessibility — Focus Management", "u": "https://v1.lightningdesignsystem.com/guidelines/accessibility-overview/", "b": "docs"}, {"t": "WCAG — Dialog Pattern", "u": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/", "b": "article"}]'>
+          <div class="entry-id">18-2</div>
+          <div class="day-topic">Focus Management</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module">Module 18</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 19 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,209,102,0.1);color:#ffd166;">M19</span>
+      <span class="phase-title">Anti-Patterns, Migration &amp; SLDS Linter</span>
+      <span class="phase-meta">Advanced &middot; 3 entries</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; The final module covers what NOT to do in SLDS, how to migrate from SLDS 1 to SLDS 2, and how to use SLDS Linter to automatically catch violations in your code.</div>
+    <div class="week-group" id="m19">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openEntry(this)"
+          data-level="advanced"
+          data-topic="SLDS Anti-Patterns — What Never To Do"
+          data-entry-id="19-1"
+          data-mod-title="Anti-Patterns, Migration &amp; SLDS Linter"
+          data-mod-num="19"
+          data-color="#ffd166"
+          data-scenario='"You want a list of the most common SLDS mistakes that senior developers and code reviewers will flag in your code."'
+          data-custom-css='"/* These are all ANTI-PATTERNS in Salesforce LWC */"'
+          data-css-na='true'
+          data-slds-code='"/* ❌ ANTI-PATTERN 1: Targeting internal base component classes */\n/* These classes can change without notice in any Salesforce release */\n/* In myComponent.css: */\n.slds-button_brand { background: red; }  /* WRONG */\n\n/* ✅ CORRECT: Use styling hooks */\n:host { --slds-c-button-brand-color-background: red; }\n\n\n/* ❌ ANTI-PATTERN 2: Using !important */\n.my-class { color: red !important; }  /* WRONG */\n\n/* ✅ CORRECT: Increase specificity with :host or scoped selectors */\n:host .my-class { color: red; }\n\n\n/* ❌ ANTI-PATTERN 3: Hardcoding Salesforce color hex values */\n.header { color: #032d60; }  /* WRONG — breaks with theme updates */\n\n/* ✅ CORRECT: Use SLDS tokens */\n.header { color: var(--slds-g-color-brand-base-50); }\n\n\n/* ❌ ANTI-PATTERN 4: Styling from parent into child component shadow */\n/* In parent.css: */\nc-my-child p { color: red; }  /* WRONG — violates Shadow DOM */\n\n/* ✅ CORRECT: Use CSS custom properties to pass values into child */\n/* parent.html: <c-my-child style=\"--my-text-color: red;\"></c-my-child> */\n/* child.css:   p { color: var(--my-text-color, black); } */\n\n\n/* ❌ ANTI-PATTERN 5: innerHTML for dynamic content (XSS risk) */\n/* this.template.querySelector(&#39;.container&#39;).innerHTML = userInput; */\n\n/* ✅ CORRECT: Use {variable} binding in template */"'
+          data-notes='"These 5 anti-patterns account for the majority of SLDS code review failures. Memorize them. The most dangerous is targeting internal base component classes — it will break silently during a Salesforce release upgrade."'
+          data-slds-classes='[]'
+          data-gains='["5 major anti-patterns", "No !important", "No hardcoded colors", "No parent→child shadow pierce", "No innerHTML"]'
+          data-sources='[{"t": "LWC Anti-Patterns for Styling", "u": "https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-slds.html", "b": "docs"}, {"t": "SLDS 2 Migration Guide", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/85bd85-lightning-design-system-2", "b": "docs"}]'>
+          <div class="entry-id">19-1</div>
+          <div class="day-topic">SLDS Anti-Patterns — What Never To Do</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module">Module 19</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openEntry(this)"
+          data-level="advanced"
+          data-topic="SLDS Linter — Automated Code Analysis"
+          data-entry-id="19-2"
+          data-mod-title="Anti-Patterns, Migration &amp; SLDS Linter"
+          data-mod-num="19"
+          data-color="#ffd166"
+          data-scenario='"You want to automatically scan all your LWC components for SLDS violations and get suggestions for how to fix them."'
+          data-custom-css='"/* SLDS Linter analyzes CSS files for violations */"'
+          data-css-na='true'
+          data-slds-code='"/* SLDS Linter is a VS Code extension + CLI tool */\n\n/* 1. Install the VS Code extension: SLDS Validator / SLDS Linter */\n/* 2. Open any LWC component folder */\n/* 3. Linter will highlight violations inline in the editor */\n\n/* What it catches: */\n/* - Usage of deprecated SLDS 1 class names */\n/* - Hardcoded color values instead of tokens */\n/* - Overrides of internal base component classes */\n/* - Missing slds-scope on non-LWC pages */\n/* - Deprecated CSS custom property names */\n\n/* CLI usage: */\n/* npx slds-linter lint ./force-app/main/default/lwc */\n\n/* Auto-fix: */\n/* npx slds-linter lint --fix ./force-app/main/default/lwc */\n\n/* Example output: */\n/* myComponent.css:5:3  warning  &#39;slds-button_brand&#39; is an internal class.\n   Use styling hook --slds-c-button-brand-color-background instead. */"'
+          data-notes='"SLDS Linter is the successor to SLDS Validator. It is far more powerful — it can automatically fix many violations across your entire codebase in one command. Run it before any deployment and add it to your CI/CD pipeline to prevent regressions."'
+          data-slds-classes='[]'
+          data-gains='["SLDS Linter setup", "Automated violation detection", "Auto-fix capability", "CI/CD integration", "SLDS Validator vs Linter"]'
+          data-sources='[{"t": "SLDS Linter Docs", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/85bd85-lightning-design-system-2", "b": "docs"}, {"t": "SLDS Validator VS Code Extension", "u": "https://marketplace.visualstudio.com/items?itemName=salesforce.slds-vscode", "b": "article"}]'>
+          <div class="entry-id">19-2</div>
+          <div class="day-topic">SLDS Linter — Automated Code Analysis</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module">Module 19</div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openEntry(this)"
+          data-level="advanced"
+          data-topic="SLDS 1 → SLDS 2 Migration Cheatsheet"
+          data-entry-id="19-3"
+          data-mod-title="Anti-Patterns, Migration &amp; SLDS Linter"
+          data-mod-num="19"
+          data-color="#ffd166"
+          data-scenario='"You have existing LWC components built with SLDS 1 and need to make them compatible with SLDS 2 which is now the default in Spring &#39;25+."'
+          data-custom-css='"/* This is a migration reference, not a CSS comparison */"'
+          data-css-na='true'
+          data-slds-code='"/* SLDS 1 → SLDS 2: What changed */\n\n/* 1. Custom property overrides: syntax changed */\n/* SLDS 1: --lwc-buttonBrandColorBackground: red;       */\n/* SLDS 2: --slds-c-button-brand-color-background: red;  */\n\n/* 2. Old-style CSS class overrides: no longer supported */\n/* SLDS 1 (worked): .THIS .slds-button_brand { background: red; } */\n/* SLDS 2 (broken): any override of internal slds-* classes       */\n\n/* 3. Deprecated classes: have new SLDS 2 equivalents */\n/* Old: slds-size--1-of-2 (double dash) */\n/* New: slds-size_1-of-2  (single underscore) */\n\n/* Old: slds-m-bottom--medium (double dash) */\n/* New: slds-m-bottom_medium  (single underscore) */\n\n/* 4. New recommended approach: use utility classes first */\n/* Do NOT write custom CSS for spacing, typography, color -- use SLDS utilities */\n\n/* 5. Run SLDS Linter for bulk migration: */\n/* npx slds-linter lint --fix ./force-app */"'
+          data-notes='"The most impactful SLDS 2 change is the naming of CSS custom property hooks — they moved from camelCase (--lwc-buttonBrandColorBackground) to kebab-case (--slds-c-button-brand-color-background). Also note the legacy double-dash (--) class separator has been replaced with single underscore (_) in newer class names."'
+          data-slds-classes='[]'
+          data-gains='["SLDS 1 vs 2 class syntax", "Custom property name migration", "Double-dash to underscore", "Legacy class names", "Bulk migration with Linter"]'
+          data-sources='[{"t": "SLDS 2 Official Migration Guide", "u": "https://www.lightningdesignsystem.com/2e1ef8501/p/85bd85-lightning-design-system-2", "b": "docs"}, {"t": "SLDS 1 Archive for Reference", "u": "https://v1.lightningdesignsystem.com/", "b": "docs"}]'>
+          <div class="entry-id">19-3</div>
+          <div class="day-topic">SLDS 1 → SLDS 2 Migration Cheatsheet</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module">Module 19</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div>
+      <div class="drawer-badge colored" id="d-badge"></div>
+      <div class="drawer-topic" id="d-topic"></div>
+      <div class="drawer-week-info" id="d-week"></div>
+    </div>
+    <div class="drawer-controls">
+      <button class="drawer-btn" id="btn-prev" title="Previous" onclick="nav(-1)">&#8249;</button>
+      <button class="drawer-btn" id="btn-next" title="Next"     onclick="nav(+1)">&#8250;</button>
+      <button class="drawer-btn close"          title="Close"   onclick="closeDrawer()">&#x2715;</button>
+    </div>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</div>
+
+<script>
+
+  var currentCard  = null;
+  var activeFilter = 'all';
+  var searchTerm   = '';
+  var TOTAL        = 49;
+
+  function visibleCards() {
+    return Array.from(document.querySelectorAll('.day-card'))
+      .filter(c => !c.classList.contains('dimmed'));
+  }
+
+  function openEntry(card) {
+    currentCard = card;
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+
+    var color    = card.dataset.color;
+    var id       = card.dataset.entryId;
+    var topic    = card.dataset.topic;
+    var modNum   = card.dataset.modNum;
+    var modTitle = card.dataset.modTitle;
+    var scenario  = JSON.parse(card.dataset.scenario);
+    var customCss = JSON.parse(card.dataset.customCss);
+    var cssNa     = card.dataset.cssNa === 'true';
+    var sldsCode  = JSON.parse(card.dataset.sldsCode);
+    var notes     = JSON.parse(card.dataset.notes);
+    var classes   = JSON.parse(card.dataset.sldsClasses);
+    var gains     = JSON.parse(card.dataset.gains);
+    var srcs      = JSON.parse(card.dataset.sources);
+
+    var badge = document.getElementById('d-badge');
+    badge.style.setProperty('--card-accent', color);
+    badge.style.setProperty('--card-accent-bg', hexToRgba(color, 0.1));
+    badge.textContent = 'M' + modNum + ' \u00b7 ' + id;
+    document.getElementById('d-topic').textContent = topic;
+    document.getElementById('d-week').textContent  = modTitle;
+
+    var vis = visibleCards();
+    var idx = vis.indexOf(card);
+    document.getElementById('btn-prev').disabled = idx <= 0;
+    document.getElementById('btn-next').disabled = idx >= vis.length - 1;
+
+    var body = '';
+
+    body += '<div><div class="drawer-section-title">Scenario</div>' +
+      '<div class="scenario-block">' + escHtml(scenario) + '</div></div>';
+
+    body += '<div><div class="drawer-section-title">Code Comparison</div>' +
+      '<div class="code-compare">';
+    if (!cssNa) {
+      body += '<div>' +
+        '<div class="code-block-label before">&#x274C; Without SLDS</div>' +
+        '<pre class="slds-code-block">' + escHtml(customCss) + '</pre></div>';
+    }
+    body += '<div>' +
+      '<div class="code-block-label after">&#x2705; With SLDS</div>' +
+      '<pre class="slds-code-block">' + escHtml(sldsCode) + '</pre></div>' +
+      '</div></div>';
+
+    body += '<div><div class="drawer-section-title">Key insight</div>' +
+      '<div class="notes-block">' + escHtml(notes) + '</div></div>';
+
+    if (classes.length) {
+      body += '<div><div class="drawer-section-title">SLDS classes — click to copy</div>' +
+        '<div class="slds-class-tags">' +
+        classes.map(function(cls) {
+          return '<span class="slds-class-tag" onclick="copyClass(this,\'' + cls + '\')">' + escHtml(cls) + '</span>';
+        }).join('') +
+        '</div></div>';
+    }
+
+    body += '<div><div class="drawer-section-title">Skills gained</div>' +
+      '<div class="gain-tags">' +
+      gains.map(function(g) { return '<span class="gain-tag">' + escHtml(g) + '</span>'; }).join('') +
+      '</div></div>';
+
+    body += '<div><div class="drawer-section-title">Resources</div>' +
+      '<div class="source-list">' +
+      srcs.map(function(s) {
+        return '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener">' +
+          '<span class="source-badge badge-' + s.b + '">' + s.b + '</span>' +
+          '<span class="source-name">' + escHtml(s.t) + '</span>' +
+          '<span class="source-arrow">&#8599;</span></a>';
+      }).join('') +
+      '</div></div>';
+
+    document.getElementById('d-body').innerHTML = body;
+    document.getElementById('drawer').classList.add('open');
+  }
+
+  function closeDrawer() {
+    document.getElementById('drawer').classList.remove('open');
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    currentCard = null;
+  }
+
+  function nav(dir) {
+    if (!currentCard) return;
+    var vis  = visibleCards();
+    var next = vis[vis.indexOf(currentCard) + dir];
+    if (next) openEntry(next);
+  }
+
+  function setFilter(level, btn) {
+    activeFilter = level;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function handleSearch(val) {
+    searchTerm = val.trim().toLowerCase();
+    applyFilters();
+  }
+
+  function applyFilters() {
+    var visible = 0;
+    document.querySelectorAll('.day-card').forEach(function(c) {
+      var levelOk  = activeFilter === 'all' || c.dataset.level === activeFilter;
+      var searchOk = !searchTerm ||
+        c.dataset.topic.toLowerCase().includes(searchTerm) ||
+        c.dataset.sldsClasses.toLowerCase().includes(searchTerm);
+      var show = levelOk && searchOk;
+      c.classList.toggle('dimmed', !show);
+      if (show) visible++;
+    });
+    document.getElementById('search-count').textContent =
+      visible + ' entr' + (visible === 1 ? 'y' : 'ies');
+    document.querySelectorAll('.phase-block').forEach(function(block) {
+      var any = Array.from(block.querySelectorAll('.day-card')).some(c => !c.classList.contains('dimmed'));
+      block.style.display = any ? '' : 'none';
+    });
+  }
+
+  function jumpTo(id) {
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function copyClass(el, cls) {
+    navigator.clipboard.writeText(cls).then(function() {
+      el.classList.add('copied');
+      el.textContent = '\u2713 copied';
+      setTimeout(function() {
+        el.classList.remove('copied');
+        el.textContent = cls;
+      }, 1500);
+    });
+  }
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function hexToRgba(hex, a) {
+    hex = hex.replace('#','');
+    return 'rgba(' + parseInt(hex.slice(0,2),16) + ','
+      + parseInt(hex.slice(2,4),16) + ','
+      + parseInt(hex.slice(4,6),16) + ',' + a + ')';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape')     closeDrawer();
+    if (e.key === 'ArrowRight') nav(+1);
+    if (e.key === 'ArrowLeft')  nav(-1);
+    if ((e.key === 'f' || e.key === 'F') && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      document.getElementById('search-input').focus();
+    }
+  });
+
+</script>
+
+</body>
+</html>

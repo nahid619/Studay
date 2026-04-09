@@ -14,9 +14,8 @@
    - Create  study/your-plan.html  and link this file.
    - If the plan needs unique styles, add a scoped block at
      the very bottom of this file: 
-   - Never add inline blocks to any page.
-════════════════════════════════════════════════════════════ 
-*/
+   - Never add inline <style> blocks to any page.
+════════════════════════════════════════════════════════════ */
 
 
 /* ══════════════════════════════════════════════════════════
@@ -367,7 +366,7 @@ body {
 .drawer {
   position: fixed;
   top: 0; right: 0; bottom: 0;
-  width: 440px;
+  width: 740px;
   background: var(--surface);
   border-left: 1px solid var(--border2);
   display: flex; flex-direction: column;
@@ -602,3 +601,140 @@ body {
 ────────────────────────────────────────────────────────── */
 
 .badge-trail { background: rgba(0,212,255,0.1); color: #00d4ff; }
+
+
+/* ── Arbitrary card accent color  (slds-doc.html)
+   Modules use arbitrary hex colors, not fixed w1-w4.
+   Set --card-accent on the element via inline style.
+────────────────────────────────────────────────────────── */
+
+.day-card.colored::before  { background: var(--card-accent, var(--muted2)); }
+.phase-dot.colored         { background: var(--card-accent, var(--muted2)); }
+.drawer-badge.colored      { background: var(--card-accent-bg, rgba(255,255,255,0.08)); color: var(--card-accent, var(--muted)); }
+
+.entry-id {
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 500;
+  color: var(--muted2); margin-bottom: 6px;
+  letter-spacing: 0.05em;
+}
+
+.entry-module {
+  font-family: var(--mono);
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-top: 6px;
+  color: var(--card-accent, var(--muted2));
+  opacity: 0.8;
+}
+
+
+/* ── Search bar  (slds-doc.html)
+────────────────────────────────────────────────────────── */
+
+.search-bar {
+  padding: 0.6rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+}
+
+.search-input {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 13px;
+  padding: 7px 12px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.search-input::placeholder { color: var(--muted2); }
+.search-input:focus { border-color: var(--muted); }
+
+.search-count {
+  font-family: var(--mono);
+  font-size: 11px; color: var(--muted2);
+  white-space: nowrap; flex-shrink: 0;
+}
+
+
+/* ── Before / After code comparison  (slds-doc.html)
+────────────────────────────────────────────────────────── */
+
+.code-compare     { display: flex; flex-direction: column; gap: 8px; }
+
+.code-block-label {
+  font-family: var(--mono);
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 5px;
+  display: flex; align-items: center; gap: 5px;
+}
+.code-block-label.before { color: var(--red); }
+.code-block-label.after  { color: var(--green); }
+
+.slds-code-block {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 11px; line-height: 1.75;
+  color: var(--text);
+  white-space: pre;
+  overflow-x: auto;
+  max-height: 240px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border2) transparent;
+}
+
+
+/* ── Scenario block  (slds-doc.html)
+────────────────────────────────────────────────────────── */
+
+.scenario-block {
+  padding: 10px 14px;
+  background: rgba(96,165,250,0.04);
+  border: 1px solid rgba(96,165,250,0.1);
+  border-left: 3px solid var(--blue);
+  border-radius: var(--radius-sm);
+  font-size: 13px; font-style: italic;
+  color: var(--muted); line-height: 1.65;
+}
+
+
+/* ── Notes block  (slds-doc.html)
+────────────────────────────────────────────────────────── */
+
+.notes-block {
+  padding: 10px 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 13px; line-height: 1.7;
+  color: var(--text);
+}
+
+
+/* ── SLDS class name pills  (slds-doc.html)
+   Clickable — copies class name to clipboard.
+────────────────────────────────────────────────────────── */
+
+.slds-class-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.slds-class-tag {
+  font-family: var(--mono);
+  font-size: 10px; font-weight: 500;
+  padding: 4px 9px; border-radius: 4px;
+  background: rgba(0,212,255,0.07);
+  border: 1px solid rgba(0,212,255,0.18);
+  color: #00d4ff;
+  cursor: pointer;
+  transition: background 0.12s, transform 0.1s;
+  user-select: none;
+}
+.slds-class-tag:hover  { background: rgba(0,212,255,0.14); transform: translateY(-1px); }
+.slds-class-tag.copied { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.3); color: var(--green); }
