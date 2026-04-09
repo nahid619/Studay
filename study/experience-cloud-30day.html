@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience Cloud 30-Day Plan</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">&#x1F310; 30-Day Study Plan &middot; 1 topic/day</div>
+  <h1 class="hero-title">Experience Cloud &#x2014; <span>Noob to Production Portal</span></h1>
+  <p class="hero-desc">A structured daily roadmap from enabling Digital Experiences to deploying a production-ready Customer Support Portal. 4 weeks cover the Builder &amp; platform foundations, user management &amp; security, custom LWC &amp; Apex development, and advanced topics including SEO, audiences, Knowledge, and deployment.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">30</div><div class="stat-label">Total days</div></div>
+    <div class="stat"><div class="stat-val">30h</div><div class="stat-label">Total time</div></div>
+    <div class="stat"><div class="stat-val">1h</div><div class="stat-label">Per day</div></div>
+    <div class="stat"><div class="stat-val">4</div><div class="stat-label">Weeks</div></div>
+    <div class="stat"><div class="stat-val">LWR</div><div class="stat-label">Focus</div></div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">filter:</span>
+  <button class="filter-btn active" onclick="setFilter('all', this)"><span class="filter-dot dot-all"></span>all</button>
+  <button class="filter-btn" onclick="setFilter('w1', this)"><span class="filter-dot" style="background:#0176D3;"></span>week 1</button>
+  <button class="filter-btn" onclick="setFilter('w2', this)"><span class="filter-dot" style="background:#2E7D32;"></span>week 2</button>
+  <button class="filter-btn" onclick="setFilter('w3', this)"><span class="filter-dot" style="background:#7b61ff;"></span>week 3</button>
+  <button class="filter-btn" onclick="setFilter('w4', this)"><span class="filter-dot" style="background:#E65100;"></span>week 4</button>
+  <div class="week-jump">
+    <span class="week-jump-label">jump:</span>
+    <select onchange="jumpWeek(this.value)">
+      <option value="w1">Week 1 — Platform Foundations</option>
+      <option value="w2">Week 2 — Users, Security &amp; Data</option>
+      <option value="w3">Week 3 — Custom Development</option>
+      <option value="w4">Week 4 — Advanced &amp; Production-Ready</option>
+    </select>
+  </div>
+</div>
+
+<!-- PLAN BODY -->
+<div class="plan-body">
+
+  <!-- WEEK 1 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(1,118,211,0.12);color:#0176D3;">Week 1</span>
+      <span class="phase-title">Platform Foundations</span>
+      <span class="phase-meta">Days 1 – 7</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Understand what Experience Cloud is, set up your first site, and master the Builder, templates, pages, navigation, and themes</div>
+    <div class="week-group" id="w1">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #0176D3;"
+          onclick="openDay(this)"
+          data-day="1"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-topic="What is Experience Cloud + Enable It"
+          data-color="#0176D3"
+          data-topics='["Experience Cloud vs Community Cloud — the rebrand explained", "What you can build: Customer Portals, Partner Portals, Help Centers, Employee Hubs, public websites", "The 3 pillars: Site Builder + User Management + CRM Data Layer", "Enable Digital Experiences in Setup", "Setting your org&#39;s domain (yourcompany.my.site.com)", "URL structure: domain → site → page (/customers/s/my-cases)", "Key terminology: Site, Member, Guest User, Template, Audience, CMS Workspace"]'
+          data-practice='"Enable Digital Experiences in your Developer Org. Set your domain. Navigate to All Sites and understand the Workspaces panel. Look at the key objects in the org: Network, NetworkMember, NetworkMemberGroup. Run a SOQL query on the Network object and understand what it stores."'
+          data-gains='["What Experience Cloud is", "Domain setup", "URL structure", "Key objects: Network", "Digital Experiences enabled"]'
+          data-sources='[{"t": "Trailhead — Experience Cloud Basics", "u": "https://trailhead.salesforce.com/content/learn/modules/community_cloud_basics", "b": "trail"}, {"t": "Setup Guide — Enable Digital Experiences", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_enable.htm", "b": "docs"}]'>
+          <div class="day-num">Day 01</div>
+          <div class="day-topic">What is Experience Cloud + Enable It</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #0176D3;"
+          onclick="openDay(this)"
+          data-day="2"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-topic="Templates &amp; Site Types"
+          data-color="#0176D3"
+          data-topics='["Customer Account Portal — for authenticated customers (Cases, Orders, Knowledge)", "Partner Central — for partners (Leads, Opportunities, Deal Registration)", "Help Center — public self-service with Knowledge Articles", "Build Your Own (LWR) — blank canvas, modern, fast, SEO-friendly", "Build Your Own (Aura) — legacy framework, more flexible for complex customizations", "LWR vs Aura comparison: performance, SEO, component compatibility, CSS approach", "Lightning Bolt solutions on AppExchange — pre-packaged site templates"]'
+          data-practice='"Create TWO sites in your Developer Org: one using the &#39;Customer Account Portal&#39; template and one using &#39;Build Your Own (LWR)&#39;. Compare how they look in Builder out of the box. Note what pages come pre-built in each. Understand the LWR vs Aura choice and why you should always choose LWR for new projects."'
+          data-gains='["Template types", "Customer Portal vs Partner vs Help Center", "LWR vs Aura decision", "Lightning Bolt solutions"]'
+          data-sources='[{"t": "Experience Cloud — Templates Overview", "u": "https://help.salesforce.com/s/articleView?id=sf.communities_templates.htm", "b": "docs"}, {"t": "LWR vs Aura Sites Comparison", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev_lwr_basics.htm", "b": "docs"}]'>
+          <div class="day-num">Day 02</div>
+          <div class="day-topic">Templates &amp; Site Types</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #0176D3;"
+          onclick="openDay(this)"
+          data-day="3"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-topic="Experience Builder — The Full Tour"
+          data-color="#0176D3"
+          data-topics='["Accessing Builder: Setup → Digital Experiences → All Sites → Builder", "Builder layout: Components panel (left), Canvas (center), Properties panel (right)", "Top bar: Pages dropdown, Theme, Settings, Preview, Publish", "Component panel — Standard vs Custom components", "Clicking a component to edit its properties in the right panel", "Page-level vs Site-level vs Component-level settings", "Undo/Redo, Preview on mobile, and the Publish workflow"]'
+          data-practice='"In your Customer Account Portal, spend 30 minutes in Builder: drag 3 different standard components onto the Home page (try Rich Text, Record List, and Banner). Edit their properties. Preview on both desktop and mobile. Then find where Theme settings, SEO settings, and Head Markup are located — you&#39;ll use all three extensively."'
+          data-gains='["Builder navigation", "Drag-and-drop workflow", "Preview vs Publish", "Properties panel", "Component configuration"]'
+          data-sources='[{"t": "Experience Builder Overview", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_overview.htm", "b": "docs"}, {"t": "Trailhead — Build a Site with Experience Builder", "u": "https://trailhead.salesforce.com/content/learn/projects/build-a-community-with-experience-cloud", "b": "trail"}]'>
+          <div class="day-num">Day 03</div>
+          <div class="day-topic">Experience Builder — The Full Tour</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #0176D3;"
+          onclick="openDay(this)"
+          data-day="4"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-topic="Pages &amp; Layouts"
+          data-color="#0176D3"
+          data-topics='["Standard page types: Home, Login, Register, Error, Record Detail, Object List, Search", "Creating custom pages and setting their URL path", "Page variations — different versions of the same page for different audiences", "Layout system: Regions (header, main, sidebar, footer) and how columns work", "Flexible Layout vs Column Section — when to use each", "Setting the default page and 404 error page", "Page Metadata: SEO title, description, robots, canonical URL (covered in-depth on Day 14)"]'
+          data-practice='"In your portal site: (1) Create a custom page called &#39;My Profile&#39; at URL /my-profile. (2) Add a Column Section with 2/3 + 1/3 layout and place components in each column. (3) Create a Page Variation of the Home page and understand how Audience assignment works with it. (4) Set a custom 404 page."'
+          data-gains='["Page types", "Custom page URLs", "Page variations", "Layout regions", "Column sections"]'
+          data-sources='[{"t": "Create and Manage Pages", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_create_page.htm", "b": "docs"}, {"t": "Page Layouts in Experience Builder", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_page_layouts.htm", "b": "docs"}]'>
+          <div class="day-num">Day 04</div>
+          <div class="day-topic">Pages &amp; Layouts</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #0176D3;"
+          onclick="openDay(this)"
+          data-day="5"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-topic="Standard Components Deep Dive"
+          data-color="#0176D3"
+          data-topics='["Data Components: Record Detail, Record List, Record Banner, Related List, Report Chart", "Action Components: Flow, Create Record, Case Deflection Search, Feed (Chatter)", "Layout Components: Accordion, Tabs, Flexible Layout, Column Section, HTML Editor", "Content Components: Rich Text, CMS Content (Single), CMS Collection, Banner, Tile List", "Community Components: Login, User Profile, Navigation Menu, Breadcrumbs, Search Bar", "Record List — setting Object, Filter, Fields, Sort, Records Per Page", "Flow component — passing variables from the URL or current user context into a Flow"]'
+          data-practice='"Build a &#39;Support Overview&#39; page using only standard components: (1) Banner at top, (2) Case Deflection Search in the middle, (3) Record List showing My Cases below, (4) Related List. Configure the Record List to show 10 records, sorted by CreatedDate DESC. Embed a simple Salesforce Flow using the Flow component and pass the currentUser&#39;s ContactId as an input variable."'
+          data-gains='["Data components", "Flow in Experience Cloud", "Case Deflection", "Record List configuration", "Component property mastery"]'
+          data-sources='[{"t": "Standard Experience Builder Components", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_standard_components.htm", "b": "docs"}, {"t": "Flow Component in Experience Builder", "u": "https://help.salesforce.com/s/articleView?id=sf.flow_distribute_portal.htm", "b": "docs"}]'>
+          <div class="day-num">Day 05</div>
+          <div class="day-topic">Standard Components Deep Dive</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #0176D3;"
+          onclick="openDay(this)"
+          data-day="6"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-topic="Navigation"
+          data-color="#0176D3"
+          data-topics='["Navigation Menu setup: Settings → Navigation in Builder", "Navigation item types: Internal Page, External URL, Menu Label (dropdown parent), Salesforce Object", "Multi-level navigation: building dropdown menus", "Public vs Member-only navigation items", "NavigationMixin in LWC — programmatic navigation inside a portal", "Audience-based navigation — showing/hiding nav items per user segment", "Important: Experience Cloud URLs always include /s/ in the path (e.g. /portal/s/my-cases)"]'
+          data-practice='"Build a full multi-level navigation menu: Home, Support (dropdown) → My Cases / Submit Case / Knowledge Base, Account (dropdown) → My Profile / My Orders, and one External URL. Mark the &#39;My Cases&#39; and &#39;My Profile&#39; links as member-only. Test it as both a Guest and a logged-in user (using Preview)."'
+          data-gains='["Navigation item types", "Multi-level menus", "Member-only nav", "NavigationMixin", "/s/ URL pattern"]'
+          data-sources='[{"t": "Navigation Menus in Experience Builder", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_nav_menu.htm", "b": "docs"}, {"t": "LWC NavigationMixin for Experience Cloud", "u": "https://developer.salesforce.com/docs/component-library/bundle/lightning-navigation/documentation", "b": "docs"}]'>
+          <div class="day-num">Day 06</div>
+          <div class="day-topic">Navigation</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #0176D3;"
+          onclick="openDay(this)"
+          data-day="7"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-topic="Themes &amp; Branding"
+          data-color="#0176D3"
+          data-topics='["Theme panel in Builder: Colors, Fonts, Images, Header/Footer settings", "Primary Color, Background, Text Color, Card Background, Border Color", "Company Logo, Login Background image, Favicon", "Head Markup: Settings → Advanced → Edit Head Markup", "Loading custom Google Fonts via Head Markup", "Overriding global CSS using Head Markup (the approved approach for non-LWR sites)", "SLDS CSS custom properties (--lwc-colorBrand, --lwc-fontFamily, etc.) for Aura sites", "LWR sites: CSS custom properties approach is different (SLDS 2 tokens)"]'
+          data-practice='"Brand your portal: (1) Change the primary color to a custom hex. (2) Upload a logo and favicon. (3) In Head Markup, load a Google Font (try &#39;Inter&#39;) and apply it to the body with CSS. (4) Override the header background color and navigation link colors using CSS classes in Head Markup. (5) Preview on mobile to verify it looks good."'
+          data-gains='["Theme panel settings", "Head Markup", "Custom fonts", "CSS overrides", "--lwc-* custom properties", "Branding workflow"]'
+          data-sources='[{"t": "Customize Your Site Theme", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_theme.htm", "b": "docs"}, {"t": "Add Custom CSS in Head Markup", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_head_markup.htm", "b": "docs"}]'>
+          <div class="day-num">Day 07</div>
+          <div class="day-topic">Themes &amp; Branding</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(46,125,50,0.12);color:#2E7D32;">Week 2</span>
+      <span class="phase-title">Users, Security &amp; Data</span>
+      <span class="phase-meta">Days 8 – 14</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Master user management, licensing, the sharing model, data access, CMS, authentication, and guest user security</div>
+    <div class="week-group" id="w2">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #2E7D32;"
+          onclick="openDay(this)"
+          data-day="8"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-topic="User Licensing"
+          data-color="#2E7D32"
+          data-topics='["License types: Customer Community, Customer Community Plus, Partner Community, External Identity, Guest", "Customer Community: limited objects (Cases, Knowledge) — cheapest for self-service portals", "Customer Community Plus: adds Reports, Dashboards, more standard objects", "Partner Community: Leads, Opportunities, Campaigns, deal registration", "External Identity: identity/SSO-only, no data access — cheapest login-only license", "Guest User: free, unauthenticated public visitors — extremely limited access", "License determines what objects, records, and features a user can access — this is your first decision in any portal project"]'
+          data-practice='"For your Customer Account Portal: (1) Open Workspaces → Administration → Members and understand the Profile-based membership model. (2) Identify what Profile is associated with the Customer Community license in your org. (3) Write a SOQL query: SELECT Id, Name, Profile.Name FROM User WHERE UserType = &#39;PowerPartner&#39; to understand how portal users are stored differently from internal users."'
+          data-gains='["6 license types", "Customer vs Partner Community", "Guest User license", "UserType in SOQL", "License → object access"]'
+          data-sources='[{"t": "Experience Cloud License Comparison", "u": "https://help.salesforce.com/s/articleView?id=sf.users_license_types_communities.htm", "b": "docs"}, {"t": "Trailhead — Experience Cloud User Licensing", "u": "https://trailhead.salesforce.com/content/learn/modules/community_cloud_basics/community_cloud_basics_user_management", "b": "trail"}]'>
+          <div class="day-num">Day 08</div>
+          <div class="day-topic">User Licensing</div>
+          <div class="phase-dot colored" style="--card-accent: #2E7D32;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #2E7D32;"
+          onclick="openDay(this)"
+          data-day="9"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-topic="Creating &amp; Managing Community Users"
+          data-color="#2E7D32"
+          data-topics='["Portal users must have a Contact record linked to an Account — this is mandatory", "Creating a community user via Apex: Contact → User with ContactId", "Username uniqueness: use email+&#39;.portal&#39; suffix convention", "Self-registration: CommunitiesSelfRegController and how to customize it", "Self-registration flow: form → Contact creation → User creation → redirect", "Adding members to a site by Profile or Permission Set", "Disabling/enabling a portal user without deleting the Contact"]'
+          data-practice='"Write Apex in Execute Anonymous to programmatically create a test Contact, then a Community User linked to that Contact using the Customer Community User profile. Verify the user appears in Setup → Users. Then explore the self-registration page in your portal (/s/SelfRegister) and understand the CommunitiesSelfRegController Apex class that backs it."'
+          data-gains='["Contact → Account → User chain", "Programmatic user creation", "CommunitiesSelfRegController", "Self-registration flow", "Profile-based membership"]'
+          data-sources='[{"t": "Create External Users with Apex", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev_create_community_users.htm", "b": "docs"}, {"t": "Self-Registration Customization", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_customize_login_reg.htm", "b": "docs"}]'>
+          <div class="day-num">Day 09</div>
+          <div class="day-topic">Creating &amp; Managing Community Users</div>
+          <div class="phase-dot colored" style="--card-accent: #2E7D32;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #2E7D32;"
+          onclick="openDay(this)"
+          data-day="10"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-topic="Security &amp; the Sharing Model"
+          data-color="#2E7D32"
+          data-topics='["OWD (Org-Wide Defaults) for portal users: Account → Private, Case → Private, Opportunity → Private", "Sharing Sets: the primary tool for giving portal users access to related records (e.g. a customer sees all Cases where Case.AccountId = their AccountId)", "External Sharing Rules: criteria-based and owner-based for portal profiles", "Sharing Groups: automatic groups created for each community (All Internal Users, All Customer Portal Users, etc.)", "Portal users ONLY see records explicitly shared with them — never assume access", "with sharing in Apex: MANDATORY for any class used in Experience Cloud", "The principle of least privilege: give Guest User almost nothing"]'
+          data-practice='"Create a Sharing Set for the Case object: grant Customer Community users Read/Write access to Cases where Case.AccountId matches their Contact&#39;s AccountId. Test by logging in as a Customer Community user and verifying they can see only their account&#39;s Cases. Then confirm that without the Sharing Set, they see zero records."'
+          data-gains='["Sharing Sets", "OWD for portal", "External sharing rules", "Sharing groups", "with sharing mandatory", "Least privilege principle"]'
+          data-sources='[{"t": "Sharing Sets for Experience Cloud", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_setting_light_users.htm", "b": "docs"}, {"t": "Experience Cloud Security Guide", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_security.htm", "b": "docs"}]'>
+          <div class="day-num">Day 10</div>
+          <div class="day-topic">Security &amp; the Sharing Model</div>
+          <div class="phase-dot colored" style="--card-accent: #2E7D32;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #2E7D32;"
+          onclick="openDay(this)"
+          data-day="11"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-topic="Guest User — Public Access &amp; Security"
+          data-color="#2E7D32"
+          data-topics='["Guest User: the special system user that represents all unauthenticated visitors", "Every site has exactly one Guest User Profile — it is auto-created", "Guest User OWD: all objects are Private by default — Guest User sees NOTHING by default", "Guest User Sharing Rules: the ONLY way to expose records to unauthenticated visitors", "What Guest Users can access: Knowledge Articles (public), Contact Us forms, Search", "Security risk: Guest User misconfiguration is the #1 Experience Cloud vulnerability", "Guest User can submit Forms (via Flows) without seeing other users&#39; data", "Never give Guest User Create/Edit/Delete on sensitive objects"]'
+          data-practice='"Test your Help Center as a Guest User: (1) Open the site in an incognito window. (2) Notice that no Case or Account data is visible. (3) Configure a Guest User Sharing Rule to make Knowledge Articles visible to Guest Users (criteria: Article.IsVisibleInPkb = true). (4) Verify Knowledge articles now appear. (5) Try to query Case as Guest — confirm it returns zero records."'
+          data-gains='["Guest User Profile", "Guest User Sharing Rules", "Public Knowledge Articles", "Guest User security risks", "Incognito testing technique"]'
+          data-sources='[{"t": "Guest User Security Best Practices", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_guest_access.htm", "b": "docs"}, {"t": "Configure Guest User Sharing", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_config_guest_user_sharing_rules.htm", "b": "docs"}]'>
+          <div class="day-num">Day 11</div>
+          <div class="day-topic">Guest User — Public Access &amp; Security</div>
+          <div class="phase-dot colored" style="--card-accent: #2E7D32;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #2E7D32;"
+          onclick="openDay(this)"
+          data-day="12"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-topic="Data Access &amp; Object Permissions"
+          data-color="#2E7D32"
+          data-topics='["Exposing objects to the site via Tabs: Workspaces → Administration → Tabs", "Profile object permissions for Community User profiles: Read/Create/Edit/Delete per object", "Field-Level Security (FLS): controlling which fields portal users can read/edit", "Page Layouts for portal profiles: &#39;Case - Portal Layout&#39; shows only relevant fields, hides internal fields", "Hiding sensitive fields: Internal Comments, Escalated, SLA data should never appear in portal layouts", "Custom objects in Experience Cloud: must be explicitly exposed via Tabs AND have profile permissions", "FLS is enforced in Apex only if you use with sharing AND check Schema permissions"]'
+          data-practice='"Create a &#39;Case - Portal Layout&#39; that shows only customer-facing fields (CaseNumber read-only, Subject, Description, Status read-only, Priority, CreatedDate) and hides internal fields (Internal Comments, Escalated, SLA Violation). Assign this layout to the Customer Community User profile. Compare it side by side with the internal Case layout."'
+          data-gains='["Tab-based object exposure", "Profile object permissions", "FLS in portal context", "Portal Page Layouts", "Hiding internal fields"]'
+          data-sources='[{"t": "Set Object Permissions for Experience Cloud", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_permissions.htm", "b": "docs"}, {"t": "Page Layout Assignment for Portal Profiles", "u": "https://help.salesforce.com/s/articleView?id=sf.customize_layoutassign.htm", "b": "docs"}]'>
+          <div class="day-num">Day 12</div>
+          <div class="day-topic">Data Access &amp; Object Permissions</div>
+          <div class="phase-dot colored" style="--card-accent: #2E7D32;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #2E7D32;"
+          onclick="openDay(this)"
+          data-day="13"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-topic="CMS — Content Management System"
+          data-color="#2E7D32"
+          data-topics='["CMS Workspace: where you create and publish content independent of code", "Built-in content types: News, Document", "Custom content types: define your own fields (Question+Answer for FAQ, Title+Body for Blog)", "CMS Channels: connecting a workspace to one or more sites — same content, multiple portals", "CMS Collections: a filtered set of content items for display on a page", "CMS Connect: pulling in content from an external headless CMS", "Displaying CMS content: CMS Single Item component, CMS Collection component, Tile List", "Why CMS matters: non-developers can update portal content without touching Builder or code"]'
+          data-practice='"Create a custom &#39;FAQ&#39; content type in your CMS Workspace with fields: Question (Text), Answer (Rich Text), Category (Picklist), Featured (Boolean). Create 5 FAQ items. Connect the workspace to your portal site. On the Home page, add a CMS Collection component filtered to Featured=true. Publish and verify content appears."'
+          data-gains='["CMS Workspace architecture", "Custom content types", "CMS Channels", "CMS Collection component", "Content vs Code separation"]'
+          data-sources='[{"t": "Salesforce CMS Overview", "u": "https://help.salesforce.com/s/articleView?id=sf.cms_overview.htm", "b": "docs"}, {"t": "Create Custom Content Types", "u": "https://help.salesforce.com/s/articleView?id=sf.cms_content_type_create.htm", "b": "docs"}]'>
+          <div class="day-num">Day 13</div>
+          <div class="day-topic">CMS — Content Management System</div>
+          <div class="phase-dot colored" style="--card-accent: #2E7D32;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #2E7D32;"
+          onclick="openDay(this)"
+          data-day="14"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-topic="Authentication, Login &amp; Registration"
+          data-color="#2E7D32"
+          data-topics='["Login page customization: custom branding, background, forgot-password text", "Self-registration page: /s/SelfRegister backed by CommunitiesSelfRegController", "Social sign-on (SSO): Google, Facebook, LinkedIn auth providers", "SAML SSO for enterprise customers: federated identity from corporate IdP", "Auth Provider setup: Setup → Identity → Auth. Providers", "Registration Handler Apex class: maps external identity to internal Salesforce user", "Password policies for portal users: separate from internal user policies", "Two-factor authentication (2FA) for portal users"]'
+          data-practice='"Customize the Login page of your portal: change background, logo, and the &#39;Forgot Password&#39; text using Head Markup and Theme settings. Explore the CommunitiesSelfRegController Apex class — add a custom field (Company Name) to the registration form. Then look at how to configure a Google Auth Provider in Setup (do the configuration but you do not need to complete OAuth setup)."'
+          data-gains='["Login page customization", "CommunitiesSelfRegController", "SSO concepts", "Auth Providers", "Registration Handler", "2FA for portal"]'
+          data-sources='[{"t": "Customize Login and Registration", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_customize_login_reg.htm", "b": "docs"}, {"t": "Configure SSO for Experience Cloud", "u": "https://help.salesforce.com/s/articleView?id=sf.sso_provider_portal.htm", "b": "docs"}]'>
+          <div class="day-num">Day 14</div>
+          <div class="day-topic">Authentication, Login &amp; Registration</div>
+          <div class="phase-dot colored" style="--card-accent: #2E7D32;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 3 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(123,97,255,0.12);color:#7b61ff;">Week 3</span>
+      <span class="phase-title">Custom Development</span>
+      <span class="phase-meta">Days 15 – 21</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Build custom LWC components for Experience Cloud, write secure Apex controllers, customize CSS, work with APIs, and add Knowledge integration</div>
+    <div class="week-group" id="w3">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)"
+          data-day="15"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-topic="Custom LWC for Experience Cloud"
+          data-color="#7b61ff"
+          data-topics='["LWC targets for Experience Cloud in js-meta.xml: lightningCommunity__Page and lightningCommunity__Default", "Exposing @api properties so admins can configure components in Builder (targetConfigs)", "@salesforce/user/Id — getting the current user&#39;s ID in a portal LWC", "@salesforce/site/prefix — getting the site&#39;s URL prefix programmatically", "NavigationMixin in Experience Cloud: navigating to records, pages, and external URLs", "Context awareness: knowing when your LWC runs in a portal vs internal app", "Important: LWC in LWR sites behaves slightly differently than Aura sites — no Aura util methods available"]'
+          data-practice='"Build a &#39;Portal Welcome Banner&#39; LWC: (1) Add lightningCommunity__Page target in meta.xml. (2) Add @api properties for title, subtitle, buttonLabel, buttonUrl — all configurable from Builder. (3) Use @salesforce/user/Id to wire to an Apex method that returns the current user&#39;s name and open case count. (4) Use NavigationMixin for the button. (5) Add it to Builder and configure it without touching the code."'
+          data-gains='["lightningCommunity__Page target", "@api in Builder", "@salesforce/user/Id", "@salesforce/site/prefix", "Builder-configurable LWC"]'
+          data-sources='[{"t": "LWC in Experience Cloud Dev Guide", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev_lwc.htm", "b": "docs"}, {"t": "LWC targetConfigs for Experience Builder", "u": "https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.use_config_for_community_builder", "b": "docs"}]'>
+          <div class="day-num">Day 15</div>
+          <div class="day-topic">Custom LWC for Experience Cloud</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)"
+          data-day="16"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-topic="Apex in Experience Cloud"
+          data-color="#7b61ff"
+          data-topics='["All Apex for portal MUST use &#39;with sharing&#39; — this enforces the portal user&#39;s sharing model", "AuraHandledException: the correct way to return user-friendly errors to LWC in a portal", "PortalController pattern: a controller class per major feature (PortalCaseController, PortalKnowledgeController)", "Querying records for the current user: WHERE ContactId = :UserInfo.getUserId() (for portal users, use Contact relationship)", "SOQL for portal users: always filter by account or contact — never return all records", "UserInfo class: getUserId(), getSessionId(), getOrganizationId() — useful for portal context", "Testing portal Apex: use Test.setCurrentPageReference() and create test portal users with createCommunityUser()"]'
+          data-practice='"Write a &#39;PortalCaseController&#39; Apex class with &#39;with sharing&#39;: (1) getUserCases() — returns current user&#39;s Cases (use Contact.AccountId to find related cases). (2) createCase(String subject, String description) — creates a new Case linked to the portal user&#39;s Contact. (3) Write a test class that creates a Community User, sets them as the running user using System.runAs(), and verifies both methods."'
+          data-gains='["with sharing mandatory", "Portal Apex patterns", "UserInfo for portal context", "SOQL scoped to current user", "System.runAs() in portal tests"]'
+          data-sources='[{"t": "Apex in Experience Cloud — Dev Guide", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev_apex.htm", "b": "docs"}, {"t": "Test Apex for Experience Cloud", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev_testing_community_user.htm", "b": "docs"}]'>
+          <div class="day-num">Day 16</div>
+          <div class="day-topic">Apex in Experience Cloud</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)"
+          data-day="17"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-topic="Building a Custom Case List LWC"
+          data-color="#7b61ff"
+          data-topics='["Real-world project day: combining everything from Days 15 and 16 into a production component", "Client-side filtering and search using JavaScript getters (avoids extra Apex calls)", "Dynamic CSS class generation for status badges (status-new, status-working, etc.)", "Empty state UI: always handle the zero-records scenario in portal components", "NavigationMixin.Navigate to standard__recordPage from a portal context", "Navigating to Create New Record from LWC: standard__objectPage with actionName: new", "Debouncing search input in LWC to avoid querying on every keystroke"]'
+          data-practice='"Build the complete &#39;myCaseList&#39; LWC: portal banner header, search input (debounced), status filter combobox, case cards with dynamic status badges (colored by New/Working/Escalated/Closed), empty state panel, and a New Case button. Wire it to PortalCaseController. Clicking a card navigates to the Case record. New Case button navigates to Case create page. Add it to Builder and make title and maxRecords configurable."'
+          data-gains='["Client-side filter/search", "Dynamic CSS classes", "Empty state pattern", "Debouncing", "Status badge colors", "NavigationMixin in portal"]'
+          data-sources='[{"t": "LWC Recipes — Portal Components", "u": "https://github.com/trailheadapps/lwc-recipes", "b": "article"}, {"t": "NavigationMixin — Record and Object Pages", "u": "https://developer.salesforce.com/docs/component-library/bundle/lightning-navigation/documentation", "b": "docs"}]'>
+          <div class="day-num">Day 17</div>
+          <div class="day-topic">Building a Custom Case List LWC</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)"
+          data-day="18"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-topic="CSS Customization — Head Markup &amp; Component CSS"
+          data-color="#7b61ff"
+          data-topics='["The three layers of CSS in Experience Cloud: (1) Theme panel tokens, (2) Head Markup global CSS, (3) LWC component scoped CSS", "Head Markup CSS approach: target Salesforce-generated class names like .forceCommunityThemeHeader, .forceCommunityNavigationMenu", "CSS custom properties in Head Markup: define :root variables, use them throughout", "Scoped CSS in LWC: styles in .css file only apply inside that component&#39;s shadow root", "Using .THIS in Aura component CSS (not LWC — common confusion)", "CSS for responsive design in Experience Cloud: mobile-first media queries in Head Markup", "Salesforce-generated CSS class names can change between releases — document what you override and test after each Salesforce update"]'
+          data-practice='"Create a complete custom theme in your portal&#39;s Head Markup: (1) Define :root variables (--brand-primary, --bg-secondary, --radius, --shadow). (2) Style the header, navigation, and cards using these variables. (3) In your myCaseList LWC&#39;s CSS file, style the case cards using component-scoped CSS. (4) Test breakpoints at 768px and 480px using DevTools."'
+          data-gains='["3 CSS layers in EC", "Head Markup CSS targeting", ":root CSS variables", "LWC scoped CSS", ".THIS in Aura", "Responsive media queries"]'
+          data-sources='[{"t": "CSS in Experience Cloud Dev Guide", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev_styling.htm", "b": "docs"}, {"t": "LWC CSS — Scoped Styles Guide", "u": "https://developer.salesforce.com/docs/platform/lwc/guide/create-components-css-slds.html", "b": "docs"}]'>
+          <div class="day-num">Day 18</div>
+          <div class="day-topic">CSS Customization — Head Markup &amp; Component CSS</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)"
+          data-day="19"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-topic="Aura Components for Experience Cloud"
+          data-color="#7b61ff"
+          data-topics='["Aura component structure: .cmp, .js, .css, .design, .svg — the .design file is unique to Aura", "Making an Aura component available in Builder: implements=&#39;forceCommunity:availableForAllPageTypes&#39;", "Aura .design file: exposes @api-equivalent attributes for Builder configuration", "Aura CSS scoping: .THIS prefix required (unlike LWC which auto-scopes)", "When to still use Aura: legacy sites, components that depend on existing Aura event architecture, or complex inter-component Aura event communication", "LWC inside Aura: composing LWC children inside Aura parent components", "Key Aura interfaces: forceCommunity:availableForAllPageTypes, forceCommunity:searchInterface", "Your opinion matters: always choose LWC for new work — Aura is maintenance mode only"]'
+          data-practice='"Build a simple Aura Banner component with a .design file that exposes heading, subheading, backgroundColor, and ctaLabel as Builder-configurable properties. Use .THIS correctly in the CSS. Add it to Experience Builder and configure it without touching the code. Then compare the effort vs doing the same in LWC to feel the difference."'
+          data-gains='["Aura component structure", ".design file", "forceCommunity:availableForAllPageTypes", ".THIS CSS scoping", "LWC vs Aura comparison in practice"]'
+          data-sources='[{"t": "Aura Components for Experience Cloud", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev_aura_components.htm", "b": "docs"}, {"t": "Aura Design File Documentation", "u": "https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/aura_compref_design.htm", "b": "docs"}]'>
+          <div class="day-num">Day 19</div>
+          <div class="day-topic">Aura Components for Experience Cloud</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)"
+          data-day="20"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-topic="Knowledge Base Integration"
+          data-color="#7b61ff"
+          data-topics='["Salesforce Knowledge: article types, data categories, and the Knowledge object (KnowledgeArticleVersion)", "Enabling Knowledge for Experience Cloud: exposing the Knowledge tab in Site Workspaces", "Data Category Groups: organizing articles by topic/product (e.g. Products → Billing → Payments)", "Article visibility: Public Knowledge Base (Guest-accessible) vs Internal Only vs Customer", "Case Deflection component: shows Knowledge articles matching a search term BEFORE a case is submitted — reduces support tickets by 20-40%", "SOQL for Knowledge: SELECT Id, Title, Summary FROM Knowledge__kav WHERE PublishStatus=&#39;Online&#39; AND IsVisibleInPkb=true", "Building a custom Knowledge search LWC with typeahead using Knowledge Apex"]'
+          data-practice='"Set up Knowledge in your org. Create a Data Category Group &#39;Products&#39; with child categories. Create 5 Knowledge Articles in different categories, mark them Public Knowledge Base. Add the Knowledge tab to your Help Center site. Place the Case Deflection component on a page — search for a term and verify articles appear BEFORE the case form. Test as Guest User."'
+          data-gains='["Knowledge article types", "Data category groups", "IsVisibleInPkb flag", "Case Deflection pattern", "Knowledge SOQL", "Guest-accessible articles"]'
+          data-sources='[{"t": "Knowledge in Experience Cloud", "u": "https://help.salesforce.com/s/articleView?id=sf.knowledge_communities_overview.htm", "b": "docs"}, {"t": "Case Deflection Component", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_deflection.htm", "b": "docs"}]'>
+          <div class="day-num">Day 20</div>
+          <div class="day-topic">Knowledge Base Integration</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)"
+          data-day="21"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-topic="Experience Cloud APIs &amp; Data Integration"
+          data-color="#7b61ff"
+          data-topics='["Experience Cloud REST API: read and write Salesforce data from external sites", "Connect API (Chatter REST API): for community feed, files, groups, recommendations", "Salesforce REST API with Session ID from portal user context", "Wire Adapters in LWC that work in Experience Cloud: getRecord, getRecordId, getListUi", "Limitations in Experience Cloud: some wire adapters and base components behave differently or are unavailable in portal context", "Cross-origin resource sharing (CORS): configuring trusted domains for external API calls", "Headless Experience Cloud: using the platform as a back-end API for a React/Vue front-end — emerging pattern"]'
+          data-practice='"Build a LWC in your portal that calls an external weather API using an Apex @future(callout=true) method. Configure CORS in Setup → Security → CORS to allow the external domain. Display the result in the portal. Then explore the Salesforce Connect REST API using Postman with a portal user&#39;s session ID — query the Cases endpoint."'
+          data-gains='["Experience Cloud REST API", "Connect API", "CORS configuration", "External callouts from portal", "Headless EC concept"]'
+          data-sources='[{"t": "Experience Cloud REST API Docs", "u": "https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/intro_what_is_chatter_connect.htm", "b": "docs"}, {"t": "CORS Setup for Salesforce", "u": "https://help.salesforce.com/s/articleView?id=sf.extend_code_cors.htm", "b": "docs"}]'>
+          <div class="day-num">Day 21</div>
+          <div class="day-topic">Experience Cloud APIs &amp; Data Integration</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 4 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(230,81,0,0.12);color:#E65100;">Week 4</span>
+      <span class="phase-title">Advanced &amp; Production-Ready</span>
+      <span class="phase-meta">Days 22 – 30</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Master audiences &amp; personalization, SEO, email notifications, moderation, mobile, deployment, best practices, and build a capstone portal</div>
+    <div class="week-group" id="w4">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #E65100;"
+          onclick="openDay(this)"
+          data-day="22"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-topic="Audiences &amp; Personalization"
+          data-color="#E65100"
+          data-topics='["What is an Audience: a named group of users defined by criteria (profile, location, login status, device, record field values)", "Audience criteria types: User Profile, User Object Field, Permission Set, Login Status (guest vs member), Device type, Domain", "Page Variations: different versions of the same page shown to different audiences", "Component Visibility: show/hide individual components on a page based on audience", "Personalization use cases: show &#39;Login to see your cases&#39; to guest, show &#39;My Cases&#39; to members, show &#39;Partner Resources&#39; only to Partner Community users", "Order of page variations: priority matters — first matching variation wins", "Audiences do NOT replace security — they only affect what is visible, not what data is accessible"]'
+          data-practice='"Create 3 Audiences: (1) &#39;Guest Visitors&#39; = Login Status: Not Logged In. (2) &#39;Customer Members&#39; = Profile: Customer Community User. (3) &#39;Mobile Users&#39; = Device: Phone. Create 2 page variations of the Home page: one for Guests (show login CTA, public content) and one for Members (show case list, account info). Test by viewing the page logged out vs logged in."'
+          data-gains='["Audience criteria types", "Page variations", "Component visibility", "Personalization patterns", "Audiences ≠ security"]'
+          data-sources='[{"t": "Audiences in Experience Cloud", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_audiences.htm", "b": "docs"}, {"t": "Page Variations and Personalization", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_page_variations.htm", "b": "docs"}]'>
+          <div class="day-num">Day 22</div>
+          <div class="day-topic">Audiences &amp; Personalization</div>
+          <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #E65100;"
+          onclick="openDay(this)"
+          data-day="23"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-topic="SEO &amp; Head Markup"
+          data-color="#E65100"
+          data-topics='["SEO in Experience Cloud: only LWR sites support server-side rendering (SSR) for true SEO crawlability", "Aura sites are client-side rendered — Google can crawl them but with limitations", "Page-level SEO settings in Builder: Title, Meta Description, Robots (index/noindex), Canonical URL", "Sitemap.xml: auto-generated by Salesforce at /sitemap.xml for public pages", "Robots.txt: control which pages search engines crawl", "Structured data (JSON-LD) via Head Markup: markup for articles, FAQs, events", "Open Graph tags in Head Markup: for social media previews (og:title, og:description, og:image)", "Tip: LWR is the most important reason to choose it over Aura for any public-facing site"]'
+          data-practice='"For your Help Center site: (1) Set unique SEO Title and Meta Description on each page in Builder. (2) Add Open Graph tags in Head Markup for the home page. (3) Add a JSON-LD FAQ structured data block using your CMS FAQ content. (4) Visit /sitemap.xml and /robots.txt to verify they are working. (5) Run a page through Google&#39;s Rich Results Test tool."'
+          data-gains='["LWR SSR for SEO", "Page-level SEO settings", "Sitemap.xml generation", "JSON-LD structured data", "Open Graph tags", "robots.txt in EC"]'
+          data-sources='[{"t": "SEO for Experience Cloud Sites", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_seo.htm", "b": "docs"}, {"t": "LWR Sites and SEO", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev_lwr_seo.htm", "b": "docs"}]'>
+          <div class="day-num">Day 23</div>
+          <div class="day-topic">SEO &amp; Head Markup</div>
+          <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #E65100;"
+          onclick="openDay(this)"
+          data-day="24"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-topic="Email &amp; Notifications"
+          data-color="#E65100"
+          data-topics='["Welcome emails: auto-sent on first login, configurable in Workspaces → Administration → Emails", "Email templates: branded HTML emails for portal welcome, case update, password reset", "Email notification settings: case comments, mentions, follows, group activity", "Salesforce Flows for custom notification triggers: use Send Email action or Custom Notification", "Custom Notification Types: Setup → Notification Builder — send in-app bell notifications", "Chatter @mentions and group notifications in portal context", "Transactional emails (case created, status changed): trigger via Workflow or Flow + Email Alert", "Testing emails: always use a sandbox with real email addresses and check the deliverability settings"]'
+          data-practice='"Customize the Welcome Email for your portal: add your logo, brand colors, and a personalized greeting using merge fields ({!User.FirstName}). Create a Flow that sends a Custom Notification to a portal user when their Case status changes to &#39;Closed&#39;. Test the flow by updating a Case in Salesforce and verifying the portal user receives the bell notification."'
+          data-gains='["Welcome email customization", "Email templates with merge fields", "Custom Notification Types", "Flow + notification trigger", "Chatter notifications in portal"]'
+          data-sources='[{"t": "Email Notifications for Experience Cloud", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_notifications.htm", "b": "docs"}, {"t": "Custom Notifications with Flow", "u": "https://help.salesforce.com/s/articleView?id=sf.customize_notiftype.htm", "b": "docs"}]'>
+          <div class="day-num">Day 24</div>
+          <div class="day-topic">Email &amp; Notifications</div>
+          <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #E65100;"
+          onclick="openDay(this)"
+          data-day="25"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-topic="Moderation &amp; Reputation"
+          data-color="#E65100"
+          data-topics='["Moderation in Experience Cloud: review and manage user-generated content (posts, comments, files)", "Moderation rules: automatically flag or block content containing specific keywords", "Moderation queue: manually review flagged content before it is visible", "Member roles in community: Member, Moderator, Group Owner — and how to assign them", "Reputation system: award points for posting, liking, answering questions — drives engagement", "Reputation levels: define thresholds (e.g. 100 pts = Contributor, 500 pts = Expert) with badges", "Flagging content: users can flag posts/comments for moderator review", "When to skip moderation: internal employee portals rarely need it; public Help Centers and partner portals do"]'
+          data-practice='"Set up a basic moderation system for your portal: (1) Create a Moderation Rule that flags any post containing &#39;competitor names&#39; or profanity keywords. (2) Enable the Moderation Queue. (3) Set up a Reputation Scoring model: +5 pts for asking a question, +10 pts for answering, +2 pts per like received. (4) Define 3 Reputation Levels: Newcomer (0-49), Contributor (50-199), Expert (200+)."'
+          data-gains='["Moderation rules", "Moderation queue", "Member roles", "Reputation scoring", "Reputation levels/badges", "When moderation matters"]'
+          data-sources='[{"t": "Moderation in Experience Cloud", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_moderating_overview.htm", "b": "docs"}, {"t": "Reputation and Gamification", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_reputation_overview.htm", "b": "docs"}]'>
+          <div class="day-num">Day 25</div>
+          <div class="day-topic">Moderation &amp; Reputation</div>
+          <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #E65100;"
+          onclick="openDay(this)"
+          data-day="26"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-topic="Reports, Dashboards &amp; Insights"
+          data-color="#E65100"
+          data-topics='["Embedding Reports in a portal: Report Chart component requires Customer Community Plus license (not available on base Customer Community)", "Dashboard component: embed a Salesforce Dashboard directly on a page", "CRM Analytics (Tableau CRM): advanced analytics that CAN be embedded in Experience Cloud for Customer Community license", "Partner Portal dashboards: show pipeline, deal registration, and MDF balances to partners", "Community Insights: built-in analytics in Workspaces → Insights — shows member activity, logins, top pages", "Limitation: standard Report Chart component only works with Customer Community Plus and above", "Alternative for basic license: build a custom LWC that queries aggregated data via Apex and renders a chart using Chart.js"]'
+          data-practice='"In your portal: (1) Check Workspaces → Insights to see the built-in Community analytics (page views, logins, active members). (2) Build a custom KPI dashboard LWC that queries 3 Apex methods (open case count, closed cases this month, avg resolution time) and displays them as stat tiles using SLDS classes. (3) Try placing the standard Report Chart component and observe the license restriction."'
+          data-gains='["Report Chart license requirement", "Dashboard component", "Community Insights", "Custom analytics LWC", "CRM Analytics basics"]'
+          data-sources='[{"t": "Reports in Experience Cloud", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_reports_dashboards.htm", "b": "docs"}, {"t": "Community Insights Analytics", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_insights.htm", "b": "docs"}]'>
+          <div class="day-num">Day 26</div>
+          <div class="day-topic">Reports, Dashboards &amp; Insights</div>
+          <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #E65100;"
+          onclick="openDay(this)"
+          data-day="27"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-topic="Mobile Responsiveness"
+          data-color="#E65100"
+          data-topics='["Salesforce mobile app (SalesforceA) vs Experience Cloud mobile site — these are different things", "Experience Cloud sites are web apps — they run in mobile browsers (no native app required)", "Builder mobile preview: the phone icon in Builder top bar", "Responsive layout: Column Section with 1-column setting for mobile, 2-3 columns for desktop", "Mobile-specific CSS: writing @media (max-width: 768px) in Head Markup", "Hiding components on mobile with Audience-based component visibility (Device: Phone)", "Downloadable mobile app via Experience Cloud (native shell with WebView): requires additional licensing", "Touch events and mobile UX: prefer larger tap targets, avoid hover-only interactions"]'
+          data-practice='"Audit your portal for mobile: (1) Open the Builder mobile preview — look for layout issues. (2) Add a mobile-specific media query in Head Markup that collapses the 2-column layout to 1-column on screens below 768px. (3) Create a Mobile Audience and hide a &#39;desktop-only&#39; sidebar component from it. (4) Open your actual portal URL on a real mobile device and document any issues."'
+          data-gains='["Builder mobile preview", "Responsive column sections", "Mobile media queries", "Mobile audience visibility", "Touch UX considerations"]'
+          data-sources='[{"t": "Mobile Experience Cloud Sites", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_mobile.htm", "b": "docs"}, {"t": "Responsive Design in Experience Builder", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_mobile_display.htm", "b": "docs"}]'>
+          <div class="day-num">Day 27</div>
+          <div class="day-topic">Mobile Responsiveness</div>
+          <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #E65100;"
+          onclick="openDay(this)"
+          data-day="28"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-topic="Deployment &amp; Change Management"
+          data-color="#E65100"
+          data-topics='["What is included in a Change Set for Experience Cloud: Site metadata, LWC, Apex, Profiles, Permission Sets, Sharing Rules, Page Layouts", "What is NOT included in a Change Set: CMS Content, Site configuration from Builder (page layouts, component configurations), Theme settings", "Experience Cloud site metadata type: Network (the site) and Community (pages and regions)", "Deploying with SF CLI: sfdx force:community:create -n &#39;Site Name&#39; -t &#39;Template Name&#39;", "Post-deployment manual steps: re-assign Profiles to the site, re-configure navigation, re-apply theme settings", "ALM (Application Lifecycle Management) for Experience Cloud: sandbox → staging → production", "Common deployment mistake: forgetting to re-enable the Guest User profile and Sharing Rules after deployment", "Tip: keep a deployment checklist — Experience Cloud has more manual post-deploy steps than almost any other Salesforce feature"]'
+          data-practice='"Create a deployment checklist for your portal project. Deploy your custom LWC, Apex classes, and Profile changes from your Developer Org to a sandbox using SF CLI (sf project deploy start). Note which things deployed automatically and which required manual reconfiguration in Builder. Specifically document: navigation re-setup, theme re-application, and Guest User profile re-enabling."'
+          data-gains='["Change Set inclusions/exclusions", "Network metadata type", "SF CLI deploy commands", "Post-deploy manual steps", "Deployment checklist", "Guest User post-deploy"]'
+          data-sources='[{"t": "Deploy Experience Cloud Sites", "u": "https://help.salesforce.com/s/articleView?id=sf.community_deploy.htm", "b": "docs"}, {"t": "SF CLI Community Commands", "u": "https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_force_community.htm", "b": "docs"}]'>
+          <div class="day-num">Day 28</div>
+          <div class="day-topic">Deployment &amp; Change Management</div>
+          <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #E65100;"
+          onclick="openDay(this)"
+          data-day="29"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-topic="Best Practices &amp; Common Mistakes"
+          data-color="#E65100"
+          data-topics='["Performance: Use LWR for all new sites, use cacheable=true on Apex, optimize images, avoid heavy JS in Head Markup", "Security: ALWAYS use with sharing, set restrictive OWD, configure Sharing Sets properly, never over-expose Guest User", "Development: Use LWC over Aura, write Apex test classes (75%+ coverage), use Custom Labels for translatable text, NEVER hardcode record IDs or URLs", "Design: mobile-first design, consistent branding, always build empty states, use loading indicators", "Deployment: maintain a post-deploy checklist, test as every user type (Guest, Customer Community, Portal Admin) after every deploy", "The hardest mistakes to debug: Guest User data not appearing (missing Sharing Rule), portal user can&#39;t see records (missing Sharing Set), LWC works in internal app but not in portal (forgot lightningCommunity__Page target)", "Performance killers to avoid: SOQL inside loops in portal Apex, querying all records without filtering by current user, loading 10+ components on a single portal page"]'
+          data-practice='"Do a full security audit of your portal: (1) Log in as Guest User and confirm they see ONLY what they should. (2) Log in as a Customer Community User and verify Sharing Sets are working. (3) Check every Apex class used in your portal for &#39;with sharing&#39;. (4) Try to access a Case record directly via URL as Guest User — confirm it is blocked. (5) Run your LWC components through the SLDS Linter."'
+          data-gains='["Performance best practices", "Security audit pattern", "Dev best practices", "Common debug scenarios", "Post-deploy verification", "SOQL performance in portal"]'
+          data-sources='[{"t": "Experience Cloud Best Practices", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev_best_practices.htm", "b": "docs"}, {"t": "Experience Cloud Security Review Checklist", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_security.htm", "b": "docs"}]'>
+          <div class="day-num">Day 29</div>
+          <div class="day-topic">Best Practices &amp; Common Mistakes</div>
+          <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #E65100;"
+          onclick="openDay(this)"
+          data-day="30"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-topic="🏆 Capstone — Full Customer Support Portal"
+          data-color="#E65100"
+          data-topics='["Build a complete production-quality Customer Support Portal from scratch in one LWR site", "Home Page: personalized welcome banner (LWC) with open case count, Featured FAQ section (CMS Collection), and quick-action tiles", "My Cases Page: custom myCaseList LWC with search, filter, status badges, and NavigationMixin row-click", "Submit Case Page: a Salesforce Flow with Case Deflection — show Knowledge articles before submitting", "Knowledge Base Page: Knowledge article list filtered by category with public Guest User access", "My Profile Page: lightning-record-edit-form for Contact fields", "Audiences: Guest sees public pages + login CTA; Members see personalized content", "Branding: full custom Head Markup theme with CSS variables, custom font, and mobile media queries", "Security: Sharing Set for Cases, restrictive Guest User, all Apex with sharing", "Deployment: deploy all components via SF CLI with a written deployment checklist"]'
+          data-practice='"Build the complete Customer Support Portal. It must have: 5 pages (Home, Cases, Submit Case, Knowledge, Profile), custom LWC with Builder-configurable properties, custom Apex with test classes, CMS-driven FAQ content, audience-based personalization for Guest vs Member, full custom branding, functional navigation, and Knowledge-powered case deflection. Test as Guest, Customer Community User, and Admin."'
+          data-gains='["Full portal build", "End-to-end integration", "Production-ready security", "Real-world personalization", "Complete deployment workflow", "Boss-level demo"]'
+          data-sources='[{"t": "Experience Cloud Specialist Superbadge", "u": "https://trailhead.salesforce.com/en/content/learn/superbadges/superbadge_community_cloud", "b": "trail"}, {"t": "Experience Cloud Developer Guide", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev.htm", "b": "docs"}]'>
+          <div class="day-type">&#x1F3C6; capstone</div>
+          <div class="day-num">Day 30</div>
+          <div class="day-topic">🏆 Capstone — Full Customer Support Portal</div>
+          <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div>
+      <div class="drawer-badge colored" id="d-badge"></div>
+      <div class="drawer-topic" id="d-topic"></div>
+      <div class="drawer-week-info" id="d-week"></div>
+    </div>
+    <div class="drawer-controls">
+      <button class="drawer-btn" id="btn-prev" title="Previous day" onclick="nav(-1)">&#8249;</button>
+      <button class="drawer-btn" id="btn-next" title="Next day"     onclick="nav(+1)">&#8250;</button>
+      <button class="drawer-btn close"          title="Close"        onclick="closeDrawer()">&#x2715;</button>
+    </div>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</div>
+
+<script>
+
+  var currentCard  = null;
+
+  function openDay(card) {
+    currentCard = card;
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+
+    var color    = card.dataset.color;
+    var phase    = card.dataset.phase;
+    var topic    = card.dataset.topic;
+    var wLabel   = card.dataset.weekLabel;
+    var day      = card.dataset.day;
+    var topics   = JSON.parse(card.dataset.topics);
+    var practice = JSON.parse(card.dataset.practice);
+    var gains    = JSON.parse(card.dataset.gains);
+    var srcs     = JSON.parse(card.dataset.sources);
+
+    var badge = document.getElementById('d-badge');
+    badge.style.setProperty('--card-accent', color);
+    badge.style.setProperty('--card-accent-bg', hexToRgba(color, 0.1));
+    badge.textContent = 'Day ' + day + ' \u00b7 ' + wLabel;
+    document.getElementById('d-topic').textContent = topic;
+    document.getElementById('d-week').textContent  = wLabel;
+
+    var all = Array.from(document.querySelectorAll('.day-card'));
+    var idx = all.indexOf(card);
+    document.getElementById('btn-prev').disabled = idx === 0;
+    document.getElementById('btn-next').disabled = idx === all.length - 1;
+
+    document.getElementById('d-body').innerHTML =
+      '<div>' +
+        '<div class="drawer-section-title">What to learn today</div>' +
+        '<div class="learn-list">' +
+          topics.map(function(item, i) {
+            return '<div class="learn-item">' +
+              '<span class="learn-num">' + String(i + 1).padStart(2, '0') + '</span>' +
+              '<span class="learn-text">' + item + '</span>' +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+      '<div>' +
+        '<div class="drawer-section-title">Practice</div>' +
+        '<div class="practice-block">' +
+          '<p class="practice-text">' + practice + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<div>' +
+        '<div class="drawer-section-title">Skills gained</div>' +
+        '<div class="gain-tags">' +
+          gains.map(function(g) { return '<span class="gain-tag">' + g + '</span>'; }).join('') +
+        '</div>' +
+      '</div>' +
+      '<div>' +
+        '<div class="drawer-section-title">Resources</div>' +
+        '<div class="source-list">' +
+          srcs.map(function(s) {
+            return '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener">' +
+              '<span class="source-badge badge-' + s.b + '">' + s.b + '</span>' +
+              '<span class="source-name">' + s.t + '</span>' +
+              '<span class="source-arrow">&#8599;</span>' +
+            '</a>';
+          }).join('') +
+        '</div>' +
+      '</div>';
+
+    document.getElementById('drawer').classList.add('open');
+  }
+
+  function closeDrawer() {
+    document.getElementById('drawer').classList.remove('open');
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    currentCard = null;
+  }
+
+  function nav(dir) {
+    if (!currentCard) return;
+    var all  = Array.from(document.querySelectorAll('.day-card'));
+    var next = all[all.indexOf(currentCard) + dir];
+    if (next) openDay(next);
+  }
+
+  function setFilter(phase, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.day-card').forEach(c => {
+      c.classList.toggle('dimmed', phase !== 'all' && c.dataset.phase !== phase);
+    });
+  }
+
+  function jumpWeek(id) {
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function hexToRgba(hex, a) {
+    hex = hex.replace('#','');
+    return 'rgba(' + parseInt(hex.slice(0,2),16) + ','
+      + parseInt(hex.slice(2,4),16) + ','
+      + parseInt(hex.slice(4,6),16) + ',' + a + ')';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape')     closeDrawer();
+    if (e.key === 'ArrowRight') nav(+1);
+    if (e.key === 'ArrowLeft')  nav(-1);
+  });
+
+</script>
+
+</body>
+</html>
