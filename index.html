@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DevPath — Study Planner</title>
+  <title>DayDeck — Study Planner</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -15,7 +16,7 @@
 
   <a class="nav-logo" href="#">
     <div class="nav-logo-icon">✓</div>
-    Dev<em>Path</em>
+    Dey<em>Deck</em>
   </a>
 
   <div class="nav-tabs" id="nav-tabs">
@@ -28,11 +29,11 @@
             --green  --blue  --purple  --red  --accent
     ───────────────────────────────────────────────── -->
 
-    <a class="nav-tab active" data-src="study/java-60day.html">
+    <a class="nav-tab" data-src="study/java-60day.html">
       <span class="tab-dot" style="background: var(--green);"></span>
       ☕ Java 60-Day
     </a>
-    
+
     <a class="nav-tab" data-src="study/lwc-30day.html">
       <span class="tab-dot" style="background: #00d4ff;"></span>
       ⚡ LWC 30-Day
@@ -68,22 +69,36 @@
      CONTENT FRAME  (study pages load here)
 ══════════════════════════════════════════════════ -->
 <div class="frame-shell">
-  <iframe class="content-frame" id="content-frame" src="study/java-60day.html"></iframe>
+  <iframe class="content-frame" id="content-frame" title="Study plan content"></iframe>
 </div>
 
 
 <!-- ══════════════════════════════════════════════════
-     TAB SWITCHING  (nothing else needed here)
+     TAB SWITCHING
+     T7: Active tab + iframe src are now set dynamically
+         from JS — no hardcoding in HTML required.
+     T5: document.title updates on every tab switch.
 ══════════════════════════════════════════════════ -->
 <script>
-  document.getElementById('nav-tabs').addEventListener('click', function (e) {
+  const tabs  = document.querySelectorAll('.nav-tab');
+  const frame = document.getElementById('content-frame');
+
+  function activateTab(tab) {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    frame.src = tab.dataset.src;
+    document.title = 'DayDeck — ' + tab.textContent.trim();
+  }
+
+  // Activate the first tab on page load
+  activateTab(tabs[0]);
+
+  // Handle tab clicks
+  document.getElementById('nav-tabs').addEventListener('click', function(e) {
     const tab = e.target.closest('.nav-tab');
     if (!tab) return;
     e.preventDefault();
-
-    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('content-frame').src = tab.dataset.src;
+    activateTab(tab);
   });
 </script>
 

@@ -811,7 +811,18 @@
      in data-* attributes on the day cards.
 ══════════════════════════════════════════════ -->
 <script>
-  var currentCard = null;
+  let currentCard = null;
+
+  /* ── HTML entity decoder (C5) ── */
+  function decodeEntities(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&amp;/g,  '&')
+      .replace(/&lt;/g,   '<')
+      .replace(/&gt;/g,   '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g,  "'");
+  }
 
   /* ── Open drawer for a given card ── */
   function openDay(card) {
@@ -821,13 +832,15 @@
     card.classList.add('active');
 
     /* Read data attributes */
-    var day   = card.dataset.day;
-    var phase = card.dataset.phase;
-    var topic = card.dataset.topic;
-    var week  = card.dataset.week;
-    var learn = JSON.parse(card.dataset.learn);
-    var out   = JSON.parse(card.dataset.outcome);
-    var srcs  = JSON.parse(card.dataset.sources);
+    const day   = card.dataset.day;
+    const phase = card.dataset.phase;
+    const topic = card.dataset.topic;
+    const week  = card.dataset.week;
+
+    let learn, out, srcs;
+    try { learn = JSON.parse(card.dataset.learn);   } catch(e) { learn = []; }
+    try { out   = JSON.parse(card.dataset.outcome); } catch(e) { out   = []; }
+    try { srcs  = JSON.parse(card.dataset.sources); } catch(e) { srcs  = []; }
 
     /* Populate header */
     document.getElementById('d-badge').className   = 'drawer-badge ' + phase;
@@ -836,8 +849,8 @@
     document.getElementById('d-week').textContent  = week;
 
     /* Enable / disable prev-next buttons */
-    var all = Array.from(document.querySelectorAll('.day-card'));
-    var idx = all.indexOf(card);
+    const all = Array.from(document.querySelectorAll('.day-card'));
+    const idx = all.indexOf(card);
     document.getElementById('btn-prev').disabled = idx === 0;
     document.getElementById('btn-next').disabled = idx === all.length - 1;
 
@@ -849,7 +862,7 @@
           learn.map(function(item, i) {
             return '<div class="learn-item">' +
               '<span class="learn-num">' + String(i + 1).padStart(2, '0') + '</span>' +
-              '<span class="learn-text">' + item + '</span>' +
+              '<span class="learn-text">' + decodeEntities(item) + '</span>' +
             '</div>';
           }).join('') +
         '</div>' +
@@ -860,7 +873,7 @@
           out.map(function(item) {
             return '<div class="outcome-item">' +
               '<span class="outcome-check">✓</span>' +
-              '<span class="outcome-text">' + item + '</span>' +
+              '<span class="outcome-text">' + decodeEntities(item) + '</span>' +
             '</div>';
           }).join('') +
         '</div>' +
@@ -869,7 +882,7 @@
         '<div class="drawer-section-title">Resources</div>' +
         '<div class="source-list">' +
           srcs.map(function(s) {
-            return '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener">' +
+            return '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener noreferrer">' +
               '<span class="source-badge badge-' + s.b + '">' + s.b + '</span>' +
               '<span class="source-name">' + s.t + '</span>' +
               '<span class="source-arrow">↗</span>' +
@@ -891,8 +904,8 @@
   /* ── Navigate prev / next ── */
   function nav(dir) {
     if (!currentCard) return;
-    var all  = Array.from(document.querySelectorAll('.day-card'));
-    var next = all[all.indexOf(currentCard) + dir];
+    const all  = Array.from(document.querySelectorAll('.day-card'));
+    const next = all[all.indexOf(currentCard) + dir];
     if (next) openDay(next);
   }
 
@@ -907,7 +920,7 @@
 
   /* ── Jump to week ── */
   function jumpWeek(id) {
-    var el = document.getElementById(id);
+    const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }
 

@@ -576,10 +576,10 @@
           data-practice='"Build the complete Customer Support Portal. It must have: 5 pages (Home, Cases, Submit Case, Knowledge, Profile), custom LWC with Builder-configurable properties, custom Apex with test classes, CMS-driven FAQ content, audience-based personalization for Guest vs Member, full custom branding, functional navigation, and Knowledge-powered case deflection. Test as Guest, Customer Community User, and Admin."'
           data-gains='["Full portal build", "End-to-end integration", "Production-ready security", "Real-world personalization", "Complete deployment workflow", "Boss-level demo"]'
           data-sources='[{"t": "Experience Cloud Specialist Superbadge", "u": "https://trailhead.salesforce.com/en/content/learn/superbadges/superbadge_community_cloud", "b": "trail"}, {"t": "Experience Cloud Developer Guide", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev.htm", "b": "docs"}]'>
-          <div class="day-type">&#x1F3C6; capstone</div>
           <div class="day-num">Day 30</div>
           <div class="day-topic">🏆 Capstone — Full Customer Support Portal</div>
           <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
+          <div class="day-type">&#x1F3C6; capstone</div>
         </div>
       </div>
     </div>
@@ -604,33 +604,46 @@
 </div>
 
 <script>
+  let currentCard = null;
 
-  var currentCard  = null;
+  /* ── HTML entity decoder (C5) ── */
+  function decodeEntities(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&amp;/g,  '&')
+      .replace(/&lt;/g,   '<')
+      .replace(/&gt;/g,   '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g,  "'");
+  }
 
+  /* ── Open drawer ── */
   function openDay(card) {
     currentCard = card;
     document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
     card.classList.add('active');
 
-    var color    = card.dataset.color;
-    var phase    = card.dataset.phase;
-    var topic    = card.dataset.topic;
-    var wLabel   = card.dataset.weekLabel;
-    var day      = card.dataset.day;
-    var topics   = JSON.parse(card.dataset.topics);
-    var practice = JSON.parse(card.dataset.practice);
-    var gains    = JSON.parse(card.dataset.gains);
-    var srcs     = JSON.parse(card.dataset.sources);
+    const color  = card.dataset.color;
+    const phase  = card.dataset.phase;
+    const topic  = card.dataset.topic;
+    const wLabel = card.dataset.weekLabel;
+    const day    = card.dataset.day;
 
-    var badge = document.getElementById('d-badge');
-    badge.style.setProperty('--card-accent', color);
+    let topics, practice, gains, srcs;
+    try { topics   = JSON.parse(card.dataset.topics);   } catch(e) { topics   = []; }
+    try { practice = JSON.parse(card.dataset.practice); } catch(e) { practice = ''; }
+    try { gains    = JSON.parse(card.dataset.gains);    } catch(e) { gains    = []; }
+    try { srcs     = JSON.parse(card.dataset.sources);  } catch(e) { srcs     = []; }
+
+    const badge = document.getElementById('d-badge');
+    badge.style.setProperty('--card-accent',    color);
     badge.style.setProperty('--card-accent-bg', hexToRgba(color, 0.1));
     badge.textContent = 'Day ' + day + ' \u00b7 ' + wLabel;
     document.getElementById('d-topic').textContent = topic;
     document.getElementById('d-week').textContent  = wLabel;
 
-    var all = Array.from(document.querySelectorAll('.day-card'));
-    var idx = all.indexOf(card);
+    const all = Array.from(document.querySelectorAll('.day-card'));
+    const idx = all.indexOf(card);
     document.getElementById('btn-prev').disabled = idx === 0;
     document.getElementById('btn-next').disabled = idx === all.length - 1;
 
@@ -641,7 +654,7 @@
           topics.map(function(item, i) {
             return '<div class="learn-item">' +
               '<span class="learn-num">' + String(i + 1).padStart(2, '0') + '</span>' +
-              '<span class="learn-text">' + item + '</span>' +
+              '<span class="learn-text">' + decodeEntities(item) + '</span>' +
             '</div>';
           }).join('') +
         '</div>' +
@@ -649,20 +662,22 @@
       '<div>' +
         '<div class="drawer-section-title">Practice</div>' +
         '<div class="practice-block">' +
-          '<p class="practice-text">' + practice + '</p>' +
+          '<p class="practice-text">' + decodeEntities(practice) + '</p>' +
         '</div>' +
       '</div>' +
       '<div>' +
         '<div class="drawer-section-title">Skills gained</div>' +
         '<div class="gain-tags">' +
-          gains.map(function(g) { return '<span class="gain-tag">' + g + '</span>'; }).join('') +
+          gains.map(function(g) {
+            return '<span class="gain-tag">' + decodeEntities(g) + '</span>';
+          }).join('') +
         '</div>' +
       '</div>' +
       '<div>' +
         '<div class="drawer-section-title">Resources</div>' +
         '<div class="source-list">' +
           srcs.map(function(s) {
-            return '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener">' +
+            return '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener noreferrer">' +
               '<span class="source-badge badge-' + s.b + '">' + s.b + '</span>' +
               '<span class="source-name">' + s.t + '</span>' +
               '<span class="source-arrow">&#8599;</span>' +
@@ -674,19 +689,22 @@
     document.getElementById('drawer').classList.add('open');
   }
 
+  /* ── Close drawer ── */
   function closeDrawer() {
     document.getElementById('drawer').classList.remove('open');
     document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
     currentCard = null;
   }
 
+  /* ── Navigate prev / next ── */
   function nav(dir) {
     if (!currentCard) return;
-    var all  = Array.from(document.querySelectorAll('.day-card'));
-    var next = all[all.indexOf(currentCard) + dir];
+    const all  = Array.from(document.querySelectorAll('.day-card'));
+    const next = all[all.indexOf(currentCard) + dir];
     if (next) openDay(next);
   }
 
+  /* ── Filter by week ── */
   function setFilter(phase, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
@@ -695,24 +713,26 @@
     });
   }
 
+  /* ── Jump to week ── */
   function jumpWeek(id) {
-    var el = document.getElementById(id);
+    const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }
 
+  /* ── Hex → rgba helper (used by openDay) ── */
   function hexToRgba(hex, a) {
-    hex = hex.replace('#','');
+    hex = hex.replace('#', '');
     return 'rgba(' + parseInt(hex.slice(0,2),16) + ','
       + parseInt(hex.slice(2,4),16) + ','
       + parseInt(hex.slice(4,6),16) + ',' + a + ')';
   }
 
+  /* ── Keyboard shortcuts ── */
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape')     closeDrawer();
     if (e.key === 'ArrowRight') nav(+1);
     if (e.key === 'ArrowLeft')  nav(-1);
   });
-
 </script>
 
 </body>

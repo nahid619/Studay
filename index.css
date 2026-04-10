@@ -600,8 +600,8 @@ body {
    Trailhead is its own resource type — not docs, not article.
 ────────────────────────────────────────────────────────── */
 
-.badge-trail { background: rgba(0,212,255,0.1); color: #00d4ff; }
-
+.badge-trail  { background: rgba(0,212,255,0.1);    color: #00d4ff; }
+.badge-github { background: rgba(139,148,158,0.12); color: #8b949e; }
 
 /* ── Arbitrary card accent color  (slds-doc.html)
    Modules use arbitrary hex colors, not fixed w1-w4.
@@ -738,3 +738,15 @@ body {
 }
 .slds-class-tag:hover  { background: rgba(0,212,255,0.14); transform: translateY(-1px); }
 .slds-class-tag.copied { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.3); color: var(--green); }
+/* ══════════════════════════════════════════════════════════
+   8. MOTION ACCESSIBILITY
+   Respects the OS "Reduce motion" preference.
+   Elements still change state — just instantly, not animated.
+══════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration:  0.01ms !important;
+  }
+}

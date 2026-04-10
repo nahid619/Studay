@@ -1448,11 +1448,10 @@
 </div>
 
 <script>
-
-  var currentCard  = null;
-  var activeFilter = 'all';
-  var searchTerm   = '';
-  var TOTAL        = 49;
+  let currentCard  = null;
+  let activeFilter = 'all';
+  let searchTerm   = '';
+  const TOTAL      = 49;
 
   function visibleCards() {
     return Array.from(document.querySelectorAll('.day-card'))
@@ -1464,33 +1463,35 @@
     document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
     card.classList.add('active');
 
-    var color    = card.dataset.color;
-    var id       = card.dataset.entryId;
-    var topic    = card.dataset.topic;
-    var modNum   = card.dataset.modNum;
-    var modTitle = card.dataset.modTitle;
-    var scenario  = JSON.parse(card.dataset.scenario);
-    var customCss = JSON.parse(card.dataset.customCss);
-    var cssNa     = card.dataset.cssNa === 'true';
-    var sldsCode  = JSON.parse(card.dataset.sldsCode);
-    var notes     = JSON.parse(card.dataset.notes);
-    var classes   = JSON.parse(card.dataset.sldsClasses);
-    var gains     = JSON.parse(card.dataset.gains);
-    var srcs      = JSON.parse(card.dataset.sources);
+    const color    = card.dataset.color;
+    const id       = card.dataset.entryId;
+    const topic    = card.dataset.topic;
+    const modNum   = card.dataset.modNum;
+    const modTitle = card.dataset.modTitle;
+    const cssNa    = card.dataset.cssNa === 'true';
 
-    var badge = document.getElementById('d-badge');
-    badge.style.setProperty('--card-accent', color);
+    let scenario, customCss, sldsCode, notes, classes, gains, srcs;
+    try { scenario  = JSON.parse(card.dataset.scenario);    } catch(e) { scenario  = ''; }
+    try { customCss = JSON.parse(card.dataset.customCss);   } catch(e) { customCss = ''; }
+    try { sldsCode  = JSON.parse(card.dataset.sldsCode);    } catch(e) { sldsCode  = ''; }
+    try { notes     = JSON.parse(card.dataset.notes);       } catch(e) { notes     = ''; }
+    try { classes   = JSON.parse(card.dataset.sldsClasses); } catch(e) { classes   = []; }
+    try { gains     = JSON.parse(card.dataset.gains);       } catch(e) { gains     = []; }
+    try { srcs      = JSON.parse(card.dataset.sources);     } catch(e) { srcs      = []; }
+
+    const badge = document.getElementById('d-badge');
+    badge.style.setProperty('--card-accent',    color);
     badge.style.setProperty('--card-accent-bg', hexToRgba(color, 0.1));
     badge.textContent = 'M' + modNum + ' \u00b7 ' + id;
     document.getElementById('d-topic').textContent = topic;
     document.getElementById('d-week').textContent  = modTitle;
 
-    var vis = visibleCards();
-    var idx = vis.indexOf(card);
+    const vis = visibleCards();
+    const idx = vis.indexOf(card);
     document.getElementById('btn-prev').disabled = idx <= 0;
     document.getElementById('btn-next').disabled = idx >= vis.length - 1;
 
-    var body = '';
+    let body = '';
 
     body += '<div><div class="drawer-section-title">Scenario</div>' +
       '<div class="scenario-block">' + escHtml(scenario) + '</div></div>';
@@ -1527,7 +1528,7 @@
     body += '<div><div class="drawer-section-title">Resources</div>' +
       '<div class="source-list">' +
       srcs.map(function(s) {
-        return '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener">' +
+        return '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener noreferrer">' +
           '<span class="source-badge badge-' + s.b + '">' + s.b + '</span>' +
           '<span class="source-name">' + escHtml(s.t) + '</span>' +
           '<span class="source-arrow">&#8599;</span></a>';
@@ -1546,8 +1547,8 @@
 
   function nav(dir) {
     if (!currentCard) return;
-    var vis  = visibleCards();
-    var next = vis[vis.indexOf(currentCard) + dir];
+    const vis  = visibleCards();
+    const next = vis[vis.indexOf(currentCard) + dir];
     if (next) openEntry(next);
   }
 
@@ -1564,26 +1565,26 @@
   }
 
   function applyFilters() {
-    var visible = 0;
+    let visible = 0;
     document.querySelectorAll('.day-card').forEach(function(c) {
-      var levelOk  = activeFilter === 'all' || c.dataset.level === activeFilter;
-      var searchOk = !searchTerm ||
+      const levelOk  = activeFilter === 'all' || c.dataset.level === activeFilter;
+      const searchOk = !searchTerm ||
         c.dataset.topic.toLowerCase().includes(searchTerm) ||
         c.dataset.sldsClasses.toLowerCase().includes(searchTerm);
-      var show = levelOk && searchOk;
+      const show = levelOk && searchOk;
       c.classList.toggle('dimmed', !show);
       if (show) visible++;
     });
     document.getElementById('search-count').textContent =
       visible + ' entr' + (visible === 1 ? 'y' : 'ies');
     document.querySelectorAll('.phase-block').forEach(function(block) {
-      var any = Array.from(block.querySelectorAll('.day-card')).some(c => !c.classList.contains('dimmed'));
+      const any = Array.from(block.querySelectorAll('.day-card')).some(c => !c.classList.contains('dimmed'));
       block.style.display = any ? '' : 'none';
     });
   }
 
   function jumpTo(id) {
-    var el = document.getElementById(id);
+    const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -1620,7 +1621,6 @@
       document.getElementById('search-input').focus();
     }
   });
-
 </script>
 
 </body>
