@@ -441,24 +441,14 @@
 <!-- ══════════════════════════════════════════════
      SCRIPT
 ══════════════════════════════════════════════ -->
+<script src="daydeck-core.js"></script>
 <script>
-  let currentCard = null;
 
-  /* ── HTML entity decoder (C5) ── */
-  function decodeEntities(str) {
-    if (!str) return '';
-    return String(str)
-      .replace(/&amp;/g,  '&')
-      .replace(/&lt;/g,   '<')
-      .replace(/&gt;/g,   '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&#39;/g,  "'");
-  }
-
-  /* ── Open drawer ── */
+  /* ── Open drawer  (Apex plan: topics + practice + gains + resources) ── */
   function openDay(card) {
     currentCard = card;
-    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.day-card.active')
+      .forEach(c => c.classList.remove('active'));
     card.classList.add('active');
 
     const phase  = card.dataset.phase;
@@ -477,13 +467,9 @@
     document.getElementById('d-topic').textContent = topic;
     document.getElementById('d-week').textContent  = wLabel;
 
-    const all = Array.from(document.querySelectorAll('.day-card'));
-    const idx = all.indexOf(card);
-    document.getElementById('btn-prev').disabled = idx === 0;
-    document.getElementById('btn-next').disabled = idx === all.length - 1;
+    updateNavButtons(card);
 
     document.getElementById('d-body').innerHTML =
-      /* ── Topics ── */
       '<div>' +
         '<div class="drawer-section-title">What to learn today</div>' +
         '<div class="learn-list">' +
@@ -495,14 +481,12 @@
           }).join('') +
         '</div>' +
       '</div>' +
-      /* ── Practice ── */
       '<div>' +
         '<div class="drawer-section-title">Practice</div>' +
         '<div class="practice-block">' +
           '<p class="practice-text">' + decodeEntities(practice) + '</p>' +
         '</div>' +
       '</div>' +
-      /* ── Gains ── */
       '<div>' +
         '<div class="drawer-section-title">Skills gained</div>' +
         '<div class="gain-tags">' +
@@ -511,12 +495,12 @@
           }).join('') +
         '</div>' +
       '</div>' +
-      /* ── Resources ── */
       '<div>' +
         '<div class="drawer-section-title">Resources</div>' +
         '<div class="source-list">' +
           srcs.map(function(s) {
-            return '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener noreferrer">' +
+            return '<a class="source-link" href="' + s.u +
+              '" target="_blank" rel="noopener noreferrer">' +
               '<span class="source-badge badge-' + s.b + '">' + s.b + '</span>' +
               '<span class="source-name">' + s.t + '</span>' +
               '<span class="source-arrow">&#8599;</span>' +
@@ -528,43 +512,6 @@
     document.getElementById('drawer').classList.add('open');
   }
 
-  /* ── Close drawer ── */
-  function closeDrawer() {
-    document.getElementById('drawer').classList.remove('open');
-    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
-    currentCard = null;
-  }
-
-  /* ── Navigate prev / next ── */
-  function nav(dir) {
-    if (!currentCard) return;
-    const all  = Array.from(document.querySelectorAll('.day-card'));
-    const next = all[all.indexOf(currentCard) + dir];
-    if (next) openDay(next);
-  }
-
-  /* ── Filter by week ── */
-  function setFilter(phase, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.day-card').forEach(c => {
-      c.classList.toggle('dimmed', phase !== 'all' && c.dataset.phase !== phase);
-    });
-  }
-
-  /* ── Jump to week ── */
-  function jumpWeek(id) {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  /* ── Keyboard shortcuts ── */
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape')     closeDrawer();
-    if (e.key === 'ArrowRight') nav(+1);
-    if (e.key === 'ArrowLeft')  nav(-1);
-  });
 </script>
-
 </body>
 </html>

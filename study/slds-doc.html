@@ -1613,6 +1613,8 @@
   }
 
   document.addEventListener('keydown', function(e) {
+    /* T4 fix: do not fire nav shortcuts while user is typing in search */
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
     if (e.key === 'Escape')     closeDrawer();
     if (e.key === 'ArrowRight') nav(+1);
     if (e.key === 'ArrowLeft')  nav(-1);
