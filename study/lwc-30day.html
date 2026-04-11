@@ -62,7 +62,7 @@
 
     <div class="week-group" id="w1">
       <div class="day-grid">
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="1" data-phase="w1" data-week-label="Week 1" data-topic="What is LWC + Dev Setup"
           data-topics='["What is Lightning Web Components (LWC)?", "LWC vs Aura — key differences", "Component folder structure: .html, .js, .css, .js-meta.xml", "Installing VS Code + Salesforce Extension Pack", "Creating a scratch org with the CLI", "Deploying your first HelloWorld component"]'
           data-practice='"Set up your Salesforce dev environment. Create a scratch org, build a &#39;HelloWorld&#39; LWC that displays your name and today&#39;s date, deploy it, and place it on a Lightning App Page."'
@@ -72,7 +72,7 @@
           <div class="day-topic">What is LWC + Dev Setup</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="2" data-phase="w1" data-week-label="Week 1" data-topic="Template Syntax &amp; Data Binding"
           data-topics='["One-way data binding with {property}", "Computed properties using JavaScript getters", "Binding to HTML attributes (href, src, value)", "Dynamic CSS class binding", "Handling user input — mimicking two-way binding with onchange"]'
           data-practice='"Build a &#39;UserProfileCard&#39; component. Show a name, title, and city. Add an input field that updates the greeting message in real time. Use a getter to display formatted initials."'
@@ -82,7 +82,7 @@
           <div class="day-topic">Template Syntax &amp; Data Binding</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="3" data-phase="w1" data-week-label="Week 1" data-topic="Conditionals &amp; Loops"
           data-topics='["lwc:if, lwc:elseif, lwc:else (modern syntax)", "Legacy if:true / if:false (still appears in real code)", "for:each loop with key={item.id}", "iterator:it — accessing first/last flags", "Rendering nested lists"]'
           data-practice='"Build a &#39;Task List&#39; component. Render a list of tasks from a JS array. Show a &#39;No tasks yet&#39; message when the list is empty. Add a &#39;completed&#39; badge for done tasks using conditional rendering."'
@@ -92,7 +92,7 @@
           <div class="day-topic">Conditionals &amp; Loops</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="4" data-phase="w1" data-week-label="Week 1" data-topic="Event Handling"
           data-topics='["Listening to DOM events: onclick, onchange, onkeyup", "event.target vs event.currentTarget", "Preventing default browser behavior", "Handling events from lightning-base-components (lightning-button, lightning-input)", "Event delegation pattern"]'
           data-practice='"Build a &#39;Counter App&#39; with increment, decrement, and reset buttons. Add a lightning-input to set a custom step value. Prevent the counter from going below 0. Display a message when it hits 0."'
@@ -102,7 +102,7 @@
           <div class="day-topic">Event Handling</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="5" data-phase="w1" data-week-label="Week 1" data-topic="Component Communication — Parent → Child"
           data-topics='["@api decorator — public properties", "Passing primitive values to child", "Passing objects and arrays to child", "@api methods — calling child methods from parent", "Property vs Attribute naming (camelCase to kebab-case)"]'
           data-practice='"Build a &#39;ProductCard&#39; child component with @api properties: name, price, inStock (Boolean). Build a parent that renders 3 ProductCards. Add an @api method &#39;highlight()&#39; to the child that adds a CSS border."'
@@ -112,7 +112,7 @@
           <div class="day-topic">Component Communication — Parent → Child</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="6" data-phase="w1" data-week-label="Week 1" data-topic="Component Communication — Child → Parent"
           data-topics='["CustomEvent — firing events from child", "Passing data with event.detail", "Listening to child events in parent template (oneventname)", "Event bubbling and composed flag", "Best practices: naming events in lowercase with hyphens"]'
           data-practice='"Extend Day 5&#39;s ProductCard: when the &#39;Add to Cart&#39; button is clicked, fire a &#39;addtocart&#39; CustomEvent with the product name and price in detail. In the parent, listen for it and update a cart summary showing total items and total price."'
@@ -123,7 +123,7 @@
           <div class="phase-dot w1"></div>
         </div>
 
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="7" data-phase="w1" data-week-label="Week 1" data-topic="Lifecycle Hooks"
           data-topics='["constructor() — first thing that runs", "connectedCallback() — component added to DOM", "disconnectedCallback() — cleanup on removal", "renderedCallback() — after every render", "errorCallback() — catch child errors", "Common mistake: querying the DOM in constructor"]'
           data-practice='"Build a &#39;Timer&#39; component. In connectedCallback, start a setInterval that increments a counter every second. In disconnectedCallback, clear the interval. In renderedCallback, log each render cycle. Watch the logs carefully."'
@@ -149,7 +149,7 @@
 
     <div class="week-group" id="w2">
       <div class="day-grid">
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="8" data-phase="w2" data-week-label="Week 2" data-topic="Slots &amp; Composition"
           data-topics='["Default slot — <slot></slot>", "Named slots — <slot name=&#39;header&#39;>", "Passing markup from parent into child slots", "Inspecting slot content with slotchange event", "Building reusable card/modal shells with slots"]'
           data-practice='"Build a reusable &#39;ModalShell&#39; component with a named &#39;header&#39; slot, a default body slot, and a named &#39;footer&#39; slot. Use it in a parent to render two different modals (a confirmation dialog and an info panel) with different content."'
@@ -159,7 +159,7 @@
           <div class="day-topic">Slots &amp; Composition</div>
           <div class="phase-dot w2"></div>
         </div>
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="9" data-phase="w2" data-week-label="Week 2" data-topic="@wire with Standard Adapters"
           data-topics='["What is @wire? Reactive data fetching explained", "getRecord — fetch a single record&#39;s fields", "getRecordId — get the current record page ID", "Handling wire data and error states", "FIELD_LEVEL import from @salesforce/schema"]'
           data-practice='"Build a &#39;ContactDetailCard&#39; that reads the current record page&#39;s Contact ID using @wire(getRecordId), then fetches FirstName, LastName, Email, and Phone using @wire(getRecord). Display all fields with proper loading and error states."'
@@ -169,7 +169,7 @@
           <div class="day-topic">@wire with Standard Adapters</div>
           <div class="phase-dot w2"></div>
         </div>
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="10" data-phase="w2" data-week-label="Week 2" data-topic="Apex Basics for LWC"
           data-topics='["@AuraEnabled annotation — exposing Apex to LWC", "@AuraEnabled(cacheable=true) — when and why", "with sharing vs without sharing", "Writing a SOQL query in Apex", "Returning List<SObject> to LWC", "Returning custom wrapper classes"]'
           data-practice='"Write an Apex class &#39;AccountController&#39; with a @AuraEnabled(cacheable=true) method that returns a List<Account> (Name, Industry, AnnualRevenue). Call it from a new LWC using @wire and render the results in a table."'
@@ -179,7 +179,7 @@
           <div class="day-topic">Apex Basics for LWC</div>
           <div class="phase-dot w2"></div>
         </div>
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="11" data-phase="w2" data-week-label="Week 2" data-topic="Imperative Apex Calls"
           data-topics='["Imperative vs @wire — when to use each", "Calling Apex imperatively with async/await", "Calling Apex on button click", "Handling errors from Apex imperatively", "Loading spinner pattern during async calls", "When NOT to use cacheable=true"]'
           data-practice='"Build a &#39;ContactSearch&#39; component. A lightning-input triggers an imperative Apex call on every keystroke (debounced). Show a spinner while loading. Render results in a lightning-datatable. Show an error message if the query fails."'
@@ -189,7 +189,7 @@
           <div class="day-topic">Imperative Apex Calls</div>
           <div class="phase-dot w2"></div>
         </div>
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="12" data-phase="w2" data-week-label="Week 2" data-topic="lightning-record-form &amp; lightning-record-edit-form"
           data-topics='["lightning-record-form — quickest way to view/edit a record", "lightning-record-view-form — read-only display", "lightning-record-edit-form — custom edit layouts", "lightning-output-field and lightning-input-field", "Handling onsuccess, onerror, onsubmit events", "Resetting the form after save"]'
           data-practice='"Build a &#39;QuickEditContact&#39; component placed on the Contact record page. Use lightning-record-edit-form to let users update Email and Phone inline. On success, show a Toast and refresh. On error, display a friendly message."'
@@ -200,7 +200,7 @@
           <div class="phase-dot w2"></div>
         </div>
 
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="13" data-phase="w2" data-week-label="Week 2" data-topic="lightning-datatable Deep Dive"
           data-topics='["lightning-datatable — columns, data, key-field", "Column types: text, number, currency, date, boolean, button-icon", "Row selection: single vs multi-select", "Row actions: edit, delete, custom", "Inline editing with draft-values", "Sorting columns with onsort"]'
           data-practice='"Build an &#39;OpportunityTable&#39; that fetches opportunities via Apex. Add columns for Name, Amount, StageName, CloseDate. Enable row actions (View, Edit, Delete). Handle inline editing and save changes back to Salesforce via imperative Apex."'
@@ -211,7 +211,7 @@
           <div class="phase-dot w2"></div>
         </div>
 
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="14" data-phase="w2" data-week-label="Week 2" data-topic="Toast Messages &amp; refreshApex"
           data-topics='["ShowToastEvent — title, message, variant, mode", "Variants: success, error, warning, info", "refreshApex — re-fetching @wire data after mutations", "getRecordNotifyChange — notifying the record cache", "Full create-read-update-delete cycle in LWC"]'
           data-practice='"Upgrade your OpportunityTable from Day 13. After every successful create, update, or delete operation: show a Toast with the correct variant and refresh the table data using refreshApex. Handle all error cases with error Toasts."'
@@ -237,7 +237,7 @@
 
     <div class="week-group" id="w3">
       <div class="day-grid">
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="15" data-phase="w3" data-week-label="Week 3" data-topic="CSS, SLDS &amp; Theming"
           data-topics='["Scoped CSS in LWC — Shadow DOM isolation", "SLDS utility classes: spacing, grid, typography", "CSS custom properties (tokens) — :host and :root", ":host selector for component-level styles", "CSS vars for dynamic theming", "SLDS icons with lightning-icon"]'
           data-practice='"Build a &#39;StatsDashboard&#39; component with 4 KPI stat cards (Accounts, Contacts, Opportunities, Revenue). Use SLDS grid for layout, SLDS utility classes for spacing and typography, and lightning-icon for each card. Make it look production-ready."'
@@ -248,7 +248,7 @@
           <div class="phase-dot w3"></div>
         </div>
 
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="16" data-phase="w3" data-week-label="Week 3" data-topic="@track &amp; Reactive Properties"
           data-topics='["When @track is needed vs when it&#39;s not", "Primitive vs object/array reactivity", "Mutating nested objects and arrays — spread operator pattern", "Common reactivity bug: direct object mutation", "JavaScript immutability patterns for LWC"]'
           data-practice='"Build a &#39;ShoppingCart&#39; component. The cart is an array of objects {name, qty, price}. Add buttons to increase/decrease qty on each item. Total should reactively update. Test: mutate the array directly (wrong way), then fix it with spread operator (right way)."'
@@ -259,7 +259,7 @@
           <div class="phase-dot w3"></div>
         </div>
 
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="17" data-phase="w3" data-week-label="Week 3" data-topic="Lightning Message Service (LMS)"
           data-topics='["What is LMS and why it exists (unrelated component communication)", "Creating a Message Channel (.messageChannel-meta.xml)", "Publishing a message: MessageContext + publish()", "Subscribing with subscribe() and unsubscribing onDisconnect", "Passing complex data in message payload"]'
           data-practice='"Build two unrelated components on the same App Page: &#39;FilterPanel&#39; and &#39;ResultsGrid&#39;. When FilterPanel sends a search term via LMS, ResultsGrid receives it and re-fetches Apex data. There should be no parent-child relationship between them."'
@@ -270,7 +270,7 @@
           <div class="phase-dot w3"></div>
         </div>
 
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="18" data-phase="w3" data-week-label="Week 3" data-topic="Wire Adapters — getRelatedListRecords &amp; More"
           data-topics='["getRelatedListRecords — fetch related list data", "getListUi — fetch standard list views", "getObjectInfo — fetch object metadata", "getPicklistValues — fetch picklist options dynamically", "Chaining wire results — using one wire&#39;s data as another&#39;s param"]'
           data-practice='"Build a &#39;ContactsOnAccount&#39; component. Use getObjectInfo to verify the Account object. Use getRelatedListRecords to fetch all Contacts for the current Account record page. Use getPicklistValues to populate a dynamic filter dropdown by LeadSource."'
@@ -281,7 +281,7 @@
           <div class="phase-dot w3"></div>
         </div>
 
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="19" data-phase="w3" data-week-label="Week 3" data-topic="Custom Events — Advanced Patterns"
           data-topics='["bubbles and composed flags — when to use each", "Event target vs composedPath()", "stopPropagation vs stopImmediatePropagation", "Event-driven architecture in multi-level component trees", "Using CustomEvent for UI state management across siblings"]'
           data-practice='"Build a 3-level component tree: App → CategoryList → CategoryItem. When a CategoryItem is clicked, fire a &#39;categoryselect&#39; event that bubbles up to the App level (skipping CategoryList). The App fetches data based on the selected category."'
@@ -292,7 +292,7 @@
           <div class="phase-dot w3"></div>
         </div>
 
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="20" data-phase="w3" data-week-label="Week 3" data-topic="Dynamic Components &amp; Lazy Loading"
           data-topics='["lwc:dynamic — rendering components by string name", "import() for lazy loading JS modules", "Conditional component mounting vs CSS display:none", "Platform resource loader — loading external libraries", "Using loadScript and loadStyle from @salesforce/resourceUrl"]'
           data-practice='"Build a &#39;WidgetSwitcher&#39; that lets users choose a dashboard widget (Chart, Table, or Map) from a dropdown. Each widget is a separate component loaded dynamically with lwc:dynamic. Only load the selected component&#39;s code when chosen."'
@@ -302,7 +302,7 @@
           <div class="day-topic">Dynamic Components &amp; Lazy Loading</div>
           <div class="phase-dot w3"></div>
         </div>
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="21" data-phase="w3" data-week-label="Week 3" data-topic="Apex DML — Create, Update, Delete from LWC"
           data-topics='["Writing @AuraEnabled Apex methods for insert/update/delete", "Returning success/error info to LWC", "saveRecord pattern — single method for create or update", "Deleting records and confirming with user dialog", "Using Database.SaveResult for granular error handling"]'
           data-practice='"Build a full &#39;LeadManager&#39;: List of leads via @wire Apex, an inline form to create new leads, click-to-edit via imperative Apex, and a delete button with a confirmation dialog. All operations show Toasts and refresh the list."'
@@ -328,7 +328,7 @@
 
     <div class="week-group" id="w4">
       <div class="day-grid">
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="22" data-phase="w4" data-week-label="Week 4" data-topic="Salesforce Base Components Library"
           data-topics='["lightning-card, lightning-button, lightning-input — props deep dive", "lightning-combobox, lightning-checkbox-group, lightning-radio-group", "lightning-badge, lightning-avatar, lightning-spinner", "lightning-accordion and lightning-tabset", "lightning-formatted-text, lightning-formatted-currency, lightning-formatted-date-time"]'
           data-practice='"Build a &#39;CandidateProfileForm&#39; using at least 8 different lightning-base-components. Include a combobox for status, radio group for experience level, checkbox group for skills, and formatted components to display saved data."'
@@ -339,7 +339,7 @@
           <div class="phase-dot w4"></div>
         </div>
 
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="23" data-phase="w4" data-week-label="Week 4" data-topic="NavigationMixin"
           data-topics='["NavigationMixin.Navigate() — navigate to records, pages, URLs", "Navigate to a Record, Object Home, Named Page", "Navigate to an external URL", "NavigationMixin.GenerateUrl() for hyperlinks", "CurrentPageReference — reading URL params"]'
           data-practice='"Add navigation to your LeadManager from Day 21. Row click navigates to the Lead record page. A button navigates to Create New Lead page. Add an external link using GenerateUrl. Read a URL param on load to pre-filter the list."'
@@ -349,7 +349,7 @@
           <div class="day-topic">NavigationMixin</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="24" data-phase="w4" data-week-label="Week 4" data-topic="App Builder Configuration"
           data-topics='["Exposing @api properties in App Builder (targetConfigs)", "targets in .js-meta.xml — App Page, Record Page, Home", "Making components drag-and-drop configurable", "Dynamic component behavior from Admin settings", "Property types: String, Integer, Boolean, picklist"]'
           data-practice='"Make your LeadManager configurable from App Builder — Admin can set &#39;Title&#39;, &#39;Rows Per Page&#39;, &#39;Default Filter&#39;, and &#39;Show Priority Column&#39; without code changes. Test all property types work correctly."'
@@ -359,7 +359,7 @@
           <div class="day-topic">App Builder Configuration</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="25" data-phase="w4" data-week-label="Week 4" data-topic="Error Handling &amp; Debugging"
           data-topics='["reduceErrors utility function pattern", "Displaying multiple errors cleanly in UI", "Chrome DevTools for LWC debugging", "Salesforce Inspector Chrome extension", "console.log tips in LWC", "VS Code debugger with Salesforce extensions"]'
           data-practice='"Add production-grade error handling to your LeadManager using reduceErrors. Intentionally break the Apex method and verify errors display cleanly. Use Chrome DevTools to inspect Shadow DOM. Add a global error boundary component."'
@@ -369,7 +369,7 @@
           <div class="day-topic">Error Handling &amp; Debugging</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="26" data-phase="w4" data-week-label="Week 4" data-topic="Performance Best Practices"
           data-topics='["Conditional rendering vs CSS display:none — when to use each", "Lazy loading child components", "Avoiding unnecessary re-renders", "Memoization: caching computed results in JS", "Avoiding SOQL inside loops in Apex", "Using @wire caching effectively"]'
           data-practice='"Audit your LeadManager from Day 21. Profile renders with Chrome DevTools Performance tab. Apply lazy loading to the edit panel. Memoize an expensive computed property. Fix any SOQL-in-loop issues in the Apex controller."'
@@ -379,7 +379,7 @@
           <div class="day-topic">Performance Best Practices</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="27" data-phase="w4" data-week-label="Week 4" data-topic="Security in LWC"
           data-topics='["Lightning Locker vs LWS (Lightning Web Security)", "Why innerHTML is dangerous — XSS risks", "Use lightning-formatted-* components safely", "Field-level security and @AuraEnabled data", "With Sharing vs Without Sharing in Apex", "CRUD and FLS checks in Apex"]'
           data-practice='"Review all Apex classes you&#39;ve written — add &#39;with sharing&#39; keyword to all. Replace any raw HTML rendering with safe lightning-formatted-text or lightning-formatted-url. Add FLS checks before returning field data."'
@@ -389,7 +389,7 @@
           <div class="day-topic">Security in LWC</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="28" data-phase="w4" data-week-label="Week 4" data-topic="Jest Unit Testing"
           data-topics='["Setting up Jest for LWC (sfdx-lwc-jest)", "Writing your first component test", "Mocking @wire responses in tests", "Mocking Apex imperative calls", "Querying shadow DOM in tests"]'
           data-practice='"Write Jest tests for your LeadManager. Test: list renders with mock wire data, error state renders when wire throws, create form dispatches correct event, delete button calls Apex mock. Aim for 80% coverage."'
@@ -399,7 +399,7 @@
           <div class="day-topic">Jest Unit Testing</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="29" data-phase="w4" data-week-label="Week 4" data-topic="Code Quality &amp; Patterns"
           data-topics='["ESLint rules for LWC (@salesforce/eslint-plugin-lwc)", "Component naming conventions", "Separating concerns: container vs presentation components", "Reusable utility JS modules (lwc/utils)", "Code review checklist for LWC"]'
           data-practice='"Refactor your LeadManager — split into a container component (data fetching + business logic) and a presentational component (pure UI). Create a shared &#39;utils&#39; LWC module with common helpers. Add ESLint to your project and fix all warnings."'
@@ -409,7 +409,7 @@
           <div class="day-topic">Code Quality &amp; Patterns</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="30" data-phase="w4" data-week-label="Week 4" data-topic="🏆 Capstone Project"
           data-topics='["Plan and build a mini CRM Dashboard from scratch", "Account/Contact search with imperative Apex", "Editable record form with Toast feedback", "Data table with row actions and sorting", "LMS-based component communication between panels", "NavigationMixin for record links", "Full SLDS styling and error handling", "App Builder configurable title and row count"]'
           data-practice='"Build the full mini CRM Dashboard. Use everything from all 4 weeks: @wire + imperative Apex, lightning-datatable, LMS, NavigationMixin, Toast, refreshApex, reduceErrors, with sharing Apex, App Builder config. This is what you show as proof of mastery."'
@@ -430,6 +430,7 @@
 <!-- ══════════════════════════════════════════════
      DRAWER
 ══════════════════════════════════════════════ -->
+<div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-header">
     <div>
@@ -518,7 +519,7 @@
         '</div>' +
       '</div>';
 
-    document.getElementById('drawer').classList.add('open');
+    showDrawer();
   }
 
 </script>

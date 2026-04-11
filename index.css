@@ -59,6 +59,24 @@
   --radius-sm: 6px;
 }
 
+/* ── D4: Light mode overrides
+   Applied when <html data-theme="light"> is set by the
+   theme toggle in index.html. All CSS variables cascade
+   from here — no component styles need to change.
+────────────────────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg:       #F4F4FA;
+  --surface:  #FFFFFF;
+  --surface2: #EDEDF5;
+  --surface3: #E4E4F0;
+
+  --border:   rgba(0, 0, 0, 0.08);
+  --border2:  rgba(0, 0, 0, 0.15);
+
+  --text:     #1A1A2E;
+  --muted:    #4848A0;
+  --muted2:   #8080B8;
+}
 
 /* ══════════════════════════════════════════════════════════
    2. RESET
@@ -152,12 +170,31 @@ body {
 }
 
 /* hint pill (right side) */
+/* hint pill (right side) */
 .nav-hint {
   font-family: var(--mono);
   font-size: 11px; color: var(--muted2);
   flex-shrink: 0;
   border: 1px solid var(--border);
   padding: 4px 10px; border-radius: 6px;
+}
+
+/* D4: dark/light mode toggle button */
+.nav-theme-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+  line-height: 1;
+}
+.nav-theme-btn:hover {
+  background: var(--surface2);
+  border-color: var(--border2);
 }
 
 /* content iframe */
@@ -306,7 +343,7 @@ body {
 /* ── Day grid ── */
 .day-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(138px, 160px));
   gap: 8px;
 }
 
@@ -341,6 +378,13 @@ body {
 .day-card.active::before { opacity: 1; }
 .day-card.dimmed        { opacity: 0.2; pointer-events: none; }
 
+/* D2: keyboard focus ring — visible only on keyboard nav, not mouse clicks */
+.day-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: var(--border2);
+}
+
 .day-num   { font-family: var(--mono); font-size: 10px; font-weight: 500; color: var(--muted2); margin-bottom: 6px; }
 .day-topic { font-size: 12px; font-weight: 600; color: var(--text); line-height: 1.4; }
 
@@ -362,6 +406,22 @@ body {
 /* ══════════════════════════════════════════════════════════
    6. DRAWER  (study/*.html)
 ══════════════════════════════════════════════════════════ */
+/* D1: full-screen scrim that appears behind the open drawer
+   z-index 49 keeps it below the drawer (z-index 50) but
+   above all page content. Clicking the scrim closes the drawer. */
+.drawer-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 49;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.drawer-scrim.open {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .drawer {
   position: fixed;
@@ -498,14 +558,35 @@ body {
 }
 
 @media (max-width: 600px) {
-  /* hide the hint pill so tabs have room */
-  .nav-hint           { display: none; }
+  /* D7: swap hint pill text to "tap a card" on mobile
+     font-size: 0 hides the original text without removing
+     the element; ::after injects the mobile-appropriate copy */
+  .nav-hint {
+    font-size: 0;
+  }
+  .nav-hint::after {
+    content: 'tap a card';
+    font-size: 11px;
+    font-family: var(--mono);
+    color: var(--muted2);
+  }
 }
 
 @media (max-width: 480px) {
   .hero-stats         { gap: 1.5rem; }
   .hero-title         { font-size: 22px; }
   .day-grid           { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+}
+
+/* D7: first-visit pulse animation for mobile
+   Draws attention to the fact that cards are tappable.
+   Applied by daydeck-core.js on first mobile visit only. */
+@keyframes card-pulse {
+  0%,  100% { box-shadow: 0 0 0 0   rgba(240, 192, 80, 0);   }
+  50%        { box-shadow: 0 0 0 5px rgba(240, 192, 80, 0.28); }
+}
+.day-card.pulse-hint {
+  animation: card-pulse 1.5s ease 0.6s 2;
 }
 
 

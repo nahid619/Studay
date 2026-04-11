@@ -62,7 +62,7 @@
 
     <div class="week-group" id="w1">
       <div class="day-grid">
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="1" data-phase="w1" data-week-label="Week 1" data-topic="What is Apex + Dev Setup"
           data-topics='["What is Apex? How it differs from Java", "Where Apex runs — Salesforce servers, Force.com platform", "Setting up VS Code with Salesforce Extension Pack", "Creating a Scratch Org with SF CLI", "Developer Console — Execute Anonymous", "System.debug() — your best debugging tool"]'
           data-practice='"Set up your Salesforce dev environment. Run your first anonymous Apex script that declares 5 different variable types (String, Integer, Boolean, Date, Decimal), prints them with System.debug(), and checks the debug log output."'
@@ -72,7 +72,7 @@
           <div class="day-topic">What is Apex + Dev Setup</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="2" data-phase="w1" data-week-label="Week 1" data-topic="Data Types &amp; Variables"
           data-topics='["Primitive types: Integer, Long, Decimal, Double, Boolean, String", "Date, DateTime, Time types and common methods", "Id type — Salesforce record IDs", "Null values — checking and handling", "String methods: trim(), toUpperCase(), contains(), substring(), split()", "Type casting and type checking"]'
           data-practice='"Write anonymous Apex that creates a &#39;mini profile&#39;: declare a name, salary (Decimal), hire date (Date), and active status (Boolean). Use String methods to format the name (trim + uppercase). Calculate years since hire using Date arithmetic. Print a formatted summary."'
@@ -82,7 +82,7 @@
           <div class="day-topic">Data Types &amp; Variables</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="3" data-phase="w1" data-week-label="Week 1" data-topic="Operators &amp; Control Flow"
           data-topics='["Arithmetic operators: +, -, *, /, Math.mod()", "Comparison operators: ==, !=, >, <, >=, <=", "Logical operators: &amp;&amp;, ||, !", "Ternary operator — shorthand if/else", "if / else if / else blocks", "switch statement — on String, Integer, and sObject type"]'
           data-practice='"Build a &#39;Lead Scoring&#39; script. Given a lead&#39;s annualRevenue (Integer), industry (String), and numberOfEmployees (Integer), use if/else and switch to assign a score (Cold/Warm/Hot). Use ternary for a VIP flag. Print the final lead tier."'
@@ -92,7 +92,7 @@
           <div class="day-topic">Operators &amp; Control Flow</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="4" data-phase="w1" data-week-label="Week 1" data-topic="Loops"
           data-topics='["for loop — traditional with index", "Enhanced for loop — for (Type item : collection)", "while loop — condition-based", "do-while loop — runs at least once", "break and continue — controlling loop flow", "Avoiding infinite loops — common mistakes"]'
           data-practice='"Write a &#39;FizzBuzz&#39; in Apex (loop 1–50, print Fizz/Buzz/FizzBuzz). Then build a &#39;Bulk Email Preview&#39; script: loop through a list of 5 names and build a personalized greeting String for each using a for loop. Use break to stop at the first &#39;VIP&#39; name."'
@@ -102,7 +102,7 @@
           <div class="day-topic">Loops</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="5" data-phase="w1" data-week-label="Week 1" data-topic="Collections — List"
           data-topics='["List<Type> — ordered, allows duplicates", "add(), get(), set(), remove(), size(), contains()", "Initializing with values: new List<String>{&#39;a&#39;,&#39;b&#39;,&#39;c&#39;}", "Sorting a List with List.sort()", "Iterating over a List", "List of sObjects — List<Account>"]'
           data-practice='"Build a &#39;Sales Pipeline Tracker&#39;: create a List<String> of 10 opportunity names. Remove all that contain &#39;Test&#39;. Sort the remaining ones. Print the top 3. Then create a List<Integer> of deal amounts, calculate the total, average, and max value."'
@@ -112,7 +112,7 @@
           <div class="day-topic">Collections — List</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="6" data-phase="w1" data-week-label="Week 1" data-topic="Collections — Set &amp; Map"
           data-topics='["Set<Type> — unique values, no duplicates, no order", "Set: add(), contains(), remove(), size()", "Map<Key, Value> — key-value store", "Map: put(), get(), containsKey(), keySet(), values(), remove()", "When to use List vs Set vs Map", "Map<Id, SObject> — the most important pattern in Apex"]'
           data-practice='"Given a list of 10 contact emails (some duplicates), use a Set to get unique emails. Then build a Map<String, Integer> of city → contact count. Given a List<Account>, build a Map<Id, Account> for fast lookup. Practice all three collection types in one script."'
@@ -122,7 +122,7 @@
           <div class="day-topic">Collections — Set &amp; Map</div>
           <div class="phase-dot w1"></div>
         </div>
-        <div class="day-card w1" onclick="openDay(this)"
+        <div class="day-card w1" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="7" data-phase="w1" data-week-label="Week 1" data-topic="Mini Project — Data Processor Class"
           data-topics='["Combining all Week 1 skills", "Writing static utility methods", "Processing a list of fake employee records using all collection types", "Control flow to categorize and filter data", "Using loops + maps together for aggregation"]'
           data-practice='"Build a static class &#39;EmployeeDataProcessor&#39;. It has methods: filterHighEarners(List<Map<String,Object>> employees, Decimal threshold), groupByDepartment(List<Map<String,Object>> employees), and getSummaryStats(). Call all three from Execute Anonymous and verify the output."'
@@ -148,7 +148,7 @@
 
     <div class="week-group" id="w2">
       <div class="day-grid">
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="8" data-phase="w2" data-week-label="Week 2" data-topic="Methods &amp; Functions"
           data-topics='["Method anatomy: access modifier, return type, name, params", "void vs return type methods", "Static vs instance methods — when to use each", "Method overloading — same name, different params", "Passing by value vs passing by reference", "Recursive methods — understanding with factorial example"]'
           data-practice='"Build a &#39;MathUtils&#39; class with overloaded add() methods (Integer, Decimal, List<Integer>), a factorial() recursive method, and a static percentage() method. Test all from Execute Anonymous. Add a non-static &#39;Calculator&#39; class with instance state for running totals."'
@@ -158,7 +158,7 @@
           <div class="day-topic">Methods &amp; Functions</div>
           <div class="phase-dot w2"></div>
         </div>
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="9" data-phase="w2" data-week-label="Week 2" data-topic="Classes &amp; OOP"
           data-topics='["Class anatomy — properties, constructors, methods", "Constructor overloading", "Encapsulation — private fields + public getters/setters", "Inheritance — extends keyword", "Abstract classes and interfaces", "Inner classes — defining classes inside classes"]'
           data-practice='"Build an OOP model for a vehicle rental system. Create an abstract &#39;Vehicle&#39; class with shared fields (make, model, dailyRate). Build &#39;Car&#39; and &#39;Truck&#39; that extend Vehicle, each adding unique properties. Add a &#39;RentalCalculator&#39; inner class that computes the total cost."'
@@ -168,7 +168,7 @@
           <div class="day-topic">Classes &amp; OOP</div>
           <div class="phase-dot w2"></div>
         </div>
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="10" data-phase="w2" data-week-label="Week 2" data-topic="Access Modifiers &amp; Wrapper Classes"
           data-topics='["public, private, protected, global — what each means", "global vs public — when global is needed", "Wrapper class pattern — combining unrelated data", "@AuraEnabled on wrapper class properties", "Returning wrapper classes from Apex to LWC", "Virtual methods and override keyword"]'
           data-practice='"Build an &#39;AccountSummaryWrapper&#39; class with @AuraEnabled properties: account name, contact count, total opportunity value, and last activity date. Write an Apex method that queries all this data and returns a List<AccountSummaryWrapper>. Test from Execute Anonymous."'
@@ -178,7 +178,7 @@
           <div class="day-topic">Access Modifiers &amp; Wrapper Classes</div>
           <div class="phase-dot w2"></div>
         </div>
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="11" data-phase="w2" data-week-label="Week 2" data-topic="SOQL Basics"
           data-topics='["SELECT, FROM, WHERE — basic query structure", "Comparison operators in WHERE: =, !=, LIKE, IN, NOT IN", "ORDER BY, LIMIT, OFFSET", "Binding Apex variables in SOQL with :variable", "SELECT COUNT() and aggregate functions", "SOQL in the Developer Console Query Editor"]'
           data-practice='"Write 5 SOQL queries in Execute Anonymous: (1) all Accounts in &#39;Technology&#39; industry, (2) Contacts whose email ends in &#39;@gmail.com&#39; using LIKE, (3) top 10 Opportunities by Amount DESC, (4) COUNT of Contacts per Account, (5) Accounts created in the last 30 days."'
@@ -188,7 +188,7 @@
           <div class="day-topic">SOQL Basics</div>
           <div class="phase-dot w2"></div>
         </div>
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="12" data-phase="w2" data-week-label="Week 2" data-topic="SOQL — Relationships &amp; Advanced Queries"
           data-topics='["Parent-to-child relationship queries (subqueries)", "Child-to-parent queries using dot notation", "Multi-level relationship queries", "SOQL with null checks (field = null / field != null)", "Date literals: TODAY, LAST_N_DAYS:n, THIS_MONTH", "SOSL — Salesforce Object Search Language basics"]'
           data-practice='"Write a query that fetches all Accounts with their related Contacts and Opportunities in one query (subqueries). Write a Contact query that traverses to Account.Industry. Write a SOSL query that searches &#39;Acme&#39; across Account, Contact, and Lead. Handle null fields safely."'
@@ -198,7 +198,7 @@
           <div class="day-topic">SOQL — Relationships &amp; Advanced Queries</div>
           <div class="phase-dot w2"></div>
         </div>
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="13" data-phase="w2" data-week-label="Week 2" data-topic="DML Operations"
           data-topics='["insert — creating new records", "update — modifying existing records", "upsert — insert or update in one call", "delete and undelete", "Database.insert() with allOrNone flag", "Database.SaveResult — checking per-record success/failure", "Bulkifying DML — always work with Lists"]'
           data-practice='"Build a &#39;DataSeeder&#39; class that: (1) inserts 5 test Accounts, (2) updates all their Industry to &#39;Technology&#39;, (3) upserts a Contact using an external ID field, (4) deletes accounts whose name contains &#39;DELETE&#39;. Use Database.insert() with partial success and check SaveResults."'
@@ -208,7 +208,7 @@
           <div class="day-topic">DML Operations</div>
           <div class="phase-dot w2"></div>
         </div>
-        <div class="day-card w2" onclick="openDay(this)"
+        <div class="day-card w2" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="14" data-phase="w2" data-week-label="Week 2" data-topic="Mini Project — Account/Contact CRUD Service"
           data-topics='["Combining SOQL queries, DML, and OOP into a real service class", "A full AccountService class with create, read, update, delete methods", "Returning meaningful results and error messages", "Calling the service from Execute Anonymous to verify all operations"]'
           data-practice='"Build a complete &#39;AccountService&#39; class with methods: createAccount(name, industry), getAccountsByIndustry(industry), updateAccountRevenue(Id, Decimal), deleteAccount(Id), and getAccountWithContacts(Id). Each method handles errors gracefully. Run a full test sequence from Execute Anonymous."'
@@ -234,7 +234,7 @@
 
     <div class="week-group" id="w3">
       <div class="day-grid">
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="15" data-phase="w3" data-week-label="Week 3" data-topic="Exception Handling"
           data-topics='["try / catch / finally blocks", "Exception types: DmlException, NullPointerException, QueryException, LimitException", "Custom exceptions — extending Exception class", "throw — manually throwing exceptions", "Logging errors: System.debug vs custom logging object", "Re-throwing exceptions for callers to handle"]'
           data-practice='"Build an &#39;AccountImporter&#39; class that takes a list of account data maps and inserts them. Wrap each insert in try/catch. Throw a custom &#39;AccountImportException&#39; if Name is blank. Catch DmlException for field validation errors. Collect all errors and return them as a List<String>."'
@@ -244,7 +244,7 @@
           <div class="day-topic">Exception Handling</div>
           <div class="phase-dot w3"></div>
         </div>
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="16" data-phase="w3" data-week-label="Week 3" data-topic="Triggers — Basics"
           data-topics='["What is an Apex Trigger and when it fires", "Trigger events: before insert, before update, after insert, after update, before delete, after delete", "Trigger context variables: Trigger.new, Trigger.old, Trigger.newMap, Trigger.oldMap", "Trigger.isInsert, Trigger.isUpdate, Trigger.isBefore, Trigger.isAfter", "A simple field-defaulting before insert trigger"]'
           data-practice='"Write a &#39;ContactTrigger&#39; that: (1) before insert — sets Description to &#39;New Contact - {today&#39;s date}&#39; if blank, (2) before update — blocks the update if Email is cleared on an existing contact, (3) after insert — logs a System.debug with the new contact count. Test all three scenarios."'
@@ -254,7 +254,7 @@
           <div class="day-topic">Triggers — Basics</div>
           <div class="phase-dot w3"></div>
         </div>
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="17" data-phase="w3" data-week-label="Week 3" data-topic="Trigger Handler Pattern"
           data-topics='["Why one trigger per object matters", "Trigger Handler class pattern — separating logic from trigger", "Handler class structure: beforeInsert(), beforeUpdate(), afterInsert() methods", "Bypassing triggers in tests with a static flag", "Recursion prevention in triggers", "Real-world trigger: auto-populate Account fields from Contacts"]'
           data-practice='"Refactor Day 16&#39;s trigger to use a proper Handler pattern. Create &#39;ContactTrigger.trigger&#39; (thin — calls handler only) and &#39;ContactTriggerHandler.cls&#39; (all logic). Add a static bypass flag. Add a new after update method that updates the parent Account&#39;s &#39;Last_Contact_Activity__c&#39; field."'
@@ -264,7 +264,7 @@
           <div class="day-topic">Trigger Handler Pattern</div>
           <div class="phase-dot w3"></div>
         </div>
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="18" data-phase="w3" data-week-label="Week 3" data-topic="Governor Limits &amp; Bulkification"
           data-topics='["What are Governor Limits and why they exist", "Key limits: 100 SOQL, 150 DML, 50,000 records, 10,000 ms CPU", "Limits class — checking usage in real time", "SOQL in a loop — why it&#39;s the #1 mistake", "Bulkification pattern: collect into List, then DML/SOQL once", "Map<Id, SObject> for O(1) lookups in loops"]'
           data-practice='"Take a deliberately broken &#39;AccountContactSyncer&#39; class that has SOQL and DML inside loops. Profile it using Limits.getQueries() and Limits.getDmlStatements(). Rewrite it bulkified: one SOQL to get all data, Map for lookups, collect all updates into a List, one DML at the end."'
@@ -274,7 +274,7 @@
           <div class="day-topic">Governor Limits &amp; Bulkification</div>
           <div class="phase-dot w3"></div>
         </div>
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="19" data-phase="w3" data-week-label="Week 3" data-topic="Future Methods &amp; Callouts"
           data-topics='["@future annotation — run code asynchronously", "Why @future? Governor limits are separate from the calling transaction", "@future(callout=true) — making HTTP callouts from Apex", "Limitations of @future — no return values, no sObject params", "HttpRequest and HttpResponse classes", "JSON.deserialize for parsing callout responses"]'
           data-practice='"Build a &#39;SlackNotifier&#39; class with a @future(callout=true) method that sends a POST request to a Slack Webhook URL (use a free test webhook from webhook.site). Call it from a trigger after Account insert. Parse and log the HTTP response status and body."'
@@ -284,7 +284,7 @@
           <div class="day-topic">Future Methods &amp; Callouts</div>
           <div class="phase-dot w3"></div>
         </div>
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="20" data-phase="w3" data-week-label="Week 3" data-topic="Batch Apex"
           data-topics='["Database.Batchable interface — start(), execute(), finish()", "QueryLocator vs Iterable for start()", "Batch scope size — default 200", "Chaining batches — calling a second batch from finish()", "Database.executeBatch() — running a batch job", "Monitoring batch jobs in Setup → Apex Jobs"]'
           data-practice='"Write a &#39;ContactEmailNormalizerBatch&#39; that processes ALL Contacts in the org (potentially millions). In execute(), trim and lowercase each Contact&#39;s Email. In finish(), send an email report with total records processed. Run it with scope size 50 and monitor the Apex Jobs page."'
@@ -294,7 +294,7 @@
           <div class="day-topic">Batch Apex</div>
           <div class="phase-dot w3"></div>
         </div>
-        <div class="day-card w3" onclick="openDay(this)"
+        <div class="day-card w3" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="21" data-phase="w3" data-week-label="Week 3" data-topic="Scheduled &amp; Queueable Apex"
           data-topics='["Schedulable interface — execute() method", "CRON expression syntax in Salesforce", "System.schedule() — registering a scheduled job", "Queueable interface — execute(QueueableContext ctx)", "Database.enqueueJob() — kicking off a queueable", "Job chaining with queueables — calling enqueueJob() from execute()", "Queueable vs @future vs Batch — choosing the right tool"]'
           data-practice='"Build a &#39;DailyLeadCleanupJob&#39; that implements Schedulable and runs every day at 2 AM using a CRON expression. Inside, it enqueues a &#39;LeadScoringQueueable&#39; that updates Lead scores based on activity. The Queueable then chains to an email notification Queueable when done."'
@@ -320,7 +320,7 @@
 
     <div class="week-group" id="w4">
       <div class="day-grid">
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="22" data-phase="w4" data-week-label="Week 4" data-topic="Apex Test Classes — Basics"
           data-topics='["@isTest annotation on class and method", "@TestSetup — shared test data for all methods", "System.assertEquals(), System.assertNotEquals(), System.assert()", "Test.startTest() and Test.stopTest() — why they matter", "Test data isolation — no access to real org data by default", "Running tests from VS Code and Setup → Apex Test Execution"]'
           data-practice='"Write a full test class for your &#39;AccountService&#39; from Day 14. Write separate test methods for: create (assert Id is not null), read (assert correct count returned), update (assert new value persists), delete (assert record no longer exists). Achieve 100% coverage on AccountService."'
@@ -330,7 +330,7 @@
           <div class="day-topic">Apex Test Classes — Basics</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="23" data-phase="w4" data-week-label="Week 4" data-topic="Test Data Factories &amp; Mocking"
           data-topics='["Test Data Factory pattern — a reusable class that creates test sObjects", "Building TestDataFactory for Account, Contact, Opportunity", "Test.setMock() — mocking HTTP callouts in tests", "HttpCalloutMock interface — fake responses", "StaticResourceCalloutMock for complex responses", "Testing exception paths with try/catch in tests"]'
           data-practice='"Build a &#39;TestDataFactory&#39; class with createAccount(), createContact(), and createOpportunity() methods. Use it across 3 different test classes. Then write a test for the SlackNotifier from Day 19 using Test.setMock() to return a fake 200 OK response."'
@@ -340,7 +340,7 @@
           <div class="day-topic">Test Data Factories &amp; Mocking</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="24" data-phase="w4" data-week-label="Week 4" data-topic="Testing Triggers &amp; Batch Jobs"
           data-topics='["Testing before insert and before update trigger logic", "Triggering bulk scenarios in tests — insert 200+ records", "Testing that addError() blocks DML correctly", "Testing Batch Apex with Test.startTest/stopTest", "Testing Scheduled Apex with System.schedule() in a test", "Getting to 75% coverage for deployment"]'
           data-practice='"Write tests for your &#39;ContactTriggerHandler&#39; from Day 17. Test: (1) bulk insert of 200 Contacts sets Description correctly, (2) clearing Email throws an addError that blocks the update, (3) after update syncs parent Account. Write a test for your DailyLeadCleanupJob using System.schedule()."'
@@ -350,7 +350,7 @@
           <div class="day-topic">Testing Triggers &amp; Batch Jobs</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="25" data-phase="w4" data-week-label="Week 4" data-topic="Apex Security — Sharing, FLS &amp; CRUD"
           data-topics='["with sharing — enforces record-level sharing rules", "without sharing — bypasses sharing (use carefully)", "inherited sharing — inherits sharing from calling context", "Schema.sObjectType.fields — checking CRUD and FLS in code", "isAccessible(), isCreateable(), isUpdateable(), isDeletable()", "stripInaccessible() — stripping fields user can&#39;t see"]'
           data-practice='"Review all your Apex classes and trigger handlers. Add &#39;with sharing&#39; to every class. Add CRUD checks before any DML: assert the user has isCreateable() before insert. Use stripInaccessible() on a SOQL result before returning data to LWC. Test as a profile with limited permissions."'
@@ -360,7 +360,7 @@
           <div class="day-topic">Apex Security — Sharing, FLS &amp; CRUD</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="26" data-phase="w4" data-week-label="Week 4" data-topic="Apex with LWC — @AuraEnabled End-to-End"
           data-topics='["Designing Apex controller classes for LWC consumption", "Returning wrapper classes with @AuraEnabled properties", "Throwing AuraHandledException — passing user-friendly errors to LWC", "cacheable=true — when safe and when dangerous", "Debugging: reading Apex debug logs from LWC calls", "Testing @AuraEnabled methods with test classes"]'
           data-practice='"Build a complete &#39;OpportunityDashboardController&#39; Apex class designed for LWC. It returns a List<OpportunityWrapper> with stage, amount, owner name, and account name. Add AuraHandledException for auth errors. Write a test class for it. Then call it from a new LWC component using @wire."'
@@ -370,7 +370,7 @@
           <div class="day-topic">Apex with LWC — @AuraEnabled End-to-End</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="27" data-phase="w4" data-week-label="Week 4" data-topic="Design Patterns &amp; Code Quality"
           data-topics='["Service Layer pattern — separating controller from business logic", "Repository pattern — isolating SOQL queries", "Selector class pattern — all queries in one place", "Domain class pattern — object-specific logic", "Apex Enterprise Patterns overview", "ESLint for Apex (PMD) — common code quality rules"]'
           data-practice='"Refactor your AccountService from Day 14 into a 3-layer architecture: AccountSelector (all SOQL), AccountDomain (business rules), AccountService (orchestrates the other two). Each class has its own test class. Run PMD code analysis and fix any violations."'
@@ -380,7 +380,7 @@
           <div class="day-topic">Design Patterns &amp; Code Quality</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="28" data-phase="w4" data-week-label="Week 4" data-topic="Platform Events &amp; Change Data Capture"
           data-topics='["Platform Events — event-driven architecture on Salesforce", "Creating a Platform Event object in Setup", "Publishing events from Apex with EventBus.publish()", "Subscribing to events with an Apex trigger", "Change Data Capture (CDC) — subscribing to record changes", "Subscribing to Platform Events from LWC with empApi"]'
           data-practice='"Create a &#39;Deal_Alert__e&#39; Platform Event with fields: AccountName, DealSize, SalesRep. Build an Apex class that publishes the event when a new Opportunity over $50,000 is created. Build an Apex trigger on the event that creates a Task for the sales manager. Subscribe from LWC using empApi."'
@@ -390,7 +390,7 @@
           <div class="day-topic">Platform Events &amp; Change Data Capture</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="29" data-phase="w4" data-week-label="Week 4" data-topic="Deployment &amp; CI/CD Basics"
           data-topics='["Deployment options: Change Sets, SF CLI, VS Code", "sf project deploy start — deploying to a sandbox", "Running all tests on deploy with --test-level RunLocalTests", "Deployment validation (check-only deploy)", "SFDX project structure best practices", "GitHub Actions for automated Salesforce CI/CD (overview)"]'
           data-practice='"Deploy your full project (all Apex classes, triggers, test classes, LWC components) from your scratch org to a developer sandbox using the SF CLI. Run all tests during deployment. Fix any failures. Do a validation-only deploy first, then the real deployment."'
@@ -400,7 +400,7 @@
           <div class="day-topic">Deployment &amp; CI/CD Basics</div>
           <div class="phase-dot w4"></div>
         </div>
-        <div class="day-card w4" onclick="openDay(this)"
+        <div class="day-card w4" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
           data-day="30" data-phase="w4" data-week-label="Week 4" data-topic="🏆 Capstone Project"
           data-topics='["Plan and build a full &#39;Sales Intelligence Dashboard&#39; backend in Apex", "AccountDashboardController — returns wrapper data combining Accounts, Contacts, Opportunities", "Trigger on Opportunity — auto-flags &#39;At Risk&#39; if CloseDate < 7 days and Stage not Closed", "Batch job to monthly-reset &#39;Last_Quarter_Revenue__c&#39; field on all Accounts", "Scheduled job that runs the batch at midnight on the 1st of each month", "Platform Event published on every new Closed Won opportunity", "Full test coverage on all classes — target 90%+", "Deploy to sandbox with all tests passing"]'
           data-practice='"Build the complete Sales Intelligence backend. Wire it all together: Apex controller feeds an LWC dashboard, triggers enforce business rules, a batch + scheduled job handles housekeeping, and platform events fire on key actions. Test everything. Deploy. This is your portfolio piece."'
@@ -421,6 +421,7 @@
 <!-- ══════════════════════════════════════════════
      DRAWER
 ══════════════════════════════════════════════ -->
+<div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-header">
     <div>
@@ -509,7 +510,7 @@
         '</div>' +
       '</div>';
 
-    document.getElementById('drawer').classList.add('open');
+    showDrawer();
   }
 
 </script>

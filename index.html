@@ -14,9 +14,24 @@
 ══════════════════════════════════════════════════ -->
 <nav class="nav">
 
+  <!-- D5: SVG card-deck logo + DayDeck name -->
   <a class="nav-logo" href="#">
-    <div class="nav-logo-icon">✓</div>
-    Dey<em>Deck</em>
+    <div class="nav-logo-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+           xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- back card (shadow) -->
+        <rect x="4.5" y="5.5" width="9" height="7" rx="1.5"
+              fill="rgba(9,9,15,0.4)"/>
+        <!-- front card -->
+        <rect x="2.5" y="3.5" width="9" height="7" rx="1.5"
+              fill="#09090F" opacity="0.82"/>
+        <!-- front card lines representing content -->
+        <rect x="4"   y="5.5" width="3.5" height="1"   rx="0.5" fill="#F0C050" opacity="0.75"/>
+        <rect x="4"   y="7.5" width="5.5" height="1"   rx="0.5" fill="#F0C050" opacity="0.45"/>
+        <rect x="4"   y="9.5" width="4"   height="1"   rx="0.5" fill="#F0C050" opacity="0.45"/>
+      </svg>
+    </div>
+    Day<em>Deck</em>
   </a>
 
   <div class="nav-tabs" id="nav-tabs">
@@ -61,6 +76,10 @@
 
   </div>
 
+  <!-- D4: theme toggle -->
+  <button class="nav-theme-btn" id="theme-toggle"
+          aria-label="Toggle light / dark mode">☀️</button>
+
   <span class="nav-hint">click a day card → details</span>
 
 </nav>
@@ -69,17 +88,16 @@
      CONTENT FRAME  (study pages load here)
 ══════════════════════════════════════════════════ -->
 <div class="frame-shell">
-  <iframe class="content-frame" id="content-frame" title="Study plan content"></iframe>
+  <iframe class="content-frame" id="content-frame"
+          title="Study plan content"></iframe>
 </div>
 
 
 <!-- ══════════════════════════════════════════════════
-     TAB SWITCHING
-     T7: Active tab + iframe src are now set dynamically
-         from JS — no hardcoding in HTML required.
-     T5: document.title updates on every tab switch.
+     SCRIPTS
 ══════════════════════════════════════════════════ -->
 <script>
+  /* ── Tab switching (T7: dynamic, T5: title updates) ── */
   const tabs  = document.querySelectorAll('.nav-tab');
   const frame = document.getElementById('content-frame');
 
@@ -90,15 +108,42 @@
     document.title = 'DayDeck — ' + tab.textContent.trim();
   }
 
-  // Activate the first tab on page load
   activateTab(tabs[0]);
 
-  // Handle tab clicks
   document.getElementById('nav-tabs').addEventListener('click', function(e) {
     const tab = e.target.closest('.nav-tab');
     if (!tab) return;
     e.preventDefault();
     activateTab(tab);
+  });
+
+  /* ── D4: Dark / light mode toggle
+     Reads and writes localStorage('daydeck-theme').
+     Sets data-theme="light" on <html>; CSS variables
+     in [data-theme="light"] handle all the colour swaps.
+  ── */
+  const themeBtn = document.getElementById('theme-toggle');
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themeBtn.textContent = '🌙';
+      themeBtn.title = 'Switch to dark mode';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      themeBtn.textContent = '☀️';
+      themeBtn.title = 'Switch to light mode';
+    }
+  }
+
+  /* Restore preference saved from a previous visit */
+  applyTheme(localStorage.getItem('daydeck-theme') || 'dark');
+
+  themeBtn.addEventListener('click', function() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const next    = isLight ? 'dark' : 'light';
+    localStorage.setItem('daydeck-theme', next);
+    applyTheme(next);
   });
 </script>
 
