@@ -378,6 +378,34 @@ body {
 .day-card.active::before { opacity: 1; }
 .day-card.dimmed        { opacity: 0.2; pointer-events: none; }
 
+/* C6: effort indicator — small dot row in the bottom-left of each card
+   ●○○ green  = light day (setup, review, concept-only)
+   ●●○ gold   = normal day (standard topic + practice)
+   ●●● red    = heavy day (mini-project, capstone, multi-concept) */
+.day-card[data-effort]::after {
+  position: absolute;
+  bottom: 7px;
+  left: 10px;
+  font-size: 7px;
+  letter-spacing: 1.5px;
+  line-height: 1;
+}
+.day-card[data-effort="light"]::after  {
+  content: '●○○';
+  color: var(--green);
+  opacity: 0.55;
+}
+.day-card[data-effort="normal"]::after {
+  content: '●●○';
+  color: var(--accent);
+  opacity: 0.45;
+}
+.day-card[data-effort="heavy"]::after  {
+  content: '●●●';
+  color: var(--red);
+  opacity: 0.6;
+}
+
 /* D2: keyboard focus ring — visible only on keyboard nav, not mouse clicks */
 .day-card:focus-visible {
   outline: 2px solid var(--accent);
@@ -709,6 +737,15 @@ body {
   opacity: 0.8;
 }
 
+/* C4: difficulty level label shown on the SLDS card face */
+.entry-level {
+  font-family: var(--mono);
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-top: 5px;
+  color: var(--card-accent, var(--muted2));
+  opacity: 0.55;
+}
 
 /* ── Search bar  (slds-doc.html)
 ────────────────────────────────────────────────────────── */

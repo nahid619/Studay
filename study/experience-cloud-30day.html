@@ -58,6 +58,7 @@
         <div class="day-card colored"
           style="--card-accent: #0176D3;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="light"
           data-day="1"
           data-phase="w1"
           data-week-label="Week 1"
@@ -74,6 +75,7 @@
         <div class="day-card colored"
           style="--card-accent: #0176D3;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="2"
           data-phase="w1"
           data-week-label="Week 1"
@@ -90,6 +92,7 @@
         <div class="day-card colored"
           style="--card-accent: #0176D3;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="3"
           data-phase="w1"
           data-week-label="Week 1"
@@ -106,6 +109,7 @@
         <div class="day-card colored"
           style="--card-accent: #0176D3;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="4"
           data-phase="w1"
           data-week-label="Week 1"
@@ -122,6 +126,7 @@
         <div class="day-card colored"
           style="--card-accent: #0176D3;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="5"
           data-phase="w1"
           data-week-label="Week 1"
@@ -138,6 +143,7 @@
         <div class="day-card colored"
           style="--card-accent: #0176D3;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="6"
           data-phase="w1"
           data-week-label="Week 1"
@@ -154,6 +160,7 @@
         <div class="day-card colored"
           style="--card-accent: #0176D3;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
           data-day="7"
           data-phase="w1"
           data-week-label="Week 1"
@@ -185,6 +192,7 @@
         <div class="day-card colored"
           style="--card-accent: #2E7D32;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="8"
           data-phase="w2"
           data-week-label="Week 2"
@@ -201,6 +209,7 @@
         <div class="day-card colored"
           style="--card-accent: #2E7D32;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="9"
           data-phase="w2"
           data-week-label="Week 2"
@@ -217,6 +226,7 @@
         <div class="day-card colored"
           style="--card-accent: #2E7D32;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="10"
           data-phase="w2"
           data-week-label="Week 2"
@@ -233,6 +243,7 @@
         <div class="day-card colored"
           style="--card-accent: #2E7D32;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="11"
           data-phase="w2"
           data-week-label="Week 2"
@@ -249,6 +260,7 @@
         <div class="day-card colored"
           style="--card-accent: #2E7D32;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="12"
           data-phase="w2"
           data-week-label="Week 2"
@@ -265,6 +277,7 @@
         <div class="day-card colored"
           style="--card-accent: #2E7D32;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="13"
           data-phase="w2"
           data-week-label="Week 2"
@@ -281,17 +294,18 @@
         <div class="day-card colored"
           style="--card-accent: #2E7D32;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
           data-day="14"
           data-phase="w2"
           data-week-label="Week 2"
-          data-topic="Authentication, Login &amp; Registration"
+          data-topic="Week 1&#8211;2 Review &amp; Mini-Build"
           data-color="#2E7D32"
-          data-topics='["Login page customization: custom branding, background, forgot-password text", "Self-registration page: /s/SelfRegister backed by CommunitiesSelfRegController", "Social sign-on (SSO): Google, Facebook, LinkedIn auth providers", "SAML SSO for enterprise customers: federated identity from corporate IdP", "Auth Provider setup: Setup → Identity → Auth. Providers", "Registration Handler Apex class: maps external identity to internal Salesforce user", "Password policies for portal users: separate from internal user policies", "Two-factor authentication (2FA) for portal users"]'
-          data-practice='"Customize the Login page of your portal: change background, logo, and the &#39;Forgot Password&#39; text using Head Markup and Theme settings. Explore the CommunitiesSelfRegController Apex class — add a custom field (Company Name) to the registration form. Then look at how to configure a Google Auth Provider in Setup (do the configuration but you do not need to complete OAuth setup)."'
-          data-gains='["Login page customization", "CommunitiesSelfRegController", "SSO concepts", "Auth Providers", "Registration Handler", "2FA for portal"]'
-          data-sources='[{"t": "Customize Login and Registration", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_customize_login_reg.htm", "b": "docs"}, {"t": "Configure SSO for Experience Cloud", "u": "https://help.salesforce.com/s/articleView?id=sf.sso_provider_portal.htm", "b": "docs"}]'>
+          data-topics='["Revisit the 3 Experience Cloud concepts from Weeks 1&#8211;2 that felt least clear &#x2014; go back to the docs or re-do the practice in your org", "Check your gaps: can you create a site from scratch, configure navigation, add a standard component, set up a Sharing Set, and explain the Guest User model &#x2014; all without help?", "Plan your mini-build: sketch the page layout, list the standard components you will use, and identify any permission or sharing config required", "Build: a self-contained 'Support Overview' page using only standard components &#x2014; Banner, Case Deflection Search, Record List of open Cases filtered by the logged-in user, and a navigation link to 'Submit a Case'", "Test the page as both a Guest User (incognito) and a logged-in Community User &#x2014; verify each sees exactly what they should", "Identify what broke or looked wrong and note it &#x2014; these are your weak spots to focus on in Week 3"]'
+          data-practice='"Build the Support Overview page entirely from Builder &#x2014; no custom code. Configure the Record List to show only the current user&#39;s open Cases, sorted by CreatedDate DESC, 5 rows. Confirm Guest Users see the search and a 'Log in' message. Confirm logged-in users see their case list. Document gaps before Week 3."'
+          data-gains='["Week 1&#8211;2 Synthesis", "Standard Component Mastery", "Guest vs Member UX", "Sharing Verification", "Build Without Hints"]'
+          data-sources='[{"t": "Experience Cloud Standard Components", "u": "https://help.salesforce.com/s/articleView?id=sf.community_builder_standard_components.htm", "b": "docs"}, {"t": "Sharing Sets &#x2014; Setup Guide", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_setting_light_users.htm", "b": "docs"}]'>
           <div class="day-num">Day 14</div>
-          <div class="day-topic">Authentication, Login &amp; Registration</div>
+          <div class="day-topic">Week 1&#8211;2 Review &amp; Mini-Build</div>
           <div class="phase-dot colored" style="--card-accent: #2E7D32;"></div>
         </div>
       </div>
@@ -312,6 +326,7 @@
         <div class="day-card colored"
           style="--card-accent: #7b61ff;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="15"
           data-phase="w3"
           data-week-label="Week 3"
@@ -328,6 +343,7 @@
         <div class="day-card colored"
           style="--card-accent: #7b61ff;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
           data-day="16"
           data-phase="w3"
           data-week-label="Week 3"
@@ -344,6 +360,7 @@
         <div class="day-card colored"
           style="--card-accent: #7b61ff;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
           data-day="17"
           data-phase="w3"
           data-week-label="Week 3"
@@ -360,6 +377,7 @@
         <div class="day-card colored"
           style="--card-accent: #7b61ff;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="18"
           data-phase="w3"
           data-week-label="Week 3"
@@ -376,6 +394,7 @@
         <div class="day-card colored"
           style="--card-accent: #7b61ff;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="19"
           data-phase="w3"
           data-week-label="Week 3"
@@ -392,6 +411,7 @@
         <div class="day-card colored"
           style="--card-accent: #7b61ff;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="20"
           data-phase="w3"
           data-week-label="Week 3"
@@ -408,6 +428,7 @@
         <div class="day-card colored"
           style="--card-accent: #7b61ff;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
           data-day="21"
           data-phase="w3"
           data-week-label="Week 3"
@@ -439,6 +460,7 @@
         <div class="day-card colored"
           style="--card-accent: #E65100;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="22"
           data-phase="w4"
           data-week-label="Week 4"
@@ -455,6 +477,7 @@
         <div class="day-card colored"
           style="--card-accent: #E65100;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="23"
           data-phase="w4"
           data-week-label="Week 4"
@@ -471,6 +494,7 @@
         <div class="day-card colored"
           style="--card-accent: #E65100;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="24"
           data-phase="w4"
           data-week-label="Week 4"
@@ -487,6 +511,7 @@
         <div class="day-card colored"
           style="--card-accent: #E65100;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
           data-day="25"
           data-phase="w4"
           data-week-label="Week 4"
@@ -503,6 +528,7 @@
         <div class="day-card colored"
           style="--card-accent: #E65100;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
           data-day="26"
           data-phase="w4"
           data-week-label="Week 4"
@@ -519,6 +545,7 @@
         <div class="day-card colored"
           style="--card-accent: #E65100;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
           data-day="27"
           data-phase="w4"
           data-week-label="Week 4"
@@ -535,6 +562,7 @@
         <div class="day-card colored"
           style="--card-accent: #E65100;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
           data-day="28"
           data-phase="w4"
           data-week-label="Week 4"
@@ -551,22 +579,24 @@
         <div class="day-card colored"
           style="--card-accent: #E65100;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
           data-day="29"
           data-phase="w4"
           data-week-label="Week 4"
-          data-topic="Best Practices &amp; Common Mistakes"
+          data-topic="Capstone Prep &#x2014; Plan, Scaffold &amp; Secure"
           data-color="#E65100"
-          data-topics='["Performance: Use LWR for all new sites, use cacheable=true on Apex, optimize images, avoid heavy JS in Head Markup", "Security: ALWAYS use with sharing, set restrictive OWD, configure Sharing Sets properly, never over-expose Guest User", "Development: Use LWC over Aura, write Apex test classes (75%+ coverage), use Custom Labels for translatable text, NEVER hardcode record IDs or URLs", "Design: mobile-first design, consistent branding, always build empty states, use loading indicators", "Deployment: maintain a post-deploy checklist, test as every user type (Guest, Customer Community, Portal Admin) after every deploy", "The hardest mistakes to debug: Guest User data not appearing (missing Sharing Rule), portal user can&#39;t see records (missing Sharing Set), LWC works in internal app but not in portal (forgot lightningCommunity__Page target)", "Performance killers to avoid: SOQL inside loops in portal Apex, querying all records without filtering by current user, loading 10+ components on a single portal page"]'
-          data-practice='"Do a full security audit of your portal: (1) Log in as Guest User and confirm they see ONLY what they should. (2) Log in as a Customer Community User and verify Sharing Sets are working. (3) Check every Apex class used in your portal for &#39;with sharing&#39;. (4) Try to access a Case record directly via URL as Guest User — confirm it is blocked. (5) Run your LWC components through the SLDS Linter."'
-          data-gains='["Performance best practices", "Security audit pattern", "Dev best practices", "Common debug scenarios", "Post-deploy verification", "SOQL performance in portal"]'
-          data-sources='[{"t": "Experience Cloud Best Practices", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev_best_practices.htm", "b": "docs"}, {"t": "Experience Cloud Security Review Checklist", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_security.htm", "b": "docs"}]'>
+          data-topics='["Map out the 5 pages of your Customer Support Portal: Home, My Cases, Submit Case, Knowledge Base, My Profile &#x2014; define the URL, audience visibility, and components for each", "Create a new LWR site using the 'Build Your Own' template in your scratch org &#x2014; do NOT use a pre-built template", "Set up the navigation skeleton: add all 5 pages as nav items, configure member-only vs public visibility", "Create the folder structure for your custom LWC components: portalWelcomeBanner, myCaseList, knowledgeSearch", "Configure the security layer before writing any code: Sharing Set for Cases (Case.AccountId = User.Contact.AccountId), Guest User Sharing Rule for Knowledge (IsVisibleInPkb = true), Customer Community User profile object permissions", "Confirm all licenses are in place: verify a test Community User exists and can log in to your site", "Write out your component communication plan: which use LMS, which use CustomEvent, which fetch data via @wire"]'
+          data-practice='"Complete all 7 planning tasks before writing a single line of custom code. By the end of Day 29 you must have: a live LWR site with 5 placeholder pages, functional navigation, Sharing Set configured and tested, Guest User Knowledge sharing rule active, and a test Community User who can log in. Day 30 is build-only &#x2014; arrive with a working skeleton and you execute instead of plan."'
+          data-gains='["Portal Architecture Planning", "LWR Site Creation", "Security-First Setup", "Sharing Set + Guest Rule", "Component Communication Design", "Scaffold Before Code"]'
+          data-sources='[{"t": "Build Your Own LWR Site", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_template_lwr.htm", "b": "docs"}, {"t": "Experience Cloud Security Guide", "u": "https://help.salesforce.com/s/articleView?id=sf.networks_security.htm", "b": "docs"}]'>
           <div class="day-num">Day 29</div>
-          <div class="day-topic">Best Practices &amp; Common Mistakes</div>
+          <div class="day-topic">Capstone Prep &#x2014; Plan, Scaffold &amp; Secure</div>
           <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
         </div>
         <div class="day-card colored"
           style="--card-accent: #E65100;"
           onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
           data-day="30"
           data-phase="w4"
           data-week-label="Week 4"
@@ -576,10 +606,10 @@
           data-practice='"Build the complete Customer Support Portal. It must have: 5 pages (Home, Cases, Submit Case, Knowledge, Profile), custom LWC with Builder-configurable properties, custom Apex with test classes, CMS-driven FAQ content, audience-based personalization for Guest vs Member, full custom branding, functional navigation, and Knowledge-powered case deflection. Test as Guest, Customer Community User, and Admin."'
           data-gains='["Full portal build", "End-to-end integration", "Production-ready security", "Real-world personalization", "Complete deployment workflow", "Boss-level demo"]'
           data-sources='[{"t": "Experience Cloud Specialist Superbadge", "u": "https://trailhead.salesforce.com/en/content/learn/superbadges/superbadge_community_cloud", "b": "trail"}, {"t": "Experience Cloud Developer Guide", "u": "https://developer.salesforce.com/docs/atlas.en-us.communities_dev.meta/communities_dev/communities_dev.htm", "b": "docs"}]'>
+          <div class="day-type">&#x1F3C6; capstone</div>
           <div class="day-num">Day 30</div>
           <div class="day-topic">🏆 Capstone — Full Customer Support Portal</div>
           <div class="phase-dot colored" style="--card-accent: #E65100;"></div>
-          <div class="day-type">&#x1F3C6; capstone</div>
         </div>
       </div>
     </div>
@@ -587,7 +617,7 @@
 </div>
 
 <!-- DRAWER -->
-<div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
+        <div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
 <div class="drawer" id="drawer">
   <div class="drawer-header">
     <div>
@@ -607,10 +637,7 @@
 <script src="daydeck-core.js"></script>
 <script>
 
-  /* ── Open drawer  (Experience Cloud: topics + practice + gains + resources)
-     Uses per-card hex color system via data-color attribute.
-     hexToRgba() comes from daydeck-core.js.
-  ── */
+  /* ── Open drawer ── */
   function openDay(card) {
     currentCard = card;
     document.querySelectorAll('.day-card.active')
@@ -634,7 +661,10 @@
     badge.style.setProperty('--card-accent-bg', hexToRgba(color, 0.1));
     badge.textContent = 'Day ' + day + ' \u00b7 ' + wLabel;
     document.getElementById('d-topic').textContent = topic;
-    document.getElementById('d-week').textContent  = wLabel;
+
+    const effortLabel = { light: '\u25cf\u25cb\u25cb light', normal: '\u25cf\u25cf\u25cb normal', heavy: '\u25cf\u25cf\u25cf heavy \u2014 plan extra time' };
+    const effort = card.dataset.effort || 'normal';
+    document.getElementById('d-week').textContent = wLabel + '  \u00b7  ' + (effortLabel[effort] || '');
 
     updateNavButtons(card);
 
@@ -682,6 +712,7 @@
   }
 
 </script>
+
 
 </body>
 </html>
