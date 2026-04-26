@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python 40-Day Plan</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">&#x1F40D; 40-Day Study Plan &middot; 1 hour/day</div>
+  <h1 class="hero-title">Python &mdash; <span>Zero to Production</span></h1>
+  <p class="hero-desc">A structured daily roadmap from your first print() to shipping a production-ready CLI tool, web scraper, REST API, and data analysis pipeline. 6 weeks cover Python foundations, data structures, advanced functions &amp; OOP, the Python ecosystem (regex, APIs, databases, testing, concurrency), and four real-world projects.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">40</div><div class="stat-label">Total days</div></div>
+    <div class="stat"><div class="stat-val">40h</div><div class="stat-label">Total time</div></div>
+    <div class="stat"><div class="stat-val">1h</div><div class="stat-label">Per day</div></div>
+    <div class="stat"><div class="stat-val">6</div><div class="stat-label">Weeks</div></div>
+    <div class="stat"><div class="stat-val">4</div><div class="stat-label">Projects</div></div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">filter:</span>
+  <button class="filter-btn active" onclick="setFilter('all', this)"><span class="filter-dot dot-all"></span>all</button>
+  <button class="filter-btn" onclick="setFilter('w1', this)"><span class="filter-dot" style="background:#06d6a0;"></span>week 1</button>
+  <button class="filter-btn" onclick="setFilter('w2', this)"><span class="filter-dot" style="background:#00d4ff;"></span>week 2</button>
+  <button class="filter-btn" onclick="setFilter('w3', this)"><span class="filter-dot" style="background:#ffd166;"></span>week 3</button>
+  <button class="filter-btn" onclick="setFilter('w4', this)"><span class="filter-dot" style="background:#7b61ff;"></span>week 4</button>
+  <button class="filter-btn" onclick="setFilter('w5', this)"><span class="filter-dot" style="background:#ff6b6b;"></span>week 5</button>
+  <button class="filter-btn" onclick="setFilter('w6', this)"><span class="filter-dot" style="background:#ffd166;"></span>week 6</button>
+  <div class="week-jump">
+    <span class="week-jump-label">jump:</span>
+    <select onchange="jumpWeek(this.value)">
+      <option value="w1">Week 1 &mdash; Python Foundations</option>
+      <option value="w2">Week 2 &mdash; Data Structures &amp; Collections</option>
+      <option value="w3">Week 3 &mdash; Functions, Modules &amp; File Handling</option>
+      <option value="w4">Week 4 &mdash; Object-Oriented Programming</option>
+      <option value="w5">Week 5 &mdash; The Python Ecosystem</option>
+      <option value="w6">Week 6 &mdash; Projects</option>
+    </select>
+  </div>
+</div>
+
+<!-- PLAN BODY -->
+<div class="plan-body">
+
+  <!-- WEEK 1 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(6,214,160,0.12);color:#06d6a0;">Week 1</span>
+      <span class="phase-title">Python Foundations</span>
+      <span class="phase-meta">Days 1 &ndash; 7</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Install Python, understand how it thinks, and write real programs using variables, strings, operators, loops, and functions</div>
+    <div class="week-group" id="w1">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="light"
+          data-day="1"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-color="#06d6a0"
+          data-topic="Setup, Installation &amp; Your First Program"
+          data-topics='[&quot;What Python is and why it dominates — web, data science, automation, AI&quot;, &quot;Python 2 vs Python 3 — always use 3.10+ for new work&quot;, &quot;Installing Python on Windows/Mac/Linux — checking the &#39;Add to PATH&#39; box&quot;, &quot;VS Code setup: Python extension, linting, formatting with Black&quot;, &quot;The Python REPL (interactive shell) — your instant sandbox&quot;, &quot;Running a .py file from the terminal: python hello.py vs python3 hello.py&quot;, &quot;print() — your first function&quot;, &quot;Comments with # and multi-line strings as docstrings&quot;, &quot;sys and platform modules: checking your Python version programmatically&quot;]'
+          data-practice='&quot;Install Python and VS Code. Verify installation with python --version. Open the REPL and run 2 + 2. Create hello.py that prints your name, today&#39;s date using the datetime module, and your Python version using sys.version. Run it from the terminal.&quot;'
+          data-gains='[&quot;Python installed&quot;, &quot;VS Code configured&quot;, &quot;REPL usage&quot;, &quot;First .py script&quot;, &quot;terminal workflow&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Intro &amp; Syntax&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_intro.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Official Python Beginner&#39;s Guide&quot;, &quot;u&quot;: &quot;https://wiki.python.org/moin/BeginnersGuide/Download&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 01</div>
+          <div class="day-topic">Setup, Installation &amp; Your First Program</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="2"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-color="#06d6a0"
+          data-topic="Variables, Data Types &amp; Type Conversion"
+          data-topics='[&quot;Variables: labeled boxes in memory — dynamic typing means no type declaration needed&quot;, &quot;Core types: int, float, str, bool, NoneType&quot;, &quot;type() function — inspect any variable&#39;s type at runtime&quot;, &quot;Naming rules: snake_case convention, can&#39;t start with a number, case-sensitive&quot;, &quot;Multiple assignment: a, b, c = 1, 2, 3 and a = b = c = 0&quot;, &quot;Type conversion (casting): int(), float(), str(), bool()&quot;, &quot;Truthy and falsy values — 0, &#39;&#39;, None, [], {} are all falsy&quot;, &quot;Constants convention: UPPER_SNAKE_CASE (Python has no true constants)&quot;, &quot;id() function — every object has a unique ID in memory&quot;, &quot;W3Schools addition: Python Numbers — int, float, complex (j suffix for imaginary)&quot;]'
+          data-practice='&quot;Build a &#39;User Profile&#39; script: declare variables for name (str), age (int), height (float), is_premium (bool), referral_code (None). Print each with its type using type(). Convert age to string and concatenate. Use f-strings to print a formatted profile card. Test what happens when you cast &#39;3.14&#39; to int vs float.&quot;'
+          data-gains='[&quot;5 core data types&quot;, &quot;type()&quot;, &quot;casting&quot;, &quot;truthy/falsy&quot;, &quot;snake_case&quot;, &quot;f-strings&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Variables &amp; Data Types&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_variables.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Variables in Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-variables/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 02</div>
+          <div class="day-topic">Variables, Data Types &amp; Type Conversion</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="3"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-color="#06d6a0"
+          data-topic="Strings — The Complete Guide"
+          data-topics='[&quot;String creation: single, double, triple-quoted strings&quot;, &quot;Escape characters: \\n (newline), \\t (tab), \\\\ (backslash), \\&#39; (single quote)&quot;, &quot;String indexing: s[0], s[-1] (negative indexing from the end)&quot;, &quot;String slicing: s[start:stop:step] — the colon operator&quot;, &quot;String immutability — you can&#39;t change a character in place&quot;, &quot;String methods: upper(), lower(), strip(), lstrip(), rstrip(), split(), join(), replace(), find(), count(), startswith(), endswith(), zfill(), center(), ljust(), rjust()&quot;, &quot;String formatting: f-strings (Python 3.6+), .format(), % operator (legacy)&quot;, &quot;Advanced f-string formatting: {value:.2f}, {value:>10}, {value:,}, {value:0>5}&quot;, &quot;String multiplication: &#39;ha&#39; * 3 = &#39;hahaha&#39;&quot;, &quot;Checking membership: &#39;world&#39; in &#39;hello world&#39; → True&quot;, &quot;W3Schools addition: string encode/decode methods and string methods reference&quot;]'
+          data-practice='&quot;Build a text analysis tool: take a multi-sentence string, count words, count vowels/consonants, find the longest word, count sentence frequency of each word (top 5). Use at least 8 different string methods. Bonus: build a basic Caesar cipher that shifts each letter by N positions.&quot;'
+          data-gains='[&quot;indexing/slicing&quot;, &quot;immutability&quot;, &quot;15+ string methods&quot;, &quot;advanced f-string formatting&quot;, &quot;string algorithms&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Strings&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_strings.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Strings and Character Data&quot;, &quot;u&quot;: &quot;https://realpython.com/python-strings/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 03</div>
+          <div class="day-topic">Strings — The Complete Guide</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="4"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-color="#06d6a0"
+          data-topic="Operators — All Types"
+          data-topics='[&quot;Arithmetic: + - * / // % ** — note that / always returns float, // always returns int&quot;, &quot;Comparison: == != < > <= >= — all return True or False&quot;, &quot;Logical: and or not — short-circuit evaluation (Python stops early if result is known)&quot;, &quot;Assignment: = += -= *= /= //= %= **= — compound assignment&quot;, &quot;Identity operators: is and is not — checks if two names point to the SAME object in memory (not equal value)&quot;, &quot;Membership operators: in and not in — checks if value exists in a collection&quot;, &quot;Bitwise operators: &amp; | ^ ~ << >> — for binary operations (less common but interview staple)&quot;, &quot;Walrus operator := (Python 3.8+) — assign AND use in one expression inside if/while&quot;, &quot;Operator precedence: ** → unary → * / // % → + - → comparisons → not → and → or&quot;, &quot;W3Schools addition: Python Numbers arithmetic — abs(), pow(), round(), divmod()&quot;]'
+          data-practice='&quot;Build an eligibility checker: ask for age, salary, and credit score. Use logical operators (and, or, not) to check loan eligibility criteria. Use the walrus operator := to assign and check a computed risk_score in one line. Use bitwise &amp; to set permission flags (READ=1, WRITE=2, ADMIN=4). Print which permissions a combined flag value grants.&quot;'
+          data-gains='[&quot;all 7 operator types&quot;, &quot;short-circuit logic&quot;, &quot;walrus := operator&quot;, &quot;identity vs equality&quot;, &quot;bitwise flags&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Operators&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_operators.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Operators and Expressions&quot;, &quot;u&quot;: &quot;https://realpython.com/python-operators-expressions/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 04</div>
+          <div class="day-topic">Operators — All Types</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="5"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-color="#06d6a0"
+          data-topic="Control Flow — if / elif / else &amp; match/case"
+          data-topics='[&quot;if / elif / else — the basic conditional structure&quot;, &quot;Ternary / conditional expression: value = x if condition else y&quot;, &quot;Nested conditionals — and the danger of deeply nested code&quot;, &quot;match/case statement (Python 3.10+) — Python&#39;s switch equivalent, far more powerful&quot;, &quot;match with guard clauses: case x if x > 0: — adds conditions to a case&quot;, &quot;match with OR patterns: case &#39;a&#39; | &#39;b&#39; | &#39;c&#39;:&quot;, &quot;match with structural pattern matching on tuples, dicts, and objects&quot;, &quot;pass statement — placeholder for an empty block&quot;, &quot;Best practice: prefer early return / early exit over deep nesting (guard clauses pattern)&quot;, &quot;W3Schools addition: Python Booleans — all about truthy/falsy in conditionals&quot;]'
+          data-practice='&quot;Build a command router using match/case (Python 3.10+) that handles commands like &#39;help&#39;, &#39;quit&#39;, &#39;add <item>&#39;, &#39;delete <id>&#39;. Each case should print a different response. Then rewrite the same logic using if/elif for comparison. Build a grade classifier that returns A/B/C/D/F using both a chain of if/elif and a ternary expression.&quot;'
+          data-gains='[&quot;if/elif/else&quot;, &quot;ternary expression&quot;, &quot;match/case Python 3.10+&quot;, &quot;guard clauses&quot;, &quot;structural pattern matching&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python If/Else&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_conditions.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — match/case (Python 3.10)&quot;, &quot;u&quot;: &quot;https://realpython.com/python310-new-features/#structural-pattern-matching&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 05</div>
+          <div class="day-topic">Control Flow — if / elif / else &amp; match/case</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="6"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-color="#06d6a0"
+          data-topic="Loops — for, while &amp; Iteration Mastery"
+          data-topics='[&quot;for loop: iterating over any iterable (list, string, range, dict, file)&quot;, &quot;range(start, stop, step) — generating number sequences&quot;, &quot;while loop — condition-controlled repetition&quot;, &quot;break: exit the loop immediately&quot;, &quot;continue: skip to the next iteration&quot;, &quot;else clause on loops — runs only if the loop completed WITHOUT a break&quot;, &quot;Nested loops — and how to break out of nested loops using a flag or exception&quot;, &quot;enumerate(iterable, start=0) — get index AND value simultaneously&quot;, &quot;zip(a, b) — iterate over two iterables in parallel&quot;, &quot;W3Schools addition: Python Arrays — difference between lists and array module, when to use each&quot;, &quot;Loop patterns: accumulator, counter, find-first, all/any using built-ins&quot;]'
+          data-practice='&quot;Build a multiplication table generator using nested for loops. Then build a number guessing game using a while loop with break: generate a random number, give the user 5 tries, tell them &#39;too high&#39;/&#39;too low&#39;, use the for-else pattern to show a &#39;you lose&#39; message if all attempts are used. Use enumerate to show attempt number. Use zip to print a parallel list of attempts and guesses.&quot;'
+          data-gains='[&quot;for loop&quot;, &quot;while loop&quot;, &quot;break/continue/else&quot;, &quot;range()&quot;, &quot;enumerate()&quot;, &quot;zip()&quot;, &quot;loop patterns&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python For Loops &amp; While Loops&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_for_loops.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Python for Loops&quot;, &quot;u&quot;: &quot;https://realpython.com/python-for-loop/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 06</div>
+          <div class="day-topic">Loops — for, while &amp; Iteration Mastery</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="7"
+          data-phase="w1"
+          data-week-label="Week 1"
+          data-color="#06d6a0"
+          data-topic="Functions &amp; Scope (LEGB Rule)"
+          data-topics='[&quot;Defining functions: def keyword, parameters, return values&quot;, &quot;Default parameter values: def greet(name, greeting=&#39;Hello&#39;):&quot;, &quot;Positional vs keyword arguments when calling&quot;, &quot;Return multiple values: Python returns a tuple — a, b = my_func()&quot;, &quot;Docstrings: triple-quoted strings immediately after def — the Python standard&quot;, &quot;Scope — the LEGB rule: Local → Enclosing → Global → Built-in&quot;, &quot;global keyword: declare that a variable inside a function refers to the global scope&quot;, &quot;nonlocal keyword: used in nested functions to refer to the enclosing function&#39;s scope&quot;, &quot;Functions as first-class objects: assign to variables, pass as arguments, return from functions&quot;, &quot;W3Schools addition: Python Scope — dedicated coverage of LEGB with examples&quot;, &quot;Pure functions vs side effects — why pure functions are easier to test and reason about&quot;]'
+          data-practice='&quot;Build a simple calculator as a function library: add(), subtract(), multiply(), divide(), power(). Each function must have a docstring. Add a global HISTORY list and a function log_operation() that appends to it using global keyword. Build a make_adder(n) function that returns a closure — make_adder(5)(3) should return 8. Demonstrate LEGB by intentionally shadowing a built-in name and showing the issue.&quot;'
+          data-gains='[&quot;def/return&quot;, &quot;default params&quot;, &quot;LEGB scope rule&quot;, &quot;global/nonlocal&quot;, &quot;docstrings&quot;, &quot;closures intro&quot;, &quot;pure functions&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Functions &amp; Scope&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_functions.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Python Scope and the LEGB Rule&quot;, &quot;u&quot;: &quot;https://realpython.com/python-scope-legb-rule/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 07</div>
+          <div class="day-topic">Functions &amp; Scope (LEGB Rule)</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(0,212,255,0.12);color:#00d4ff;">Week 2</span>
+      <span class="phase-title">Data Structures &amp; Collections</span>
+      <span class="phase-meta">Days 8 &ndash; 14</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Master Python&#39;s four built-in data structures, comprehensions, and functional built-ins — the core tools of every Python program</div>
+    <div class="week-group" id="w2">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="8"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-color="#00d4ff"
+          data-topic="Lists — The Workhorse"
+          data-topics='[&quot;Creating lists: literals, list(), list comprehension&quot;, &quot;Indexing and negative indexing&quot;, &quot;Slicing: list[start:stop:step], reversing with [::-1]&quot;, &quot;List methods: append(), insert(), extend(), remove(), pop(), del, clear()&quot;, &quot;Searching: index(), count(), in operator&quot;, &quot;Sorting: sort() (in-place), sorted() (new list), reverse=True, key=lambda&quot;, &quot;Copying: assignment is NOT a copy — use .copy(), list(), or slicing [:]&quot;, &quot;Shallow copy vs deep copy: copy.deepcopy() for nested structures&quot;, &quot;Nested lists (2D matrices): accessing with [row][col]&quot;, &quot;List as stack: append() + pop()&quot;, &quot;List as queue: append() + pop(0) — note: collections.deque is faster for this&quot;, &quot;Built-in functions: len(), sum(), min(), max(), any(), all()&quot;]'
+          data-practice='&quot;Build a student grade manager: use a list of dicts [{name, score}]. Implement add_student(), remove_student(), find_student(), get_top_n(n), calculate_class_average(), get_grade_distribution() (count of A/B/C/D/F). Sort by score. Find the median manually (sort and pick middle). Demonstrate the shallow copy trap by modifying a copied list of lists.&quot;'
+          data-gains='[&quot;list CRUD&quot;, &quot;sort/sorted/key&quot;, &quot;shallow vs deep copy&quot;, &quot;2D lists&quot;, &quot;list as stack/queue&quot;, &quot;builtin aggregators&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Lists&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_lists.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Python Lists and Tuples&quot;, &quot;u&quot;: &quot;https://realpython.com/python-lists-tuples/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 08</div>
+          <div class="day-topic">Lists — The Workhorse</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="9"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-color="#00d4ff"
+          data-topic="Tuples"
+          data-topics='[&quot;Tuple syntax: (1, 2, 3) — and the one-element gotcha: (1,) not (1)&quot;, &quot;Tuples are immutable: you cannot change, add, or remove items after creation&quot;, &quot;When to use tuple vs list: tuples for fixed data (coordinates, RGB, DB records), lists for changeable data&quot;, &quot;Tuple unpacking: x, y = (10, 20) — Pythonic multi-assignment&quot;, &quot;Extended unpacking with *: first, *rest = (1, 2, 3, 4, 5)&quot;, &quot;Tuple as dictionary keys (lists can&#39;t be — they&#39;re mutable)&quot;, &quot;Named tuples from collections.namedtuple — readable tuples with field names&quot;, &quot;Tuples are faster than lists for iteration — prefer tuples for constant sequences&quot;, &quot;Tuple methods: index(), count() — the only two&quot;, &quot;Returning multiple values from functions as tuples&quot;]'
+          data-practice='&quot;Build a coordinate system using tuples: represent 2D points as (x, y). Write distance(p1, p2) using tuple unpacking. Build a color palette as a list of named tuples: Color = namedtuple(&#39;Color&#39;, [&#39;name&#39;, &#39;hex&#39;, &#39;rgb&#39;]). Add 5 colors. Print them, access by name (color.hex). Demonstrate why tuples work as dict keys but lists don&#39;t.&quot;'
+          data-gains='[&quot;tuple immutability&quot;, &quot;one-element syntax&quot;, &quot;tuple unpacking&quot;, &quot;*rest unpacking&quot;, &quot;namedtuple&quot;, &quot;tuple as dict key&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Tuples&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_tuples.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — namedtuple in Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-namedtuple/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 09</div>
+          <div class="day-topic">Tuples</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="10"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-color="#00d4ff"
+          data-topic="Sets"
+          data-topics='[&quot;Set syntax: {1, 2, 3} — and empty set: set() NOT {} (that makes a dict)&quot;, &quot;Sets store UNIQUE values — duplicates are silently dropped&quot;, &quot;Sets are UNORDERED — no indexing, no slicing&quot;, &quot;Blazing fast membership testing: in operator on a set is O(1) vs O(n) for a list&quot;, &quot;Set methods: add(), remove(), discard() (no error if missing), pop(), clear()&quot;, &quot;Set operations: union (|), intersection (&amp;), difference (-), symmetric_difference (^)&quot;, &quot;Set comparisons: issubset(), issuperset(), isdisjoint()&quot;, &quot;Frozenset: an immutable set — can be used as a dict key&quot;, &quot;Common pattern: remove duplicates from a list with list(set(my_list))&quot;, &quot;W3Schools addition: Set methods reference — union(), intersection(), difference() method versions alongside operator versions&quot;]'
+          data-practice='&quot;Build a tag system for articles: each article has a set of tags. Implement find_common_tags(articles), find_unique_to(article1, articles), find_articles_with_tag(tag), most_popular_tags(). Use all four set operations (|, &amp;, -, ^). Convert a list of 1000 random numbers to a set and measure the speed of &#39;in&#39; check vs the original list using time.time().&quot;'
+          data-gains='[&quot;set uniqueness&quot;, &quot;set vs list performance&quot;, &quot;4 set operations&quot;, &quot;frozenset&quot;, &quot;deduplication pattern&quot;, &quot;O(1) lookup&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Sets&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_sets.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Sets in Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-sets/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 10</div>
+          <div class="day-topic">Sets</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="11"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-color="#00d4ff"
+          data-topic="Dictionaries — The Power Tool"
+          data-topics='[&quot;Dictionary syntax: {key: value} — keys must be immutable (str, int, tuple)&quot;, &quot;Accessing values: d[key] — raises KeyError if missing; d.get(key, default) — safe&quot;, &quot;Adding and updating: d[key] = value, d.update({...})&quot;, &quot;Removing: del d[key], d.pop(key), d.popitem() (last inserted), d.clear()&quot;, &quot;Iterating: for k in d (keys), for v in d.values(), for k, v in d.items()&quot;, &quot;Dict methods: keys(), values(), items(), get(), setdefault(), update()&quot;, &quot;Dict comprehension: {k: v for k, v in pairs}&quot;, &quot;Nested dicts: accessing with d[&#39;level1&#39;][&#39;level2&#39;] or chained .get()&quot;, &quot;Merging dicts: {**dict1, **dict2} or | operator (Python 3.9+)&quot;, &quot;collections.defaultdict — auto-creates missing keys&quot;, &quot;collections.Counter — specialized dict for counting&quot;, &quot;collections.OrderedDict — ordered dict (regular dicts are ordered in Python 3.7+)&quot;]'
+          data-practice='&quot;Build an inventory management system using dicts: {product_id: {name, price, quantity}}. Implement add_product(), update_stock(), remove_product(), search_by_name(), get_total_value(), get_low_stock_items(threshold). Use defaultdict to group products by category. Use Counter to find the most-ordered items from a list of order records.&quot;'
+          data-gains='[&quot;dict CRUD&quot;, &quot;d.get() safe access&quot;, &quot;dict.items()&quot;, &quot;dict comprehension&quot;, &quot;merging dicts (|)&quot;, &quot;defaultdict&quot;, &quot;Counter&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Dictionaries&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_dictionaries.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Python Dictionaries&quot;, &quot;u&quot;: &quot;https://realpython.com/python-dicts/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 11</div>
+          <div class="day-topic">Dictionaries — The Power Tool</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="12"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-color="#00d4ff"
+          data-topic="Comprehensions — The Pythonic Way"
+          data-topics='[&quot;List comprehension: [expression for item in iterable if condition]&quot;, &quot;Dict comprehension: {k: v for k, v in iterable}&quot;, &quot;Set comprehension: {expression for item in iterable}&quot;, &quot;Generator expression: (expression for item in iterable) — lazy, memory-efficient&quot;, &quot;Nested comprehension: [cell for row in matrix for cell in row]&quot;, &quot;Comprehension with ternary: [x if x > 0 else 0 for x in nums]&quot;, &quot;When NOT to use comprehension: avoid if logic is complex (3+ conditions) — use a loop instead for readability&quot;, &quot;Performance: comprehensions are faster than equivalent for loops because they&#39;re optimized in C&quot;, &quot;W3Schools addition: Python Lists — list() constructor and comprehension side by side&quot;]'
+          data-practice='&quot;Replace every for loop in your previous exercises with a comprehension where appropriate. New challenges: (1) Flatten a 3x3 matrix with a nested comprehension. (2) Build a dict of {word: length} from a sentence using dict comprehension. (3) Use a generator expression inside sum() to sum all even squares from 1 to 100 — compare memory usage with list comprehension using sys.getsizeof().&quot;'
+          data-gains='[&quot;list/dict/set comprehension&quot;, &quot;generator expression&quot;, &quot;nested comprehension&quot;, &quot;ternary in comprehension&quot;, &quot;performance vs readability&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python List Comprehension&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_lists_comprehension.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — List Comprehensions&quot;, &quot;u&quot;: &quot;https://realpython.com/list-comprehension-python/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 12</div>
+          <div class="day-topic">Comprehensions — The Pythonic Way</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="13"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-color="#00d4ff"
+          data-topic="Built-in Functions &amp; Functional Tools"
+          data-topics='[&quot;Essential built-ins: len(), type(), range(), print(), input(), id(), isinstance(), hasattr()&quot;, &quot;Math built-ins: abs(), round(), min(), max(), sum(), pow(), divmod()&quot;, &quot;Iteration built-ins: enumerate(), zip(), reversed(), sorted(), map(), filter()&quot;, &quot;map(function, iterable) — apply a function to every item&quot;, &quot;filter(function, iterable) — keep only items where function returns True&quot;, &quot;zip(a, b, c) — combine iterables into tuples, stops at shortest&quot;, &quot;zip_longest from itertools — zip that fills missing values&quot;, &quot;sorted() with key= — sort any iterable by any criteria&quot;, &quot;all() and any() — check conditions across an iterable&quot;, &quot;functools.reduce() — collapse an iterable to a single value&quot;, &quot;W3Schools addition: Python Built-in Functions reference — complete list&quot;]'
+          data-practice='&quot;Process a dataset of 20 student records [{name, age, grade, score}] using ONLY map, filter, sorted, zip, and comprehensions — no explicit for loops. (1) Use filter to get only passing students (score >= 60). (2) Use map to apply a 10% score bonus. (3) Use sorted with a key to rank by score. (4) Use zip to pair students with certificates list. (5) Use all() to check if everyone passed.&quot;'
+          data-gains='[&quot;map()&quot;, &quot;filter()&quot;, &quot;sorted(key=)&quot;, &quot;zip()&quot;, &quot;enumerate()&quot;, &quot;all()/any()&quot;, &quot;functools.reduce&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Built-in Functions&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_ref_functions.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — map() filter() reduce()&quot;, &quot;u&quot;: &quot;https://realpython.com/python-map-function/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 13</div>
+          <div class="day-topic">Built-in Functions &amp; Functional Tools</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="14"
+          data-phase="w2"
+          data-week-label="Week 2"
+          data-color="#00d4ff"
+          data-topic="Week 2 Project — Data Structures Challenge"
+          data-topics='[&quot;Consolidating all data structures: list, tuple, set, dict together&quot;, &quot;Algorithm pattern: sliding window — tracking a window of items in a list&quot;, &quot;Algorithm pattern: frequency count — counting occurrences with Counter or dict&quot;, &quot;Algorithm pattern: grouping — grouping items by a key using defaultdict&quot;, &quot;Algorithm pattern: two-pointer technique on sorted lists&quot;, &quot;Choosing the right structure: use a set for fast lookup, dict for key-value mapping, list for ordered sequences, tuple for immutable records&quot;, &quot;Time complexity basics: O(1), O(n), O(n log n) — enough to explain your choices in an interview&quot;]'
+          data-practice='&quot;Build a Contact Book CLI: store contacts as a list of dicts {name, phone, email, tags (set)}. Implement: (1) add/edit/delete contact, (2) search by name or tag, (3) group contacts by first letter using defaultdict, (4) find duplicate phone numbers using Counter, (5) export to a formatted string. All operations must use the most appropriate data structure and demonstrate Big-O awareness in comments.&quot;'
+          data-gains='[&quot;data structure selection&quot;, &quot;frequency count pattern&quot;, &quot;grouping pattern&quot;, &quot;O(1) vs O(n)&quot;, &quot;CLI pattern&quot;, &quot;combined structures&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — Data Structures in Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-data-structures/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Python Docs — collections module&quot;, &quot;u&quot;: &quot;https://docs.python.org/3/library/collections.html&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 14</div>
+          <div class="day-topic">Week 2 Project — Data Structures Challenge</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 3 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,209,102,0.12);color:#ffd166;">Week 3</span>
+      <span class="phase-title">Intermediate — Functions, Modules &amp; File Handling</span>
+      <span class="phase-meta">Days 15 &ndash; 21</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Write reusable, organized, and production-quality code with advanced functions, proper project structure, file I/O, error handling, and datetime</div>
+    <div class="week-group" id="w3">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="15"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-color="#ffd166"
+          data-topic="Advanced Functions — *args, **kwargs, Lambda, Recursion"
+          data-topics='[&quot;*args: accept any number of positional arguments as a tuple inside the function&quot;, &quot;**kwargs: accept any number of keyword arguments as a dict inside the function&quot;, &quot;Combining: def func(a, b, *args, keyword_only, **kwargs) — order matters&quot;, &quot;Unpacking on call: func(*my_list) and func(**my_dict) — spreading iterables as args&quot;, &quot;Lambda functions: lambda params: expression — anonymous, single-expression&quot;, &quot;Lambda use cases: key= in sorted/min/max, passing to map/filter&quot;, &quot;Lambda limitations: no statements, no multi-line — use def for anything complex&quot;, &quot;Recursion: a function that calls itself. Mandatory: a base case, else infinite loop&quot;, &quot;Tail recursion and Python&#39;s recursion limit (~1000): sys.setrecursionlimit()&quot;, &quot;Memoization with functools.lru_cache — cache recursive results to avoid recomputation&quot;]'
+          data-practice='&quot;Write: (1) A logger(*args, level=&#39;INFO&#39;, **metadata) function that formats log entries using args and kwargs. (2) A recursive binary search function with memoization. (3) A recursive flatten(lst) that handles arbitrarily nested lists. (4) Use lambda with sorted() to sort a list of dicts by multiple keys (first by score descending, then by name ascending). (5) Implement a memoized Fibonacci and compare its speed to the naive version for n=35.&quot;'
+          data-gains='[&quot;*args/**kwargs&quot;, &quot;arg unpacking on call&quot;, &quot;lambda&quot;, &quot;recursion + base case&quot;, &quot;lru_cache memoization&quot;, &quot;recursion limit&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — *args and **kwargs&quot;, &quot;u&quot;: &quot;https://realpython.com/python-kwargs-and-args/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Python Docs — functools.lru_cache&quot;, &quot;u&quot;: &quot;https://docs.python.org/3/library/functools.html#functools.lru_cache&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 15</div>
+          <div class="day-topic">Advanced Functions — *args, **kwargs, Lambda, Recursion</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="16"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-color="#ffd166"
+          data-topic="Decorators — Functions That Wrap Functions"
+          data-topics='[&quot;Functions are first-class objects: you can pass, return, and assign them&quot;, &quot;Closures revisited: inner function that captures outer function&#39;s variables&quot;, &quot;A decorator is a function that takes a function and returns a modified version&quot;, &quot;@decorator syntax — syntactic sugar for func = decorator(func)&quot;, &quot;The wrapper function: always use (*args, **kwargs) to pass through all arguments&quot;, &quot;functools.wraps: preserves the original function&#39;s __name__ and docstring&quot;, &quot;Practical decorators: @timer (measure execution time), @retry (retry on failure), @validate_input, @require_auth, @cache&quot;, &quot;Decorators with arguments: a third level of nesting — factory → decorator → wrapper&quot;, &quot;Stacking decorators: @decorator1 @decorator2 — applied bottom-up&quot;, &quot;Class-based decorators: using __call__ for stateful decorators&quot;]'
+          data-practice='&quot;Build a decorator toolkit: (1) @timer that prints execution time of any function. (2) @retry(n=3) that retries a function n times on exception. (3) @validate_types(*types) that checks argument types match the provided types (simplified typing enforcement). (4) @log_calls that logs function name, args, and return value to a list. Stack @timer and @log_calls on the same function and observe the order of execution.&quot;'
+          data-gains='[&quot;first-class functions&quot;, &quot;closures&quot;, &quot;@decorator syntax&quot;, &quot;functools.wraps&quot;, &quot;decorators with args&quot;, &quot;stacking decorators&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — Primer on Decorators&quot;, &quot;u&quot;: &quot;https://realpython.com/primer-on-python-decorators/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Python Docs — functools.wraps&quot;, &quot;u&quot;: &quot;https://docs.python.org/3/library/functools.html#functools.wraps&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 16</div>
+          <div class="day-topic">Decorators — Functions That Wrap Functions</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="17"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-color="#ffd166"
+          data-topic="Modules, Packages &amp; pip"
+          data-topics='[&quot;Module: any .py file — import it with import filename&quot;, &quot;import module, from module import func, import module as alias&quot;, &quot;The __name__ == &#39;__main__&#39; guard — why you ALWAYS include this in any reusable module&quot;, &quot;Package: a folder with __init__.py inside — allows relative imports&quot;, &quot;Relative imports: from .utils import helper (dot = same package)&quot;, &quot;Standard library highlights: os, sys, math, random, datetime, pathlib, collections, itertools, functools, json, csv, re, subprocess&quot;, &quot;Third-party packages: pip install package, pip uninstall, pip show, pip list&quot;, &quot;requirements.txt: pip freeze > requirements.txt — snapshot dependencies&quot;, &quot;pip install -r requirements.txt — restore environment from requirements&quot;, &quot;W3Schools addition: Python Modules — built-in dir() function to explore a module&#39;s attributes&quot;, &quot;W3Schools addition: Math module — math.sqrt(), math.ceil(), math.floor(), math.log(), math.pi, math.e&quot;]'
+          data-practice='&quot;Build a multi-file calculator project: (1) calculator/operations.py with add, subtract, multiply, divide. (2) calculator/validators.py with type-checking functions. (3) calculator/__init__.py that exports the public API. (4) main.py that uses the package. Add the __name__ == &#39;__main__&#39; guard to operations.py and verify it works both as a module AND as a script. Install a third-party package (rich for styled output) and use it.&quot;'
+          data-gains='[&quot;import types&quot;, &quot;__name__ guard&quot;, &quot;package structure&quot;, &quot;__init__.py&quot;, &quot;relative imports&quot;, &quot;pip workflow&quot;, &quot;requirements.txt&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Modules&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_modules.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Python Modules and Packages&quot;, &quot;u&quot;: &quot;https://realpython.com/python-modules-packages/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 17</div>
+          <div class="day-topic">Modules, Packages &amp; pip</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="light"
+          data-day="18"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-color="#ffd166"
+          data-topic="Virtual Environments &amp; Project Setup"
+          data-topics='[&quot;Why virtual environments? Isolate each project&#39;s dependencies — avoid version conflicts&quot;, &quot;venv: built-in virtual environment tool. python -m venv .venv&quot;, &quot;Activating: source .venv/bin/activate (Mac/Linux) or .venv\\Scripts\\activate (Windows)&quot;, &quot;Deactivating: deactivate&quot;, &quot;The .venv folder: never commit to Git — always in .gitignore&quot;, &quot;Standard project structure: src/, tests/, docs/, .venv/, requirements.txt, README.md, .gitignore&quot;, &quot;pyproject.toml: the modern way to define a Python project (replaces setup.py)&quot;, &quot;pipenv and poetry: alternative environment + dependency managers&quot;, &quot;Checking installed packages: pip list, pip show package-name&quot;, &quot;Pinning versions in requirements.txt: requests==2.31.0 vs requests>=2.28.0&quot;, &quot;My addition: .env files for environment variables — python-dotenv library — NEVER commit secrets&quot;]'
+          data-practice='&quot;Set up a professional Python project from scratch: (1) Create a new folder, initialize a git repo. (2) Create and activate a venv. (3) Create the src/ project structure with __init__.py. (4) Create a .gitignore that excludes .venv/, __pycache__/, .env. (5) Create a .env file with a fake API_KEY variable. (6) Use python-dotenv to load it in main.py. (7) Write a requirements.txt and test restoring on a fresh venv.&quot;'
+          data-gains='[&quot;python -m venv&quot;, &quot;activate/deactivate&quot;, &quot;project structure&quot;, &quot;.gitignore&quot;, &quot;.env secrets&quot;, &quot;python-dotenv&quot;, &quot;pyproject.toml&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Python Docs — venv&quot;, &quot;u&quot;: &quot;https://docs.python.org/3/library/venv.html&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Virtual Environments Primer&quot;, &quot;u&quot;: &quot;https://realpython.com/python-virtual-environments-a-primer/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 18</div>
+          <div class="day-topic">Virtual Environments &amp; Project Setup</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="19"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-color="#ffd166"
+          data-topic="File I/O — Reading, Writing &amp; pathlib"
+          data-topics='[&quot;Opening files: open(path, mode) — modes: r, w, a, r+, rb, wb&quot;, &quot;The with statement (context manager): always use with open() — auto-closes the file&quot;, &quot;Reading: read(), readline(), readlines(), iterating line by line with for line in f&quot;, &quot;Writing: write(), writelines()&quot;, &quot;Appending to files: &#39;a&#39; mode — adds to end without overwriting&quot;, &quot;Working with binary files: &#39;rb&#39;/&#39;wb&#39; modes for images, PDFs&quot;, &quot;pathlib.Path (Python 3.4+): the modern, OOP way to handle file paths — replaces os.path&quot;, &quot;pathlib: Path.cwd(), Path.home(), path / &#39;subdir&#39; / &#39;file.txt&#39; (path joining)&quot;, &quot;pathlib: path.read_text(), path.write_text(), path.exists(), path.mkdir(parents=True)&quot;, &quot;pathlib: path.glob(&#39;*.txt&#39;), path.rglob() for recursive file finding&quot;, &quot;os module: os.getcwd(), os.listdir(), os.makedirs(), os.rename(), os.remove()&quot;, &quot;shutil: high-level file operations — shutil.copy(), shutil.move(), shutil.rmtree()&quot;]'
+          data-practice='&quot;Build a file organizer: scan a directory for files, group them by extension, move each file to a subdirectory named after its extension (e.g. all .txt to /txt/, all .jpg to /images/). Use pathlib exclusively (no os.path). Implement undo by keeping a log file of all moves. Also write a function that reads a CSV file line by line without loading it all into memory.&quot;'
+          data-gains='[&quot;open() modes&quot;, &quot;with statement&quot;, &quot;read/write/append&quot;, &quot;pathlib.Path&quot;, &quot;path joining /&quot;, &quot;glob/rglob&quot;, &quot;shutil&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python File Handling&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_file_handling.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — pathlib Guide&quot;, &quot;u&quot;: &quot;https://realpython.com/python-pathlib/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 19</div>
+          <div class="day-topic">File I/O — Reading, Writing &amp; pathlib</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="20"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-color="#ffd166"
+          data-topic="Exception Handling"
+          data-topics='[&quot;Errors vs Exceptions: SyntaxError is caught at parse time; exceptions at runtime&quot;, &quot;try / except / else / finally: the full structure&quot;, &quot;Catching specific exceptions: except ValueError, except (TypeError, ValueError)&quot;, &quot;The exception object: except ValueError as e — access e.args, str(e)&quot;, &quot;else clause on try: runs only if NO exception was raised&quot;, &quot;finally clause: ALWAYS runs — perfect for cleanup (close files, release locks)&quot;, &quot;Built-in exceptions: ValueError, TypeError, IndexError, KeyError, FileNotFoundError, ZeroDivisionError, AttributeError, ImportError, RuntimeError, StopIteration&quot;, &quot;Raising exceptions: raise ValueError(&#39;message&#39;) — throw your own&quot;, &quot;Custom exceptions: class MyError(Exception): pass — inherit from Exception&quot;, &quot;Exception chaining: raise NewError() from original_error&quot;, &quot;Best practice: catch specific exceptions, NOT bare except: (antipattern that swallows all errors)&quot;]'
+          data-practice='&quot;Build a robust file parser that reads a CSV of user data. Wrap EVERY operation (open, parse line, convert types) in specific try/except blocks. Create a custom ParseError exception. Use finally to ensure the file is always closed. Collect all errors without stopping (accumulate exceptions). At the end, print a summary of how many lines succeeded vs failed, and the details of each failure.&quot;'
+          data-gains='[&quot;try/except/else/finally&quot;, &quot;specific exception types&quot;, &quot;custom exceptions&quot;, &quot;raise&quot;, &quot;exception chaining&quot;, &quot;error accumulation pattern&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Try/Except&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_try_except.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Exception Handling&quot;, &quot;u&quot;: &quot;https://realpython.com/python-exceptions/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 20</div>
+          <div class="day-topic">Exception Handling</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="21"
+          data-phase="w3"
+          data-week-label="Week 3"
+          data-color="#ffd166"
+          data-topic="Dates, Times &amp; the datetime Module"
+          data-topics='[&quot;datetime module: datetime.now(), datetime.today(), datetime.utcnow()&quot;, &quot;date, time, datetime, timedelta — the four key classes&quot;, &quot;Creating specific dates: datetime(2025, 1, 15, 14, 30, 0)&quot;, &quot;Formatting output: strftime() — %Y-%m-%d, %H:%M:%S, %A (weekday), %B (month name)&quot;, &quot;Parsing strings to dates: strptime(string, format)&quot;, &quot;Date arithmetic with timedelta: date + timedelta(days=30)&quot;, &quot;Comparing dates: datetime objects support <, >, == comparisons&quot;, &quot;timezone-aware datetimes with pytz or Python 3.9+ zoneinfo module&quot;, &quot;time module: time.time() for Unix timestamps, time.sleep() for pausing execution&quot;, &quot;calendar module: calendar.month_name, calendar.isleap(year)&quot;, &quot;W3Schools addition: Python Dates — dedicated strftime format codes reference&quot;, &quot;Real-world use: scheduling, age calculation, event countdown, log timestamps&quot;]'
+          data-practice='&quot;Build a birthday reminder system: store birthdays in a dict {name: date_string}. Write functions: (1) days_until_birthday(name) — how many days until the next occurrence. (2) age(name) — current age in years. (3) upcoming_this_month() — all birthdays in the current month. (4) next_birthday() — closest birthday. Format all output with strftime. Handle timezones for one of the dates using zoneinfo.&quot;'
+          data-gains='[&quot;datetime.now()&quot;, &quot;strftime/strptime&quot;, &quot;timedelta arithmetic&quot;, &quot;timezone-aware&quot;, &quot;time.time()&quot;, &quot;date comparison&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Datetime&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_datetime.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Python datetime&quot;, &quot;u&quot;: &quot;https://realpython.com/python-datetime/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 21</div>
+          <div class="day-topic">Dates, Times &amp; the datetime Module</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 4 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(123,97,255,0.12);color:#7b61ff;">Week 4</span>
+      <span class="phase-title">Object-Oriented Programming</span>
+      <span class="phase-meta">Days 22 &ndash; 28</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Think in objects — master classes, inheritance, polymorphism, magic methods, dataclasses, type hints, iterators, and context managers</div>
+    <div class="week-group" id="w4">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="22"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-color="#7b61ff"
+          data-topic="OOP Basics — Classes &amp; Objects"
+          data-topics='[&quot;Class anatomy: class keyword, __init__ constructor, self parameter&quot;, &quot;Instance variables: self.name = name — belongs to the object&quot;, &quot;Class variables: shared across ALL instances of the class&quot;, &quot;Instance methods: functions that access self&quot;, &quot;Class methods @classmethod: take cls as first parameter — factory pattern&quot;, &quot;@classmethod as alternative constructors: Person.from_string(&#39;Alice-30&#39;)&quot;, &quot;Static methods @staticmethod: no self, no cls — utility functions inside a class&quot;, &quot;Property decorator @property: control attribute access with getter/setter&quot;, &quot;@property with @name.setter: validate values when an attribute is assigned&quot;, &quot;Private vs public: _ single underscore (convention: don&#39;t touch), __ double underscore (name mangling)&quot;, &quot;__str__: human-readable string (for print()), __repr__: developer string (for debugging)&quot;]'
+          data-practice='&quot;Build a BankAccount class: __init__(owner, balance=0), deposit(amount), withdraw(amount) with validation (raises InsufficientFunds), transfer(target_account, amount), @property for balance (read-only), @classmethod open_with_bonus(owner) that creates account with 100 starting balance. Add __str__ and __repr__. Create a class variable transaction_count that tracks all transactions across all instances.&quot;'
+          data-gains='[&quot;__init__/self&quot;, &quot;class vs instance vars&quot;, &quot;@classmethod factory&quot;, &quot;@staticmethod&quot;, &quot;@property getter/setter&quot;, &quot;__str__/__repr__&quot;, &quot;_ vs __&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Classes/Objects&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_classes.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — OOP in Python 3&quot;, &quot;u&quot;: &quot;https://realpython.com/python3-object-oriented-programming/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 22</div>
+          <div class="day-topic">OOP Basics — Classes &amp; Objects</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="23"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-color="#7b61ff"
+          data-topic="Inheritance &amp; super()"
+          data-topics='[&quot;Single inheritance: class Child(Parent) — Child gets all of Parent&#39;s methods and attributes&quot;, &quot;super().__init__(): call the parent&#39;s constructor — always call it first in child __init__&quot;, &quot;Method overriding: redefine a parent method in the child class&quot;, &quot;Extending parent methods: call super().method() then add extra logic&quot;, &quot;isinstance(obj, Class): True if obj is an instance of Class OR any of its parents&quot;, &quot;issubclass(Child, Parent): True if Child inherits from Parent&quot;, &quot;Multiple inheritance: class Child(Parent1, Parent2) — use carefully&quot;, &quot;MRO (Method Resolution Order): how Python decides which method to call — check with Class.__mro__&quot;, &quot;The diamond problem: why MRO matters — Python uses C3 linearization&quot;, &quot;Abstract base classes from abc module: @abstractmethod forces children to implement a method&quot;]'
+          data-practice='&quot;Build an employee management hierarchy: Employee(name, salary) → Developer(languages) → SeniorDeveloper(team) and Manager(department). Each subclass calls super().__init__() and adds its own attributes. Override __str__ at each level. Add an abstract method generate_report() to Employee using ABC. Verify you can&#39;t instantiate Employee directly. Print Class.__mro__ for SeniorDeveloper.&quot;'
+          data-gains='[&quot;single inheritance&quot;, &quot;super().__init__()&quot;, &quot;method overriding&quot;, &quot;isinstance/issubclass&quot;, &quot;multiple inheritance&quot;, &quot;MRO&quot;, &quot;ABC/@abstractmethod&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Inheritance&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_inheritance.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Inheritance and Composition&quot;, &quot;u&quot;: &quot;https://realpython.com/inheritance-composition-python/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 23</div>
+          <div class="day-topic">Inheritance &amp; super()</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="24"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-color="#7b61ff"
+          data-topic="Polymorphism &amp; Duck Typing"
+          data-topics='[&quot;Polymorphism: same interface, different behavior — one function, multiple types&quot;, &quot;Method polymorphism: different classes implement the same method name differently&quot;, &quot;Operator polymorphism: + works on strings, lists, and numbers differently&quot;, &quot;Duck typing: &#39;If it walks like a duck and quacks like a duck, it is a duck&#39; — Python checks behavior, not type&quot;, &quot;Duck typing in practice: any object with a .read() method works with functions that call .read()&quot;, &quot;Protocol classes (Python 3.8+): from typing import Protocol — define a structural type without inheritance&quot;, &quot;Polymorphism with inheritance: loop over mixed shapes and call .area() on each&quot;, &quot;Function polymorphism: len() works on strings, lists, dicts, tuples — all implement __len__&quot;, &quot;W3Schools addition: Python Polymorphism — dedicated section with class and function polymorphism&quot;, &quot;My addition: Abstract base classes vs Protocols — when to use each&quot;]'
+          data-practice='&quot;Build a shape renderer: Circle, Rectangle, Triangle all implement area(), perimeter(), and draw() (prints ASCII art). Write a render_all(shapes) function that calls draw() on each — it doesn&#39;t care what type shape is, just that it has draw(). Then define a Drawable Protocol class using typing.Protocol. Verify an unrelated FileWidget class that also has draw() satisfies the Protocol without inheriting.&quot;'
+          data-gains='[&quot;polymorphism&quot;, &quot;duck typing&quot;, &quot;typing.Protocol&quot;, &quot;structural typing&quot;, &quot;same interface/different behavior&quot;, &quot;Protocol vs ABC&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Polymorphism&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_polymorphism.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Duck Typing and Protocols&quot;, &quot;u&quot;: &quot;https://realpython.com/duck-typing-and-protocols-in-python/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 24</div>
+          <div class="day-topic">Polymorphism &amp; Duck Typing</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="25"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-color="#7b61ff"
+          data-topic="Magic Methods (Dunder Methods)"
+          data-topics='[&quot;Dunder = double underscore. Python calls these automatically for built-in operations.&quot;, &quot;__str__(self): print(obj) — human-readable string&quot;, &quot;__repr__(self): repr(obj) — developer-readable, should ideally be eval-able&quot;, &quot;__len__(self): len(obj) — makes your class work with len()&quot;, &quot;__getitem__(self, key): obj[key] — makes your class subscriptable&quot;, &quot;__setitem__(self, key, value): obj[key] = value&quot;, &quot;__contains__(self, item): item in obj — enables the in operator&quot;, &quot;__iter__(self) + __next__(self): makes your class iterable in a for loop&quot;, &quot;__eq__(self, other): == comparison between objects&quot;, &quot;__lt__, __le__, __gt__, __ge__: < > <= >= — or use @functools.total_ordering&quot;, &quot;__add__, __sub__, __mul__: + - * on your objects&quot;, &quot;__call__(self, *args): obj() — makes your class callable like a function&quot;]'
+          data-practice='&quot;Build a Vector class: Vector(x, y, z). Implement __add__, __sub__, __mul__ (scalar multiplication), __len__ (number of components), __iter__ (so you can unpack x, y, z = v), __eq__, __repr__, __abs__ (magnitude), and __call__ (normalize the vector). Use @total_ordering to implement all comparison operators from just __eq__ and __lt__. Test: v1 + v2, len(v), for component in v, v1 == v2, abs(v), v().&quot;'
+          data-gains='[&quot;dunder methods&quot;, &quot;__str__/__repr__&quot;, &quot;__len__/__getitem__&quot;, &quot;__iter__/__next__&quot;, &quot;__eq__/__lt__&quot;, &quot;__add__&quot;, &quot;__call__&quot;, &quot;total_ordering&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — Python Magic Methods&quot;, &quot;u&quot;: &quot;https://realpython.com/python-magic-methods/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Python Docs — Data Model&quot;, &quot;u&quot;: &quot;https://docs.python.org/3/reference/datamodel.html&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 25</div>
+          <div class="day-topic">Magic Methods (Dunder Methods)</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="26"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-color="#7b61ff"
+          data-topic="dataclasses &amp; Type Hints"
+          data-topics='[&quot;Type hints (Python 3.5+): def greet(name: str) -> str: — annotations, not enforcement&quot;, &quot;Variable type hints: age: int = 25&quot;, &quot;Complex type hints from typing module: List[str], Dict[str, int], Optional[str], Union[int, str], Tuple[int, int]&quot;, &quot;Python 3.9+ simplified: list[str], dict[str, int] — no need to import from typing&quot;, &quot;Python 3.10+ union shorthand: int | str instead of Union[int, str]&quot;, &quot;@dataclass decorator (Python 3.7+): auto-generates __init__, __repr__, __eq__&quot;, &quot;dataclass fields with default values and default_factory for mutable defaults&quot;, &quot;field(default_factory=list) — the correct way to have mutable defaults in dataclasses&quot;, &quot;frozen=True: creates an immutable dataclass (auto-generates __hash__)&quot;, &quot;post_init: __post_init__(self) — run validation after auto-generated __init__&quot;, &quot;mypy: static type checker that enforces type hints — run mypy yourfile.py&quot;]'
+          data-practice='&quot;Refactor your BankAccount class from Day 22 into a @dataclass. Add full type hints to all methods. Add a frozen=True version (ImmutableConfig dataclass). Use __post_init__ to validate that initial balance is non-negative. Define a Transaction dataclass with amount: float, type: str, timestamp: datetime = field(default_factory=datetime.now). Run mypy on your file and fix all type errors.&quot;'
+          data-gains='[&quot;type hints&quot;, &quot;Optional/Union/List types&quot;, &quot;Python 3.10 | shorthand&quot;, &quot;@dataclass&quot;, &quot;field(default_factory)&quot;, &quot;frozen dataclass&quot;, &quot;__post_init__&quot;, &quot;mypy&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — Python dataclasses&quot;, &quot;u&quot;: &quot;https://realpython.com/python-data-classes/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Real Python — Type Checking with mypy&quot;, &quot;u&quot;: &quot;https://realpython.com/python-type-checking/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 26</div>
+          <div class="day-topic">dataclasses &amp; Type Hints</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="27"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-color="#7b61ff"
+          data-topic="Iterators &amp; Generators"
+          data-topics='[&quot;Iterator protocol: an object with __iter__() and __next__() methods&quot;, &quot;Every iterable (list, string, dict) returns an iterator when iter() is called on it&quot;, &quot;next() function: manually advance an iterator. Raises StopIteration when exhausted.&quot;, &quot;Building a custom iterator class: implement __iter__ and __next__&quot;, &quot;Generator functions: use yield instead of return — execution pauses at each yield&quot;, &quot;Generator objects are lazy — they compute one item at a time, on demand&quot;, &quot;yield from: delegate to a sub-generator or iterable&quot;, &quot;Generator expressions: (x**2 for x in range(10)) — memory-efficient comprehension&quot;, &quot;Infinite generators: generators that never raise StopIteration (e.g. counter, Fibonacci)&quot;, &quot;itertools module: chain(), cycle(), islice(), combinations(), permutations(), product()&quot;, &quot;W3Schools addition: Python Iterators — official iterator protocol example&quot;]'
+          data-practice='&quot;Build: (1) A custom Range class (like Python&#39;s range) with __iter__ and __next__. (2) A generator function that lazily reads a large file line by line (never loads full file). (3) An infinite Fibonacci generator using yield. (4) A pipeline of generators: generator → filter generator → transform generator → take first N. Use itertools.islice() to take from the infinite Fibonacci generator. Measure memory usage of generator vs list for 1 million items.&quot;'
+          data-gains='[&quot;iterator protocol&quot;, &quot;__iter__/__next__&quot;, &quot;StopIteration&quot;, &quot;yield&quot;, &quot;lazy evaluation&quot;, &quot;infinite generators&quot;, &quot;itertools&quot;, &quot;generator pipeline&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python Iterators&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_iterators.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Python Generators&quot;, &quot;u&quot;: &quot;https://realpython.com/introduction-to-python-generators/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 27</div>
+          <div class="day-topic">Iterators &amp; Generators</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="28"
+          data-phase="w4"
+          data-week-label="Week 4"
+          data-color="#7b61ff"
+          data-topic="Context Managers"
+          data-topics='[&quot;What a context manager is: ensures setup AND teardown happen, even if an exception occurs&quot;, &quot;The with statement: with expression as variable: — calls __enter__ and __exit__&quot;, &quot;__enter__(self): setup, returns the resource&quot;, &quot;__exit__(self, exc_type, exc_val, exc_tb): teardown, receives exception info if one occurred&quot;, &quot;Returning True from __exit__ suppresses the exception — usually you don&#39;t want this&quot;, &quot;contextlib.contextmanager: use a generator with @contextmanager to build one without a class&quot;, &quot;Built-in context managers: open(), threading.Lock(), sqlite3.connect(), unittest.mock.patch()&quot;, &quot;Multiple context managers: with open(f1) as a, open(f2) as b:&quot;, &quot;Use cases: file handling, database connections, network sockets, timing blocks, temporary directory creation&quot;, &quot;contextlib.suppress: suppress specific exceptions — with suppress(FileNotFoundError):&quot;]'
+          data-practice='&quot;Build: (1) A DatabaseConnection context manager class that opens/closes a sqlite3 connection and rolls back on exception. (2) A @contextmanager generator version of the same. (3) A Timer context manager that prints elapsed time. (4) A TempDirectory context manager that creates a temp folder on enter and deletes it on exit. Test that the cleanup always runs even when an exception is raised inside the with block.&quot;'
+          data-gains='[&quot;__enter__/__exit__&quot;, &quot;with statement&quot;, &quot;@contextmanager&quot;, &quot;exception in __exit__&quot;, &quot;contextlib.suppress&quot;, &quot;cleanup guarantee&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — Context Managers and the with Statement&quot;, &quot;u&quot;: &quot;https://realpython.com/python-with-statement/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Python Docs — contextlib&quot;, &quot;u&quot;: &quot;https://docs.python.org/3/library/contextlib.html&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 28</div>
+          <div class="day-topic">Context Managers</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 5 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,107,107,0.12);color:#ff6b6b;">Week 5</span>
+      <span class="phase-title">The Python Ecosystem</span>
+      <span class="phase-meta">Days 29 &ndash; 35</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Use the real-world tools every Python developer touches: regex, APIs, databases, testing, concurrency, and DSA fundamentals</div>
+    <div class="week-group" id="w5">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="29"
+          data-phase="w5"
+          data-week-label="Week 5"
+          data-color="#ff6b6b"
+          data-topic="Regular Expressions (regex)"
+          data-topics='[&quot;What regex is: a pattern language for matching text&quot;, &quot;The re module: re.match(), re.search(), re.findall(), re.finditer(), re.sub(), re.split()&quot;, &quot;re.compile(pattern): pre-compile a pattern for repeated use — faster&quot;, &quot;Basic patterns: . (any char), \\d (digit), \\w (word char), \\s (whitespace), ^ (start), $ (end)&quot;, &quot;Quantifiers: * (0+), + (1+), ? (0 or 1), {n}, {n,m}&quot;, &quot;Character classes: [abc], [a-z], [^abc] (negation)&quot;, &quot;Capture groups: (pattern) — extract matched parts&quot;, &quot;Named groups: (?P<name>pattern) — access by name in match.group(&#39;name&#39;)&quot;, &quot;Lookahead/lookbehind: (?=...), (?!...), (?<=...), (?<!...) — zero-width assertions&quot;, &quot;Flags: re.IGNORECASE, re.MULTILINE, re.DOTALL&quot;, &quot;W3Schools addition: Python RegEx — dedicated section with all metacharacters and special sequences&quot;]'
+          data-practice='&quot;Build a text extraction tool: (1) Extract all email addresses from a block of text. (2) Extract phone numbers in multiple formats (555-1234, (555) 123-4567, +1-555-123-4567). (3) Validate a password (min 8 chars, must have uppercase, lowercase, digit, and special char). (4) Parse log lines: &#39;2025-01-15 14:32:11 ERROR Server crashed&#39; into date, level, message using named groups. (5) Find all URLs in HTML text.&quot;'
+          data-gains='[&quot;re module&quot;, &quot;metacharacters&quot;, &quot;capture groups&quot;, &quot;named groups&quot;, &quot;re.compile&quot;, &quot;lookahead/lookbehind&quot;, &quot;re.sub&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python RegEx&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_regex.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Regular Expressions&quot;, &quot;u&quot;: &quot;https://realpython.com/regex-python/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 29</div>
+          <div class="day-topic">Regular Expressions (regex)</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="30"
+          data-phase="w5"
+          data-week-label="Week 5"
+          data-color="#ff6b6b"
+          data-topic="JSON, CSV &amp; Data Formats"
+          data-topics='[&quot;JSON module: json.loads() (string → dict), json.dumps() (dict → string), json.load() (file), json.dump() (to file)&quot;, &quot;json.dumps with indent=2, sort_keys=True for readable output&quot;, &quot;Handling dates in JSON: JSON has no date type — serialize to ISO string, deserialize with datetime.fromisoformat()&quot;, &quot;CSV module: csv.reader(), csv.writer(), csv.DictReader(), csv.DictWriter()&quot;, &quot;DictReader: each row is an automatic dict — fieldnames from header row&quot;, &quot;DictWriter: write dicts as rows — must specify fieldnames, use extrasaction=&#39;ignore&#39;&quot;, &quot;configparser: read .ini and .cfg configuration files&quot;, &quot;TOML (Python 3.11+): tomllib for reading .toml files — the modern config format&quot;, &quot;yaml via PyYAML: popular for config files — yaml.safe_load() for untrusted sources&quot;, &quot;W3Schools addition: Python JSON — json.loads vs json.load distinction&quot;]'
+          data-practice='&quot;Build a data pipeline: (1) Read a CSV of transactions (DictReader). (2) Validate each row (custom validator). (3) Enrich each record (add calculated fields). (4) Save the result as pretty JSON with indent=2. (5) Load the JSON back and verify round-trip fidelity. (6) Read configuration from a .toml or .ini file using configparser/tomllib to make the pipeline configurable without code changes.&quot;'
+          data-gains='[&quot;json.loads/dumps/load/dump&quot;, &quot;csv.DictReader/DictWriter&quot;, &quot;JSON date serialization&quot;, &quot;configparser&quot;, &quot;tomllib&quot;, &quot;round-trip fidelity&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python JSON&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_json.asp&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Working with JSON&quot;, &quot;u&quot;: &quot;https://realpython.com/python-json/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 30</div>
+          <div class="day-topic">JSON, CSV &amp; Data Formats</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="31"
+          data-phase="w5"
+          data-week-label="Week 5"
+          data-color="#ff6b6b"
+          data-topic="APIs with requests"
+          data-topics='[&quot;HTTP basics: GET (read), POST (create), PUT (update), DELETE — and status codes (200, 201, 400, 401, 404, 500)&quot;, &quot;requests library: pip install requests&quot;, &quot;requests.get(url, params={}, headers={}): GET request&quot;, &quot;requests.post(url, json={}, headers={}): POST with JSON body&quot;, &quot;Response object: r.status_code, r.json(), r.text, r.headers, r.ok&quot;, &quot;r.raise_for_status(): raise an HTTPError if status >= 400&quot;, &quot;Authentication: API keys in headers {&#39;Authorization&#39;: &#39;Bearer TOKEN&#39;} or params&quot;, &quot;Session objects: requests.Session() — reuse connections, persist headers&quot;, &quot;Timeout: always pass timeout=10 — never make a request without a timeout&quot;, &quot;Handling errors: network errors (ConnectionError), timeouts (Timeout), HTTP errors (HTTPError)&quot;, &quot;Rate limiting: add time.sleep() between calls, respect Retry-After headers&quot;]'
+          data-practice='&quot;Build a weather dashboard: (1) Use the Open-Meteo API (free, no key) to fetch 7-day forecast for coordinates. (2) Parse the JSON response. (3) Display a formatted daily forecast table. (4) Add retry logic: if the request fails, retry up to 3 times with exponential backoff. (5) Cache the response to a JSON file — only re-fetch if the cache is older than 1 hour. Use time.sleep(1) between retries.&quot;'
+          data-gains='[&quot;HTTP methods&quot;, &quot;requests.get/post&quot;, &quot;r.json()/raise_for_status()&quot;, &quot;Bearer auth&quot;, &quot;timeout&quot;, &quot;retry with backoff&quot;, &quot;response caching&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — HTTP Requests with requests&quot;, &quot;u&quot;: &quot;https://realpython.com/python-requests/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Open-Meteo Free Weather API&quot;, &quot;u&quot;: &quot;https://open-meteo.com/en/docs&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 31</div>
+          <div class="day-topic">APIs with requests</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="32"
+          data-phase="w5"
+          data-week-label="Week 5"
+          data-color="#ff6b6b"
+          data-topic="Databases with SQLite"
+          data-topics='[&quot;sqlite3: built-in Python module, no server needed — single .db file&quot;, &quot;connect() → cursor() → execute() → commit() — the standard workflow&quot;, &quot;CREATE TABLE IF NOT EXISTS — safe table creation&quot;, &quot;Parameterized queries: cursor.execute(&#39;SELECT * FROM t WHERE id = ?&#39;, (id,)) — NEVER use f-strings in SQL (SQL injection!)&quot;, &quot;executemany(): insert a list of records in one call&quot;, &quot;fetchone(), fetchall(), fetchmany(n) — retrieving results&quot;, &quot;Row factory: conn.row_factory = sqlite3.Row — access columns by name like a dict&quot;, &quot;Context manager with sqlite3.connect() as conn: — auto-commits or rolls back&quot;, &quot;CRUD pattern: create(), read(), update(), delete() methods wrapping SQL&quot;, &quot;Transactions: conn.commit() to save, conn.rollback() to undo&quot;, &quot;My addition: database class pattern — wrap connection in a class with __enter__/__exit__&quot;]'
+          data-practice='&quot;Build a Library Management System with SQLite: tables for books (id, title, author, isbn, available) and members (id, name, email, joined). Implement: add_book(), search_books(query), checkout(member_id, book_id), return_book(book_id), list_overdue(), export_to_csv(). Use parameterized queries throughout. Add a migration function that checks the schema version and upgrades the table structure if needed.&quot;'
+          data-gains='[&quot;sqlite3 workflow&quot;, &quot;parameterized queries&quot;, &quot;SQL injection prevention&quot;, &quot;row_factory&quot;, &quot;CRUD pattern&quot;, &quot;transactions&quot;, &quot;executemany&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — SQLite in Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-sqlite-sqlalchemy/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Python Docs — sqlite3 module&quot;, &quot;u&quot;: &quot;https://docs.python.org/3/library/sqlite3.html&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 32</div>
+          <div class="day-topic">Databases with SQLite</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="33"
+          data-phase="w5"
+          data-week-label="Week 5"
+          data-color="#ff6b6b"
+          data-topic="Testing — unittest &amp; pytest"
+          data-topics='[&quot;Why test? Catch bugs early, document behavior, enable safe refactoring&quot;, &quot;unittest: built-in module. TestCase class, test methods start with test_&quot;, &quot;Assertions: assertEqual, assertNotEqual, assertTrue, assertFalse, assertIsNone, assertRaises&quot;, &quot;setUp() and tearDown(): run before/after each test method&quot;, &quot;pytest: pip install pytest. Write test functions (no class needed), assert keyword&quot;, &quot;pytest auto-discovery: any file matching test_*.py or *_test.py&quot;, &quot;pytest fixtures: @pytest.fixture — share setup code across tests&quot;, &quot;pytest parametrize: @pytest.mark.parametrize — run one test with many inputs&quot;, &quot;Mocking with unittest.mock: Mock(), MagicMock(), patch() — replace real dependencies&quot;, &quot;mock.patch as decorator: @patch(&#39;module.function&#39;) — replace during test only&quot;, &quot;Test-driven development (TDD): write test first, then write code to pass it&quot;, &quot;Code coverage: pip install pytest-cov, run pytest --cov&quot;]'
+          data-practice='&quot;Write a full test suite for your BankAccount class from Day 22: (1) unittest.TestCase with setUp creating a test account. (2) Test deposit, withdraw, transfer, and InsufficientFunds exception. (3) Rewrite tests using pytest fixtures. (4) Use @pytest.mark.parametrize to test withdraw with 5 different amounts (valid, zero, negative, exact balance, over balance). (5) Mock the datetime.now() call in your timestamp method. (6) Run with --cov and achieve 90%+ coverage.&quot;'
+          data-gains='[&quot;unittest.TestCase&quot;, &quot;pytest fixtures&quot;, &quot;parametrize&quot;, &quot;mock/patch&quot;, &quot;setUp/tearDown&quot;, &quot;TDD cycle&quot;, &quot;coverage reports&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — Testing in Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-testing/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Real Python — pytest Guide&quot;, &quot;u&quot;: &quot;https://realpython.com/pytest-python-testing/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 33</div>
+          <div class="day-topic">Testing — unittest &amp; pytest</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="34"
+          data-phase="w5"
+          data-week-label="Week 5"
+          data-color="#ff6b6b"
+          data-topic="Concurrency — Threading, Multiprocessing &amp; asyncio"
+          data-topics='[&quot;The Global Interpreter Lock (GIL): only one Python thread executes at a time — limits CPU parallelism&quot;, &quot;Threading: good for I/O-bound tasks (network requests, file I/O). threading.Thread, daemon threads&quot;, &quot;ThreadPoolExecutor (concurrent.futures): high-level thread pool — map() over threads&quot;, &quot;Multiprocessing: good for CPU-bound tasks (math, image processing). Bypasses the GIL — true parallelism&quot;, &quot;ProcessPoolExecutor: high-level process pool — same API as ThreadPoolExecutor&quot;, &quot;asyncio: cooperative concurrency. Single-threaded but non-blocking. Best for many concurrent I/O operations&quot;, &quot;async def: define a coroutine. await: pause and yield control&quot;, &quot;asyncio.run(): entry point for async programs&quot;, &quot;asyncio.gather(): run multiple coroutines concurrently&quot;, &quot;aiohttp: async HTTP library — make many requests concurrently with asyncio&quot;, &quot;When to use what: asyncio for many concurrent HTTP/DB calls, threading for moderate I/O, multiprocessing for CPU&quot;]'
+          data-practice='&quot;Compare all three approaches: fetch 10 URLs concurrently. (1) Sequential — baseline timing. (2) ThreadPoolExecutor — time it. (3) asyncio + aiohttp — time it. For CPU work: calculate the sum of squares for 100 million numbers. (1) Single process. (2) multiprocessing with ProcessPoolExecutor splitting the work across CPU cores. Measure and compare all timings. Write clear comments explaining WHY each approach is faster for its specific use case.&quot;'
+          data-gains='[&quot;GIL explained&quot;, &quot;threading for I/O&quot;, &quot;multiprocessing for CPU&quot;, &quot;ThreadPoolExecutor/ProcessPoolExecutor&quot;, &quot;async/await&quot;, &quot;asyncio.gather()&quot;, &quot;aiohttp&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — Python Concurrency&quot;, &quot;u&quot;: &quot;https://realpython.com/python-concurrency/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Real Python — asyncio Guide&quot;, &quot;u&quot;: &quot;https://realpython.com/async-io-python/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 34</div>
+          <div class="day-topic">Concurrency — Threading, Multiprocessing &amp; asyncio</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="35"
+          data-phase="w5"
+          data-week-label="Week 5"
+          data-color="#ff6b6b"
+          data-topic="DSA Fundamentals — Sorting, Searching &amp; Classic Structures"
+          data-topics='[&quot;Why DSA matters: interviews, performance-critical code, understanding the tools you use daily&quot;, &quot;Big-O notation review: O(1), O(log n), O(n), O(n log n), O(n²) — what each means in practice&quot;, &quot;Sorting algorithms: Bubble (O(n²)), Selection (O(n²)), Insertion (O(n²)), Merge (O(n log n)), Quick (O(n log n) avg) — implement from scratch&quot;, &quot;Python&#39;s built-in sort: Timsort (O(n log n)) — based on merge+insertion sort. Use it in production always.&quot;, &quot;Searching: Linear search O(n), Binary search O(log n) — binary search requires sorted data&quot;, &quot;Stack: LIFO. Implement with a list using append()/pop(). Use for undo, call stack, expression parsing.&quot;, &quot;Queue: FIFO. Use collections.deque — append()/popleft(). Use for BFS, task queues.&quot;, &quot;Linked List: manually built Node + LinkedList class — understand pointers/references&quot;, &quot;Hash Table: Python&#39;s dict IS a hash table. Understand collision, load factor, O(1) amortized access.&quot;, &quot;W3Schools addition: Python DSA section — Stacks, Queues, Linked Lists, Binary Search all with Python code&quot;]'
+          data-practice='&quot;Implement from scratch: (1) Merge sort with a visual step-by-step print showing the recursion. (2) Binary search both iteratively and recursively — test on a sorted list of 1000 numbers. (3) A Stack class with push, pop, peek, is_empty. Use it to check if brackets are balanced in a string. (4) A Queue class using deque. Use it to simulate a task scheduler (add tasks, process 3 at a time). Measure O(n) vs O(1) lookup on list vs dict for 1 million items.&quot;'
+          data-gains='[&quot;Big-O notation&quot;, &quot;merge sort&quot;, &quot;binary search&quot;, &quot;Stack (LIFO)&quot;, &quot;Queue (FIFO)&quot;, &quot;hash table = dict&quot;, &quot;linked list&quot;, &quot;sorting complexity&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;W3Schools — Python DSA&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/dsa/dsa_intro.php&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — Data Structures and Algorithms&quot;, &quot;u&quot;: &quot;https://realpython.com/python-data-structures/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 35</div>
+          <div class="day-topic">DSA Fundamentals — Sorting, Searching &amp; Classic Structures</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 6 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,209,102,0.12);color:#ffd166;">Week 6</span>
+      <span class="phase-title">Projects — Build Real Things</span>
+      <span class="phase-meta">Days 36 &ndash; 40</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Ship four real-world projects that combine everything you&#39;ve learned — from automation scripts to web APIs</div>
+    <div class="week-group" id="w6">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="36"
+          data-phase="w6"
+          data-week-label="Week 6"
+          data-color="#ffd166"
+          data-topic="Project 1 — File &amp; System Automation"
+          data-topics='[&quot;subprocess module: run system commands from Python — subprocess.run(), subprocess.Popen()&quot;, &quot;Automating file operations with pathlib and shutil&quot;, &quot;Scheduled execution: using schedule library or cron jobs&quot;, &quot;Watching a folder for changes: watchdog library&quot;, &quot;argparse: building proper command-line interfaces with flags and arguments&quot;, &quot;Logging module: proper logging vs print() — logging.basicConfig(), handlers, formatters&quot;, &quot;Log levels: DEBUG, INFO, WARNING, ERROR, CRITICAL&quot;, &quot;Email automation: smtplib for sending emails, imaplib for reading&quot;, &quot;os.environ: reading environment variables — secrets management&quot;]'
+          data-practice='&quot;Build a File Organizer CLI: a command-line tool (using argparse) that scans a target directory and organizes files by type (images → /images/, docs → /documents/, etc.). Flags: --dry-run (preview without moving), --recursive (include subdirectories), --log-file (write moves to a log). Use logging module for all output. Use pathlib for all path operations. Add --watch mode using watchdog to monitor a folder and auto-organize new files.&quot;'
+          data-gains='[&quot;subprocess&quot;, &quot;argparse&quot;, &quot;logging module&quot;, &quot;watchdog&quot;, &quot;CLI tool&quot;, &quot;dry-run pattern&quot;, &quot;os.environ&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — argparse&quot;, &quot;u&quot;: &quot;https://realpython.com/command-line-interfaces-python-argparse/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Real Python — Python Logging&quot;, &quot;u&quot;: &quot;https://realpython.com/python-logging/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 36</div>
+          <div class="day-topic">Project 1 — File &amp; System Automation</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="37"
+          data-phase="w6"
+          data-week-label="Week 6"
+          data-color="#ffd166"
+          data-topic="Project 2 — Web Scraper"
+          data-topics='[&quot;requests: fetch HTML from any URL&quot;, &quot;BeautifulSoup (bs4): parse HTML with Pythonic API — pip install beautifulsoup4 lxml&quot;, &quot;soup.find(), soup.find_all(), CSS selectors with soup.select()&quot;, &quot;Navigating the parse tree: .parent, .children, .next_sibling, .text, .get_text(strip=True)&quot;, &quot;Extracting attributes: tag[&#39;href&#39;], tag.get(&#39;src&#39;)&quot;, &quot;Handling pagination: find &#39;next page&#39; link, loop until no more pages&quot;, &quot;Respect robots.txt: always check before scraping&quot;, &quot;Rate limiting: time.sleep() between requests — be a polite scraper&quot;, &quot;Saving scraped data to CSV, JSON, or SQLite&quot;, &quot;Selenium (brief intro): for JavaScript-heavy sites that need a real browser&quot;]'
+          data-practice='&quot;Build a Book Scraper: scrape books.toscrape.com (a legal practice site). Extract: title, price, rating, availability, product page URL for all books. Paginate through all 50 pages. Save to both CSV and SQLite. Add: (1) Filter by category. (2) Find top 10 highest-rated cheapest books. (3) A progress bar using tqdm library. Handle network errors with retry logic. Respect robots.txt.&quot;'
+          data-gains='[&quot;BeautifulSoup&quot;, &quot;CSS selectors&quot;, &quot;pagination&quot;, &quot;data extraction&quot;, &quot;robots.txt&quot;, &quot;tqdm progress&quot;, &quot;scraper to CSV/SQLite&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — Web Scraping with BeautifulSoup&quot;, &quot;u&quot;: &quot;https://realpython.com/beautiful-soup-web-scraper-python/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Legal Scraping Practice — books.toscrape.com&quot;, &quot;u&quot;: &quot;https://books.toscrape.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 37</div>
+          <div class="day-topic">Project 2 — Web Scraper</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="38"
+          data-phase="w6"
+          data-week-label="Week 6"
+          data-color="#ffd166"
+          data-topic="Project 3 — REST API with Flask or FastAPI"
+          data-topics='[&quot;FastAPI: modern, fast, auto-generates OpenAPI docs — pip install fastapi uvicorn&quot;, &quot;Defining routes: @app.get(&#39;/items&#39;), @app.post(&#39;/items&#39;)&quot;, &quot;Path parameters: @app.get(&#39;/items/{item_id}&#39;) and query parameters: ?skip=0&amp;limit=10&quot;, &quot;Request body with Pydantic models: class Item(BaseModel) — auto-validates JSON input&quot;, &quot;Response models: control what gets returned from each endpoint&quot;, &quot;Status codes: return JSONResponse with status_code=201 for created&quot;, &quot;HTTPException: raise HTTPException(status_code=404, detail=&#39;Not found&#39;)&quot;, &quot;Auto-generated docs: FastAPI serves Swagger UI at /docs automatically&quot;, &quot;CORS middleware for browser access&quot;, &quot;Basic auth: API key in header with a dependency&quot;]'
+          data-practice='&quot;Build a To-Do API with FastAPI: endpoints GET /todos, POST /todos, GET /todos/{id}, PUT /todos/{id}, DELETE /todos/{id}. Use a Pydantic model for validation (title required, done optional bool). Store in SQLite using the pattern from Day 32. Add: filtering by status (?done=true), pagination (?skip=0&amp;limit=10), API key authentication header. Visit /docs to test all endpoints via the auto-generated Swagger UI.&quot;'
+          data-gains='[&quot;FastAPI routes&quot;, &quot;Pydantic validation&quot;, &quot;path/query params&quot;, &quot;HTTPException&quot;, &quot;Swagger docs at /docs&quot;, &quot;CRUD REST API&quot;, &quot;API key auth&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;FastAPI Official Docs&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/tutorial/&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Real Python — FastAPI Tutorial&quot;, &quot;u&quot;: &quot;https://realpython.com/fastapi-python-web-apis/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 38</div>
+          <div class="day-topic">Project 3 — REST API with Flask or FastAPI</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="39"
+          data-phase="w6"
+          data-week-label="Week 6"
+          data-color="#ffd166"
+          data-topic="Project 4 — Data Analysis with pandas"
+          data-topics='[&quot;pandas: the essential data analysis library — pip install pandas&quot;, &quot;DataFrame: a 2D table of data. Series: a single column.&quot;, &quot;Reading data: pd.read_csv(), pd.read_json(), pd.read_excel()&quot;, &quot;Exploring data: df.head(), df.tail(), df.info(), df.describe(), df.shape&quot;, &quot;Selecting: df[&#39;column&#39;], df[[&#39;col1&#39;, &#39;col2&#39;]], df.loc[row, col] (label), df.iloc[row, col] (index)&quot;, &quot;Filtering: df[df[&#39;score&#39;] > 90], df.query(&#39;score > 90 and grade == A&#39;)&quot;, &quot;Data cleaning: df.dropna(), df.fillna(), df.duplicated(), df.drop_duplicates()&quot;, &quot;Aggregation: df.groupby(&#39;category&#39;)[&#39;value&#39;].sum() — SQL GROUP BY equivalent&quot;, &quot;Merging: pd.merge(df1, df2, on=&#39;key&#39;, how=&#39;left&#39;) — SQL JOIN equivalent&quot;, &quot;Visualization: df.plot(), matplotlib basics — bar, line, scatter, histogram&quot;]'
+          data-practice='&quot;Analyze the Titanic dataset (free on Kaggle): (1) Load CSV with pandas. (2) Clean: handle missing Age values, drop columns with too many nulls. (3) Answer: survival rate by gender, by class, by age group. (4) Find the most common embarking port for survivors. (5) Create 4 visualizations: survival by class (bar), age distribution (histogram), survival rate by gender (pie), fare vs survival (scatter). Export summary statistics to a new CSV.&quot;'
+          data-gains='[&quot;DataFrame/Series&quot;, &quot;read_csv&quot;, &quot;filtering&quot;, &quot;groupby&quot;, &quot;merge&quot;, &quot;dropna/fillna&quot;, &quot;matplotlib basics&quot;, &quot;data cleaning workflow&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — Pandas Tutorial&quot;, &quot;u&quot;: &quot;https://realpython.com/pandas-dataframe/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Titanic Dataset on Kaggle&quot;, &quot;u&quot;: &quot;https://www.kaggle.com/c/titanic/data&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 39</div>
+          <div class="day-topic">Project 4 — Data Analysis with pandas</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="40"
+          data-phase="w6"
+          data-week-label="Week 6"
+          data-color="#ffd166"
+          data-topic="🏆 Capstone — Personal Finance Manager"
+          data-topics='[&quot;Full application architecture: separate modules for database, reports, CLI, and models&quot;, &quot;SQLite database with 3 tables: transactions, budgets, recurring_transactions&quot;, &quot;dataclasses for Transaction and Budget models with type hints throughout&quot;, &quot;CLI with argparse: add income/expense, view transactions, monthly report, set budget, export CSV&quot;, &quot;Monthly report: income, expenses, net, per-category breakdown with progress bars vs budget (text only)&quot;, &quot;Budget alert system: warn when spending exceeds 80% or 100% of a category budget&quot;, &quot;Recurring transactions: auto-add monthly bills on a schedule&quot;, &quot;CSV export with csv.DictWriter&quot;, &quot;Unit tests with pytest covering all core functions&quot;, &quot;Packaging: pyproject.toml so the tool is installable with pip install -e .&quot;]'
+          data-practice='&quot;Build the complete Personal Finance Manager as a proper Python package: database.py (FinanceDB class with context manager), models.py (Transaction/Budget dataclasses), reports.py (monthly_report, export_csv), cli.py (argparse CLI), tests/test_database.py (pytest tests). All Apex classes must have type hints. All functions must have docstrings. Run pytest with 80%+ coverage. Make it installable as a CLI tool via pip install -e . so you can run &#39;finance add expense 50 Food lunch&#39; from anywhere.&quot;'
+          data-gains='[&quot;full app architecture&quot;, &quot;dataclasses + type hints&quot;, &quot;argparse CLI&quot;, &quot;sqlite3 + context manager&quot;, &quot;pytest coverage&quot;, &quot;pyproject.toml&quot;, &quot;pip install -e .&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Real Python — Packaging Python Projects&quot;, &quot;u&quot;: &quot;https://realpython.com/pypi-publish-python-package/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Python Packaging Guide — pyproject.toml&quot;, &quot;u&quot;: &quot;https://packaging.python.org/en/latest/tutorials/packaging-projects/&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-type">&#x1F3C6; capstone</div>
+          <div class="day-num">Day 40</div>
+          <div class="day-topic">🏆 Capstone — Personal Finance Manager</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /plan-body -->
+
+<!-- DRAWER -->
+        <div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div>
+      <div class="drawer-badge colored" id="d-badge"></div>
+      <div class="drawer-topic" id="d-topic"></div>
+      <div class="drawer-week-info" id="d-week"></div>
+    </div>
+    <div class="drawer-controls">
+      <button class="drawer-btn" id="btn-prev" title="Previous day" onclick="nav(-1)">&#8249;</button>
+      <button class="drawer-btn" id="btn-next" title="Next day"     onclick="nav(+1)">&#8250;</button>
+      <button class="drawer-btn close"          title="Close"        onclick="closeDrawer()">&#x2715;</button>
+    </div>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</div>
+
+<script src="daydeck-core.js"></script>
+<script>
+
+  function openDay(card) {
+    currentCard = card;
+    document.querySelectorAll('.day-card.active')
+      .forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+
+    const color  = card.dataset.color;
+    const topic  = card.dataset.topic;
+    const wLabel = card.dataset.weekLabel;
+    const day    = card.dataset.day;
+
+    let topics, practice, gains, srcs;
+    try { topics   = JSON.parse(card.dataset.topics);   } catch(e) { topics   = []; }
+    try { practice = JSON.parse(card.dataset.practice); } catch(e) { practice = ''; }
+    try { gains    = JSON.parse(card.dataset.gains);    } catch(e) { gains    = []; }
+    try { srcs     = JSON.parse(card.dataset.sources);  } catch(e) { srcs     = []; }
+
+    const badge = document.getElementById('d-badge');
+    badge.style.setProperty('--card-accent',    color);
+    badge.style.setProperty('--card-accent-bg', hexToRgba(color, 0.1));
+    badge.textContent = 'Day ' + day + ' \u00b7 ' + wLabel;
+    document.getElementById('d-topic').textContent = topic;
+
+    const effortLabel = { light: '\u25cf\u25cb\u25cb light', normal: '\u25cf\u25cf\u25cb normal', heavy: '\u25cf\u25cf\u25cf heavy \u2014 plan extra time' };
+    const effort = card.dataset.effort || 'normal';
+    document.getElementById('d-week').textContent = wLabel + '  \u00b7  ' + (effortLabel[effort] || '');
+
+    updateNavButtons(card);
+
+    document.getElementById('d-body').innerHTML =
+      '<div>' +
+        '<div class="drawer-section-title">What to learn today</div>' +
+        '<div class="learn-list">' +
+          topics.map(function(item, i) {
+            return '<div class="learn-item">' +
+              '<span class="learn-num">' + String(i + 1).padStart(2, '0') + '</span>' +
+              '<span class="learn-text">' + decodeEntities(item) + '</span>' +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+      '<div>' +
+        '<div class="drawer-section-title">Practice</div>' +
+        '<div class="practice-block">' +
+          '<p class="practice-text">' + decodeEntities(practice) + '</p>' +
+        '</div>' +
+      '</div>' +
+      '<div>' +
+        '<div class="drawer-section-title">Skills gained</div>' +
+        '<div class="gain-tags">' +
+          gains.map(function(g) {
+            return '<span class="gain-tag">' + decodeEntities(g) + '</span>';
+          }).join('') +
+        '</div>' +
+      '</div>' +
+      '<div>' +
+        '<div class="drawer-section-title">Resources</div>' +
+        '<div class="source-list">' +
+          srcs.map(function(s) {
+            return '<a class="source-link" href="' + s.u +
+              '" target="_blank" rel="noopener noreferrer">' +
+              '<span class="source-badge badge-' + s.b + '">' + s.b + '</span>' +
+              '<span class="source-name">' + s.t + '</span>' +
+              '<span class="source-arrow">&#8599;</span>' +
+            '</a>';
+          }).join('') +
+        '</div>' +
+      '</div>';
+
+    showDrawer();
+  }
+
+</script>
+
+</body>
+</html>
