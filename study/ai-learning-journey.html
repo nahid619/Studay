@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Learning Journey</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">&#x1F916; 52-Day Study Plan &middot; Self-paced</div>
+  <h1 class="hero-title">AI Learning Journey &mdash; <span>Zero to Junior AI Engineer</span></h1>
+  <p class="hero-desc">A structured 52-day roadmap from developer setup to shipping production AI applications. 9 phases cover Python fundamentals, Ollama &amp; prompt engineering, tool use &amp; agents, FastAPI &amp; Docker, RAG pipelines, and graduation. Every day has topics, key concepts explained in plain English, hands-on practice, and curated resources.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">52</div><div class="stat-label">Total days</div></div>
+    <div class="stat"><div class="stat-val">9</div><div class="stat-label">Phases</div></div>
+    <div class="stat"><div class="stat-val">AI</div><div class="stat-label">Focus</div></div>
+    <div class="stat"><div class="stat-val">LLM</div><div class="stat-label">Core tech</div></div>
+    <div class="stat"><div class="stat-val">RAG</div><div class="stat-label">Capstone</div></div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <span class="filter-label">type:</span>
+  <button class="filter-btn active" onclick="setFilter('all', this)"><span class="filter-dot dot-all"></span>all</button>
+  <button class="filter-btn" onclick="setFilter('learning', this)"><span class="filter-dot" style="background:#60A5FA;"></span>learning</button>
+  <button class="filter-btn" onclick="setFilter('project', this)"><span class="filter-dot" style="background:#F0C050;"></span>project</button>
+  <button class="filter-btn" onclick="setFilter('review', this)"><span class="filter-dot" style="background:#34D399;"></span>review</button>
+  <div class="week-jump">
+    <span class="week-jump-label">jump:</span>
+    <select onchange="jumpWeek(this.value)">
+      <option value="ph0">Phase 0 &mdash; Developer Foundations</option>
+      <option value="ph1">Phase 1 &mdash; Python Fundamentals</option>
+      <option value="ph2">Phase 2 &mdash; Ollama + Prompt Engineering</option>
+      <option value="ph3">Phase 3 &mdash; Tool Use &amp; AI Agents</option>
+      <option value="ph4">Phase 4 &mdash; FastAPI + Docker</option>
+      <option value="ph5">Phase 5 &mdash; RAG + Advanced</option>
+      <option value="ph6">Phase 6 &mdash; Junior Engineer Polish</option>
+      <option value="ph7">Phase 7 &mdash; BONUS — External AI APIs</option>
+      <option value="ph8">Phase 8 &mdash; What&#39;s Next &amp; Graduation</option>
+    </select>
+  </div>
+</div>
+
+<!-- PLAN BODY -->
+<div class="plan-body">
+
+  <!-- PHASE 0 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(6,214,160,0.12);color:#06d6a0;">Phase 0</span>
+      <span class="phase-title">🔧 Developer Foundations</span>
+      <span class="phase-meta">Days 1 &ndash; 4</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Before writing a single line of AI code, you need the tools every developer uses. These are non-negotiable for any job.</div>
+    <div class="week-group" id="ph0">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="1"
+          data-phase="ph0"
+          data-day-type="learning"
+          data-week-label="Phase 0"
+          data-color="#06d6a0"
+          data-topic="Setup Everything Right"
+          data-time="45 mins"
+          data-topics='[&quot;Install Python 3.11+&quot;, &quot;Install VS Code + Python extension&quot;, &quot;Understand virtual environments (venv) — isolated space for each project&amp;#39;s packages&quot;, &quot;Create your first project folder&quot;, &quot;Run your first Python file&quot;, &quot;pip — Python&amp;#39;s package installer&quot;, &quot;Terminal — where you type commands&quot;]'
+          data-concepts='[{&quot;concept&quot;: &quot;Python&quot;, &quot;meaning&quot;: &quot;The language you write code in&quot;}, {&quot;concept&quot;: &quot;VS Code&quot;, &quot;meaning&quot;: &quot;Your code editor&quot;}, {&quot;concept&quot;: &quot;venv&quot;, &quot;meaning&quot;: &quot;Isolated space for each project&amp;#39;s packages&quot;}, {&quot;concept&quot;: &quot;pip&quot;, &quot;meaning&quot;: &quot;Python&amp;#39;s package installer&quot;}, {&quot;concept&quot;: &quot;terminal&quot;, &quot;meaning&quot;: &quot;Where you type commands&quot;}]'
+          data-practice='[&quot;Install Python 3.11+ and VS Code&quot;, &quot;Create D:\\AI_Projects\\phase0\\ and activate venv&quot;, &quot;Create hello.py → run it → see output&quot;, &quot;Close terminal → reopen → reactivate venv (practice 3 times — muscle memory)&quot;, &quot;Change the print messages to say something about yourself&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Download Python 3.11+&quot;, &quot;u&quot;: &quot;https://www.python.org/downloads/&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;VS Code Python Setup (Official)&quot;, &quot;u&quot;: &quot;https://code.visualstudio.com/docs/python/python-tutorial&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Python venv Guide — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-virtual-environments-a-primer/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 01</div>
+          <div class="day-topic">Setup Everything Right</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="2"
+          data-phase="ph0"
+          data-day-type="learning"
+          data-week-label="Phase 0"
+          data-color="#06d6a0"
+          data-topic="Git &amp; GitHub"
+          data-time="65 mins"
+          data-topics='[&quot;What Git is and why every developer uses it — tracks changes to your code over time&quot;, &quot;Basic Git commands: init, add, commit, push&quot;, &quot;Create a GitHub account and your first repository&quot;, &quot;commit — save a snapshot of your code (like a checkpoint in a game)&quot;, &quot;push — upload your local code to GitHub (backup + share)&quot;, &quot;repository (repo) — a project folder tracked by Git&quot;, &quot;.gitignore — file that tells Git what NOT to track (keep API keys private)&quot;, &quot;NEVER commit your .env file — it contains your API keys&quot;]'
+          data-concepts='[{&quot;concept&quot;: &quot;Git&quot;, &quot;meaning&quot;: &quot;Tracks changes to your code over time — never lose your work&quot;}, {&quot;concept&quot;: &quot;GitHub&quot;, &quot;meaning&quot;: &quot;Website to store your code online — show employers your work&quot;}, {&quot;concept&quot;: &quot;commit&quot;, &quot;meaning&quot;: &quot;Save a snapshot of your code — like a checkpoint in a game&quot;}, {&quot;concept&quot;: &quot;push&quot;, &quot;meaning&quot;: &quot;Upload your local code to GitHub — backup + share&quot;}, {&quot;concept&quot;: &quot;.gitignore&quot;, &quot;meaning&quot;: &quot;File that tells Git what NOT to track — keep API keys private&quot;}]'
+          data-practice='[&quot;Install Git and configure your name/email&quot;, &quot;Create a GitHub account at github.com&quot;, &quot;Run git init in your phase0 folder&quot;, &quot;Add and commit hello.py with a meaningful commit message&quot;, &quot;Create a repo on GitHub and push your code — verify it appears online&quot;, &quot;Create .gitignore with venv/ and .env inside&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Git Official Download&quot;, &quot;u&quot;: &quot;https://git-scm.com/download/win&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Git &amp; GitHub for Beginners — freeCodeCamp&quot;, &quot;u&quot;: &quot;https://www.freecodecamp.org/news/git-and-github-for-beginners/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;GitHub Docs: Getting Started&quot;, &quot;u&quot;: &quot;https://docs.github.com/en/get-started&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 02</div>
+          <div class="day-topic">Git &amp; GitHub</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="3"
+          data-phase="ph0"
+          data-day-type="learning"
+          data-week-label="Phase 0"
+          data-color="#06d6a0"
+          data-topic="Terminal Power &amp; File System"
+          data-time="45 mins"
+          data-topics='[&quot;Navigate folders confidently in terminal&quot;, &quot;Create, move, copy, delete files via command line&quot;, &quot;Run Python scripts properly&quot;, &quot;Understand relative vs absolute paths&quot;, &quot;pip freeze &gt; requirements.txt — save package list&quot;, &quot;pip install -r requirements.txt — restore from list&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Navigate to 3 different folders using only the terminal (no file explorer)&quot;, &quot;Create a folder, create a file inside it, then delete both — using only terminal&quot;, &quot;Run pip freeze &gt; requirements.txt — open the file and read what&amp;#39;s in it&quot;, &quot;Practice: from D:\\AI_Projects\\phase0, go to Desktop and back in 2 commands&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Windows Command Line for Beginners&quot;, &quot;u&quot;: &quot;https://www.freecodecamp.org/news/command-line-for-beginners/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 03</div>
+          <div class="day-topic">Terminal Power &amp; File System</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="4"
+          data-phase="ph0"
+          data-day-type="project"
+          data-week-label="Phase 0"
+          data-color="#06d6a0"
+          data-topic="PROJECT: Developer Setup &amp; GitHub Portfolio"
+          data-time="75 mins"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;GitHub Profile README Guide&quot;, &quot;u&quot;: &quot;https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 04</div>
+          <div class="day-topic">PROJECT: Developer Setup &amp; GitHub Portfolio</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(0,212,255,0.12);color:#00d4ff;">Phase 1</span>
+      <span class="phase-title">🟦 Python Fundamentals</span>
+      <span class="phase-meta">Days 5 &ndash; 16</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Learn the Python concepts that actually matter for AI. Every topic connects to something you&#39;ll use in your AI projects.</div>
+    <div class="week-group" id="ph1">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="5"
+          data-phase="ph1"
+          data-day-type="learning"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="Variables &amp; Data Types"
+          data-time="60 mins"
+          data-topics='[&quot;Variables and assignment — labeled boxes in memory&quot;, &quot;The 5 data types: int, float, str, bool, None&quot;, &quot;type() function — inspect any variable&amp;#39;s type at runtime&quot;, &quot;Type checking and conversion: int(), float(), str(), bool()&quot;, &quot;f-strings preview: f&amp;#39;Using {model} with temperature {temperature}&amp;#39;&quot;, &quot;AI connection: int = max_tokens, float = temperature, str = prompt, bool = stream&quot;]'
+          data-concepts='[{&quot;concept&quot;: &quot;int&quot;, &quot;example&quot;: &quot;max_tokens = 1000&quot;, &quot;aiUse&quot;: &quot;API parameters&quot;}, {&quot;concept&quot;: &quot;float&quot;, &quot;example&quot;: &quot;temperature = 0.7&quot;, &quot;aiUse&quot;: &quot;LLM creativity setting&quot;}, {&quot;concept&quot;: &quot;str&quot;, &quot;example&quot;: &quot;prompt = &amp;#39;Hello&amp;#39;&quot;, &quot;aiUse&quot;: &quot;Every message to the AI&quot;}, {&quot;concept&quot;: &quot;bool&quot;, &quot;example&quot;: &quot;stream = True&quot;, &quot;aiUse&quot;: &quot;Toggle features on/off&quot;}, {&quot;concept&quot;: &quot;None&quot;, &quot;example&quot;: &quot;response = None&quot;, &quot;aiUse&quot;: &quot;Empty placeholder&quot;}]'
+          data-practice='[&quot;Create an AI config with 5 variables: model, temp, max_tokens, stream, system_prompt&quot;, &quot;Print each with its type using type()&quot;, &quot;Convert &amp;#39;3.14&amp;#39; (string) to float and multiply by 2&quot;, &quot;Swap a = &amp;#39;qwen3.5:4b&amp;#39; and b = &amp;#39;llama3.2:3b&amp;#39; using one line: a, b = b, a&quot;, &quot;Print type(None) and type(True) — note the results&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Python Data Types — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-data-types/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Variables — W3Schools&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_variables.asp&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Built-in Types — Python Docs&quot;, &quot;u&quot;: &quot;https://docs.python.org/3/library/stdtypes.html&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 05</div>
+          <div class="day-topic">Variables &amp; Data Types</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="6"
+          data-phase="ph1"
+          data-day-type="learning"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="Strings &amp; f-strings (Most Important Day)"
+          data-time="60 mins"
+          data-topics='[&quot;String operations and methods: upper(), lower(), strip(), replace(), split(), join()&quot;, &quot;f-strings in depth — the backbone of prompt engineering&quot;, &quot;Multi-line strings with triple quotes — used for system prompts&quot;, &quot;String slicing and searching: in, startswith(), split()&quot;, &quot;Prompt template function pattern — you&amp;#39;ll use this in every project&quot;, &quot;XML-tagged prompts: &lt;context&gt;, &lt;question&gt; blocks for structured prompting&quot;]'
+          data-concepts='[{&quot;concept&quot;: &quot;f-string&quot;, &quot;example&quot;: &quot;f&amp;#39;Hello {name}&amp;#39;&quot;, &quot;aiUse&quot;: &quot;Dynamic prompts&quot;}, {&quot;concept&quot;: &quot;Triple quote&quot;, &quot;example&quot;: &quot;\&quot;\&quot;\&quot;...\&quot;\&quot;\&quot;&quot;, &quot;aiUse&quot;: &quot;Multi-line system prompts&quot;}, {&quot;concept&quot;: &quot;.strip()&quot;, &quot;example&quot;: &quot;&amp;#39; hi &amp;#39;.strip()&quot;, &quot;aiUse&quot;: &quot;Clean user input before sending&quot;}, {&quot;concept&quot;: &quot;.replace()&quot;, &quot;example&quot;: &quot;s.replace(&amp;#39;X&amp;#39;, name)&quot;, &quot;aiUse&quot;: &quot;Prompt templates&quot;}, {&quot;concept&quot;: &quot;.split()&quot;, &quot;example&quot;: &quot;&amp;#39;a,b,c&amp;#39;.split(&amp;#39;,&amp;#39;)&quot;, &quot;aiUse&quot;: &quot;Parse AI responses&quot;}]'
+          data-practice='[&quot;Take &amp;#39;  nahid@gmail.com  &amp;#39; → strip it, get just the username before @&quot;, &quot;Write a build_system_prompt(name, role, language) function using f-strings&quot;, &quot;Create a multi-line prompt using triple quotes with 3 variables inserted&quot;, &quot;Split &amp;#39;qwen3.5:4b,llama3.2:3b,gemma3:4b&amp;#39; into a list of model names&quot;, &quot;Reverse the string &amp;#39;Python&amp;#39; using slicing [::-1]&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Python Strings — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-strings/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;f-Strings — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-f-strings/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;String Methods — W3Schools&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_ref_string.asp&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 06</div>
+          <div class="day-topic">Strings &amp; f-strings (Most Important Day)</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="7"
+          data-phase="ph1"
+          data-day-type="learning"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="Lists &amp; Loops"
+          data-time="60 mins"
+          data-topics='[&quot;Creating and accessing lists: append(), remove(), pop(), len()&quot;, &quot;for loops — iterating over any list&quot;, &quot;while loops — condition-based repetition&quot;, &quot;List comprehensions: [x for x in items if condition]&quot;, &quot;AI connection: messages history is a list of dicts — looping over chat history&quot;, &quot;enumerate() — get index AND value: for i, msg in enumerate(history)&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Create a models list and loop through it printing each with its index&quot;, &quot;Build a message_history list — append 5 messages using a loop&quot;, &quot;Write filter_by_role(history, role) using a list comprehension&quot;, &quot;Write a while loop that reads user input until they type &amp;#39;quit&amp;#39;&quot;, &quot;Count the total characters across all user messages in a history list&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Python Lists — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-lists-tuples/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Python Loops — W3Schools&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_for_loops.asp&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;List Comprehensions — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/list-comprehension-python/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 07</div>
+          <div class="day-topic">Lists &amp; Loops</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="8"
+          data-phase="ph1"
+          data-day-type="project"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="PROJECT: Shopping List Manager CLI"
+          data-time="70 mins"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;Python JSON — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-json/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 08</div>
+          <div class="day-topic">PROJECT: Shopping List Manager CLI</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="9"
+          data-phase="ph1"
+          data-day-type="learning"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="Dictionaries"
+          data-time="60 mins"
+          data-topics='[&quot;Creating and accessing dictionaries&quot;, &quot;Adding, updating, deleting keys&quot;, &quot;Nested dictionaries&quot;, &quot;dict.get(key, default) — safe access with fallback (critical for API responses)&quot;, &quot;dict.keys(), dict.values(), dict.items() — iteration&quot;, &quot;AI connection: EVERY LLM API message is a dictionary — {role, content}&quot;, &quot;Exact Ollama API response structure: response[&amp;#39;message&amp;#39;][&amp;#39;content&amp;#39;]&quot;]'
+          data-concepts='[{&quot;concept&quot;: &quot;Dict literal&quot;, &quot;code&quot;: &quot;{\&quot;role\&quot;: \&quot;user\&quot;}&quot;, &quot;aiUse&quot;: &quot;Exact API message format&quot;}, {&quot;concept&quot;: &quot;Access&quot;, &quot;code&quot;: &quot;msg[\&quot;role\&quot;]&quot;, &quot;aiUse&quot;: &quot;Read message role&quot;}, {&quot;concept&quot;: &quot;.get()&quot;, &quot;code&quot;: &quot;msg.get(\&quot;content\&quot;, \&quot;\&quot;)&quot;, &quot;aiUse&quot;: &quot;Safe access with fallback&quot;}, {&quot;concept&quot;: &quot;Nested&quot;, &quot;code&quot;: &quot;response[\&quot;message\&quot;][\&quot;content\&quot;]&quot;, &quot;aiUse&quot;: &quot;Real API response structure&quot;}]'
+          data-practice='[&quot;Create an AI config dict with model, temperature, stream, system_prompt keys&quot;, &quot;Update temperature to 0.9 and add a new key max_tokens: 500&quot;, &quot;Create a 4-message history list and extract only content from each&quot;, &quot;Write make_message(role, content) that returns a properly formatted message dict&quot;, &quot;Safely access response.get(&amp;#39;error&amp;#39;, None) — what does it return if error doesn&amp;#39;t exist?&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Python Dictionaries — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-dicts/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Dictionaries — W3Schools&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_dictionaries.asp&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 09</div>
+          <div class="day-topic">Dictionaries</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="10"
+          data-phase="ph1"
+          data-day-type="learning"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="Functions"
+          data-time="60 mins"
+          data-topics='[&quot;Defining and calling functions&quot;, &quot;Parameters, default values, return values&quot;, &quot;Docstrings — documenting your code (triple-quoted string after def)&quot;, &quot;Default parameters: def chat_request(user_input, model=&amp;#39;qwen3.5:4b&amp;#39;, temperature=0.7)&quot;, &quot;Functions that work together — how real projects are structured&quot;, &quot;AI connection: every API call gets wrapped in a function&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Write clear_history(history) that empties the list and prints how many messages were cleared&quot;, &quot;Write get_user_messages(history) that returns a list of only user message strings&quot;, &quot;Write build_prompt(topic, style=&amp;#39;brief&amp;#39;) with a default style parameter&quot;, &quot;Add docstrings to all functions&quot;, &quot;Write a function that takes a history list and returns the total character count typed by user&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Python Functions — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/defining-your-own-python-function/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Functions — W3Schools&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_functions.asp&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 10</div>
+          <div class="day-topic">Functions</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="11"
+          data-phase="ph1"
+          data-day-type="learning"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="if/else &amp; Error Handling (try/except)"
+          data-time="60 mins"
+          data-topics='[&quot;if, elif, else — making decisions in code&quot;, &quot;Comparison operators: ==, !=, &gt;, in, not&quot;, &quot;try/except — handling errors without crashing&quot;, &quot;Specific exceptions: requests.ConnectionError, requests.Timeout, KeyError, ValueError&quot;, &quot;raise_for_status() — raises error if HTTP status != 200&quot;, &quot;AI connection: API calls fail — you MUST handle it gracefully&quot;, &quot;Pattern: safe_ollama_call() that NEVER crashes — always returns something&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Write validate_role(role) that raises ValueError if role is not user, assistant, or system&quot;, &quot;Wrap int(&amp;#39;abc&amp;#39;) in try/except — catch ValueError and print friendly message&quot;, &quot;Write safe_load_json(filename) that returns {} if file doesn&amp;#39;t exist instead of crashing&quot;, &quot;Write a function that checks if a model name contains a size tag: 3b, 4b, etc.&quot;, &quot;Add try/except to your shopping list&amp;#39;s load_list() from Day 8&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Python Exceptions — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-exceptions/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;try/except — W3Schools&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_try_except.asp&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 11</div>
+          <div class="day-topic">if/else &amp; Error Handling (try/except)</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="12"
+          data-phase="ph1"
+          data-day-type="project"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="PROJECT: Student Grade Calculator"
+          data-time="75 mins"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;Python JSON — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-json/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 12</div>
+          <div class="day-topic">PROJECT: Student Grade Calculator</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="13"
+          data-phase="ph1"
+          data-day-type="learning"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="JSON &amp; File I/O"
+          data-time="55 mins"
+          data-topics='[&quot;Reading and writing JSON files: json.dump(), json.load()&quot;, &quot;Reading plain text files (for RAG later) — with open(filepath, &amp;#39;r&amp;#39;, encoding=&amp;#39;utf-8&amp;#39;)&quot;, &quot;os.path for safe file handling: os.path.exists(), os.makedirs()&quot;, &quot;Safe config loader pattern — returns defaults if file missing or corrupted&quot;, &quot;AI connection: saving chat history, config files, RAG document ingestion&quot;, &quot;json.JSONDecodeError — handle corrupted JSON gracefully&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Save your Ollama model list as a JSON array to models.json&quot;, &quot;Load it back and print each model name with its index&quot;, &quot;Write append_to_log(message) that adds a timestamped line to chat.log&quot;, &quot;Create config.json with model, temperature, system_prompt — load and print it&quot;, &quot;Write a function that checks if a file is valid JSON before loading&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Working with JSON — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-json/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;File I/O — Python Docs&quot;, &quot;u&quot;: &quot;https://docs.python.org/3/tutorial/inputoutput.html&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 13</div>
+          <div class="day-topic">JSON &amp; File I/O</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="14"
+          data-phase="ph1"
+          data-day-type="learning"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="Classes &amp; Object-Oriented Python"
+          data-time="65 mins"
+          data-topics='[&quot;What a class is — a blueprint for an object&quot;, &quot;__init__, attributes, methods&quot;, &quot;ChatSession class — a real-world example you&amp;#39;ll use&quot;, &quot;self — refers to the current instance of the class&quot;, &quot;@property — computed attributes&quot;, &quot;AI connection: you&amp;#39;ll wrap your chatbot in a ChatSession class&quot;, &quot;Methods: add_message(), get_messages(), clear(), last_reply(), message_count()&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Add a max_messages limit to ChatSession — when exceeded, drop oldest messages&quot;, &quot;Add a to_dict() method that returns the session as a serializable dict&quot;, &quot;Add a from_dict(data) class method that creates a ChatSession from saved data&quot;, &quot;Write a ConversationLogger class that saves each session to a file on close&quot;, &quot;Make ChatSession iterable — for msg in session: should work&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;OOP in Python — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python3-object-oriented-programming/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Classes — W3Schools&quot;, &quot;u&quot;: &quot;https://www.w3schools.com/python/python_classes.asp&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 14</div>
+          <div class="day-topic">Classes &amp; Object-Oriented Python</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="15"
+          data-phase="ph1"
+          data-day-type="learning"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="Python Modules &amp; Project Structure"
+          data-time="55 mins"
+          data-topics='[&quot;import — importing standard library and third-party modules&quot;, &quot;from module import function — importing specific things&quot;, &quot;Creating your own modules — any .py file is a module&quot;, &quot;__name__ == &amp;#39;__main__&amp;#39; guard — prevents code running on import&quot;, &quot;requirements.txt — pin your dependencies with versions&quot;, &quot;python-dotenv — load .env files safely&quot;, &quot;os.getenv(&amp;#39;KEY&amp;#39;, &amp;#39;default&amp;#39;) — read environment variables&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Split your shopping list into utils.py (helper functions) and main.py (CLI)&quot;, &quot;Create a config.py that loads all settings from .env using os.getenv()&quot;, &quot;Add __name__ == &amp;#39;__main__&amp;#39; guard to your main.py&quot;, &quot;Create requirements.txt and test: pip install -r requirements.txt in a fresh venv&quot;, &quot;Create .env with MODEL=qwen3.5:4b and read it from Python&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Python Modules — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-modules-packages/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;python-dotenv Docs&quot;, &quot;u&quot;: &quot;https://pypi.org/project/python-dotenv/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 15</div>
+          <div class="day-topic">Python Modules &amp; Project Structure</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #00d4ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="16"
+          data-phase="ph1"
+          data-day-type="project"
+          data-week-label="Phase 1"
+          data-color="#00d4ff"
+          data-topic="PROJECT: CLI Chat Simulator"
+          data-time="75 mins"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;Python CLI Tutorial&quot;, &quot;u&quot;: &quot;https://realpython.com/python-command-line-arguments/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 16</div>
+          <div class="day-topic">PROJECT: CLI Chat Simulator</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,209,102,0.12);color:#ffd166;">Phase 2</span>
+      <span class="phase-title">🟨 Ollama + Prompt Engineering</span>
+      <span class="phase-meta">Days 17 &ndash; 21</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Connect Python to real AI. Make your first local LLM call, build multi-turn conversations, and learn to write prompts that actually get good results.</div>
+    <div class="week-group" id="ph2">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="17"
+          data-phase="ph2"
+          data-day-type="learning"
+          data-week-label="Phase 2"
+          data-color="#ffd166"
+          data-topic="Ollama Setup &amp; First AI Call"
+          data-time="60 mins"
+          data-topics='[&quot;Install Ollama — run LLMs locally for free&quot;, &quot;Pull models: ollama pull qwen3.5:4b&quot;, &quot;ollama serve — start the Ollama server&quot;, &quot;Make your first HTTP call to the Ollama API using requests&quot;, &quot;Ollama API endpoint: http://localhost:11434/api/chat&quot;, &quot;Request format: {model, stream: false, messages: [{role, content}]}&quot;, &quot;Response format: response.json()[&amp;#39;message&amp;#39;][&amp;#39;content&amp;#39;]&quot;, &quot;Available models: qwen3.5:4b, llama3.2:3b, qwen2.5-coder:3b, deepseek-r1:1.5b&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Install Ollama from ollama.com and pull qwen3.5:4b&quot;, &quot;Start ollama serve in one terminal — leave it running&quot;, &quot;Write your first ollama_chat(prompt) function and get a real AI reply&quot;, &quot;Ask 5 different questions — observe response quality and speed&quot;, &quot;Try llama3.2:3b vs qwen3.5:4b on the same question — note differences&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Ollama Official Site&quot;, &quot;u&quot;: &quot;https://ollama.com&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Ollama API Docs&quot;, &quot;u&quot;: &quot;https://github.com/ollama/ollama/blob/main/docs/api.md&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 17</div>
+          <div class="day-topic">Ollama Setup &amp; First AI Call</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="18"
+          data-phase="ph2"
+          data-day-type="learning"
+          data-week-label="Phase 2"
+          data-color="#ffd166"
+          data-topic="Multi-Turn Conversations &amp; Memory"
+          data-time="60 mins"
+          data-topics='[&quot;How multi-turn works — always send the FULL history, not just the latest message&quot;, &quot;Message roles: system (instructions), user (human), assistant (AI)&quot;, &quot;Building a growing message history list&quot;, &quot;System prompts — the invisible instruction at the start of every conversation&quot;, &quot;How LLMs are stateless — they remember nothing without the history you provide&quot;, &quot;Context window — the total limit on how many tokens can be in one request&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Build a chat() function that maintains history across calls&quot;, &quot;Test: ask &amp;#39;My name is Nahid.&amp;#39; then later ask &amp;#39;What is my name?&amp;#39; — does it remember?&quot;, &quot;Add a system prompt that makes the AI respond only in bullet points&quot;, &quot;Write trim_history(history, max_messages=10) to prevent context overflow&quot;, &quot;Build a simple REPL loop: input → chat() → print reply → repeat&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Ollama Chat API&quot;, &quot;u&quot;: &quot;https://github.com/ollama/ollama/blob/main/docs/api.md#generate-a-chat-completion&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 18</div>
+          <div class="day-topic">Multi-Turn Conversations &amp; Memory</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="19"
+          data-phase="ph2"
+          data-day-type="learning"
+          data-week-label="Phase 2"
+          data-color="#ffd166"
+          data-topic="Prompt Engineering"
+          data-time="60 mins"
+          data-topics='[&quot;What makes a good prompt vs a bad prompt&quot;, &quot;Role prompting: &amp;#39;You are an expert Python tutor...&amp;#39;&quot;, &quot;Persona + constraints + output format in system prompts&quot;, &quot;Few-shot prompting — giving examples inside the prompt&quot;, &quot;XML-tagged prompts: &lt;context&gt;, &lt;question&gt;, &lt;instructions&gt; blocks&quot;, &quot;Temperature and its effect: 0.1 (focused/deterministic) vs 0.9 (creative/varied)&quot;, &quot;Chain-of-thought prompting: &amp;#39;Think step by step&amp;#39;&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Write 3 versions of the same prompt — bad, okay, and excellent — compare outputs&quot;, &quot;Create a code review system prompt that makes the AI give structured feedback&quot;, &quot;Test few-shot prompting: give 2 examples of input→output pairs, see if AI follows the pattern&quot;, &quot;Test the same question at temperature 0.1 vs 0.9 — document the differences&quot;, &quot;Write a prompt that forces the AI to use XML tags in its output&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Prompt Engineering Guide&quot;, &quot;u&quot;: &quot;https://www.promptingguide.ai/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;OpenAI Prompt Engineering Guide&quot;, &quot;u&quot;: &quot;https://platform.openai.com/docs/guides/prompt-engineering&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 19</div>
+          <div class="day-topic">Prompt Engineering</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="20"
+          data-phase="ph2"
+          data-day-type="learning"
+          data-week-label="Phase 2"
+          data-color="#ffd166"
+          data-topic="Streaming Responses"
+          data-time="55 mins"
+          data-topics='[&quot;Why streaming — users don&amp;#39;t want to wait 10 seconds for a full response&quot;, &quot;stream: True in the Ollama API request&quot;, &quot;iter_lines() — reading the response stream line by line&quot;, &quot;Printing tokens as they arrive: print(token, end=&amp;#39;&amp;#39;, flush=True)&quot;, &quot;Collecting the full response from a stream&quot;, &quot;LangChain streaming with callbacks&quot;, &quot;Connection: this is the foundation of streaming in FastAPI (Day 32)&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Modify your ollama_chat() to support streaming (stream=True)&quot;, &quot;Ask a long question and watch tokens appear one by one&quot;, &quot;Build stream_chat() that prints tokens AND collects the full response&quot;, &quot;Time a non-streaming vs streaming request — which feels faster to the user?&quot;, &quot;Add a typing indicator: print(&amp;#39;AI is thinking...&amp;#39;) before streaming starts&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Ollama Streaming Docs&quot;, &quot;u&quot;: &quot;https://github.com/ollama/ollama/blob/main/docs/api.md#response&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 20</div>
+          <div class="day-topic">Streaming Responses</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="21"
+          data-phase="ph2"
+          data-day-type="project"
+          data-week-label="Phase 2"
+          data-color="#ffd166"
+          data-topic="PROJECT: Multi-Turn AI Assistant"
+          data-time="80 mins"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;LangChain Ollama Integration&quot;, &quot;u&quot;: &quot;https://python.langchain.com/docs/integrations/llms/ollama&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 21</div>
+          <div class="day-topic">PROJECT: Multi-Turn AI Assistant</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,107,107,0.12);color:#ff6b6b;">Phase 3</span>
+      <span class="phase-title">🟧 Tool Use &amp; AI Agents</span>
+      <span class="phase-meta">Days 22 &ndash; 28</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Give your AI the ability to take real actions — not just talk, but do things. Learn the ReAct pattern that powers every modern AI agent.</div>
+    <div class="week-group" id="ph3">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="22"
+          data-phase="ph3"
+          data-day-type="learning"
+          data-week-label="Phase 3"
+          data-color="#ff6b6b"
+          data-topic="What Are Tools &amp; JSON Schemas"
+          data-time="55 mins"
+          data-topics='[&quot;What a tool means in AI context — a function the AI can choose to call&quot;, &quot;Chatbot vs Agent: chatbot can only talk, agent can run code, save files, calculate, search&quot;, &quot;Tool definition as a JSON schema: name, description, parameters&quot;, &quot;The actual Python function that runs when tool is called&quot;, &quot;The LLM just decides — it does NOT run the code. YOU run the code.&quot;, &quot;Tool description quality matters — the AI decides which tool to use based on it&quot;]'
+          data-concepts='[{&quot;aspect&quot;: &quot;Chatbot&quot;, &quot;canTalk&quot;: true, &quot;canRunCode&quot;: false, &quot;canSaveFiles&quot;: false}, {&quot;aspect&quot;: &quot;Agent&quot;, &quot;canTalk&quot;: true, &quot;canRunCode&quot;: true, &quot;canSaveFiles&quot;: true}]'
+          data-practice='[&quot;Write a tool definition for get_weather(city) and a fake Python implementation&quot;, &quot;Write a tool definition for save_note(title, content) and implement it&quot;, &quot;Write a tool for convert_currency(amount, from_curr, to_curr) with fake rates&quot;, &quot;Test all 3 Python functions directly — verify they return sensible strings&quot;, &quot;Write a tool definition for add_expense(amount, category, description)&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Ollama Tool Use Docs&quot;, &quot;u&quot;: &quot;https://ollama.com/blog/tool-support&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 22</div>
+          <div class="day-topic">What Are Tools &amp; JSON Schemas</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="23"
+          data-phase="ph3"
+          data-day-type="learning"
+          data-week-label="Phase 3"
+          data-color="#ff6b6b"
+          data-topic="Tool Dispatcher &amp; ReAct Pattern"
+          data-time="65 mins"
+          data-topics='[&quot;The dispatcher — routes tool calls to the correct function&quot;, &quot;Tool registry: TOOLS = {name: function} dictionary&quot;, &quot;run_tool(tool_name, tool_args) — the central router&quot;, &quot;The ReAct loop: Reason → Act → Observe → Repeat&quot;, &quot;Step-by-step: User question → AI thinks → AI calls tool → Tool runs → AI observes result → AI answers&quot;, &quot;Stop conditions: when does the agent give the final answer?&quot;, &quot;Max steps safety limit — prevents infinite loops&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Add count_words(text) and reverse_text(text) to the dispatcher&quot;, &quot;Test all tools through the dispatcher (not directly)&quot;, &quot;Write a loop that processes a list of 5 tool calls sequentially&quot;, &quot;Add proper error handling — what if tool_args is missing a required key?&quot;, &quot;Print all available tool names at startup&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;ReAct Paper — AI Agents&quot;, &quot;u&quot;: &quot;https://arxiv.org/abs/2210.03629&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 23</div>
+          <div class="day-topic">Tool Dispatcher &amp; ReAct Pattern</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="24"
+          data-phase="ph3"
+          data-day-type="learning"
+          data-week-label="Phase 3"
+          data-color="#ff6b6b"
+          data-topic="Real Agent with Ollama"
+          data-time="70 mins"
+          data-topics='[&quot;Using Ollama to make real tool-call decisions (not hardcoded)&quot;, &quot;Formatting the tool list as JSON for the LLM to read&quot;, &quot;Strict JSON-only system prompt: respond with {tool: ..., args: ...} OR {answer: ...}&quot;, &quot;Parsing the LLM&amp;#39;s JSON response: json.loads() + strip markdown fences&quot;, &quot;Handling json.JSONDecodeError — fallback to plain text response&quot;, &quot;Full ReAct loop with real intelligence: max_steps guard&quot;, &quot;Verbose mode for debugging — see each step&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Run agent with 5 different questions — observe how it decides what to do&quot;, &quot;Ask a question needing NO tools — does it answer directly?&quot;, &quot;Add save_note tool — test: &amp;#39;Save a note called test with content Hello&amp;#39;&quot;, &quot;Try with llama3.2:3b — does it follow JSON format as reliably?&quot;, &quot;Add verbose=False mode — clean output for production use&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Ollama Tool Support Blog Post&quot;, &quot;u&quot;: &quot;https://ollama.com/blog/tool-support&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 24</div>
+          <div class="day-topic">Real Agent with Ollama</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="25"
+          data-phase="ph3"
+          data-day-type="project"
+          data-week-label="Phase 3"
+          data-color="#ff6b6b"
+          data-topic="PROJECT: Calculator + Weather Agent"
+          data-time="75 mins"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;Ollama Python Docs&quot;, &quot;u&quot;: &quot;https://github.com/ollama/ollama-python&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 25</div>
+          <div class="day-topic">PROJECT: Calculator + Weather Agent</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="26"
+          data-phase="ph3"
+          data-day-type="learning"
+          data-week-label="Phase 3"
+          data-color="#ff6b6b"
+          data-topic="LangChain Agents &amp; Tools"
+          data-time="65 mins"
+          data-topics='[&quot;What LangChain adds on top of raw API calls — higher-level abstractions&quot;, &quot;@tool decorator — define tools as Python functions with docstrings&quot;, &quot;create_react_agent() — LangChain&amp;#39;s built-in ReAct agent&quot;, &quot;AgentExecutor — runs the agent loop and manages tool execution&quot;, &quot;ConversationBufferMemory — multi-turn memory for agents&quot;, &quot;LangChain Ollama integration: ChatOllama&quot;, &quot;Tools as decorated functions — docstring becomes the tool description&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Install langchain, langchain-ollama&quot;, &quot;Convert your calculate() and get_weather() functions to LangChain @tool format&quot;, &quot;Run a LangChain agent with your tools and compare to your manual agent&quot;, &quot;Add ConversationBufferMemory and test multi-turn agent conversations&quot;, &quot;Compare: is LangChain easier? What does it hide from you?&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;LangChain Ollama Docs&quot;, &quot;u&quot;: &quot;https://python.langchain.com/docs/integrations/llms/ollama&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;LangChain Tools Guide&quot;, &quot;u&quot;: &quot;https://python.langchain.com/docs/how_to/custom_tools/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 26</div>
+          <div class="day-topic">LangChain Agents &amp; Tools</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="27"
+          data-phase="ph3"
+          data-day-type="learning"
+          data-week-label="Phase 3"
+          data-color="#ff6b6b"
+          data-topic="Multi-File Agent Architecture"
+          data-time="60 mins"
+          data-topics='[&quot;Organizing an agent project across multiple files&quot;, &quot;tools.py — all tool definitions and implementations&quot;, &quot;agent.py — the ReAct loop and agent logic&quot;, &quot;config.py — settings from .env&quot;, &quot;main.py — the CLI entry point&quot;, &quot;storage.py — file/data persistence&quot;, &quot;Why this matters: real projects are multi-file, interviews check your architecture&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Split your agent_v1.py into tools.py + agent.py + main.py&quot;, &quot;Ensure imports work between files&quot;, &quot;Add a storage.py that handles saving/loading expenses to JSON&quot;, &quot;Verify the refactored code works identically to the original&quot;, &quot;Add __all__ to each module to document its public interface&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Python Project Structure — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-application-layouts/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 27</div>
+          <div class="day-topic">Multi-File Agent Architecture</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="28"
+          data-phase="ph3"
+          data-day-type="project"
+          data-week-label="Phase 3"
+          data-color="#ff6b6b"
+          data-topic="PROJECT: Expense Tracker Agent"
+          data-time="80 mins"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;LangChain Agents Docs&quot;, &quot;u&quot;: &quot;https://python.langchain.com/docs/how_to/agent_executor/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 28</div>
+          <div class="day-topic">PROJECT: Expense Tracker Agent</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(123,97,255,0.12);color:#7b61ff;">Phase 4</span>
+      <span class="phase-title">🟥 FastAPI + Docker</span>
+      <span class="phase-meta">Days 29 &ndash; 37</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Turn your Python AI skills into a deployable web application. Build a REST API, stream responses to a browser, containerize with Docker, and add automated tests with CI/CD.</div>
+    <div class="week-group" id="ph4">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="29"
+          data-phase="ph4"
+          data-day-type="learning"
+          data-week-label="Phase 4"
+          data-color="#7b61ff"
+          data-topic="FastAPI Basics"
+          data-time="65 mins"
+          data-topics='[&quot;What FastAPI is — the fastest way to build Python APIs&quot;, &quot;Why FastAPI over Flask: auto docs (Swagger UI), async support, type hints, speed&quot;, &quot;uvicorn — the server that runs your FastAPI app&quot;, &quot;@app.get(), @app.post() — route decorators&quot;, &quot;Pydantic models — type-safe request/response validation&quot;, &quot;Query parameters vs request body&quot;, &quot;Automatic Swagger UI at /docs — test your API without Postman&quot;, &quot;HTTP status codes: 200 (OK), 201 (Created), 400 (Bad Request), 422 (Validation Error), 500 (Server Error)&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Install fastapi and uvicorn[standard]&quot;, &quot;Build a /health endpoint that returns {status: &amp;#39;ok&amp;#39;, model: &amp;#39;qwen3.5:4b&amp;#39;}&quot;, &quot;Build a /chat POST endpoint that accepts {message: str} and returns a fake reply&quot;, &quot;Open /docs in browser — test all endpoints without writing any client code&quot;, &quot;Add query parameter: /chat?model=qwen3.5:4b&amp;temperature=0.7&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;FastAPI Official Docs&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;FastAPI Tutorial — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/fastapi-python-web-apis/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 29</div>
+          <div class="day-topic">FastAPI Basics</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="30"
+          data-phase="ph4"
+          data-day-type="learning"
+          data-week-label="Phase 4"
+          data-color="#7b61ff"
+          data-topic="Connecting FastAPI to Ollama"
+          data-time="60 mins"
+          data-topics='[&quot;Making the /chat endpoint call real Ollama instead of returning fake data&quot;, &quot;async def vs def — when to use async in FastAPI&quot;, &quot;httpx — async HTTP client (better than requests for FastAPI)&quot;, &quot;Pydantic BaseModel for request validation: ChatRequest(message, model, temperature)&quot;, &quot;JSONResponse — return custom HTTP responses with status codes&quot;, &quot;HTTPException — raise API errors properly: raise HTTPException(status_code=404, detail=&amp;#39;...&amp;#39;)&quot;, &quot;Connecting the Phase 2 ChatSession class to a FastAPI endpoint&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Replace the fake reply in /chat with a real Ollama call using httpx&quot;, &quot;Add input validation: message cannot be empty (min_length=1)&quot;, &quot;Add a /models endpoint that lists available Ollama models&quot;, &quot;Handle Ollama connection errors gracefully — return 503 if Ollama is down&quot;, &quot;Test all edge cases in /docs: empty message, invalid model name&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;FastAPI Request Body&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/tutorial/body/&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;httpx Docs&quot;, &quot;u&quot;: &quot;https://www.python-httpx.org/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 30</div>
+          <div class="day-topic">Connecting FastAPI to Ollama</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="31"
+          data-phase="ph4"
+          data-day-type="learning"
+          data-week-label="Phase 4"
+          data-color="#7b61ff"
+          data-topic="Streaming with Server-Sent Events (SSE)"
+          data-time="65 mins"
+          data-topics='[&quot;What Server-Sent Events (SSE) are — one-way streaming from server to browser&quot;, &quot;StreamingResponse in FastAPI — the key to token-by-token streaming&quot;, &quot;EventSourceResponse and the SSE format: data: token\\n\\n&quot;, &quot;Generator functions with yield — lazy production of tokens&quot;, &quot;Connecting Ollama streaming (stream=True) to FastAPI SSE&quot;, &quot;JavaScript EventSource API — how the browser receives the stream&quot;, &quot;Why streaming matters for AI UX — users see responses as they&amp;#39;re generated&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Build a /stream endpoint that streams Ollama tokens via SSE&quot;, &quot;Write a minimal HTML page with JavaScript EventSource that displays the stream&quot;, &quot;Add a [DONE] signal at end of stream so the client knows when to stop&quot;, &quot;Test: fast model vs slow model — streaming makes both feel responsive&quot;, &quot;Add error handling: if Ollama disconnects mid-stream, send an error event&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;FastAPI StreamingResponse Docs&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;MDN EventSource API&quot;, &quot;u&quot;: &quot;https://developer.mozilla.org/en-US/docs/Web/API/EventSource&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 31</div>
+          <div class="day-topic">Streaming with Server-Sent Events (SSE)</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="32"
+          data-phase="ph4"
+          data-day-type="learning"
+          data-week-label="Phase 4"
+          data-color="#7b61ff"
+          data-topic="HTML Frontend + Static Files"
+          data-time="60 mins"
+          data-topics='[&quot;Serving HTML with FastAPI: StaticFiles + FileResponse&quot;, &quot;Building a simple chat UI with vanilla HTML, CSS, JavaScript&quot;, &quot;Fetch API — calling your FastAPI endpoints from the browser&quot;, &quot;EventSource — receiving streaming responses in the browser&quot;, &quot;DOM manipulation: creating message elements dynamically&quot;, &quot;Model selector dropdown — let users switch models from the UI&quot;, &quot;Loading states — show &amp;#39;AI is thinking...&amp;#39; while waiting&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Build index.html with a chat input, send button, and message display area&quot;, &quot;Connect the UI to /chat endpoint using fetch()&quot;, &quot;Connect to /stream endpoint using EventSource — show tokens as they arrive&quot;, &quot;Add a model selector that reads from /models endpoint&quot;, &quot;Style it with basic CSS — make it look usable, not ugly&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;FastAPI Static Files&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/tutorial/static-files/&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;MDN Fetch API&quot;, &quot;u&quot;: &quot;https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 32</div>
+          <div class="day-topic">HTML Frontend + Static Files</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="33"
+          data-phase="ph4"
+          data-day-type="project"
+          data-week-label="Phase 4"
+          data-color="#7b61ff"
+          data-topic="PROJECT: Streaming Chat Web App"
+          data-time="80 mins"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;FastAPI First Steps&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/tutorial/first-steps/&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 33</div>
+          <div class="day-topic">PROJECT: Streaming Chat Web App</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="34"
+          data-phase="ph4"
+          data-day-type="learning"
+          data-week-label="Phase 4"
+          data-color="#7b61ff"
+          data-topic="pytest — Writing Tests for Your API"
+          data-time="60 mins"
+          data-topics='[&quot;Why tests matter — catch bugs before users do, and look professional&quot;, &quot;pytest — the standard Python testing framework&quot;, &quot;TestClient from FastAPI — test your endpoints without running the server&quot;, &quot;test_ prefix — pytest auto-discovers functions starting with test_&quot;, &quot;assert statements — verify expected vs actual output&quot;, &quot;Test structure: Arrange → Act → Assert&quot;, &quot;Testing happy paths AND error cases&quot;, &quot;pytest -v for verbose output, pytest -k &amp;#39;test_name&amp;#39; to run one test&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Install pytest and write a test for the /health endpoint&quot;, &quot;Write a test for /chat with a valid message — assert status 200&quot;, &quot;Write a test for /chat with empty message — assert status 422&quot;, &quot;Write a test for /models — assert response is a list&quot;, &quot;Run pytest -v and get all tests passing&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;FastAPI Testing Docs&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/tutorial/testing/&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;pytest Docs&quot;, &quot;u&quot;: &quot;https://docs.pytest.org/en/stable/&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 34</div>
+          <div class="day-topic">pytest — Writing Tests for Your API</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="35"
+          data-phase="ph4"
+          data-day-type="learning"
+          data-week-label="Phase 4"
+          data-color="#7b61ff"
+          data-topic="Docker — Containerize Your App"
+          data-time="70 mins"
+          data-topics='[&quot;What Docker is — package your app so it runs anywhere&quot;, &quot;Docker concepts: Image (blueprint), Container (running instance), Dockerfile (recipe)&quot;, &quot;Dockerfile structure: FROM, WORKDIR, COPY, RUN, CMD&quot;, &quot;docker build -t myapp . — build an image&quot;, &quot;docker run -p 8000:8000 myapp — run a container&quot;, &quot;.dockerignore — don&amp;#39;t copy venv/ and .env into the image&quot;, &quot;docker-compose.yml — define multi-container apps&quot;, &quot;Why Docker matters: &amp;#39;it works on my machine&amp;#39; is not good enough&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Write a Dockerfile for your FastAPI chat app&quot;, &quot;Build the image: docker build -t ai-chat-app .&quot;, &quot;Run the container: docker run -p 8000:8000 ai-chat-app&quot;, &quot;Create .dockerignore and verify venv/ is excluded&quot;, &quot;Create docker-compose.yml with the app service configured&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Docker Official Docs&quot;, &quot;u&quot;: &quot;https://docs.docker.com/get-started/&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;FastAPI Docker Deployment&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/deployment/docker/&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 35</div>
+          <div class="day-topic">Docker — Containerize Your App</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="36"
+          data-phase="ph4"
+          data-day-type="learning"
+          data-week-label="Phase 4"
+          data-color="#7b61ff"
+          data-topic="GitHub Actions CI/CD"
+          data-time="55 mins"
+          data-topics='[&quot;What CI/CD means — Continuous Integration / Continuous Deployment&quot;, &quot;GitHub Actions — automated pipelines that run on every push&quot;, &quot;.github/workflows/test.yml — the workflow file&quot;, &quot;Workflow triggers: on push, on pull_request&quot;, &quot;Steps: checkout code → set up Python → install deps → run pytest&quot;, &quot;Green checkmark = tests pass. Red X = something broke.&quot;, &quot;Status badge in README — shows employers your tests always pass&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Create .github/workflows/test.yml in your chat app repo&quot;, &quot;Push to GitHub — go to Actions tab and watch it run&quot;, &quot;Make a test fail on purpose — push and watch CI fail (red X)&quot;, &quot;Fix the test — push again — watch CI pass (green checkmark)&quot;, &quot;Add CI badge to README: ![Tests](URL from GitHub Actions)&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;GitHub Actions Docs&quot;, &quot;u&quot;: &quot;https://docs.github.com/en/actions&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;GitHub Actions for Python&quot;, &quot;u&quot;: &quot;https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 36</div>
+          <div class="day-topic">GitHub Actions CI/CD</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #7b61ff;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="37"
+          data-phase="ph4"
+          data-day-type="project"
+          data-week-label="Phase 4"
+          data-color="#7b61ff"
+          data-topic="PROJECT: Docker + CI/CD Polish (Expense Tracker)"
+          data-time="75 mins"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;Docker Python Guide&quot;, &quot;u&quot;: &quot;https://docs.docker.com/language/python/&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;pytest Best Practices&quot;, &quot;u&quot;: &quot;https://docs.pytest.org/en/stable/explanation/goodpractices.html&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 37</div>
+          <div class="day-topic">PROJECT: Docker + CI/CD Polish (Expense Tracker)</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 5 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(6,214,160,0.12);color:#06d6a0;">Phase 5</span>
+      <span class="phase-title">🟩 RAG + Advanced</span>
+      <span class="phase-meta">Days 38 &ndash; 46</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Build a personal knowledge agent that reads your own documents and answers questions from them. Master embeddings, ChromaDB, and the full Retrieval-Augmented Generation pipeline.</div>
+    <div class="week-group" id="ph5">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="38"
+          data-phase="ph5"
+          data-day-type="learning"
+          data-week-label="Phase 5"
+          data-color="#06d6a0"
+          data-topic="What is RAG &amp; Why It Matters"
+          data-time="50 mins"
+          data-topics='[&quot;RAG = Retrieval-Augmented Generation — give the AI your documents at query time&quot;, &quot;Why LLMs hallucinate — they generate plausible-sounding text even when they don&amp;#39;t know&quot;, &quot;Why RAG solves hallucination — force the AI to answer from retrieved context only&quot;, &quot;The 3-step RAG pipeline: Ingest → Retrieve → Generate&quot;, &quot;Ingest: split documents into chunks → embed → store in vector database&quot;, &quot;Retrieve: embed the user&amp;#39;s question → find similar chunks&quot;, &quot;Generate: pass question + retrieved chunks → LLM → grounded answer&quot;, &quot;Real use cases: company knowledge base, study notes, personal documents, legal docs&quot;]'
+          data-concepts='[{&quot;step&quot;: &quot;Ingest&quot;, &quot;what&quot;: &quot;Split docs into chunks → embed → store in ChromaDB&quot;}, {&quot;step&quot;: &quot;Retrieve&quot;, &quot;what&quot;: &quot;Embed question → find top-N similar chunks&quot;}, {&quot;step&quot;: &quot;Generate&quot;, &quot;what&quot;: &quot;Pass question + chunks to LLM → grounded answer&quot;}]'
+          data-practice='[&quot;Draw the RAG pipeline on paper from memory — can you explain all 3 steps?&quot;, &quot;Research: what are the differences between BM25 (keyword) and semantic (embedding) search?&quot;, &quot;List 5 real problems in your life that RAG could solve&quot;, &quot;Read the ChromaDB getting started page&quot;, &quot;Answer: what goes wrong if you skip the Retrieve step and just send all documents to the LLM?&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;What is RAG? — IBM&quot;, &quot;u&quot;: &quot;https://www.ibm.com/topics/retrieval-augmented-generation&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;RAG Explained — Pinecone&quot;, &quot;u&quot;: &quot;https://www.pinecone.io/learn/retrieval-augmented-generation/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 38</div>
+          <div class="day-topic">What is RAG &amp; Why It Matters</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="39"
+          data-phase="ph5"
+          data-day-type="learning"
+          data-week-label="Phase 5"
+          data-color="#06d6a0"
+          data-topic="Embeddings &amp; Vector Search"
+          data-time="60 mins"
+          data-topics='[&quot;What an embedding is — a list of numbers (vector) representing meaning&quot;, &quot;Similar text → similar numbers → close together in vector space&quot;, &quot;Cosine similarity — measures angle between two vectors (0 = unrelated, 1 = identical)&quot;, &quot;sentence-transformers library — generates embeddings locally for free&quot;, &quot;Default embedding model: all-MiniLM-L6-v2 (384 dimensions)&quot;, &quot;Practical test: &amp;#39;Python loops&amp;#39; and &amp;#39;for loop in Python&amp;#39; are close; &amp;#39;biryani recipe&amp;#39; is far&quot;, &quot;Why embeddings beat keyword search — they understand meaning, not just words&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Install chromadb and sentence-transformers&quot;, &quot;Run the embedding example — observe the vector pattern (list of 384 floats)&quot;, &quot;Write 6 sentences: 3 about Python, 3 about cooking — check which groups are similar&quot;, &quot;Research: &amp;#39;What does it mean for embeddings to be 384-dimensional?&amp;#39;&quot;, &quot;Explain embeddings in your own words — you should be able to explain it to a friend&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Sentence Transformers Docs&quot;, &quot;u&quot;: &quot;https://www.sbert.net/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;ChromaDB Docs&quot;, &quot;u&quot;: &quot;https://docs.trychroma.com/&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 39</div>
+          <div class="day-topic">Embeddings &amp; Vector Search</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="40"
+          data-phase="ph5"
+          data-day-type="learning"
+          data-week-label="Phase 5"
+          data-color="#06d6a0"
+          data-topic="ChromaDB Setup &amp; Querying"
+          data-time="60 mins"
+          data-topics='[&quot;ChromaDB — a local vector database that stores embeddings and text&quot;, &quot;chromadb.PersistentClient(path=&amp;#39;./chroma_db&amp;#39;) — data saved to disk across restarts&quot;, &quot;get_or_create_collection() — idempotent collection creation&quot;, &quot;collection.add(documents, ids, metadatas) — store text with metadata&quot;, &quot;collection.query(query_texts, n_results) — semantic search&quot;, &quot;Results structure: documents, metadatas, distances&quot;, &quot;Filtering with where= — search within a subset of documents&quot;, &quot;collection.count() — how many documents are stored&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Run the ChromaDB example and verify 6 documents are stored&quot;, &quot;Query with 5 different questions — observe which documents match&quot;, &quot;Add a filter: where={topic: tech} to only search tech documents&quot;, &quot;Delete the collection and recreate it — verify it starts empty&quot;, &quot;Add 5 more documents about Bangladesh and query them&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;ChromaDB Getting Started&quot;, &quot;u&quot;: &quot;https://docs.trychroma.com/getting-started&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;ChromaDB Python API&quot;, &quot;u&quot;: &quot;https://docs.trychroma.com/reference/py-client&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 40</div>
+          <div class="day-topic">ChromaDB Setup &amp; Querying</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="41"
+          data-phase="ph5"
+          data-day-type="learning"
+          data-week-label="Phase 5"
+          data-color="#06d6a0"
+          data-topic="Text Chunking &amp; Ingest Pipeline"
+          data-time="60 mins"
+          data-topics='[&quot;Why documents need to be split into chunks — context window limits, relevance precision&quot;, &quot;chunk_text(text, chunk_size=500, overlap=50) — split with overlap&quot;, &quot;Overlap prevents losing context at chunk boundaries&quot;, &quot;Metadata: source filename + chunk index per chunk — enables citations&quot;, &quot;Idempotent ingestion — skip already-ingested chunks (check IDs before adding)&quot;, &quot;Ingest pipeline: read file → chunk → embed → store with metadata&quot;, &quot;Chunk size tradeoff: too small = missing context, too large = less precise retrieval&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Create 3 .txt files on different topics (Python, Bangladesh history, cooking)&quot;, &quot;Run the ingest pipeline — verify chunk counts&quot;, &quot;Query the collection after ingestion — do results cite the right source?&quot;, &quot;Try different chunk sizes (200, 500, 1000) — which gives better results?&quot;, &quot;Add a check: if doc_id already exists, skip it (idempotent ingestion)&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;LangChain Text Splitters&quot;, &quot;u&quot;: &quot;https://python.langchain.com/docs/how_to/split_by_token/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 41</div>
+          <div class="day-topic">Text Chunking &amp; Ingest Pipeline</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="42"
+          data-phase="ph5"
+          data-day-type="project"
+          data-week-label="Phase 5"
+          data-color="#06d6a0"
+          data-topic="PROJECT: Document Q&amp;A System (Days 42-43)"
+          data-time="75 mins each day"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;ChromaDB Docs&quot;, &quot;u&quot;: &quot;https://docs.trychroma.com/&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 42</div>
+          <div class="day-topic">PROJECT: Document Q&amp;A System (Days 42-43)</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="44"
+          data-phase="ph5"
+          data-day-type="learning"
+          data-week-label="Phase 5"
+          data-color="#06d6a0"
+          data-topic="RAG + FastAPI Web Interface (Days 44-45)"
+          data-time="65 mins each day"
+          data-topics='[&quot;Adding RAG endpoints to your FastAPI app from Phase 4&quot;, &quot;POST /rag — accepts a question, returns RAG answer with sources&quot;, &quot;POST /rag/ingest — triggers document ingestion from a folder&quot;, &quot;GET /rag/status — returns total chunk count&quot;, &quot;Streaming RAG responses — stream the LLM generation after retrieval&quot;, &quot;Simple web UI for document Q&amp;A — search box, answer display, source highlighting&quot;, &quot;Button to trigger ingestion from browser&quot;]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;FastAPI StreamingResponse&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/advanced/custom-response/#streamingresponse&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 44</div>
+          <div class="day-topic">RAG + FastAPI Web Interface (Days 44-45)</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #06d6a0;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="46"
+          data-phase="ph5"
+          data-day-type="project"
+          data-week-label="Phase 5"
+          data-color="#06d6a0"
+          data-topic="PROJECT: Personal Knowledge Agent — Core (Days 46-47)"
+          data-time="80 mins each day"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;FastAPI Advanced Docs&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/advanced/&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;ChromaDB Docs&quot;, &quot;u&quot;: &quot;https://docs.trychroma.com/&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 46</div>
+          <div class="day-topic">PROJECT: Personal Knowledge Agent — Core (Days 46-47)</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 6 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,209,102,0.12);color:#ffd166;">Phase 6</span>
+      <span class="phase-title">🎓 Junior Engineer Polish</span>
+      <span class="phase-meta">Days 48 &ndash; 52</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Bridge the gap between &#39;I can build things&#39; and &#39;I&#39;m ready to get hired&#39;. Polish your projects, build your GitHub presence, understand what junior AI engineers actually do, and prepare your portfolio and resume.</div>
+    <div class="week-group" id="ph6">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="48"
+          data-phase="ph6"
+          data-day-type="learning"
+          data-week-label="Phase 6"
+          data-color="#ffd166"
+          data-topic="Git Workflows for Teams"
+          data-time="55 mins"
+          data-topics='[&quot;Branches — working on features without breaking main code&quot;, &quot;git checkout -b feature/expense-categories — create a new branch&quot;, &quot;git merge feature/my-feature — merge a branch into main&quot;, &quot;Pull Requests (PRs) — how teams review code before merging&quot;, &quot;Merge conflicts — what they are and how to resolve them&quot;, &quot;Good commit messages: feat: add expense categories, fix: handle empty input, docs: update README&quot;, &quot;Conventional Commits format — industry standard&quot;, &quot;git log --oneline --graph — visualize branch history&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Create a feature/improve-ui branch in your chat app repo&quot;, &quot;Make 3 commits on the branch with descriptive messages&quot;, &quot;Open a Pull Request on GitHub (even if you&amp;#39;re the only contributor)&quot;, &quot;Merge the PR — see how it looks in the commit history&quot;, &quot;Deliberately create a merge conflict and resolve it&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Git Branching — Atlassian&quot;, &quot;u&quot;: &quot;https://www.atlassian.com/git/tutorials/using-branches&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Conventional Commits Spec&quot;, &quot;u&quot;: &quot;https://www.conventionalcommits.org/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 48</div>
+          <div class="day-topic">Git Workflows for Teams</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="49"
+          data-phase="ph6"
+          data-day-type="learning"
+          data-week-label="Phase 6"
+          data-color="#ffd166"
+          data-topic="Code Quality &amp; Best Practices"
+          data-time="55 mins"
+          data-topics='[&quot;Type hints — add types to function signatures: def chat(msg: str) -&gt; str:&quot;, &quot;PEP 8 — the Python style guide everyone follows&quot;, &quot;Naming conventions: snake_case for functions/variables, PascalCase for classes&quot;, &quot;Black — auto-formatter: pip install black, then black your_file.py&quot;, &quot;Functions should do ONE thing — if a function does 3 things, split it&quot;, &quot;Don&amp;#39;t repeat yourself (DRY) — if you copy-paste code, it should be a function&quot;, &quot;Magic numbers — replace 0.7 with TEMPERATURE = 0.7 at the top of the file&quot;, &quot;Environment variables — NEVER hardcode API keys, model names in code&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Add type hints to every function in your expense tracker&quot;, &quot;Install black and format all your .py files&quot;, &quot;Find one function that does too many things — split it into 2&quot;, &quot;Replace all hardcoded values (model names, file paths) with constants or .env&quot;, &quot;Review your code as if someone else wrote it — what&amp;#39;s confusing?&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;PEP 8 Style Guide&quot;, &quot;u&quot;: &quot;https://pep8.org/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Black Formatter&quot;, &quot;u&quot;: &quot;https://black.readthedocs.io/&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-num">Day 49</div>
+          <div class="day-topic">Code Quality &amp; Best Practices</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="50"
+          data-phase="ph6"
+          data-day-type="learning"
+          data-week-label="Phase 6"
+          data-color="#ffd166"
+          data-topic="What Junior AI Engineers Actually Do"
+          data-time="50 mins"
+          data-topics='[&quot;Real day-to-day tasks: API endpoints with AI (daily), prompt writing/testing (daily), debugging AI output quality (daily)&quot;, &quot;Weekly: integrate LLM into existing features, write tests for AI features, code review&quot;, &quot;Monthly: build RAG pipelines, deploy updates with Docker/CI&quot;, &quot;Skills you now have vs what&amp;#39;s still advanced (fine-tuning, training from scratch)&quot;, &quot;Resume: Projects section is most important for junior AI roles&quot;, &quot;Interview preparation: explain what each project does and why you built it&quot;, &quot;Where to find jobs: LinkedIn, Remote OK, We Work Remotely, Upwork, local BD companies&quot;, &quot;Resume keywords: Python, FastAPI, LangChain, RAG, ChromaDB, Ollama, Docker, REST API, pytest, CI/CD&quot;]'
+          data-concepts='[{&quot;task&quot;: &quot;Build API endpoints with AI&quot;, &quot;frequency&quot;: &quot;Daily&quot;, &quot;skillYouHave&quot;: &quot;FastAPI ✅&quot;}, {&quot;task&quot;: &quot;Write prompts and test them&quot;, &quot;frequency&quot;: &quot;Daily&quot;, &quot;skillYouHave&quot;: &quot;Prompt Engineering ✅&quot;}, {&quot;task&quot;: &quot;Debug AI output quality&quot;, &quot;frequency&quot;: &quot;Daily&quot;, &quot;skillYouHave&quot;: &quot;Evaluation Skills ✅&quot;}, {&quot;task&quot;: &quot;Write tests for AI features&quot;, &quot;frequency&quot;: &quot;Weekly&quot;, &quot;skillYouHave&quot;: &quot;pytest ✅&quot;}, {&quot;task&quot;: &quot;Build RAG pipelines&quot;, &quot;frequency&quot;: &quot;Monthly&quot;, &quot;skillYouHave&quot;: &quot;ChromaDB ✅&quot;}, {&quot;task&quot;: &quot;Deploy updates&quot;, &quot;frequency&quot;: &quot;Monthly&quot;, &quot;skillYouHave&quot;: &quot;Docker, CI/CD ✅&quot;}]'
+          data-practice='[&quot;Write a one-paragraph summary of each of your 4 main projects (for interviews)&quot;, &quot;Update your LinkedIn with your new skills and projects&quot;, &quot;Search &amp;#39;junior AI engineer&amp;#39; on LinkedIn — read 5 job descriptions&quot;, &quot;Find which skills appear in every job description — do you have them?&quot;, &quot;Draft your resume projects section using the template in the guide&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;LinkedIn Jobs — AI Engineer Python&quot;, &quot;u&quot;: &quot;https://www.linkedin.com/jobs/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Remote OK — AI Jobs&quot;, &quot;u&quot;: &quot;https://remoteok.com/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;We Work Remotely&quot;, &quot;u&quot;: &quot;https://weworkremotely.com/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 50</div>
+          <div class="day-topic">What Junior AI Engineers Actually Do</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="51"
+          data-phase="ph6"
+          data-day-type="learning"
+          data-week-label="Phase 6"
+          data-color="#ffd166"
+          data-topic="Building Your GitHub Profile"
+          data-time="60 mins"
+          data-topics='[&quot;GitHub profile README — create a repo with your username to display a custom profile&quot;, &quot;Pin your best 6 projects on your GitHub profile page&quot;, &quot;Repository descriptions — every repo needs a 1-sentence description&quot;, &quot;Topics/tags — add relevant tags: python, ai, fastapi, rag, ollama, docker&quot;, &quot;GitHub stats widget — show your contribution graph&quot;, &quot;Tech stack badges — shields.io for colorful technology badges&quot;, &quot;What recruiters look for: consistency of commits, README quality, project diversity&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Create GitHub profile README with your real info&quot;, &quot;Pin your 3 best projects on your GitHub profile&quot;, &quot;Add description, website, and topics to each pinned repo&quot;, &quot;Add tech stack badges to each project&amp;#39;s README&quot;, &quot;Search &amp;#39;junior AI engineer portfolio&amp;#39; on GitHub — see what top profiles look like&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;GitHub Profile README Guide&quot;, &quot;u&quot;: &quot;https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Shields.io Badges&quot;, &quot;u&quot;: &quot;https://shields.io/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 51</div>
+          <div class="day-topic">Building Your GitHub Profile</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ffd166;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="heavy"
+          data-day="52"
+          data-phase="ph6"
+          data-day-type="project"
+          data-week-label="Phase 6"
+          data-color="#ffd166"
+          data-topic="CAPSTONE: Personal Knowledge Agent — Production Version"
+          data-time="90 mins each of Days 52-53"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[{&quot;t&quot;: &quot;FastAPI Production Deployment&quot;, &quot;u&quot;: &quot;https://fastapi.tiangolo.com/deployment/&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Docker Compose Docs&quot;, &quot;u&quot;: &quot;https://docs.docker.com/compose/&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="day-type">&#x1F528; project</div>
+          <div class="day-num">Day 52</div>
+          <div class="day-topic">CAPSTONE: Personal Knowledge Agent — Production Version</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 7 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(1,118,211,0.12);color:#0176D3;">Phase 7</span>
+      <span class="phase-title">🔑 BONUS — External AI APIs</span>
+      <span class="phase-meta">Day 99</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; When you want to use cloud models instead of local Ollama. Groq is free and fast — learn to switch between providers instantly.</div>
+    <div class="week-group" id="ph7">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #0176D3;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="99"
+          data-phase="ph7"
+          data-day-type="reference"
+          data-week-label="Phase 7"
+          data-color="#0176D3"
+          data-topic="External API Providers &amp; Universal Chat Function"
+          data-time="30 mins"
+          data-topics='[&quot;Get free Groq API key at console.groq.com — access llama-3.3-70b (70B!) for free&quot;, &quot;pip install groq openai anthropic — install provider SDKs&quot;, &quot;Universal chat() function — switch providers by changing one variable: PROVIDER = &amp;#39;ollama&amp;#39; | &amp;#39;groq&amp;#39; | &amp;#39;openai&amp;#39; | &amp;#39;anthropic&amp;#39;&quot;, &quot;All providers use the same messages format: [{role, content}]&quot;, &quot;Store API keys in .env — NEVER in code&quot;, &quot;Groq is the recommended free alternative when Ollama is too slow on your hardware&quot;]'
+          data-concepts='[]'
+          data-practice='[&quot;Sign up for Groq at console.groq.com (free, no credit card)&quot;, &quot;Add GROQ_API_KEY to your .env file&quot;, &quot;Run the universal chat() function with PROVIDER=&amp;#39;groq&amp;#39; — compare to Ollama speed&quot;, &quot;Switch to &amp;#39;ollama&amp;#39; and &amp;#39;groq&amp;#39; on the same question — compare output quality&quot;, &quot;Try the 70B Groq model on a complex question your local models struggle with&quot;]'
+          data-sources='[{&quot;t&quot;: &quot;Groq Console (Free)&quot;, &quot;u&quot;: &quot;https://console.groq.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Groq Python SDK&quot;, &quot;u&quot;: &quot;https://github.com/groq/groq-python&quot;, &quot;b&quot;: &quot;github&quot;}, {&quot;t&quot;: &quot;OpenAI Python SDK&quot;, &quot;u&quot;: &quot;https://github.com/openai/openai-python&quot;, &quot;b&quot;: &quot;github&quot;}, {&quot;t&quot;: &quot;Anthropic Python SDK&quot;, &quot;u&quot;: &quot;https://github.com/anthropic/anthropic-sdk-python&quot;, &quot;b&quot;: &quot;github&quot;}]'>
+          <div class="day-num">Day 99</div>
+          <div class="day-topic">External API Providers &amp; Universal Chat Function</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 8 -->
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,107,107,0.12);color:#ff6b6b;">Phase 8</span>
+      <span class="phase-title">🚀 What&#39;s Next &amp; Graduation</span>
+      <span class="phase-meta">Days 100 &ndash; 101</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; You&#39;ve completed 52 days of structured learning. Here is your map for continuing to grow and the graduation checklist to confirm you&#39;re ready for junior roles.</div>
+    <div class="week-group" id="ph8">
+      <div class="day-grid">
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="100"
+          data-phase="ph8"
+          data-day-type="reference"
+          data-week-label="Phase 8"
+          data-color="#ff6b6b"
+          data-topic="Continue Learning — Paths After Day 52"
+          data-time="Ongoing"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[]'>
+          <div class="day-num">Day 100</div>
+          <div class="day-topic">Continue Learning — Paths After Day 52</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+        <div class="day-card colored"
+          style="--card-accent: #ff6b6b;"
+          onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)"
+          data-effort="normal"
+          data-day="101"
+          data-phase="ph8"
+          data-day-type="reference"
+          data-week-label="Phase 8"
+          data-color="#ff6b6b"
+          data-topic="🎓 Final Graduation Checklist"
+          data-time="Self-assessment"
+          data-topics='[]'
+          data-concepts='[]'
+          data-practice='[]'
+          data-sources='[]'>
+          <div class="day-num">Day 101</div>
+          <div class="day-topic">🎓 Final Graduation Checklist</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /plan-body -->
+
+<!-- DRAWER -->
+<div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div>
+      <div class="drawer-badge colored" id="d-badge"></div>
+      <div class="drawer-topic" id="d-topic"></div>
+      <div class="drawer-week-info" id="d-week"></div>
+    </div>
+    <div class="drawer-controls">
+      <button class="drawer-btn" id="btn-prev" title="Previous day" onclick="nav(-1)">&#8249;</button>
+      <button class="drawer-btn" id="btn-next" title="Next day"     onclick="nav(+1)">&#8250;</button>
+      <button class="drawer-btn close"          title="Close"        onclick="closeDrawer()">&#x2715;</button>
+    </div>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</div>
+
+<script src="daydeck-core.js"></script>
+<script>
+
+  function openDay(card) {
+    currentCard = card;
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+
+    const color  = card.dataset.color;
+    const topic  = card.dataset.topic;
+    const wLabel = card.dataset.weekLabel;
+    const day    = card.dataset.day;
+    const time   = card.dataset.time;
+
+    let topics, concepts, practice, srcs;
+    try { topics   = JSON.parse(card.dataset.topics);   } catch(e) { topics   = []; }
+    try { concepts = JSON.parse(card.dataset.concepts); } catch(e) { concepts = []; }
+    try { practice = JSON.parse(card.dataset.practice); } catch(e) { practice = []; }
+    try { srcs     = JSON.parse(card.dataset.sources);  } catch(e) { srcs     = []; }
+
+    const badge = document.getElementById('d-badge');
+    badge.style.setProperty('--card-accent',    color);
+    badge.style.setProperty('--card-accent-bg', hexToRgba(color, 0.1));
+    badge.textContent = 'Day ' + day + ' · ' + wLabel;
+    document.getElementById('d-topic').textContent = topic;
+
+    const effortLabel = { light: '●○○ light', normal: '●●○ normal', heavy: '●●● heavy — plan extra time' };
+    const effort = card.dataset.effort || 'normal';
+    document.getElementById('d-week').textContent = wLabel + '  ·  ' + (effortLabel[effort] || '') + '  ·  ' + time;
+
+    updateNavButtons(card);
+
+    let body = '';
+
+    // Topics
+    body += '<div>' +
+      '<div class="drawer-section-title">What to learn today</div>' +
+      '<div class="learn-list">' +
+      topics.map(function(item, i) {
+        return '<div class="learn-item">' +
+          '<span class="learn-num">' + String(i + 1).padStart(2, '0') + '</span>' +
+          '<span class="learn-text">' + decodeEntities(item) + '</span>' +
+        '</div>';
+      }).join('') +
+      '</div></div>';
+
+    // Key Concepts
+    if (concepts.length) {
+      body += '<div>' +
+        '<div class="drawer-section-title">Key Concepts</div>' +
+        '<div class="learn-list">' +
+        concepts.map(function(c) {
+          return '<div class="learn-item">' +
+            '<span class="learn-num" style="min-width:auto;padding:2px 8px;background:var(--surface3);border-radius:4px;font-size:9px;">' +
+              decodeEntities(c.concept) +
+            '</span>' +
+            '<span class="learn-text">' + decodeEntities(c.meaning) + '</span>' +
+          '</div>';
+        }).join('') +
+        '</div></div>';
+    }
+
+    // Practice
+    if (practice.length) {
+      body += '<div>' +
+        '<div class="drawer-section-title">Practice</div>' +
+        '<div class="practice-block"><div style="display:flex;flex-direction:column;gap:6px;">' +
+        practice.map(function(step, i) {
+          return '<div style="display:flex;gap:10px;align-items:flex-start;">' +
+            '<span style="font-family:var(--mono);font-size:10px;font-weight:700;color:var(--accent);flex-shrink:0;padding-top:2px;">' +
+              String(i + 1).padStart(2, '0') +
+            '</span>' +
+            '<span class="practice-text" style="margin:0;">' + decodeEntities(step) + '</span>' +
+          '</div>';
+        }).join('') +
+        '</div></div></div>';
+    }
+
+    // Resources
+    if (srcs.length) {
+      body += '<div>' +
+        '<div class="drawer-section-title">Resources</div>' +
+        '<div class="source-list">' +
+        srcs.map(function(s) {
+          return '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener noreferrer">' +
+            '<span class="source-badge badge-' + s.b + '">' + s.b + '</span>' +
+            '<span class="source-name">' + s.t + '</span>' +
+            '<span class="source-arrow">&#8599;</span>' +
+          '</a>';
+        }).join('') +
+        '</div></div>';
+    }
+
+    document.getElementById('d-body').innerHTML = body;
+    showDrawer();
+  }
+
+  // Type-based filter (overrides setFilter from core which uses data-phase)
+  function setFilter(dtype, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.day-card').forEach(c => {
+      c.classList.toggle('dimmed',
+        dtype !== 'all' && c.dataset.dayType !== dtype);
+    });
+    if (currentCard) updateNavButtons(currentCard);
+  }
+
+</script>
+</body>
+</html>
