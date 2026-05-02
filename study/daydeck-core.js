@@ -17,7 +17,36 @@
 ══════════════════════════════════════════════════════════ */
 
 
-/* ── Shared mutable state ── */
+/* ── D4: Theme sync
+   Study pages live inside an iframe — they have their own
+   document and never see the parent's data-theme attribute.
+   Two strategies work together:
+     1. On load, read localStorage directly (same origin).
+     2. Listen for postMessage from index.html so toggling
+        the button updates the iframe in real time.
+────────────────────────────────────────────────────────── */
+(function syncTheme() {
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }
+
+  /* Initial load — read saved preference */
+  applyTheme(localStorage.getItem('daydeck-theme') || 'dark');
+
+  /* Real-time — parent pushes theme on every toggle */
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'daydeck-theme') {
+      applyTheme(e.data.theme);
+    }
+  });
+}());
+
+
+
 // eslint-disable-next-line no-var
 var currentCard = null;  /* var intentional — must cross <script> tag boundaries */
 

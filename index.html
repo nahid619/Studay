@@ -101,6 +101,12 @@
 
   </div>
 
+  <!-- Hamburger (mobile only) -->
+  <button class="nav-hamburger" id="nav-hamburger"
+          aria-label="Open navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
   <!-- D4: theme toggle -->
   <button class="nav-theme-btn" id="theme-toggle"
           aria-label="Toggle light / dark mode">☀️</button>
@@ -122,7 +128,7 @@
      SCRIPTS
 ══════════════════════════════════════════════════ -->
 <script>
-  /* ── Tab switching (T7: dynamic, T5: title updates) ── */
+  /* ── Tab switching ── */
   const tabs  = document.querySelectorAll('.nav-tab');
   const frame = document.getElementById('content-frame');
 
@@ -131,6 +137,7 @@
     tab.classList.add('active');
     frame.src = tab.dataset.src;
     document.title = 'DayDeck — ' + tab.textContent.trim();
+    closeMenu();
   }
 
   activateTab(tabs[0]);
@@ -142,11 +149,18 @@
     activateTab(tab);
   });
 
-  /* ── D4: Dark / light mode toggle
-     Reads and writes localStorage('daydeck-theme').
-     Sets data-theme="light" on <html>; CSS variables
-     in [data-theme="light"] handle all the colour swaps.
-  ── */
+  /* ── Theme: push into iframe whenever it (re)loads ── */
+  frame.addEventListener('load', function() {
+    pushThemeToFrame();
+  });
+
+  function pushThemeToFrame() {
+    const theme = localStorage.getItem('daydeck-theme') || 'dark';
+    try { frame.contentWindow.postMessage({ type: 'daydeck-theme', theme }, '*'); }
+    catch(e) {}
+  }
+
+  /* ── D4: Dark / light mode toggle ── */
   const themeBtn = document.getElementById('theme-toggle');
 
   function applyTheme(theme) {
@@ -159,9 +173,9 @@
       themeBtn.textContent = '☀️';
       themeBtn.title = 'Switch to light mode';
     }
+    pushThemeToFrame();
   }
 
-  /* Restore preference saved from a previous visit */
   applyTheme(localStorage.getItem('daydeck-theme') || 'dark');
 
   themeBtn.addEventListener('click', function() {
@@ -169,6 +183,33 @@
     const next    = isLight ? 'dark' : 'light';
     localStorage.setItem('daydeck-theme', next);
     applyTheme(next);
+  });
+
+  /* ── Hamburger menu (mobile) ── */
+  const hamburger = document.getElementById('nav-hamburger');
+  const navTabs   = document.getElementById('nav-tabs');
+
+  function closeMenu() {
+    navTabs.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburger.addEventListener('click', function() {
+    const isOpen = navTabs.classList.contains('open');
+    if (isOpen) { closeMenu(); }
+    else {
+      navTabs.classList.add('open');
+      hamburger.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  /* Close menu if user clicks outside it */
+  document.addEventListener('click', function(e) {
+    if (!hamburger.contains(e.target) && !navTabs.contains(e.target)) {
+      closeMenu();
+    }
   });
 </script>
 

@@ -208,6 +208,34 @@ body {
   background: var(--bg);
 }
 
+/* ── Hamburger button (mobile only) ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 4px;
+  width: 36px; height: 36px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 6px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.nav-hamburger:hover { background: var(--surface2); border-color: var(--border2); }
+.nav-hamburger span {
+  display: block;
+  width: 16px; height: 1.5px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.2s, opacity 0.2s;
+  transform-origin: center;
+}
+/* Animate to ✕ when open */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
 
 /* ══════════════════════════════════════════════════════════
    5. STUDY PAGE BASE  (study/*.html — loaded inside iframe)
@@ -583,6 +611,49 @@ body {
   .plan-body, .hero   { padding: 1.5rem 1rem; }
   .filter-bar         { padding: 0.75rem 1rem; }
   .week-jump          { display: none; }
+}
+
+/* ── Mobile nav: hamburger + dropdown ── */
+@media (max-width: 768px) {
+  /* Show hamburger, hide desktop hint */
+  .nav-hamburger { display: flex; }
+  .nav-hint      { display: none; }
+
+  /* Push theme button to the right, hamburger next to it */
+  .nav { gap: 0.75rem; }
+  .nav-logo { margin-right: auto; }
+
+  /* Tabs become a full-width dropdown panel */
+  .nav-tabs {
+    display: none;          /* hidden by default on mobile */
+    flex-direction: column;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border2);
+    padding: 0.5rem 0;
+    z-index: 99;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    max-height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
+  }
+  .nav-tabs.open { display: flex; }
+
+  .nav-tab {
+    width: 100%;
+    padding: 12px 1.25rem;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    justify-content: flex-start;
+  }
+  .nav-tab:last-child { border-bottom: none; }
+  .nav-tab.active {
+    background: var(--surface2);
+    border-color: var(--border);
+  }
 }
 
 @media (max-width: 600px) {
