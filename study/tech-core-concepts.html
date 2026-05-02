@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Core Concepts Roadmap</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-eyebrow">&#x1F9E0; Engineering Roadmap &mdash; Core Concepts Reference</div>
+  <h1 class="hero-title">Tech Core Concepts &mdash; <span>The Engineer&#39;s Roadmap</span></h1>
+  <p class="hero-desc">A structured reference covering every core topic a serious software engineer needs to master: OS &amp; command line, functional programming, Git, networking, data structures, APIs, databases, system design, infrastructure, Docker, Kubernetes, and 9 supplementary topics. Each entry explains why it matters, what to learn, commands, projects, and resources. Includes a self-assessment progress tracker and an essential reading list.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">15</div><div class="stat-label">Core topics</div></div>
+    <div class="stat"><div class="stat-val">9</div><div class="stat-label">Supp. topics</div></div>
+    <div class="stat"><div class="stat-val">6</div><div class="stat-label">Phases</div></div>
+    <div class="stat"><div class="stat-val">Dev</div><div class="stat-label">Level</div></div>
+    <div class="stat"><div class="stat-val">Full</div><div class="stat-label">Stack</div></div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <span class="filter-label">view:</span>
+  <button class="filter-btn active" onclick="setFilter('all', this)"><span class="filter-dot dot-all"></span>all</button>
+  <button class="filter-btn" onclick="setFilter('core', this)"><span class="filter-dot" style="background:#06d6a0;"></span>core topics</button>
+  <button class="filter-btn" onclick="setFilter('supp', this)"><span class="filter-dot" style="background:#7b61ff;"></span>supplementary</button>
+  <div class="week-jump">
+    <span class="week-jump-label">jump:</span>
+    <select onchange="jumpTo(this.value)">
+      <option value="ph1">Phase 1 &mdash; Foundations</option>
+      <option value="ph2">Phase 2 &mdash; Data &amp; APIs</option>
+      <option value="ph3">Phase 3 &mdash; Engineering Craft</option>
+      <option value="ph4">Phase 4 &mdash; Infrastructure</option>
+      <option value="ph5">Phase 5 &mdash; Scale</option>
+      <option value="ph6">Phase 6 &mdash; Supplementary Topics</option>
+      <option value="ph7">Progress Tracker</option>
+      <option value="ph8">Reading List</option>
+    </select>
+  </div>
+</div>
+
+<div class="search-bar">
+  <input class="search-input" id="search-input" type="text"
+         placeholder="Search topics, concepts, commands&#x2026; (e.g. docker, ACID, CAP theorem)"
+         oninput="handleSearch(this.value)" />
+  <span class="search-count" id="search-count">24 topics</span>
+</div>
+
+<div class="plan-body" id="plan-body">
+
+  <div class="phase-block" id="block-ph1">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(6,214,160,0.12);color:#06d6a0;">Phase 1</span>
+      <span class="phase-title">🏗️ Foundations</span>
+      <span class="phase-meta">4 topics</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Build the universal skills every engineer needs: OS fluency, functional thinking, version control, and network understanding.</div>
+    <div class="week-group" id="ph1">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #06d6a0;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#06d6a0" data-topic-id="1-1" data-title="OS &amp; Command Line" data-icon="🖥️" data-difficulty="⭐⭐☆☆☆" data-time="2–3 weeks" data-why='&quot;Every server, container, and cloud instance runs on an OS. Fluency here makes everything else faster and easier.&quot;' data-core='[&quot;Understand what an Operating System does — manages hardware, memory, and processes&quot;, &quot;Learn the difference between Linux, macOS, and Windows (kernel, shell, ecosystem)&quot;, &quot;Understand process management: how the OS schedules and runs programs&quot;, &quot;Learn memory management: RAM, virtual memory, swap space&quot;, &quot;Understand file descriptors and how everything in Unix is a &amp;#39;file&amp;#39;&quot;, &quot;Get comfortable with bash or zsh&quot;, &quot;Understand the difference between a shell and a terminal emulator&quot;]' data-deeper='[&quot;File system structure: /etc, /var, /home, /usr, /tmp, /proc, /dev&quot;, &quot;Environment variables: $PATH, $HOME, $USER, export, .bashrc, .zshrc, .profile&quot;, &quot;stdin (0), stdout (1), stderr (2) and piping (|, &gt;, &gt;&gt;, 2&gt;&amp;1)&quot;, &quot;Cron jobs — scheduling recurring tasks with crontab -e&quot;, &quot;Symlinks: ln -s and why they are used&quot;, &quot;Package managers: apt (Ubuntu/Debian), brew (macOS), yum/dnf (RHEL/CentOS), pacman (Arch)&quot;, &quot;Shell scripting to automate repetitive tasks (loops, conditionals, functions)&quot;, &quot;Process signals: SIGTERM, SIGKILL, SIGHUP&quot;]' data-commands='{&quot;Navigation&quot;: &quot;ls, cd, pwd, mkdir, rm, cp, mv&quot;, &quot;File Viewing&quot;: &quot;cat, less, head, tail, grep, wc&quot;, &quot;Permissions&quot;: &quot;chmod, chown, ls -la, umask&quot;, &quot;Processes&quot;: &quot;ps, kill, top, htop, jobs, bg, fg&quot;, &quot;Networking&quot;: &quot;ping, curl, wget, netstat, ss, nmap&quot;, &quot;Text Editing&quot;: &quot;nano, vim (at least know how to exit!)&quot;, &quot;Searching&quot;: &quot;find, grep, locate, which, whereis&quot;, &quot;Archiving&quot;: &quot;tar, zip, gzip, rsync&quot;, &quot;Disk &amp; Memory&quot;: &quot;df, du, free, lsblk&quot;}' data-projects='[&quot;Write a bash script that backs up a folder and timestamps it&quot;, &quot;Write a script that monitors CPU usage and sends an alert when it exceeds a threshold&quot;, &quot;Automate a multi-step setup process (install dependencies, clone a repo, configure environment)&quot;]' data-sources='[{&quot;t&quot;: &quot;The Linux Command Line — free book by William Shotts&quot;, &quot;u&quot;: &quot;https://linuxcommand.org/tlcl.php&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;explainshell.com — paste any command and get it explained&quot;, &quot;u&quot;: &quot;https://explainshell.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;OverTheWire: Bandit — gamified terminal learning&quot;, &quot;u&quot;: &quot;https://overthewire.org/wargames/bandit/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">1-1</div>
+          <div class="day-topic">🖥️ OS &amp; Command Line</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-level">⭐⭐☆☆☆ &middot; 2–3 weeks</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #06d6a0;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#06d6a0" data-topic-id="1-2" data-title="Functional Programming" data-icon="⚙️" data-difficulty="⭐⭐⭐☆☆" data-time="2–3 weeks" data-why='&quot;FP concepts — pure functions, immutability, composition — are the backbone of modern front-end frameworks, data pipelines, and concurrent systems.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Re-implement map, filter, and reduce from scratch&quot;, &quot;Build a data transformation pipeline using only pure functions&quot;, &quot;Implement a memoization function and test it with Fibonacci&quot;]' data-sources='[{&quot;t&quot;: &quot;Professor Frisby&amp;#39;s Mostly Adequate Guide to FP — free, JavaScript-based&quot;, &quot;u&quot;: &quot;https://mostly-adequate.gitbook.io/mostly-adequate-guide/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Functional Programming in Python — Real Python&quot;, &quot;u&quot;: &quot;https://realpython.com/python-functional-programming/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">1-2</div>
+          <div class="day-topic">⚙️ Functional Programming</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-level">⭐⭐⭐☆☆ &middot; 2–3 weeks</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #06d6a0;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#06d6a0" data-topic-id="1-3" data-title="Git &amp; Version Control" data-icon="🌿" data-difficulty="⭐⭐☆☆☆" data-time="1–2 weeks" data-why='&quot;Git is the foundation of all collaborative software development. You cannot work on a real team without it.&quot;' data-core='[]' data-deeper='[]' data-commands='{&quot;setup&quot;: [&quot;git config --global user.name &amp;#39;Your Name&amp;#39;&quot;, &quot;git config --global user.email &amp;#39;you@example.com&amp;#39;&quot;, &quot;git config --global core.editor &amp;#39;vim&amp;#39;&quot;], &quot;dailyWorkflow&quot;: [&quot;git init — Initialize a new repo&quot;, &quot;git clone &lt;url&gt; — Clone a remote repo&quot;, &quot;git status — See what&amp;#39;s changed&quot;, &quot;git add &lt;file&gt; — Stage a specific file&quot;, &quot;git add . — Stage all changes&quot;, &quot;git commit -m &amp;#39;message&amp;#39; — Commit staged changes&quot;, &quot;git log --oneline --graph — View commit history visually&quot;, &quot;git diff — See unstaged changes&quot;, &quot;git diff --staged — See staged changes&quot;], &quot;branchingAndMerging&quot;: [&quot;git branch — List branches&quot;, &quot;git branch feature/login — Create a branch&quot;, &quot;git switch feature/login — Switch to it&quot;, &quot;git switch -c feature/login — Create and switch in one step&quot;, &quot;git merge feature/login — Merge into current branch&quot;, &quot;git branch -d feature/login — Delete a branch&quot;], &quot;remoteOperations&quot;: [&quot;git remote add origin &lt;url&gt; — Link to remote&quot;, &quot;git push origin main — Push local to remote&quot;, &quot;git pull origin main — Pull remote changes&quot;, &quot;git fetch — Download without merging&quot;], &quot;undoingThings&quot;: [&quot;git restore &lt;file&gt; — Discard unstaged changes&quot;, &quot;git restore --staged &lt;file&gt; — Unstage a file&quot;, &quot;git revert &lt;commit&gt; — Undo a commit (safe, keeps history)&quot;, &quot;git reset --hard &lt;commit&gt; — Danger: rewrite history&quot;, &quot;git stash — Temporarily save changes&quot;, &quot;git stash pop — Restore stashed changes&quot;]}' data-projects='[&quot;Contribute to an open-source project on GitHub (even a documentation fix)&quot;, &quot;Set up a repo with branch protection rules and required PR reviews&quot;, &quot;Simulate a merge conflict with a partner and resolve it&quot;]' data-sources='[{&quot;t&quot;: &quot;Pro Git — free, official, comprehensive&quot;, &quot;u&quot;: &quot;https://git-scm.com/book/en/v2&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Oh Shit, Git! — practical fixes for common mistakes&quot;, &quot;u&quot;: &quot;https://ohshitgit.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Learn Git Branching — interactive visual tool&quot;, &quot;u&quot;: &quot;https://learngitbranching.js.org&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">1-3</div>
+          <div class="day-topic">🌿 Git &amp; Version Control</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-level">⭐⭐☆☆☆ &middot; 1–2 weeks</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #06d6a0;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#06d6a0" data-topic-id="1-4" data-title="Networking Basics" data-icon="🌐" data-difficulty="⭐⭐⭐☆☆" data-time="2–3 weeks" data-why='&quot;Every web app, API, database, and cloud service communicates over a network. Debugging production issues requires understanding how data flows.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Set up a home network diagram with all devices, IPs, and ports&quot;, &quot;Use Wireshark to capture and analyze HTTP traffic&quot;, &quot;Write a simple TCP server and client from scratch in Python&quot;]' data-sources='[{&quot;t&quot;: &quot;Computer Networks: A Top-Down Approach — classic textbook&quot;, &quot;u&quot;: &quot;https://gaia.cs.umass.edu/kurose_ross/index.php&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Cloudflare Learning Center — free, excellent explanations&quot;, &quot;u&quot;: &quot;https://www.cloudflare.com/learning/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;NetworkChuck on YouTube — engaging beginner-friendly content&quot;, &quot;u&quot;: &quot;https://www.youtube.com/@NetworkChuck&quot;, &quot;b&quot;: &quot;video&quot;}]'>
+          <div class="entry-id">1-4</div>
+          <div class="day-topic">🌐 Networking Basics</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-level">⭐⭐⭐☆☆ &middot; 2–3 weeks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ph2">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(0,212,255,0.12);color:#00d4ff;">Phase 2</span>
+      <span class="phase-title">🔌 Data &amp; APIs</span>
+      <span class="phase-meta">3 topics</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Master how data is stored, queried, and exchanged. SQL, NoSQL, and REST APIs are the backbone of virtually every backend system.</div>
+    <div class="week-group" id="ph2">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #00d4ff;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#00d4ff" data-topic-id="2-1" data-title="APIs &amp; REST" data-icon="🔌" data-difficulty="⭐⭐☆☆☆" data-time="2–3 weeks" data-why='&quot;APIs are the connective tissue of modern software. Every frontend, mobile app, and microservice communicates through them.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Build a full CRUD REST API (e.g., a task manager) with proper status codes&quot;, &quot;Integrate with a public API (GitHub, OpenWeather, Spotify)&quot;, &quot;Add JWT authentication to your REST API&quot;, &quot;Build a simple GraphQL API and compare it to your REST API&quot;]' data-sources='[{&quot;t&quot;: &quot;REST API Design Best Practices — freeCodeCamp&quot;, &quot;u&quot;: &quot;https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Postman Learning Center&quot;, &quot;u&quot;: &quot;https://learning.postman.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;HTTP Status Codes Reference — MDN&quot;, &quot;u&quot;: &quot;https://developer.mozilla.org/en-US/docs/Web/HTTP/Status&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="entry-id">2-1</div>
+          <div class="day-topic">🔌 APIs &amp; REST</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-level">⭐⭐☆☆☆ &middot; 2–3 weeks</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #00d4ff;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#00d4ff" data-topic-id="2-2" data-title="SQL Databases" data-icon="🗄️" data-difficulty="⭐⭐⭐☆☆" data-time="3–4 weeks" data-why='&quot;The vast majority of business-critical data lives in relational databases. SQL is arguably the most important skill a backend developer can have.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Design and implement a schema for an e-commerce store (users, products, orders, reviews)&quot;, &quot;Write queries to find the top 10 customers by revenue per month&quot;, &quot;Optimize a slow query using EXPLAIN ANALYZE and indexes&quot;, &quot;Implement a banking transfer with ACID transactions&quot;]' data-sources='[{&quot;t&quot;: &quot;PostgreSQL Official Docs — exceptional quality&quot;, &quot;u&quot;: &quot;https://www.postgresql.org/docs/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Use The Index, Luke — SQL performance for developers&quot;, &quot;u&quot;: &quot;https://use-the-index-luke.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;SQLZoo — interactive SQL practice&quot;, &quot;u&quot;: &quot;https://sqlzoo.net&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">2-2</div>
+          <div class="day-topic">🗄️ SQL Databases</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-level">⭐⭐⭐☆☆ &middot; 3–4 weeks</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #00d4ff;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#00d4ff" data-topic-id="2-3" data-title="NoSQL Databases" data-icon="🍃" data-difficulty="⭐⭐☆☆☆" data-time="2 weeks" data-why='&quot;Not every problem fits neatly into rows and columns. Knowing when and how to use NoSQL is essential for scalable, modern architectures.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Build an API with MongoDB that handles a blog platform (posts, comments, tags)&quot;, &quot;Implement a Redis cache layer in front of a SQL query&quot;, &quot;Model and query a social network (followers/following) in Neo4j&quot;]' data-sources='[{&quot;t&quot;: &quot;MongoDB University — free official courses&quot;, &quot;u&quot;: &quot;https://university.mongodb.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Redis Documentation — excellent, practical guides&quot;, &quot;u&quot;: &quot;https://redis.io/docs/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;NoSQL Distilled — book by Fowler &amp; Sadalage&quot;, &quot;u&quot;: &quot;https://www.martinfowler.com/books/nosql.html&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">2-3</div>
+          <div class="day-topic">🍃 NoSQL Databases</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-level">⭐⭐☆☆☆ &middot; 2 weeks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ph3">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(123,97,255,0.12);color:#7b61ff;">Phase 3</span>
+      <span class="phase-title">⚒️ Engineering Craft</span>
+      <span class="phase-meta">3 topics</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Write software that is maintainable, testable, and secure. These are the skills that separate a coder from a professional software engineer.</div>
+    <div class="week-group" id="ph3">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #7b61ff;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#7b61ff" data-topic-id="3-1" data-title="Design Patterns" data-icon="🏛️" data-difficulty="⭐⭐⭐⭐☆" data-time="3–4 weeks" data-why='&quot;Design patterns are a shared vocabulary for solving recurring problems. They make code more maintainable, extensible, and easier to discuss with other engineers.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Refactor an existing codebase to apply SOLID principles&quot;, &quot;Build a notification system using the Observer pattern&quot;, &quot;Implement a payment system with interchangeable Strategy patterns (credit card, PayPal, crypto)&quot;]' data-sources='[{&quot;t&quot;: &quot;Refactoring Guru — best visual explanations on the internet&quot;, &quot;u&quot;: &quot;https://refactoring.guru/design-patterns&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Design Patterns (GoF) — the original book&quot;, &quot;u&quot;: &quot;https://en.wikipedia.org/wiki/Design_Patterns&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Head First Design Patterns — beginner-friendly&quot;, &quot;u&quot;: &quot;https://www.oreilly.com/library/view/head-first-design/9781492077992/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">3-1</div>
+          <div class="day-topic">🏛️ Design Patterns</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-level">⭐⭐⭐⭐☆ &middot; 3–4 weeks</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #7b61ff;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#7b61ff" data-topic-id="3-2" data-title="Testing" data-icon="🧪" data-difficulty="⭐⭐⭐☆☆" data-time="2–3 weeks" data-why='&quot;Tests are the safety net that lets you change code with confidence. Without them, every change is a gamble.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Achieve 80%+ test coverage on a small API project using TDD&quot;, &quot;Write E2E tests for a checkout flow using Playwright&quot;, &quot;Set up a CI pipeline that blocks merging if tests fail&quot;]' data-sources='[{&quot;t&quot;: &quot;Testing JavaScript — Kent C. Dodds&quot;, &quot;u&quot;: &quot;https://testingjavascript.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;pytest Documentation — clean and practical&quot;, &quot;u&quot;: &quot;https://docs.pytest.org&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Growing Object-Oriented Software, Guided by Tests — classic book&quot;, &quot;u&quot;: &quot;http://www.growing-object-oriented-software.com/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">3-2</div>
+          <div class="day-topic">🧪 Testing</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-level">⭐⭐⭐☆☆ &middot; 2–3 weeks</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #7b61ff;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#7b61ff" data-topic-id="3-3" data-title="Security" data-icon="🔐" data-difficulty="⭐⭐⭐⭐☆" data-time="3–4 weeks" data-why='&quot;A single vulnerability can compromise millions of users. Security is not optional — it must be built in from the start.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Find and fix SQL injection vulnerabilities in a deliberately vulnerable app (DVWA, Juice Shop)&quot;, &quot;Implement a full authentication system with JWT + refresh tokens&quot;, &quot;Set up a security scanning step in your CI/CD pipeline&quot;]' data-sources='[{&quot;t&quot;: &quot;OWASP Top 10 — official vulnerability list&quot;, &quot;u&quot;: &quot;https://owasp.org/www-project-top-ten/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;OWASP WebGoat — learn by exploiting an intentionally vulnerable app&quot;, &quot;u&quot;: &quot;https://github.com/WebGoat/WebGoat&quot;, &quot;b&quot;: &quot;github&quot;}, {&quot;t&quot;: &quot;PortSwigger Web Security Academy — free, world-class labs&quot;, &quot;u&quot;: &quot;https://portswigger.net/web-security&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">3-3</div>
+          <div class="day-topic">🔐 Security</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-level">⭐⭐⭐⭐☆ &middot; 3–4 weeks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ph4">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,107,107,0.12);color:#ff6b6b;">Phase 4</span>
+      <span class="phase-title">🏗️ Infrastructure</span>
+      <span class="phase-meta">4 topics</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Learn to build, ship, and operate software at scale. Docker, CI/CD, System Design, and Cloud are the skills that take you from developer to engineer.</div>
+    <div class="week-group" id="ph4">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#ff6b6b" data-topic-id="4-1" data-title="System Design" data-icon="🏗️" data-difficulty="⭐⭐⭐⭐⭐" data-time="Ongoing (return to this repeatedly)" data-why='&quot;System design is how you think about building software at scale. It&amp;#39;s also one of the most important topics in senior engineering interviews.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Design a URL shortener end-to-end (API, DB schema, caching strategy, scale plan)&quot;, &quot;Implement a simple in-memory LRU cache&quot;, &quot;Set up Redis caching in front of a database-backed API and measure the speedup&quot;]' data-sources='[{&quot;t&quot;: &quot;Designing Data-Intensive Applications — Martin Kleppmann — THE book&quot;, &quot;u&quot;: &quot;https://dataintensive.net&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;System Design Primer — free GitHub repo&quot;, &quot;u&quot;: &quot;https://github.com/donnemartin/system-design-primer&quot;, &quot;b&quot;: &quot;github&quot;}, {&quot;t&quot;: &quot;ByteByteGo — visual system design newsletter/course&quot;, &quot;u&quot;: &quot;https://bytebytego.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">4-1</div>
+          <div class="day-topic">🏗️ System Design</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-level">⭐⭐⭐⭐⭐ &middot; Ongoing (return to this repeatedly)</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#ff6b6b" data-topic-id="4-2" data-title="Docker &amp; Containerization" data-icon="🐳" data-difficulty="⭐⭐⭐☆☆" data-time="2–3 weeks" data-why='&quot;Containers are the foundation of modern deployment. Without Docker, you can&amp;#39;t work with Kubernetes, microservices, or most cloud-native architectures.&quot;' data-core='[{&quot;concept&quot;: &quot;Image&quot;, &quot;definition&quot;: &quot;Immutable blueprint (like a class); built from a Dockerfile&quot;}, {&quot;concept&quot;: &quot;Container&quot;, &quot;definition&quot;: &quot;A running instance of an image (like an object)&quot;}, {&quot;concept&quot;: &quot;Layer&quot;, &quot;definition&quot;: &quot;Each Dockerfile instruction creates a cached layer&quot;}, {&quot;concept&quot;: &quot;Registry&quot;, &quot;definition&quot;: &quot;Where images are stored; Docker Hub is the default public one&quot;}, {&quot;concept&quot;: &quot;Volume&quot;, &quot;definition&quot;: &quot;Persistent storage that survives container restarts&quot;}, {&quot;concept&quot;: &quot;Network&quot;, &quot;definition&quot;: &quot;How containers communicate with each other&quot;}]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Dockerize an existing application with a Dockerfile and .dockerignore&quot;, &quot;Set up a full dev environment with Docker Compose (app + DB + cache)&quot;, &quot;Create a multi-stage build that reduces image size by 50%+&quot;]' data-sources='[{&quot;t&quot;: &quot;Play with Docker — free browser-based Docker playground&quot;, &quot;u&quot;: &quot;https://labs.play-with-docker.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Docker Official Docs — comprehensive and well-written&quot;, &quot;u&quot;: &quot;https://docs.docker.com&quot;, &quot;b&quot;: &quot;docs&quot;}, {&quot;t&quot;: &quot;Docker Deep Dive — book by Nigel Poulton&quot;, &quot;u&quot;: &quot;https://www.nigelpoulton.com/books/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">4-2</div>
+          <div class="day-topic">🐳 Docker &amp; Containerization</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-level">⭐⭐⭐☆☆ &middot; 2–3 weeks</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#ff6b6b" data-topic-id="4-3" data-title="CI/CD" data-icon="🔄" data-difficulty="⭐⭐⭐☆☆" data-time="2–3 weeks" data-why='&quot;CI/CD is what separates teams that ship every day from teams that dread deployments. It automates the path from code to production.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Set up a GitHub Actions pipeline that runs tests on every PR and blocks merging on failure&quot;, &quot;Add Docker build and push to a container registry&quot;, &quot;Implement a blue/green deployment strategy for a small service&quot;]' data-sources='[{&quot;t&quot;: &quot;GitHub Actions Docs&quot;, &quot;u&quot;: &quot;https://docs.github.com/en/actions&quot;, &quot;b&quot;: &quot;github&quot;}, {&quot;t&quot;: &quot;The DevOps Handbook — foundational book&quot;, &quot;u&quot;: &quot;https://itrevolution.com/product/the-devops-handbook/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;CI/CD with Docker and GitHub Actions&quot;, &quot;u&quot;: &quot;https://docs.docker.com/build/ci/github-actions/&quot;, &quot;b&quot;: &quot;docs&quot;}]'>
+          <div class="entry-id">4-3</div>
+          <div class="day-topic">🔄 CI/CD</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-level">⭐⭐⭐☆☆ &middot; 2–3 weeks</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#ff6b6b" data-topic-id="4-4" data-title="Cloud Computing" data-icon="☁️" data-difficulty="⭐⭐⭐☆☆" data-time="4–6 weeks" data-why='&quot;The cloud is the default infrastructure for modern applications. Understanding it is now a baseline expectation for backend and DevOps engineers.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Deploy a containerized application to ECS Fargate behind an ALB&quot;, &quot;Build a serverless API with Lambda + API Gateway + DynamoDB&quot;, &quot;Set up a static website with S3 + CloudFront + Route 53&quot;]' data-sources='[{&quot;t&quot;: &quot;AWS Free Tier — $300 in credits for 12 months on many services&quot;, &quot;u&quot;: &quot;https://aws.amazon.com/free/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;AWS Well-Architected Framework — official best practices&quot;, &quot;u&quot;: &quot;https://aws.amazon.com/architecture/well-architected/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;A Cloud Guru / Pluralsight — structured cloud courses&quot;, &quot;u&quot;: &quot;https://acloudguru.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">4-4</div>
+          <div class="day-topic">☁️ Cloud Computing</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-level">⭐⭐⭐☆☆ &middot; 4–6 weeks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ph5">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,209,102,0.12);color:#ffd166;">Phase 5</span>
+      <span class="phase-title">📡 Scale</span>
+      <span class="phase-meta">1 topics</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Understand how large systems stay reliable and consistent across many machines. This is where software engineering meets distributed systems thinking.</div>
+    <div class="week-group" id="ph5">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #ffd166;" onclick="openTopic(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openTopic(this)" data-filter="core" data-color="#ffd166" data-topic-id="5-1" data-title="Microservices &amp; Distributed Systems" data-icon="🔀" data-difficulty="⭐⭐⭐⭐⭐" data-time="4–6 weeks" data-why='&quot;Most large-scale systems are built as microservices. Understanding how they communicate, fail, and stay consistent is essential at senior+ levels.&quot;' data-core='[]' data-deeper='[]' data-commands='{}' data-projects='[&quot;Extract one service from a monolith (e.g., split authentication into its own service)&quot;, &quot;Build an order processing system using the Saga pattern with message queues&quot;, &quot;Set up distributed tracing across 3+ services with Jaeger&quot;]' data-sources='[{&quot;t&quot;: &quot;Building Microservices, 2nd Ed. — Sam Newman — the definitive book&quot;, &quot;u&quot;: &quot;https://samnewman.io/books/building_microservices_2nd_edition/&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Microservices.io — patterns reference by Chris Richardson&quot;, &quot;u&quot;: &quot;https://microservices.io&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Distributed Systems for Fun and Profit — free online book&quot;, &quot;u&quot;: &quot;http://book.mixu.net/distsys/&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="entry-id">5-1</div>
+          <div class="day-topic">🔀 Microservices &amp; Distribute…</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-level">⭐⭐⭐⭐⭐ &middot; 4–6 weeks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ph6">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(1,118,211,0.12);color:#0176D3;">Phase 6</span>
+      <span class="phase-title">🗺️ Supplementary Topics</span>
+      <span class="phase-meta">9 topics</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Explore after completing the core roadmap. These topics are valuable for specialization and round out your engineering knowledge.</div>
+    <div class="week-group" id="ph6">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #0176D3;" onclick="openSupp(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSupp(this)" data-filter="supp" data-color="#0176D3" data-title="TypeScript" data-why='&quot;Type safety for JavaScript; now the industry standard&quot;'>
+          <div class="entry-id">6-01</div>
+          <div class="day-topic">TypeScript</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #0176D3;" onclick="openSupp(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSupp(this)" data-filter="supp" data-color="#0176D3" data-title="WebSockets &amp; SSE" data-why='&quot;Real-time communication for live features&quot;'>
+          <div class="entry-id">6-02</div>
+          <div class="day-topic">WebSockets &amp; SSE</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #0176D3;" onclick="openSupp(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSupp(this)" data-filter="supp" data-color="#0176D3" data-title="GraphQL (Deep Dive)" data-why='&quot;Flexible API layer for complex frontends&quot;'>
+          <div class="entry-id">6-03</div>
+          <div class="day-topic">GraphQL (Deep Dive)</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #0176D3;" onclick="openSupp(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSupp(this)" data-filter="supp" data-color="#0176D3" data-title="Algorithms &amp; Data Structures" data-why='&quot;Foundation for problem-solving and interviews&quot;'>
+          <div class="entry-id">6-04</div>
+          <div class="day-topic">Algorithms &amp; Data Structures</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #0176D3;" onclick="openSupp(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSupp(this)" data-filter="supp" data-color="#0176D3" data-title="Monitoring &amp; Observability" data-why='&quot;Prometheus, Grafana, alerting in production&quot;'>
+          <div class="entry-id">6-05</div>
+          <div class="day-topic">Monitoring &amp; Observability</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #0176D3;" onclick="openSupp(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSupp(this)" data-filter="supp" data-color="#0176D3" data-title="Infrastructure as Code" data-why='&quot;Terraform, Pulumi — reproducible infrastructure&quot;'>
+          <div class="entry-id">6-06</div>
+          <div class="day-topic">Infrastructure as Code</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #0176D3;" onclick="openSupp(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSupp(this)" data-filter="supp" data-color="#0176D3" data-title="Machine Learning Basics" data-why='&quot;Increasingly expected in product engineering roles&quot;'>
+          <div class="entry-id">6-07</div>
+          <div class="day-topic">Machine Learning Basics</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #0176D3;" onclick="openSupp(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSupp(this)" data-filter="supp" data-color="#0176D3" data-title="WebAssembly (WASM)" data-why='&quot;High-performance web and edge computing&quot;'>
+          <div class="entry-id">6-08</div>
+          <div class="day-topic">WebAssembly (WASM)</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #0176D3;" onclick="openSupp(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSupp(this)" data-filter="supp" data-color="#0176D3" data-title="eBPF" data-why='&quot;Deep Linux kernel observability and networking&quot;'>
+          <div class="entry-id">6-09</div>
+          <div class="day-topic">eBPF</div>
+          <div class="phase-dot colored" style="--card-accent: #0176D3;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ph7">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(6,214,160,0.1);color:#06d6a0;">Phase 7</span>
+      <span class="phase-title">📋 Progress Tracker</span>
+      <span class="phase-meta">Self-assessment</span><div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Track your learning journey across all phases.</div>
+    <div class="week-group" id="ph7">
+      <div style="margin-bottom:24px;">
+        <div class="week-header" style="margin-bottom:10px;"><span class="week-num" style="color:#06d6a0;">Phase 1 — Foundations</span><div class="week-divider"></div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>OS &amp; Command Line</div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>Functional Programming</div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>Git &amp; Version Control</div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>Networking Basics</div>
+        </div>
+      </div>
+      <div style="margin-bottom:24px;">
+        <div class="week-header" style="margin-bottom:10px;"><span class="week-num" style="color:#06d6a0;">Phase 2 — Data &amp; APIs</span><div class="week-divider"></div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>APIs &amp; REST</div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>SQL Databases</div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>NoSQL Databases</div>
+        </div>
+      </div>
+      <div style="margin-bottom:24px;">
+        <div class="week-header" style="margin-bottom:10px;"><span class="week-num" style="color:#06d6a0;">Phase 3 — Engineering Craft</span><div class="week-divider"></div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>Design Patterns</div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>Testing</div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>Security</div>
+        </div>
+      </div>
+      <div style="margin-bottom:24px;">
+        <div class="week-header" style="margin-bottom:10px;"><span class="week-num" style="color:#06d6a0;">Phase 4 — Infrastructure</span><div class="week-divider"></div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>System Design</div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>Docker &amp; Containerization</div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>CI/CD</div>
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>Cloud Computing</div>
+        </div>
+      </div>
+      <div style="margin-bottom:24px;">
+        <div class="week-header" style="margin-bottom:10px;"><span class="week-num" style="color:#06d6a0;">Phase 5 — Scale</span><div class="week-divider"></div></div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <div style="font-family:var(--mono);font-size:11px;font-weight:500;padding:5px 12px;border-radius:6px;background:var(--surface2);border:1px solid var(--border2);color:var(--muted);display:flex;align-items:center;gap:6px;"><span style="width:10px;height:10px;border-radius:50%;border:2px solid #06d6a0;display:inline-block;flex-shrink:0;"></span>Microservices &amp; Distributed Systems</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ph8">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,107,107,0.1);color:#ff6b6b;">Phase 8</span>
+      <span class="phase-title">📖 Essential Reading List</span>
+      <span class="phase-meta">Essential books</span><div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; The books that every serious software engineer should read. Prioritize in order.</div>
+    <div class="week-group" id="ph8">
+      <div style="margin-bottom:24px;">
+        <div class="week-header" style="margin-bottom:10px;"><span class="week-num" style="color:#ff6b6b;">Foundational</span><div class="week-divider"></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">The Pragmatic Programmer</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Hunt &amp; Thomas</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">Clean Code</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Robert C. Martin</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">The Clean Coder</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Robert C. Martin</div></div></div>
+        </div>
+      </div>
+      <div style="margin-bottom:24px;">
+        <div class="week-header" style="margin-bottom:10px;"><span class="week-num" style="color:#ff6b6b;">Architecture &amp; Design</span><div class="week-divider"></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">Design Patterns</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Gang of Four</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">Refactoring</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Martin Fowler</div></div></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">A Philosophy of Software Design</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">John Ousterhout</div></div></div>
+        </div>
+      </div>
+      <div style="margin-bottom:24px;">
+        <div class="week-header" style="margin-bottom:10px;"><span class="week-num" style="color:#ff6b6b;">Infrastructure &amp; Scale</span><div class="week-divider"></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <a href="https://dataintensive.net" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">Designing Data-Intensive Applications</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Martin Kleppmann</div></div><span style="margin-left:auto;color:var(--muted2);font-size:14px;">&#8599;</span></a>
+          <a href="https://samnewman.io/books/building_microservices_2nd_edition/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">Building Microservices</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Sam Newman</div></div><span style="margin-left:auto;color:var(--muted2);font-size:14px;">&#8599;</span></a>
+          <a href="https://itrevolution.com/product/the-devops-handbook/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">The DevOps Handbook</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Kim, Humble, Debois, Willis</div></div><span style="margin-left:auto;color:var(--muted2);font-size:14px;">&#8599;</span></a>
+          <a href="https://sre.google/books/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">Site Reliability Engineering</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Google</div></div><span style="margin-left:auto;color:var(--muted2);font-size:14px;">&#8599;</span></a>
+        </div>
+      </div>
+      <div style="margin-bottom:24px;">
+        <div class="week-header" style="margin-bottom:10px;"><span class="week-num" style="color:#ff6b6b;">Database</span><div class="week-divider"></div></div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <a href="https://use-the-index-luke.com" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">Use The Index, Luke</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Markus Winand</div></div><span style="margin-left:auto;color:var(--muted2);font-size:14px;">&#8599;</span></a>
+          <a href="https://www.martinfowler.com/books/nosql.html" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:background 0.12s,border-color 0.12s;"><span style="font-size:18px;">&#x1F4D6;</span><div><div style="font-size:13px;font-weight:600;">NoSQL Distilled</div><div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px;">Fowler &amp; Sadalage</div></div><span style="margin-left:auto;color:var(--muted2);font-size:14px;">&#8599;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /plan-body -->
+
+<div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div>
+      <div class="drawer-badge colored" id="d-badge"></div>
+      <div class="drawer-topic" id="d-topic"></div>
+      <div class="drawer-week-info" id="d-week"></div>
+    </div>
+    <div class="drawer-controls">
+      <button class="drawer-btn" id="btn-prev" title="Previous" onclick="nav(-1)">&#8249;</button>
+      <button class="drawer-btn" id="btn-next" title="Next"     onclick="nav(+1)">&#8250;</button>
+      <button class="drawer-btn close"          title="Close"   onclick="closeDrawer()">&#x2715;</button>
+    </div>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</div>
+
+<script src="daydeck-core.js"></script>
+<script>
+  let activeFilter = 'all';
+  let searchTerm   = '';
+
+  function visibleCards() {
+    return Array.from(document.querySelectorAll('.day-card')).filter(c => !c.classList.contains('dimmed'));
+  }
+
+  function buildAndShowDrawer(card) {
+    document.getElementById('drawer').classList.add('open');
+    document.getElementById('drawer-scrim')?.classList.add('open');
+    const vis = visibleCards(), idx = vis.indexOf(card);
+    document.getElementById('btn-prev').disabled = idx <= 0;
+    document.getElementById('btn-next').disabled = idx >= vis.length - 1;
+  }
+
+  function openTopic(card) {
+    currentCard = card;
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    const color = card.dataset.color, tid = card.dataset.topicId,
+          title = card.dataset.title, icon = card.dataset.icon,
+          diff  = card.dataset.difficulty, time = card.dataset.time;
+    let why, core, deeper, commands, projects, srcs;
+    try { why      = JSON.parse(card.dataset.why);      } catch(e) { why = ''; }
+    try { core     = JSON.parse(card.dataset.core);     } catch(e) { core = []; }
+    try { deeper   = JSON.parse(card.dataset.deeper);   } catch(e) { deeper = []; }
+    try { commands = JSON.parse(card.dataset.commands); } catch(e) { commands = {}; }
+    try { projects = JSON.parse(card.dataset.projects); } catch(e) { projects = []; }
+    try { srcs     = JSON.parse(card.dataset.sources);  } catch(e) { srcs = []; }
+    const badge = document.getElementById('d-badge');
+    badge.style.setProperty('--card-accent', color);
+    badge.style.setProperty('--card-accent-bg', hexToRgba(color, 0.1));
+    badge.textContent = tid + ' · ' + diff;
+    document.getElementById('d-topic').textContent = icon + ' ' + title;
+    document.getElementById('d-week').textContent  = time + '  ·  estimated time';
+    let body = '';
+    if (why) body += '<div><div class="drawer-section-title">Why it matters</div><div class="scenario-block" style="font-style:normal;color:var(--text);">' + escHtml(why) + '</div></div>';
+    if (core.length) body += '<div><div class="drawer-section-title">Core concepts</div><div class="learn-list">' + core.map((item,i) => '<div class="learn-item"><span class="learn-num">'+String(i+1).padStart(2,'0')+'</span><span class="learn-text">'+escHtml(item)+'</span></div>').join('') + '</div></div>';
+    const cmdKeys = Object.keys(commands);
+    if (cmdKeys.length) body += '<div><div class="drawer-section-title">Commands reference</div><div style="display:flex;flex-direction:column;gap:6px;">' + cmdKeys.map(k => '<div style="display:flex;gap:10px;align-items:baseline;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;"><span style="font-family:var(--mono);font-size:9px;font-weight:700;color:var(--accent);flex-shrink:0;min-width:80px;text-transform:uppercase;letter-spacing:0.06em;">'+escHtml(k)+'</span><span style="font-family:var(--mono);font-size:11px;color:var(--text);line-height:1.6;">'+escHtml(commands[k])+'</span></div>').join('') + '</div></div>';
+    if (deeper.length) body += '<div><div class="drawer-section-title">Deeper concepts</div><div class="learn-list">' + deeper.map((item,i) => '<div class="learn-item"><span class="learn-num">'+String(i+1).padStart(2,'0')+'</span><span class="learn-text">'+escHtml(item)+'</span></div>').join('') + '</div></div>';
+    if (projects.length) body += '<div><div class="drawer-section-title">Practice projects</div><div class="practice-block"><div style="display:flex;flex-direction:column;gap:6px;">' + projects.map((p,i) => '<div style="display:flex;gap:10px;align-items:flex-start;"><span style="font-family:var(--mono);font-size:10px;font-weight:700;color:var(--accent);flex-shrink:0;padding-top:2px;">'+String(i+1).padStart(2,'0')+'</span><span class="practice-text" style="margin:0;">'+escHtml(p)+'</span></div>').join('') + '</div></div></div>';
+    if (srcs.length) body += '<div><div class="drawer-section-title">Resources</div><div class="source-list">' + srcs.map(s => '<a class="source-link" href="'+(s.u||'#')+'" target="_blank" rel="noopener noreferrer"><span class="source-badge badge-'+s.b+'">'+s.b+'</span><span class="source-name">'+escHtml(s.t)+'</span><span class="source-arrow">&#8599;</span></a>').join('') + '</div></div>';
+    document.getElementById('d-body').innerHTML = body;
+    buildAndShowDrawer(card);
+  }
+
+  function openSupp(card) {
+    currentCard = card;
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    const color = card.dataset.color, title = card.dataset.title;
+    let why; try { why = JSON.parse(card.dataset.why); } catch(e) { why = ''; }
+    const badge = document.getElementById('d-badge');
+    badge.style.setProperty('--card-accent', color);
+    badge.style.setProperty('--card-accent-bg', hexToRgba(color, 0.1));
+    badge.textContent = 'Supplementary';
+    document.getElementById('d-topic').textContent = title;
+    document.getElementById('d-week').textContent  = 'Phase 6 · Worth knowing';
+    document.getElementById('d-body').innerHTML = why
+      ? '<div><div class="drawer-section-title">Why it matters</div><div class="scenario-block" style="font-style:normal;color:var(--text);">' + escHtml(why) + '</div></div>'
+      : '<div class="notes-block">No additional detail available for this topic.</div>';
+    buildAndShowDrawer(card);
+  }
+
+  function closeDrawer() {
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('drawer-scrim')?.classList.remove('open');
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    currentCard = null;
+  }
+
+  function nav(dir) {
+    if (!currentCard) return;
+    const vis = visibleCards(), next = vis[vis.indexOf(currentCard) + dir];
+    if (next) { next.dataset.filter === 'supp' ? openSupp(next) : openTopic(next); }
+  }
+
+  function setFilter(f, btn) {
+    activeFilter = f;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function handleSearch(val) {
+    searchTerm = val.trim().toLowerCase();
+    applyFilters();
+  }
+
+  function applyFilters() {
+    let visible = 0;
+    document.querySelectorAll('.day-card').forEach(function(c) {
+      const filterOk = activeFilter === 'all' || c.dataset.filter === activeFilter;
+      const searchOk = !searchTerm ||
+        c.dataset.title.toLowerCase().includes(searchTerm) ||
+        (c.dataset.why||'').toLowerCase().includes(searchTerm) ||
+        (c.dataset.core||'').toLowerCase().includes(searchTerm) ||
+        (c.dataset.deeper||'').toLowerCase().includes(searchTerm) ||
+        (c.dataset.commands||'').toLowerCase().includes(searchTerm);
+      const show = filterOk && searchOk;
+      c.classList.toggle('dimmed', !show);
+      if (show) visible++;
+    });
+    document.getElementById('search-count').textContent = visible + ' topic' + (visible === 1 ? '' : 's');
+    document.querySelectorAll('.phase-block').forEach(function(block) {
+      const any = Array.from(block.querySelectorAll('.day-card')).some(c => !c.classList.contains('dimmed'));
+      block.style.display = any ? '' : 'none';
+    });
+  }
+
+  function jumpTo(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function escHtml(str) {
+    return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === 'Escape')     closeDrawer();
+    if (e.key === 'ArrowRight') nav(+1);
+    if (e.key === 'ArrowLeft')  nav(-1);
+    if ((e.key === 'f' || e.key === 'F') && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      document.getElementById('search-input').focus();
+    }
+  });
+</script>
+</body>
+</html>
