@@ -34,6 +34,9 @@
     Day<em>Deck</em>
   </a>
 
+  <!-- Scroll arrows (desktop) -->
+  <button class="nav-arrow" id="nav-arrow-left"  aria-label="Scroll tabs left">&#8249;</button>
+
   <div class="nav-tabs" id="nav-tabs">
 
     <!-- ─────────────────────────────────────────────────
@@ -101,6 +104,8 @@
 
   </div>
 
+  <button class="nav-arrow" id="nav-arrow-right" aria-label="Scroll tabs right">&#8250;</button>
+
   <!-- Hamburger (mobile only) -->
   <button class="nav-hamburger" id="nav-hamburger"
           aria-label="Open navigation menu" aria-expanded="false">
@@ -128,10 +133,58 @@
      SCRIPTS
 ══════════════════════════════════════════════════ -->
 <script>
-  /* ── Tab switching ── */
-  const tabs  = document.querySelectorAll('.nav-tab');
-  const frame = document.getElementById('content-frame');
+  /* ── DOM refs — all declared first so every function below can use them ── */
+  const tabs       = document.querySelectorAll('.nav-tab');
+  const frame      = document.getElementById('content-frame');
+  const themeBtn   = document.getElementById('theme-toggle');
+  const hamburger  = document.getElementById('nav-hamburger');
+  const navTabs    = document.getElementById('nav-tabs');
+  const arrowLeft  = document.getElementById('nav-arrow-left');
+  const arrowRight = document.getElementById('nav-arrow-right');
 
+  /* ────────────────────────────────────────────────────
+     NAV SCROLL ARROWS (desktop)
+  ──────────────────────────────────────────────────── */
+  function updateArrows() {
+    if (!arrowLeft || !arrowRight) return;
+    const atStart = navTabs.scrollLeft <= 1;
+    const atEnd   = navTabs.scrollLeft >= navTabs.scrollWidth - navTabs.clientWidth - 1;
+    arrowLeft.classList.toggle('arrow-dim', atStart);
+    arrowRight.classList.toggle('arrow-dim', atEnd);
+  }
+
+  if (arrowLeft)  arrowLeft.addEventListener('click',  () => { navTabs.scrollBy({ left: -220, behavior: 'smooth' }); });
+  if (arrowRight) arrowRight.addEventListener('click', () => { navTabs.scrollBy({ left:  220, behavior: 'smooth' }); });
+  navTabs.addEventListener('scroll', updateArrows);
+  /* Defer until after layout paint so scrollWidth is accurate */
+  setTimeout(updateArrows, 0);
+
+  /* ────────────────────────────────────────────────────
+     HAMBURGER MENU
+  ──────────────────────────────────────────────────── */
+  function closeMenu() {
+    navTabs.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const isOpen = navTabs.classList.contains('open');
+    navTabs.classList.toggle('open', !isOpen);
+    hamburger.classList.toggle('open', !isOpen);
+    hamburger.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!hamburger.contains(e.target) && !navTabs.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  /* ────────────────────────────────────────────────────
+     TAB SWITCHING
+  ──────────────────────────────────────────────────── */
   function activateTab(tab) {
     tabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
@@ -140,28 +193,25 @@
     closeMenu();
   }
 
-  activateTab(tabs[0]);
-
-  document.getElementById('nav-tabs').addEventListener('click', function(e) {
+  navTabs.addEventListener('click', function(e) {
     const tab = e.target.closest('.nav-tab');
     if (!tab) return;
     e.preventDefault();
     activateTab(tab);
   });
 
-  /* ── Theme: push into iframe whenever it (re)loads ── */
-  frame.addEventListener('load', function() {
-    pushThemeToFrame();
-  });
+  activateTab(tabs[0]);
 
+  /* ────────────────────────────────────────────────────
+     THEME — push into the iframe on load and on toggle
+  ──────────────────────────────────────────────────── */
   function pushThemeToFrame() {
     const theme = localStorage.getItem('daydeck-theme') || 'dark';
-    try { frame.contentWindow.postMessage({ type: 'daydeck-theme', theme }, '*'); }
+    try { frame.contentWindow.postMessage({ type: 'daydeck-theme', theme: theme }, '*'); }
     catch(e) {}
   }
 
-  /* ── D4: Dark / light mode toggle ── */
-  const themeBtn = document.getElementById('theme-toggle');
+  frame.addEventListener('load', pushThemeToFrame);
 
   function applyTheme(theme) {
     if (theme === 'light') {
@@ -180,36 +230,9 @@
 
   themeBtn.addEventListener('click', function() {
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    const next    = isLight ? 'dark' : 'light';
+    const next = isLight ? 'dark' : 'light';
     localStorage.setItem('daydeck-theme', next);
     applyTheme(next);
-  });
-
-  /* ── Hamburger menu (mobile) ── */
-  const hamburger = document.getElementById('nav-hamburger');
-  const navTabs   = document.getElementById('nav-tabs');
-
-  function closeMenu() {
-    navTabs.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-  }
-
-  hamburger.addEventListener('click', function() {
-    const isOpen = navTabs.classList.contains('open');
-    if (isOpen) { closeMenu(); }
-    else {
-      navTabs.classList.add('open');
-      hamburger.classList.add('open');
-      hamburger.setAttribute('aria-expanded', 'true');
-    }
-  });
-
-  /* Close menu if user clicks outside it */
-  document.addEventListener('click', function(e) {
-    if (!hamburger.contains(e.target) && !navTabs.contains(e.target)) {
-      closeMenu();
-    }
   });
 </script>
 

@@ -65,17 +65,17 @@
    from here — no component styles need to change.
 ────────────────────────────────────────────────────────── */
 [data-theme="light"] {
-  --bg:       #F4F4FA;
-  --surface:  #FFFFFF;
-  --surface2: #EDEDF5;
-  --surface3: #E4E4F0;
+  --bg:       #ECEDF6;   /* slightly deeper than before — less blinding */
+  --surface:  #F5F5FC;   /* off-white, not pure #FFF */
+  --surface2: #E5E6F2;
+  --surface3: #DADBEC;
 
-  --border:   rgba(0, 0, 0, 0.08);
-  --border2:  rgba(0, 0, 0, 0.15);
+  --border:   rgba(0, 0, 0, 0.09);
+  --border2:  rgba(0, 0, 0, 0.18);
 
-  --text:     #1A1A2E;
-  --muted:    #4848A0;
-  --muted2:   #8080B8;
+  --text:     #14142A;   /* slightly deeper navy */
+  --muted:    #3C3C9C;   /* darker purple — passes AA on all surfaces */
+  --muted2:   #5050A0;   /* was #8080B8 (3:1 contrast) → now ~5.5:1 */
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -208,7 +208,24 @@ body {
   background: var(--bg);
 }
 
-/* ── Hamburger button (mobile only) ── */
+/* ── Scroll arrows (desktop, flanking the tab strip) ── */
+.nav-arrow {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.12s, color 0.12s, opacity 0.15s;
+  padding: 0;
+  opacity: 1;
+}
+.nav-arrow:hover { background: var(--surface3); }
+.nav-arrow.arrow-dim { opacity: 0.25; pointer-events: none; }
 .nav-hamburger {
   display: none;
   flex-direction: column; justify-content: center; align-items: center;
@@ -507,9 +524,9 @@ body {
 
 .drawer-badge {
   font-family: var(--mono);
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 3px 9px; border-radius: 4px;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 4px 10px; border-radius: 4px;
   display: inline-flex; align-items: center; gap: 5px;
 }
 .drawer-badge::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
@@ -532,7 +549,7 @@ body {
 .drawer-btn:disabled             { opacity: 0.25; cursor: not-allowed; }
 .drawer-btn.close:hover          { border-color: var(--red); color: var(--red); }
 
-.drawer-topic     { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; color: var(--text); }
+.drawer-topic     { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; color: var(--text); }
 .drawer-week-info { font-size: 12px; color: var(--muted); font-family: var(--mono); margin-top: 4px; }
 
 /* body */
@@ -615,8 +632,9 @@ body {
 
 /* ── Mobile nav: hamburger + dropdown ── */
 @media (max-width: 768px) {
-  /* Show hamburger, hide desktop hint */
+  /* Show hamburger, hide desktop arrows and hint */
   .nav-hamburger { display: flex; }
+  .nav-arrow     { display: none; }
   .nav-hint      { display: none; }
 
   /* Push theme button to the right, hamburger next to it */
