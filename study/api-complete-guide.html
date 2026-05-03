@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Complete Guide</title>
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-eyebrow">&#x1F310; API Mastery Guide &mdash; From Zero to Production</div>
+  <h1 class="hero-title">API Complete Guide &mdash; <span>Everything You Need to Know</span></h1>
+  <p class="hero-desc">A complete reference covering APIs from first principles to advanced production patterns. Covers HTTP, REST, authentication, OAuth 2.0, JWT, CRUD, Salesforce APIs, error handling, rate limiting, versioning, and a 54-term glossary. Built for developers learning to read, hit, and build APIs.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">33</div><div class="stat-label">Sections</div></div>
+    <div class="stat"><div class="stat-val">6</div><div class="stat-label">Chapters</div></div>
+    <div class="stat"><div class="stat-val">54</div><div class="stat-label">Glossary terms</div></div>
+    <div class="stat"><div class="stat-val">SF</div><div class="stat-label">Salesforce</div></div>
+    <div class="stat"><div class="stat-val">REST</div><div class="stat-label">Focus</div></div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <span class="filter-label">chapter:</span>
+  <button class="filter-btn active" onclick="setFilter('all',this)"><span class="filter-dot dot-all"></span>all</button>
+  <button class="filter-btn" onclick="setFilter('ch1',this)"><span class="filter-dot" style="background:#06d6a0;"></span>fundamentals</button>
+  <button class="filter-btn" onclick="setFilter('ch2',this)"><span class="filter-dot" style="background:#00d4ff;"></span>http</button>
+  <button class="filter-btn" onclick="setFilter('ch3',this)"><span class="filter-dot" style="background:#ffd166;"></span>rest</button>
+  <button class="filter-btn" onclick="setFilter('ch4',this)"><span class="filter-dot" style="background:#7b61ff;"></span>auth</button>
+  <button class="filter-btn" onclick="setFilter('ch5',this)"><span class="filter-dot" style="background:#ff6b6b;"></span>practical</button>
+  <button class="filter-btn" onclick="setFilter('ch6',this)"><span class="filter-dot" style="background:#f77f00;"></span>advanced</button>
+  <div class="week-jump">
+    <span class="week-jump-label">jump:</span>
+    <select onchange="jumpTo(this.value)">
+      <option value="ch1">Ch 1 &mdash; Fundamentals</option>
+      <option value="ch2">Ch 2 &mdash; HTTP Basics</option>
+      <option value="ch3">Ch 3 &mdash; REST &amp; Structure</option>
+      <option value="ch4">Ch 4 &mdash; Authentication</option>
+      <option value="ch5">Ch 5 &mdash; Practical APIs</option>
+      <option value="ch6">Ch 6 &mdash; Advanced &amp; Reference</option>
+      <option value="quick-ref">&#x26A1; Quick Reference Card</option>
+    </select>
+  </div>
+</div>
+
+<div class="search-bar">
+  <input class="search-input" id="search-input" type="text"
+         placeholder="Search sections, terms, concepts&#x2026; (e.g. OAuth, 404, Bearer token)"
+         oninput="handleSearch(this.value)" />
+  <span class="search-count" id="search-count">33 sections</span>
+</div>
+
+<div class="plan-body" id="plan-body">
+
+  <div class="phase-block" id="block-ch1">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(6,214,160,0.12);color:#06d6a0;">Chapter 1</span>
+      <span class="phase-title">🔌 Fundamentals</span>
+      <span class="phase-meta">5 sections</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Understand what APIs are, why they exist, and how the internet works</div>
+    <div class="week-group" id="ch1">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #06d6a0;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch1" data-color="#06d6a0" data-id="1" data-title="What is an API?" data-icon="🔌" data-snippet="API stands for Application Programming Interface. It is a se…" data-sec='{&quot;id&quot;: 1, &quot;title&quot;: &quot;What is an API?&quot;, &quot;icon&quot;: &quot;🔌&quot;, &quot;definition&quot;: &quot;API stands for Application Programming Interface. It is a set of rules that allows one software to talk to another software.&quot;, &quot;wordBreakdown&quot;: {&quot;Application&quot;: &quot;Any software — an app, a website, Salesforce, Gmail&quot;, &quot;Programming&quot;: &quot;Done through code or systems&quot;, &quot;Interface&quot;: &quot;A way to interact with something&quot;}, &quot;contract&quot;: &quot;If you send me a request in this exact format, I will send you back data in this exact format.&quot;, &quot;keyInsight&quot;: &quot;You don&#39;t need to know HOW the other system works internally. You just need to know what to ask and what you&#39;ll get back.&quot;}'>
+          <div class="entry-id">§01</div>
+          <div class="day-topic">🔌 What is an API?</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">API stands for Application Programming Interface. It is a se…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #06d6a0;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch1" data-color="#06d6a0" data-id="2" data-title="Why APIs Exist" data-icon="💡" data-snippet="" data-sec='{&quot;id&quot;: 2, &quot;title&quot;: &quot;Why APIs Exist&quot;, &quot;icon&quot;: &quot;💡&quot;, &quot;problem&quot;: &quot;Without APIs, every app would have to build everything from scratch.&quot;, &quot;realWorldExamples&quot;: [&quot;Instead of building your own payment system → use Stripe&#39;s API&quot;, &quot;Instead of building your own maps → use Google Maps API&quot;, &quot;Instead of building your own login system → use Google/Facebook Login API&quot;, &quot;In Salesforce → instead of manually exporting data → use Salesforce REST API to pull it programmatically&quot;], &quot;benefits&quot;: [{&quot;benefit&quot;: &quot;Reusability&quot;, &quot;meaning&quot;: &quot;One service, used by thousands of apps&quot;}, {&quot;benefit&quot;: &quot;Separation&quot;, &quot;meaning&quot;: &quot;Frontend and Backend can be built independently&quot;}, {&quot;benefit&quot;: &quot;Integration&quot;, &quot;meaning&quot;: &quot;Different systems (Salesforce + SAP + Slack) can talk to each other&quot;}, {&quot;benefit&quot;: &quot;Automation&quot;, &quot;meaning&quot;: &quot;No human needed to move data around&quot;}]}'>
+          <div class="entry-id">§02</div>
+          <div class="day-topic">💡 Why APIs Exist</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #06d6a0;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch1" data-color="#06d6a0" data-id="3" data-title="Real-World Analogies" data-icon="🍽️" data-snippet="" data-sec='{&quot;id&quot;: 3, &quot;title&quot;: &quot;Real-World Analogies&quot;, &quot;icon&quot;: &quot;🍽️&quot;, &quot;analogies&quot;: [{&quot;name&quot;: &quot;The Restaurant Analogy (Most Famous)&quot;, &quot;youAre&quot;: &quot;The client — the app making the request&quot;, &quot;kitchen&quot;: &quot;The server — the system with data/logic&quot;, &quot;waiter&quot;: &quot;The API&quot;, &quot;explanation&quot;: &quot;You don&#39;t walk into the kitchen and cook. You tell the waiter what you want. The waiter takes your order (request) to the kitchen and brings back your food (response). You never see how the kitchen works.&quot;}, {&quot;name&quot;: &quot;The Power Socket Analogy&quot;, &quot;explanation&quot;: &quot;A power socket has a standard interface. You plug in your phone, laptop, or lamp — the socket doesn&#39;t care which device you use. As long as you follow the interface (right plug shape), you get electricity. An API is the same — a standard way to plug in and get what you need.&quot;}, {&quot;name&quot;: &quot;The ATM Analogy&quot;, &quot;explanation&quot;: &quot;Your bank&#39;s core system is complex. But the ATM gives you a simple interface: Insert card → authenticate → request money → get money. The ATM is the API between you and the bank&#39;s internal system.&quot;}]}'>
+          <div class="entry-id">§03</div>
+          <div class="day-topic">🍽️ Real-World Analogies</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #06d6a0;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch1" data-color="#06d6a0" data-id="4" data-title="How the Internet Works (Quick Foundation)" data-icon="🌐" data-snippet="Every API call follows this same path. Instead of a browser,…" data-sec='{&quot;id&quot;: 4, &quot;title&quot;: &quot;How the Internet Works (Quick Foundation)&quot;, &quot;icon&quot;: &quot;🌐&quot;, &quot;stepsWhenYouTypeAURL&quot;: [&quot;Your browser asks a DNS server: &#39;What is the IP address for google.com?&#39;&quot;, &quot;DNS replies: &#39;It&#39;s 142.250.64.100&#39;&quot;, &quot;Your browser connects to that IP address&quot;, &quot;It sends a request to Google&#39;s server&quot;, &quot;Google&#39;s server sends back a response (the webpage)&quot;], &quot;keyInsight&quot;: &quot;Every API call follows this same path. Instead of a browser, it&#39;s your app sending the request. Instead of a webpage, the response is data (usually JSON).&quot;, &quot;keyTerms&quot;: [{&quot;term&quot;: &quot;IP Address&quot;, &quot;definition&quot;: &quot;Unique address of a computer on the internet (like a postal address)&quot;}, {&quot;term&quot;: &quot;DNS&quot;, &quot;definition&quot;: &quot;Phone book of the internet — translates domain name to IP address&quot;}, {&quot;term&quot;: &quot;Port&quot;, &quot;definition&quot;: &quot;A specific &#39;door&#39; on a server. APIs usually run on port 443 (HTTPS) or 80 (HTTP)&quot;}, {&quot;term&quot;: &quot;Protocol&quot;, &quot;definition&quot;: &quot;The agreed-upon rules of communication (HTTP, HTTPS, FTP, etc.)&quot;}]}'>
+          <div class="entry-id">§04</div>
+          <div class="day-topic">🌐 How the Internet Works (Q…</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">Every API call follows this same path. Instead of a browser,…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #06d6a0;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch1" data-color="#06d6a0" data-id="5" data-title="Client &amp; Server" data-icon="🖥️" data-snippet="These are the two sides of every API conversation." data-sec='{&quot;id&quot;: 5, &quot;title&quot;: &quot;Client & Server&quot;, &quot;icon&quot;: &quot;🖥️&quot;, &quot;definition&quot;: &quot;These are the two sides of every API conversation.&quot;, &quot;roles&quot;: [{&quot;term&quot;: &quot;Client&quot;, &quot;whatItIs&quot;: &quot;The one making the request&quot;, &quot;examples&quot;: &quot;Your browser, a mobile app, Salesforce Flow, a Python script&quot;}, {&quot;term&quot;: &quot;Server&quot;, &quot;whatItIs&quot;: &quot;The one receiving and responding&quot;, &quot;examples&quot;: &quot;Google&#39;s server, Salesforce server, your company&#39;s backend&quot;}], &quot;keyInsight&quot;: &quot;The same machine can be both client and server at different times. Salesforce is a server when you&#39;re using the UI, but it becomes a client when it calls an external API (like a payment gateway).&quot;}'>
+          <div class="entry-id">§05</div>
+          <div class="day-topic">🖥️ Client &amp; Server</div>
+          <div class="phase-dot colored" style="--card-accent: #06d6a0;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">These are the two sides of every API conversation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ch2">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(0,212,255,0.12);color:#00d4ff;">Chapter 2</span>
+      <span class="phase-title">🌐 HTTP Basics</span>
+      <span class="phase-meta">5 sections</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Master HTTP methods, status codes, and the anatomy of requests and responses</div>
+    <div class="week-group" id="ch2">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #00d4ff;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch2" data-color="#00d4ff" data-id="6" data-title="HTTP — The Language of the Web" data-icon="📡" data-snippet="HTTP = HyperText Transfer Protocol. The set of rules that de…" data-sec='{&quot;id&quot;: 6, &quot;title&quot;: &quot;HTTP — The Language of the Web&quot;, &quot;icon&quot;: &quot;📡&quot;, &quot;definition&quot;: &quot;HTTP = HyperText Transfer Protocol. The set of rules that defines HOW requests and responses should be formatted when communicating over the web. Every API call travels as an HTTP message.&quot;, &quot;https&quot;: &quot;HTTPS = HTTP + Security (encrypted with SSL/TLS). Always prefer HTTPS.&quot;, &quot;requestResponseCycle&quot;: {&quot;description&quot;: &quot;CLIENT sends an HTTP REQUEST → SERVER processes → SERVER sends back an HTTP RESPONSE&quot;, &quot;characteristics&quot;: [&quot;Stateless — Each request is independent. The server doesn&#39;t remember previous requests unless you send a token/session ID.&quot;, &quot;Synchronous (usually) — You send a request, you wait, you get a response.&quot;]}}'>
+          <div class="entry-id">§06</div>
+          <div class="day-topic">📡 HTTP — The Language of th…</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">HTTP = HyperText Transfer Protocol. The set of rules that de…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #00d4ff;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch2" data-color="#00d4ff" data-id="7" data-title="HTTP Methods (Verbs)" data-icon="📝" data-snippet="HTTP Methods tell the server what action you want to perform…" data-sec='{&quot;id&quot;: 7, &quot;title&quot;: &quot;HTTP Methods (Verbs)&quot;, &quot;icon&quot;: &quot;📝&quot;, &quot;description&quot;: &quot;HTTP Methods tell the server what action you want to perform. This is one of the most important things to understand.&quot;, &quot;methods&quot;: [{&quot;method&quot;: &quot;GET&quot;, &quot;purpose&quot;: &quot;Retrieve / Read data&quot;, &quot;analogy&quot;: &quot;Asking the waiter what&#39;s on the menu&quot;, &quot;changesData&quot;: false}, {&quot;method&quot;: &quot;POST&quot;, &quot;purpose&quot;: &quot;Create new data&quot;, &quot;analogy&quot;: &quot;Placing a new order&quot;, &quot;changesData&quot;: true}, {&quot;method&quot;: &quot;PUT&quot;, &quot;purpose&quot;: &quot;Update/Replace existing data (full replacement)&quot;, &quot;analogy&quot;: &quot;Replacing your entire order&quot;, &quot;changesData&quot;: true}, {&quot;method&quot;: &quot;PATCH&quot;, &quot;purpose&quot;: &quot;Partially update data (only the fields you send)&quot;, &quot;analogy&quot;: &quot;Changing just the drink in your order&quot;, &quot;changesData&quot;: true}, {&quot;method&quot;: &quot;DELETE&quot;, &quot;purpose&quot;: &quot;Delete data&quot;, &quot;analogy&quot;: &quot;Cancelling your order&quot;, &quot;changesData&quot;: true}], &quot;salesforceExamples&quot;: [{&quot;action&quot;: &quot;Get all Accounts&quot;, &quot;method&quot;: &quot;GET&quot;, &quot;endpoint&quot;: &quot;/services/data/v58.0/sobjects/Account&quot;}, {&quot;action&quot;: &quot;Create a new Contact&quot;, &quot;method&quot;: &quot;POST&quot;, &quot;endpoint&quot;: &quot;/services/data/v58.0/sobjects/Contact&quot;}, {&quot;action&quot;: &quot;Update an Account name&quot;, &quot;method&quot;: &quot;PATCH&quot;, &quot;endpoint&quot;: &quot;/services/data/v58.0/sobjects/Account/001xx000003GYKV&quot;}, {&quot;action&quot;: &quot;Delete a Lead&quot;, &quot;method&quot;: &quot;DELETE&quot;, &quot;endpoint&quot;: &quot;/services/data/v58.0/sobjects/Lead/00Qxx000000ABCD&quot;}], &quot;ruleOfThumb&quot;: {&quot;safe&quot;: &quot;GET = safe, no data is changed&quot;, &quot;careful&quot;: &quot;POST/PUT/PATCH/DELETE = data is changed — be careful!&quot;}}'>
+          <div class="entry-id">§07</div>
+          <div class="day-topic">📝 HTTP Methods (Verbs)</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">HTTP Methods tell the server what action you want to perform…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #00d4ff;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch2" data-color="#00d4ff" data-id="8" data-title="HTTP Status Codes" data-icon="🔢" data-snippet="When the server responds, it always sends a status code — a …" data-sec='{&quot;id&quot;: 8, &quot;title&quot;: &quot;HTTP Status Codes&quot;, &quot;icon&quot;: &quot;🔢&quot;, &quot;description&quot;: &quot;When the server responds, it always sends a status code — a 3-digit number that tells you what happened.&quot;, &quot;categories&quot;: [{&quot;range&quot;: &quot;1xx&quot;, &quot;category&quot;: &quot;Informational&quot;, &quot;meaning&quot;: &quot;Request received, still processing&quot;}, {&quot;range&quot;: &quot;2xx&quot;, &quot;category&quot;: &quot;Success&quot;, &quot;meaning&quot;: &quot;Everything worked&quot;}, {&quot;range&quot;: &quot;3xx&quot;, &quot;category&quot;: &quot;Redirection&quot;, &quot;meaning&quot;: &quot;Go somewhere else&quot;}, {&quot;range&quot;: &quot;4xx&quot;, &quot;category&quot;: &quot;Client Error&quot;, &quot;meaning&quot;: &quot;YOU did something wrong&quot;}, {&quot;range&quot;: &quot;5xx&quot;, &quot;category&quot;: &quot;Server Error&quot;, &quot;meaning&quot;: &quot;SERVER did something wrong&quot;}], &quot;mostImportantCodes&quot;: [{&quot;code&quot;: 200, &quot;name&quot;: &quot;OK&quot;, &quot;whenYouSeeIt&quot;: &quot;Request succeeded, here&#39;s your data&quot;}, {&quot;code&quot;: 201, &quot;name&quot;: &quot;Created&quot;, &quot;whenYouSeeIt&quot;: &quot;New resource was successfully created&quot;}, {&quot;code&quot;: 204, &quot;name&quot;: &quot;No Content&quot;, &quot;whenYouSeeIt&quot;: &quot;Success, but nothing to return (common in DELETE)&quot;}, {&quot;code&quot;: 400, &quot;name&quot;: &quot;Bad Request&quot;, &quot;whenYouSeeIt&quot;: &quot;Your request has wrong format or missing fields&quot;}, {&quot;code&quot;: 401, &quot;name&quot;: &quot;Unauthorized&quot;, &quot;whenYouSeeIt&quot;: &quot;You&#39;re not logged in / no valid token&quot;}, {&quot;code&quot;: 403, &quot;name&quot;: &quot;Forbidden&quot;, &quot;whenYouSeeIt&quot;: &quot;You&#39;re logged in, but don&#39;t have permission&quot;}, {&quot;code&quot;: 404, &quot;name&quot;: &quot;Not Found&quot;, &quot;whenYouSeeIt&quot;: &quot;The resource/endpoint doesn&#39;t exist&quot;}, {&quot;code&quot;: 409, &quot;name&quot;: &quot;Conflict&quot;, &quot;whenYouSeeIt&quot;: &quot;Duplicate record or conflicting data&quot;}, {&quot;code&quot;: 422, &quot;name&quot;: &quot;Unprocessable Entity&quot;, &quot;whenYouSeeIt&quot;: &quot;Data format is right, but values are invalid&quot;}, {&quot;code&quot;: 429, &quot;name&quot;: &quot;Too Many Requests&quot;, &quot;whenYouSeeIt&quot;: &quot;You&#39;ve hit the rate limit&quot;}, {&quot;code&quot;: 500, &quot;name&quot;: &quot;Internal Server Error&quot;, &quot;whenYouSeeIt&quot;: &quot;Something broke on the server side&quot;}, {&quot;code&quot;: 503, &quot;name&quot;: &quot;Service Unavailable&quot;, &quot;whenYouSeeIt&quot;: &quot;Server is down or overloaded&quot;}], &quot;memoryTrick&quot;: &quot;4xx = Your fault. 5xx = Their fault.&quot;}'>
+          <div class="entry-id">§08</div>
+          <div class="day-topic">🔢 HTTP Status Codes</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">When the server responds, it always sends a status code — a …</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #00d4ff;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch2" data-color="#00d4ff" data-id="9" data-title="Anatomy of an API Request" data-icon="📤" data-snippet="Every API request has these 4 parts." data-sec='{&quot;id&quot;: 9, &quot;title&quot;: &quot;Anatomy of an API Request&quot;, &quot;icon&quot;: &quot;📤&quot;, &quot;description&quot;: &quot;Every API request has these 4 parts.&quot;, &quot;fourParts&quot;: [{&quot;part&quot;: 1, &quot;name&quot;: &quot;URL (Uniform Resource Locator)&quot;, &quot;description&quot;: &quot;The address of the resource you want.&quot;, &quot;breakdown&quot;: {&quot;protocol&quot;: &quot;https://&quot;, &quot;domain&quot;: &quot;api.salesforce.com&quot;, &quot;path&quot;: &quot;/services/data/v58.0/&quot;, &quot;resource&quot;: &quot;sobjects/Contact&quot;}}, {&quot;part&quot;: 2, &quot;name&quot;: &quot;Method&quot;, &quot;description&quot;: &quot;What you want to do (GET, POST, PUT, PATCH, DELETE) — covered in Section 7.&quot;}, {&quot;part&quot;: 3, &quot;name&quot;: &quot;Headers&quot;, &quot;description&quot;: &quot;Metadata about your request — like the envelope around a letter. Includes authorization, content-type, etc.&quot;}, {&quot;part&quot;: 4, &quot;name&quot;: &quot;Body&quot;, &quot;description&quot;: &quot;The actual data you&#39;re sending. Only exists with POST, PUT, PATCH — not GET or DELETE.&quot;}], &quot;exampleRequest&quot;: {&quot;method&quot;: &quot;POST&quot;, &quot;url&quot;: &quot;https://api.example.com/v1/contacts?source=web&quot;, &quot;headers&quot;: {&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: &quot;Bearer eyJhbGciOiJSUzI1NiJ9...&quot;, &quot;X-Api-Key&quot;: &quot;my-secret-key-123&quot;}, &quot;body&quot;: {&quot;firstName&quot;: &quot;Ahmed&quot;, &quot;lastName&quot;: &quot;Khan&quot;, &quot;email&quot;: &quot;ahmed@example.com&quot;}}}'>
+          <div class="entry-id">§09</div>
+          <div class="day-topic">📤 Anatomy of an API Request</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">Every API request has these 4 parts.</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #00d4ff;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch2" data-color="#00d4ff" data-id="10" data-title="Anatomy of an API Response" data-icon="📥" data-snippet="The server sends back 3 things: a status code, headers, and …" data-sec='{&quot;id&quot;: 10, &quot;title&quot;: &quot;Anatomy of an API Response&quot;, &quot;icon&quot;: &quot;📥&quot;, &quot;description&quot;: &quot;The server sends back 3 things: a status code, headers, and a body.&quot;, &quot;threeParts&quot;: [{&quot;part&quot;: 1, &quot;name&quot;: &quot;Status Code + Text&quot;, &quot;description&quot;: &quot;Did it work? (e.g., 200 OK, 404 Not Found)&quot;}, {&quot;part&quot;: 2, &quot;name&quot;: &quot;Headers&quot;, &quot;description&quot;: &quot;Metadata (content type, rate limits, date, etc.)&quot;}, {&quot;part&quot;: 3, &quot;name&quot;: &quot;Body&quot;, &quot;description&quot;: &quot;The actual data (usually JSON)&quot;}], &quot;exampleResponse&quot;: {&quot;statusCode&quot;: &quot;200 OK&quot;, &quot;headers&quot;: {&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Date&quot;: &quot;Sat, 02 May 2026 10:30:00 GMT&quot;, &quot;X-RateLimit-Remaining&quot;: &quot;99&quot;}, &quot;body&quot;: {&quot;id&quot;: &quot;003xx000004TmiQ&quot;, &quot;firstName&quot;: &quot;Ahmed&quot;, &quot;lastName&quot;: &quot;Khan&quot;, &quot;email&quot;: &quot;ahmed@example.com&quot;, &quot;createdDate&quot;: &quot;2026-05-02T10:30:00Z&quot;}}}'>
+          <div class="entry-id">§10</div>
+          <div class="day-topic">📥 Anatomy of an API Response</div>
+          <div class="phase-dot colored" style="--card-accent: #00d4ff;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">The server sends back 3 things: a status code, headers, and …</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ch3">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,209,102,0.12);color:#ffd166;">Chapter 3</span>
+      <span class="phase-title">📐 REST &amp; Structure</span>
+      <span class="phase-meta">7 sections</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Understand REST principles, endpoints, headers, JSON, and parameters</div>
+    <div class="week-group" id="ch3">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #ffd166;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch3" data-color="#ffd166" data-id="11" data-title="What is REST API?" data-icon="🏗️" data-snippet="REST = REpresentational State Transfer. REST is not a techno…" data-sec='{&quot;id&quot;: 11, &quot;title&quot;: &quot;What is REST API?&quot;, &quot;icon&quot;: &quot;🏗️&quot;, &quot;definition&quot;: &quot;REST = REpresentational State Transfer. REST is not a technology — it&#39;s a style / set of rules for designing APIs. An API that follows REST rules is called a RESTful API or REST API.&quot;, &quot;history&quot;: &quot;REST was defined in 2000 by Roy Fielding in his PhD dissertation. It became the dominant style for web APIs because it&#39;s simple and uses standard HTTP.&quot;, &quot;inPractice&quot;: [&quot;Uses HTTP&quot;, &quot;Has clear URLs (endpoints) for each resource&quot;, &quot;Uses HTTP Methods (GET, POST, etc.) correctly&quot;, &quot;Returns data in JSON (usually)&quot;, &quot;Is stateless&quot;], &quot;keyPoint&quot;: &quot;What makes an API &#39;RESTful&#39;? → Six principles (next section).&quot;}'>
+          <div class="entry-id">§11</div>
+          <div class="day-topic">🏗️ What is REST API?</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">REST = REpresentational State Transfer. REST is not a techno…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ffd166;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch3" data-color="#ffd166" data-id="12" data-title="REST Principles Explained" data-icon="📐" data-snippet="" data-sec='{&quot;id&quot;: 12, &quot;title&quot;: &quot;REST Principles Explained&quot;, &quot;icon&quot;: &quot;📐&quot;, &quot;principles&quot;: [{&quot;number&quot;: 1, &quot;name&quot;: &quot;Client-Server Separation&quot;, &quot;explanation&quot;: &quot;The client (UI) and server (backend) are independent. They communicate only through the API. You can rebuild the frontend without touching the backend and vice versa.&quot;}, {&quot;number&quot;: 2, &quot;name&quot;: &quot;Stateless&quot;, &quot;explanation&quot;: &quot;Each request from the client must contain all the information the server needs. The server does NOT store session info between requests. If you need to stay authenticated, you send your token with EVERY request.&quot;}, {&quot;number&quot;: 3, &quot;name&quot;: &quot;Cacheable&quot;, &quot;explanation&quot;: &quot;Responses should say whether they can be cached. GET responses are often cached to speed things up. POST/PUT/DELETE are not cached.&quot;}, {&quot;number&quot;: 4, &quot;name&quot;: &quot;Uniform Interface&quot;, &quot;explanation&quot;: &quot;The key principle. Resources are identified by URLs. You manipulate resources through representations (JSON). Each message is self-descriptive. Everything is accessible the same standardized way.&quot;, &quot;isKey&quot;: true}, {&quot;number&quot;: 5, &quot;name&quot;: &quot;Layered System&quot;, &quot;explanation&quot;: &quot;The client doesn&#39;t need to know if it&#39;s talking directly to the server or through load balancers, caches, or security layers. It just calls the API.&quot;}, {&quot;number&quot;: 6, &quot;name&quot;: &quot;Code on Demand (Optional)&quot;, &quot;explanation&quot;: &quot;Servers can send executable code (like JavaScript) to clients. This is rarely used.&quot;, &quot;optional&quot;: true}]}'>
+          <div class="entry-id">§12</div>
+          <div class="day-topic">📐 REST Principles Explained</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ffd166;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch3" data-color="#ffd166" data-id="13" data-title="Endpoints" data-icon="📍" data-snippet="An endpoint is a specific URL that represents a specific res…" data-sec='{&quot;id&quot;: 13, &quot;title&quot;: &quot;Endpoints&quot;, &quot;icon&quot;: &quot;📍&quot;, &quot;definition&quot;: &quot;An endpoint is a specific URL that represents a specific resource or action in an API. Think of an API as a restaurant and endpoints as items on the menu.&quot;, &quot;urlStructureBreakdown&quot;: {&quot;example&quot;: &quot;https://api.example.com/v1/accounts/12345/contacts&quot;, &quot;parts&quot;: {&quot;protocol&quot;: &quot;https://&quot;, &quot;domain&quot;: &quot;api.example.com&quot;, &quot;version&quot;: &quot;/v1/&quot;, &quot;resource&quot;: &quot;accounts&quot;, &quot;resourceId&quot;: &quot;12345&quot;, &quot;subResource&quot;: &quot;contacts&quot;}}, &quot;commonPatterns&quot;: [{&quot;method&quot;: &quot;GET&quot;, &quot;path&quot;: &quot;/accounts&quot;, &quot;description&quot;: &quot;Get all accounts&quot;}, {&quot;method&quot;: &quot;GET&quot;, &quot;path&quot;: &quot;/accounts/123&quot;, &quot;description&quot;: &quot;Get a specific account (id=123)&quot;}, {&quot;method&quot;: &quot;POST&quot;, &quot;path&quot;: &quot;/accounts&quot;, &quot;description&quot;: &quot;Create a new account&quot;}, {&quot;method&quot;: &quot;PUT&quot;, &quot;path&quot;: &quot;/accounts/123&quot;, &quot;description&quot;: &quot;Replace account 123&quot;}, {&quot;method&quot;: &quot;PATCH&quot;, &quot;path&quot;: &quot;/accounts/123&quot;, &quot;description&quot;: &quot;Update parts of account 123&quot;}, {&quot;method&quot;: &quot;DELETE&quot;, &quot;path&quot;: &quot;/accounts/123&quot;, &quot;description&quot;: &quot;Delete account 123&quot;}, {&quot;method&quot;: &quot;GET&quot;, &quot;path&quot;: &quot;/accounts/123/contacts&quot;, &quot;description&quot;: &quot;Get contacts of account 123&quot;}, {&quot;method&quot;: &quot;POST&quot;, &quot;path&quot;: &quot;/accounts/123/contacts&quot;, &quot;description&quot;: &quot;Add a contact to account 123&quot;}], &quot;restfulRule&quot;: {&quot;description&quot;: &quot;Use nouns (not verbs) in URL paths — that&#39;s what makes it RESTful.&quot;, &quot;good&quot;: [&quot;/accounts&quot;, &quot;/accounts/123/contacts&quot;], &quot;bad&quot;: [&quot;/getAccounts&quot;, &quot;/createNewAccount&quot;, &quot;/deleteUser&quot;]}}'>
+          <div class="entry-id">§13</div>
+          <div class="day-topic">📍 Endpoints</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">An endpoint is a specific URL that represents a specific res…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ffd166;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch3" data-color="#ffd166" data-id="14" data-title="Headers" data-icon="📋" data-snippet="Headers are key-value pairs sent with both requests and resp…" data-sec='{&quot;id&quot;: 14, &quot;title&quot;: &quot;Headers&quot;, &quot;icon&quot;: &quot;📋&quot;, &quot;definition&quot;: &quot;Headers are key-value pairs sent with both requests and responses. They carry metadata — information about the message itself, not the data.&quot;, &quot;requestHeaders&quot;: [{&quot;header&quot;: &quot;Content-Type&quot;, &quot;purpose&quot;: &quot;Format of the body you&#39;re sending&quot;, &quot;exampleValue&quot;: &quot;application/json&quot;}, {&quot;header&quot;: &quot;Accept&quot;, &quot;purpose&quot;: &quot;Format you want in the response&quot;, &quot;exampleValue&quot;: &quot;application/json&quot;}, {&quot;header&quot;: &quot;Authorization&quot;, &quot;purpose&quot;: &quot;Your credentials/token&quot;, &quot;exampleValue&quot;: &quot;Bearer eyJhbGci...&quot;}, {&quot;header&quot;: &quot;X-Api-Key&quot;, &quot;purpose&quot;: &quot;Your API key&quot;, &quot;exampleValue&quot;: &quot;sk-12345abcde&quot;}, {&quot;header&quot;: &quot;User-Agent&quot;, &quot;purpose&quot;: &quot;Identifies the client&quot;, &quot;exampleValue&quot;: &quot;MyApp/1.0&quot;}], &quot;responseHeaders&quot;: [{&quot;header&quot;: &quot;Content-Type&quot;, &quot;purpose&quot;: &quot;Format of the response body&quot;, &quot;exampleValue&quot;: &quot;application/json&quot;}, {&quot;header&quot;: &quot;X-RateLimit-Limit&quot;, &quot;purpose&quot;: &quot;Max requests allowed&quot;, &quot;exampleValue&quot;: &quot;100&quot;}, {&quot;header&quot;: &quot;X-RateLimit-Remaining&quot;, &quot;purpose&quot;: &quot;Requests left&quot;, &quot;exampleValue&quot;: &quot;87&quot;}, {&quot;header&quot;: &quot;X-RateLimit-Reset&quot;, &quot;purpose&quot;: &quot;When the limit resets (Unix timestamp)&quot;, &quot;exampleValue&quot;: &quot;1746182400&quot;}, {&quot;header&quot;: &quot;Cache-Control&quot;, &quot;purpose&quot;: &quot;How long to cache the response&quot;, &quot;exampleValue&quot;: &quot;max-age=3600&quot;}], &quot;contentTypeValues&quot;: [{&quot;value&quot;: &quot;application/json&quot;, &quot;meaning&quot;: &quot;JSON data — most common&quot;}, {&quot;value&quot;: &quot;application/xml&quot;, &quot;meaning&quot;: &quot;XML data — older systems, SOAP&quot;}, {&quot;value&quot;: &quot;multipart/form-data&quot;, &quot;meaning&quot;: &quot;File uploads&quot;}, {&quot;value&quot;: &quot;application/x-www-form-urlencoded&quot;, &quot;meaning&quot;: &quot;HTML form data&quot;}]}'>
+          <div class="entry-id">§14</div>
+          <div class="day-topic">📋 Headers</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">Headers are key-value pairs sent with both requests and resp…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ffd166;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch3" data-color="#ffd166" data-id="15" data-title="Authentication &amp; Authorization" data-icon="🔐" data-snippet="" data-sec='{&quot;id&quot;: 15, &quot;title&quot;: &quot;Authentication & Authorization&quot;, &quot;icon&quot;: &quot;🔐&quot;, &quot;keyDifference&quot;: {&quot;authentication&quot;: {&quot;term&quot;: &quot;Authentication (AuthN)&quot;, &quot;questionItAnswers&quot;: &quot;Who are you?&quot;, &quot;example&quot;: &quot;Login with username/password&quot;}, &quot;authorization&quot;: {&quot;term&quot;: &quot;Authorization (AuthZ)&quot;, &quot;questionItAnswers&quot;: &quot;What are you allowed to do?&quot;, &quot;example&quot;: &quot;Can this user delete records?&quot;}}, &quot;rule&quot;: &quot;You must be authenticated first, then authorized.&quot;, &quot;methods&quot;: [{&quot;method&quot;: &quot;API Key&quot;, &quot;simplicity&quot;: &quot;Simplest&quot;, &quot;description&quot;: &quot;A secret string you attach to your request. The server checks if it&#39;s valid.&quot;, &quot;example&quot;: &quot;X-Api-Key: abc123secretkey&quot;}, {&quot;method&quot;: &quot;Basic Auth&quot;, &quot;description&quot;: &quot;Base64-encoded username:password sent in the header. Rarely used today — insecure.&quot;, &quot;example&quot;: &quot;Authorization: Basic dXNlcm5hbWU6cGFzc3dvcmQ=&quot;}, {&quot;method&quot;: &quot;Bearer Token&quot;, &quot;description&quot;: &quot;A token (usually JWT) sent in the Authorization header. Most common today.&quot;, &quot;example&quot;: &quot;Authorization: Bearer eyJhbGciOiJSUzI1NiJ9...&quot;}, {&quot;method&quot;: &quot;OAuth 2.0&quot;, &quot;description&quot;: &quot;An authorization framework that lets you grant limited access to your account to a third-party app without sharing your password. Covered in detail in Section 20.&quot;}, {&quot;method&quot;: &quot;Session Cookies&quot;, &quot;description&quot;: &quot;Used in traditional web apps. Less common in modern APIs.&quot;}]}'>
+          <div class="entry-id">§15</div>
+          <div class="day-topic">🔐 Authentication &amp; Authoriz…</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ffd166;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch3" data-color="#ffd166" data-id="16" data-title="JSON in APIs" data-icon="📦" data-snippet="JSON (JavaScript Object Notation) is the most common format …" data-sec='{&quot;id&quot;: 16, &quot;title&quot;: &quot;JSON in APIs&quot;, &quot;icon&quot;: &quot;📦&quot;, &quot;description&quot;: &quot;JSON (JavaScript Object Notation) is the most common format for API request bodies and responses.&quot;, &quot;dataTypes&quot;: [{&quot;type&quot;: &quot;String&quot;, &quot;example&quot;: &quot;\&quot;hello\&quot;&quot;, &quot;note&quot;: &quot;Always in double quotes&quot;}, {&quot;type&quot;: &quot;Number&quot;, &quot;example&quot;: &quot;42 or 3.14&quot;}, {&quot;type&quot;: &quot;Boolean&quot;, &quot;example&quot;: &quot;true or false&quot;}, {&quot;type&quot;: &quot;Null&quot;, &quot;example&quot;: &quot;null&quot;}, {&quot;type&quot;: &quot;Object&quot;, &quot;example&quot;: &quot;{ \&quot;key\&quot;: \&quot;value\&quot; }&quot;}, {&quot;type&quot;: &quot;Array&quot;, &quot;example&quot;: &quot;[ \&quot;item1\&quot;, \&quot;item2\&quot; ]&quot;}], &quot;jsonInApiContext&quot;: [&quot;Sending data (POST/PATCH body): You write JSON to tell the server what to create/update&quot;, &quot;Receiving data (GET response): The server returns JSON with the requested data&quot;, &quot;Always set header: Content-Type: application/json when sending JSON&quot;], &quot;exampleSalesforceJSON&quot;: {&quot;id&quot;: &quot;001xx000003GYKV&quot;, &quot;name&quot;: &quot;Acme Corporation&quot;, &quot;industry&quot;: &quot;Technology&quot;, &quot;annualRevenue&quot;: 5000000, &quot;isActive&quot;: true, &quot;address&quot;: {&quot;street&quot;: &quot;123 Main St&quot;, &quot;city&quot;: &quot;San Francisco&quot;, &quot;state&quot;: &quot;CA&quot;}, &quot;contacts&quot;: [{&quot;name&quot;: &quot;John Doe&quot;, &quot;email&quot;: &quot;john@acme.com&quot;}, {&quot;name&quot;: &quot;Jane Smith&quot;, &quot;email&quot;: &quot;jane@acme.com&quot;}], &quot;description&quot;: null}}'>
+          <div class="entry-id">§16</div>
+          <div class="day-topic">📦 JSON in APIs</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">JSON (JavaScript Object Notation) is the most common format …</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ffd166;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch3" data-color="#ffd166" data-id="17" data-title="Query Parameters &amp; Path Parameters" data-icon="🔗" data-snippet="Two ways to pass information in a URL." data-sec='{&quot;id&quot;: 17, &quot;title&quot;: &quot;Query Parameters & Path Parameters&quot;, &quot;icon&quot;: &quot;🔗&quot;, &quot;description&quot;: &quot;Two ways to pass information in a URL.&quot;, &quot;pathParameters&quot;: {&quot;definition&quot;: &quot;Embedded directly in the URL path. Used to identify a specific resource.&quot;, &quot;examples&quot;: [&quot;/accounts/001xx000003GYKV — the Account ID is the path parameter&quot;, &quot;/accounts/001xx/contacts/003xx — both IDs are path parameters&quot;]}, &quot;queryParameters&quot;: {&quot;definition&quot;: &quot;Added after a ? in the URL. Used for filtering, sorting, searching, pagination.&quot;, &quot;format&quot;: &quot;First param uses ?, subsequent params use &&quot;, &quot;examples&quot;: [&quot;/accounts?industry=Technology&state=CA&limit=10&offset=20&quot;, &quot;/services/data/v58.0/query?q=SELECT+Id,Name+FROM+Account+WHERE+Industry=&#39;Technology&#39;&quot;]}, &quot;comparisonTable&quot;: [{&quot;type&quot;: &quot;Path Param&quot;, &quot;location&quot;: &quot;In the URL path&quot;, &quot;purpose&quot;: &quot;Identify a specific resource&quot;, &quot;example&quot;: &quot;/contacts/003xx...&quot;}, {&quot;type&quot;: &quot;Query Param&quot;, &quot;location&quot;: &quot;After ? in the URL&quot;, &quot;purpose&quot;: &quot;Filter, sort, paginate&quot;, &quot;example&quot;: &quot;?status=active&limit=50&quot;}]}'>
+          <div class="entry-id">§17</div>
+          <div class="day-topic">🔗 Query Parameters &amp; Path P…</div>
+          <div class="phase-dot colored" style="--card-accent: #ffd166;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">Two ways to pass information in a URL.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ch4">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(123,97,255,0.12);color:#7b61ff;">Chapter 4</span>
+      <span class="phase-title">🔐 Authentication</span>
+      <span class="phase-meta">4 sections</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Deep dive into API Keys, OAuth 2.0, JWT, Bearer tokens and request payloads</div>
+    <div class="week-group" id="ch4">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #7b61ff;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch4" data-color="#7b61ff" data-id="18" data-title="Request Body / Payload" data-icon="📨" data-snippet="The body (also called payload) is the actual data you send t…" data-sec='{&quot;id&quot;: 18, &quot;title&quot;: &quot;Request Body / Payload&quot;, &quot;icon&quot;: &quot;📨&quot;, &quot;definition&quot;: &quot;The body (also called payload) is the actual data you send to the server. It only exists in POST, PUT, and PATCH requests — NOT in GET or DELETE.&quot;, &quot;postExample&quot;: {&quot;description&quot;: &quot;Create a Contact — send ALL required fields&quot;, &quot;method&quot;: &quot;POST&quot;, &quot;endpoint&quot;: &quot;/services/data/v58.0/sobjects/Contact&quot;, &quot;headers&quot;: {&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: &quot;Bearer <token>&quot;}, &quot;body&quot;: {&quot;FirstName&quot;: &quot;Ahmed&quot;, &quot;LastName&quot;: &quot;Khan&quot;, &quot;Email&quot;: &quot;ahmed@example.com&quot;, &quot;Phone&quot;: &quot;+880-123-456789&quot;, &quot;AccountId&quot;: &quot;001xx000003GYKV&quot;}}, &quot;patchExample&quot;: {&quot;description&quot;: &quot;Update ONLY the Email — PATCH only needs the fields you&#39;re changing. PUT would need the entire object.&quot;, &quot;method&quot;: &quot;PATCH&quot;, &quot;endpoint&quot;: &quot;/services/data/v58.0/sobjects/Contact/003xx000004TmiQ&quot;, &quot;headers&quot;: {&quot;Content-Type&quot;: &quot;application/json&quot;, &quot;Authorization&quot;: &quot;Bearer <token>&quot;}, &quot;body&quot;: {&quot;Email&quot;: &quot;ahmed.new@example.com&quot;}}}'>
+          <div class="entry-id">§18</div>
+          <div class="day-topic">📨 Request Body / Payload</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">The body (also called payload) is the actual data you send t…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #7b61ff;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch4" data-color="#7b61ff" data-id="19" data-title="API Keys" data-icon="🗝️" data-snippet="An API key is a unique string that identifies you (or your a…" data-sec='{&quot;id&quot;: 19, &quot;title&quot;: &quot;API Keys&quot;, &quot;icon&quot;: &quot;🗝️&quot;, &quot;definition&quot;: &quot;An API key is a unique string that identifies you (or your application) to an API. Think of it like a password for your app — not for you personally.&quot;, &quot;howItWorks&quot;: [&quot;You register with an API provider (e.g., Google Maps)&quot;, &quot;They give you a unique key: AIzaSyD-9tSrke72I7rvdkjio01&quot;, &quot;You include this key in every API call&quot;, &quot;The server validates the key and knows who is calling&quot;], &quot;whereKeysGo&quot;: [{&quot;location&quot;: &quot;In a Header&quot;, &quot;example&quot;: &quot;X-Api-Key: AIzaSyD-9tSrke72I7rvdkjio01&quot;}, {&quot;location&quot;: &quot;In a Query Parameter&quot;, &quot;example&quot;: &quot;https://maps.googleapis.com/maps/api/geocode/json?address=Dhaka&key=AIzaSyD-9tSrke72I7rvdkjio01&quot;}, {&quot;location&quot;: &quot;In the Authorization Header&quot;, &quot;example&quot;: &quot;Authorization: ApiKey AIzaSyD-9tSrke72I7rvdkjio01&quot;}], &quot;securityRules&quot;: [&quot;NEVER put API keys in frontend code — anyone can see them&quot;, &quot;NEVER commit API keys to Git/GitHub&quot;, &quot;Store them in environment variables or a secrets manager&quot;, &quot;Regenerate if compromised&quot;, &quot;Use IP restrictions when possible&quot;]}'>
+          <div class="entry-id">§19</div>
+          <div class="day-topic">🗝️ API Keys</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">An API key is a unique string that identifies you (or your a…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #7b61ff;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch4" data-color="#7b61ff" data-id="20" data-title="OAuth 2.0" data-icon="🔑" data-snippet="OAuth 2.0 is the industry-standard authorization framework. …" data-sec='{&quot;id&quot;: 20, &quot;title&quot;: &quot;OAuth 2.0&quot;, &quot;icon&quot;: &quot;🔑&quot;, &quot;definition&quot;: &quot;OAuth 2.0 is the industry-standard authorization framework. It&#39;s what powers &#39;Sign in with Google&#39; and Salesforce&#39;s Connected Apps.&quot;, &quot;problemItSolves&quot;: &quot;Without OAuth, apps would need your password to access your data — terrible. With OAuth, you give the app limited, revocable permission without sharing your password.&quot;, &quot;flow&quot;: [{&quot;step&quot;: 1, &quot;actor&quot;: &quot;Your App → Salesforce&quot;, &quot;action&quot;: &quot;I need access to User&#39;s data&quot;}, {&quot;step&quot;: 2, &quot;actor&quot;: &quot;Salesforce → User&quot;, &quot;action&quot;: &quot;This app wants access. Do you allow it?&quot;}, {&quot;step&quot;: 3, &quot;actor&quot;: &quot;User → Salesforce&quot;, &quot;action&quot;: &quot;Yes, I approve&quot;}, {&quot;step&quot;: 4, &quot;actor&quot;: &quot;Salesforce → Your App&quot;, &quot;action&quot;: &quot;Here&#39;s an Authorization Code&quot;}, {&quot;step&quot;: 5, &quot;actor&quot;: &quot;Your App → Salesforce&quot;, &quot;action&quot;: &quot;Here&#39;s my code + my client_secret. Give me a token.&quot;}, {&quot;step&quot;: 6, &quot;actor&quot;: &quot;Salesforce → Your App&quot;, &quot;action&quot;: &quot;Here&#39;s your Access Token&quot;}, {&quot;step&quot;: 7, &quot;actor&quot;: &quot;Your App → Salesforce API&quot;, &quot;action&quot;: &quot;Here&#39;s my Access Token. Give me the data.&quot;}, {&quot;step&quot;: 8, &quot;actor&quot;: &quot;Salesforce API → Your App&quot;, &quot;action&quot;: &quot;Here&#39;s the data.&quot;}], &quot;keyTerms&quot;: [{&quot;term&quot;: &quot;Resource Owner&quot;, &quot;meaning&quot;: &quot;The user (you) who owns the data&quot;}, {&quot;term&quot;: &quot;Client&quot;, &quot;meaning&quot;: &quot;The app requesting access&quot;}, {&quot;term&quot;: &quot;Authorization Server&quot;, &quot;meaning&quot;: &quot;Issues tokens (e.g., Salesforce Identity)&quot;}, {&quot;term&quot;: &quot;Resource Server&quot;, &quot;meaning&quot;: &quot;The API with the actual data&quot;}, {&quot;term&quot;: &quot;Access Token&quot;, &quot;meaning&quot;: &quot;Short-lived credential to access data&quot;}, {&quot;term&quot;: &quot;Refresh Token&quot;, &quot;meaning&quot;: &quot;Long-lived credential to get new Access Tokens&quot;}, {&quot;term&quot;: &quot;Scope&quot;, &quot;meaning&quot;: &quot;What the app is allowed to access (e.g., read contacts)&quot;}, {&quot;term&quot;: &quot;Client ID&quot;, &quot;meaning&quot;: &quot;Public identifier for the app&quot;}, {&quot;term&quot;: &quot;Client Secret&quot;, &quot;meaning&quot;: &quot;Private password for the app — never share!&quot;}], &quot;grantTypes&quot;: [{&quot;flow&quot;: &quot;Authorization Code&quot;, &quot;whenUsed&quot;: &quot;Web apps with a backend (most secure)&quot;}, {&quot;flow&quot;: &quot;Client Credentials&quot;, &quot;whenUsed&quot;: &quot;Server-to-server (no user involved)&quot;}, {&quot;flow&quot;: &quot;Implicit&quot;, &quot;whenUsed&quot;: &quot;Old SPAs — deprecated, avoid&quot;}, {&quot;flow&quot;: &quot;Device Code&quot;, &quot;whenUsed&quot;: &quot;Smart TVs, CLI tools&quot;}, {&quot;flow&quot;: &quot;Username/Password&quot;, &quot;whenUsed&quot;: &quot;Only for highly trusted apps — avoid&quot;}], &quot;salesforceConnection&quot;: &quot;When you create a Connected App in Salesforce, you get a Consumer Key (= Client ID) and Consumer Secret (= Client Secret). This is how external apps authenticate with Salesforce using OAuth 2.0.&quot;}'>
+          <div class="entry-id">§20</div>
+          <div class="day-topic">🔑 OAuth 2.0</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">OAuth 2.0 is the industry-standard authorization framework. …</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #7b61ff;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch4" data-color="#7b61ff" data-id="21" data-title="Tokens — JWT &amp; Bearer" data-icon="🎫" data-snippet="" data-sec='{&quot;id&quot;: 21, &quot;title&quot;: &quot;Tokens — JWT & Bearer&quot;, &quot;icon&quot;: &quot;🎫&quot;, &quot;tokenTypes&quot;: [{&quot;type&quot;: &quot;Access Token&quot;, &quot;description&quot;: &quot;A temporary credential given after authentication. Sent with every API request to prove who you are.&quot;, &quot;lifetime&quot;: &quot;Usually 15 minutes to 1 hour&quot;}, {&quot;type&quot;: &quot;Refresh Token&quot;, &quot;description&quot;: &quot;A longer-lived token used to get a new Access Token when it expires. You don&#39;t need to log in again.&quot;}, {&quot;type&quot;: &quot;Bearer Token&quot;, &quot;description&quot;: &quot;&#39;Bearer&#39; means whoever holds this token gets access. It&#39;s the most common way to send a token.&quot;, &quot;example&quot;: &quot;Authorization: Bearer eyJhbGciOiJSUzI1NiJ9...&quot;}], &quot;jwt&quot;: {&quot;name&quot;: &quot;JWT — JSON Web Token&quot;, &quot;pronunciation&quot;: &quot;Pronounced &#39;jot&#39;&quot;, &quot;description&quot;: &quot;The most common format for tokens. A self-contained token with 3 parts separated by dots.&quot;, &quot;structure&quot;: {&quot;header&quot;: &quot;Algorithm used to sign the token&quot;, &quot;payload&quot;: &quot;The actual data (user ID, expiry, roles, etc.) — Base64 encoded, NOT encrypted&quot;, &quot;signature&quot;: &quot;Cryptographic proof the token wasn&#39;t tampered with&quot;}, &quot;debuggingTip&quot;: &quot;Go to jwt.io and paste any JWT token to see its contents. Very useful for debugging.&quot;, &quot;securityWarning&quot;: &quot;JWT payload is only Base64 encoded, not encrypted. Anyone can read it. Never put passwords in JWT payload.&quot;}}'>
+          <div class="entry-id">§21</div>
+          <div class="day-topic">🎫 Tokens — JWT &amp; Bearer</div>
+          <div class="phase-dot colored" style="--card-accent: #7b61ff;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ch5">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(255,107,107,0.12);color:#ff6b6b;">Chapter 5</span>
+      <span class="phase-title">🛠️ Practical APIs</span>
+      <span class="phase-meta">7 sections</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Learn CRUD, how to hit and build APIs, documentation, tools, and Salesforce APIs</div>
+    <div class="week-group" id="ch5">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch5" data-color="#ff6b6b" data-id="22" data-title="CRUD Operations" data-icon="🔄" data-snippet="CRUD = Create, Read, Update, Delete. These are the four fund…" data-sec='{&quot;id&quot;: 22, &quot;title&quot;: &quot;CRUD Operations&quot;, &quot;icon&quot;: &quot;🔄&quot;, &quot;definition&quot;: &quot;CRUD = Create, Read, Update, Delete. These are the four fundamental operations on any data. APIs map these to HTTP methods.&quot;, &quot;mapping&quot;: [{&quot;crud&quot;: &quot;Create&quot;, &quot;httpMethod&quot;: &quot;POST&quot;, &quot;sqlEquivalent&quot;: &quot;INSERT&quot;, &quot;example&quot;: &quot;Create a new Account&quot;}, {&quot;crud&quot;: &quot;Read&quot;, &quot;httpMethod&quot;: &quot;GET&quot;, &quot;sqlEquivalent&quot;: &quot;SELECT&quot;, &quot;example&quot;: &quot;Get Account details&quot;}, {&quot;crud&quot;: &quot;Update&quot;, &quot;httpMethod&quot;: &quot;PUT / PATCH&quot;, &quot;sqlEquivalent&quot;: &quot;UPDATE&quot;, &quot;example&quot;: &quot;Update Account name&quot;}, {&quot;crud&quot;: &quot;Delete&quot;, &quot;httpMethod&quot;: &quot;DELETE&quot;, &quot;sqlEquivalent&quot;: &quot;DELETE&quot;, &quot;example&quot;: &quot;Remove a Contact&quot;}], &quot;keyInsight&quot;: &quot;This is the most fundamental concept in any API. Almost every API you ever use will be doing some form of CRUD.&quot;}'>
+          <div class="entry-id">§22</div>
+          <div class="day-topic">🔄 CRUD Operations</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">CRUD = Create, Read, Update, Delete. These are the four fund…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch5" data-color="#ff6b6b" data-id="23" data-title="What Does &#39;Hitting an API&#39; Mean?" data-icon="🎯" data-snippet="When someone says &#39;I hit the API&#39; or &#39;hit an endpoint&#39; — it …" data-sec='{&quot;id&quot;: 23, &quot;title&quot;: &quot;What Does &#39;Hitting an API&#39; Mean?&quot;, &quot;icon&quot;: &quot;🎯&quot;, &quot;definition&quot;: &quot;When someone says &#39;I hit the API&#39; or &#39;hit an endpoint&#39; — it simply means they made an API call / sent an HTTP request. It&#39;s just slang for making a request. No mystery!&quot;, &quot;waysToHitAnAPI&quot;: [{&quot;method&quot;: &quot;Using a browser (GET only)&quot;, &quot;description&quot;: &quot;Just type a URL in the browser. This is a GET request.&quot;, &quot;example&quot;: &quot;https://api.exchangerate.host/latest?base=USD&quot;}, {&quot;method&quot;: &quot;Using Postman or Insomnia&quot;, &quot;description&quot;: &quot;GUI tools for making any type of request. Best for testing.&quot;}, {&quot;method&quot;: &quot;Using curl (Command Line)&quot;, &quot;description&quot;: &quot;Terminal-based HTTP requests. Powerful for scripting.&quot;, &quot;example&quot;: &quot;curl -X GET \&quot;https://api.example.com/accounts\&quot; -H \&quot;Authorization: Bearer mytoken123\&quot;&quot;}, {&quot;method&quot;: &quot;Using JavaScript (fetch API)&quot;, &quot;description&quot;: &quot;Used in web apps and Node.js.&quot;, &quot;example&quot;: &quot;const response = await fetch(&#39;https://api.example.com/accounts&#39;, { method: &#39;GET&#39;, headers: { &#39;Authorization&#39;: &#39;Bearer mytoken123&#39; } }); const data = await response.json();&quot;}, {&quot;method&quot;: &quot;Using Python (requests library)&quot;, &quot;description&quot;: &quot;Most common for scripting and automation.&quot;, &quot;example&quot;: &quot;import requests; response = requests.get(&#39;https://api.example.com/accounts&#39;, headers={&#39;Authorization&#39;: &#39;Bearer mytoken123&#39;}); data = response.json()&quot;}, {&quot;method&quot;: &quot;From Salesforce Flow / Apex&quot;, &quot;description&quot;: &quot;Salesforce has its own way to call external APIs using HTTP Callouts.&quot;}]}'>
+          <div class="entry-id">§23</div>
+          <div class="day-topic">🎯 What Does &#39;Hitting an API…</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">When someone says &#39;I hit the API&#39; or &#39;hit an endpoint&#39; — it …</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch5" data-color="#ff6b6b" data-id="24" data-title="What Does &#39;Building an API&#39; Mean?" data-icon="🏗️" data-snippet="Building an API means you are creating the SERVER side — you…" data-sec='{&quot;id&quot;: 24, &quot;title&quot;: &quot;What Does &#39;Building an API&#39; Mean?&quot;, &quot;icon&quot;: &quot;🏗️&quot;, &quot;definition&quot;: &quot;Building an API means you are creating the SERVER side — you&#39;re creating the endpoints that others will call.&quot;, &quot;youDecide&quot;: [&quot;What endpoints exist (e.g., /orders, /products)&quot;, &quot;What methods are accepted (GET, POST, etc.)&quot;, &quot;What authentication is required&quot;, &quot;What data format is returned&quot;, &quot;How errors are handled&quot;], &quot;exampleAPI&quot;: {&quot;baseUrl&quot;: &quot;api.mycompany.com&quot;, &quot;endpoints&quot;: [{&quot;method&quot;: &quot;GET&quot;, &quot;path&quot;: &quot;/products&quot;, &quot;description&quot;: &quot;Returns list of all products&quot;}, {&quot;method&quot;: &quot;GET&quot;, &quot;path&quot;: &quot;/products/{id}&quot;, &quot;description&quot;: &quot;Returns one product&quot;}, {&quot;method&quot;: &quot;POST&quot;, &quot;path&quot;: &quot;/products&quot;, &quot;description&quot;: &quot;Creates a new product&quot;}, {&quot;method&quot;: &quot;PATCH&quot;, &quot;path&quot;: &quot;/products/{id}&quot;, &quot;description&quot;: &quot;Updates a product&quot;}, {&quot;method&quot;: &quot;DELETE&quot;, &quot;path&quot;: &quot;/products/{id}&quot;, &quot;description&quot;: &quot;Deletes a product&quot;}]}, &quot;commonTechnologies&quot;: [{&quot;language&quot;: &quot;JavaScript/Node.js&quot;, &quot;frameworks&quot;: &quot;Express, Fastify&quot;}, {&quot;language&quot;: &quot;Python&quot;, &quot;frameworks&quot;: &quot;FastAPI, Django REST, Flask&quot;}, {&quot;language&quot;: &quot;Java&quot;, &quot;frameworks&quot;: &quot;Spring Boot&quot;}, {&quot;language&quot;: &quot;C#&quot;, &quot;frameworks&quot;: &quot;ASP.NET&quot;}, {&quot;language&quot;: &quot;Go&quot;, &quot;frameworks&quot;: &quot;Gin, Fiber&quot;}, {&quot;language&quot;: &quot;PHP&quot;, &quot;frameworks&quot;: &quot;Laravel&quot;}], &quot;salesforceNote&quot;: &quot;As a Salesforce Admin, you don&#39;t need to build APIs from scratch. But when you create a Salesforce Custom REST Resource using Apex — that IS building an API.&quot;}'>
+          <div class="entry-id">§24</div>
+          <div class="day-topic">🏗️ What Does &#39;Building an AP…</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">Building an API means you are creating the SERVER side — you…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch5" data-color="#ff6b6b" data-id="25" data-title="API Documentation — How to Read It" data-icon="📖" data-snippet="API documentation (docs) is the manual for an API. Learning …" data-sec='{&quot;id&quot;: 25, &quot;title&quot;: &quot;API Documentation — How to Read It&quot;, &quot;icon&quot;: &quot;📖&quot;, &quot;description&quot;: &quot;API documentation (docs) is the manual for an API. Learning to read docs is a critical skill.&quot;, &quot;whatGoodDocsInclude&quot;: [&quot;Base URL — Where to send requests&quot;, &quot;Authentication — How to authenticate&quot;, &quot;Endpoints — What&#39;s available&quot;, &quot;Parameters — What you can send&quot;, &quot;Request Examples — Sample requests&quot;, &quot;Response Examples — Sample responses&quot;, &quot;Error Codes — What errors mean&quot;], &quot;exampleDocsEntry&quot;: {&quot;endpoint&quot;: &quot;GET /contacts/{contactId}&quot;, &quot;description&quot;: &quot;Retrieves a single contact by ID&quot;, &quot;pathParameters&quot;: [{&quot;name&quot;: &quot;contactId&quot;, &quot;required&quot;: true, &quot;type&quot;: &quot;string&quot;, &quot;description&quot;: &quot;The ID of the contact&quot;}], &quot;headers&quot;: [{&quot;header&quot;: &quot;Authorization&quot;, &quot;required&quot;: true, &quot;value&quot;: &quot;Bearer <token>&quot;}], &quot;responses&quot;: {&quot;200&quot;: {&quot;id&quot;: &quot;003xx000004TmiQ&quot;, &quot;firstName&quot;: &quot;Ahmed&quot;, &quot;lastName&quot;: &quot;Khan&quot;, &quot;email&quot;: &quot;ahmed@example.com&quot;}, &quot;404&quot;: {&quot;errorCode&quot;: &quot;NOT_FOUND&quot;, &quot;message&quot;: &quot;Contact not found&quot;}}}, &quot;popularDocFormats&quot;: [{&quot;format&quot;: &quot;Swagger / OpenAPI&quot;, &quot;description&quot;: &quot;Interactive docs — you can test right in the browser. Very common.&quot;}, {&quot;format&quot;: &quot;Postman Collections&quot;, &quot;description&quot;: &quot;Importable into Postman for instant testing.&quot;}, {&quot;format&quot;: &quot;Markdown docs&quot;, &quot;description&quot;: &quot;Like Salesforce Developer Docs.&quot;}, {&quot;format&quot;: &quot;Redoc&quot;, &quot;description&quot;: &quot;Another OpenAPI viewer.&quot;}], &quot;salesforceDocsLinks&quot;: [{&quot;name&quot;: &quot;REST API&quot;, &quot;url&quot;: &quot;developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest&quot;}, {&quot;name&quot;: &quot;SOQL reference&quot;, &quot;url&quot;: &quot;developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl&quot;}, {&quot;name&quot;: &quot;All APIs&quot;, &quot;url&quot;: &quot;developer.salesforce.com/docs/apis&quot;}]}'>
+          <div class="entry-id">§25</div>
+          <div class="day-topic">📖 API Documentation — How t…</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">API documentation (docs) is the manual for an API. Learning …</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch5" data-color="#ff6b6b" data-id="26" data-title="Tools to Test APIs" data-icon="🛠️" data-snippet="You don&#39;t need to write code to test an API. These tools let…" data-sec='{&quot;id&quot;: 26, &quot;title&quot;: &quot;Tools to Test APIs&quot;, &quot;icon&quot;: &quot;🛠️&quot;, &quot;description&quot;: &quot;You don&#39;t need to write code to test an API. These tools let you make API calls through a GUI.&quot;, &quot;tools&quot;: [{&quot;name&quot;: &quot;Postman&quot;, &quot;popularity&quot;: &quot;Most Popular&quot;, &quot;url&quot;: &quot;postman.com&quot;, &quot;features&quot;: [&quot;Create requests visually&quot;, &quot;Save requests in collections&quot;, &quot;Test with environments (dev, prod)&quot;, &quot;Auto-generate code snippets&quot;, &quot;Free tier is excellent&quot;]}, {&quot;name&quot;: &quot;Insomnia&quot;, &quot;description&quot;: &quot;Similar to Postman. Cleaner UI, slightly simpler. Good for GraphQL too.&quot;}, {&quot;name&quot;: &quot;curl (Command Line)&quot;, &quot;description&quot;: &quot;Built into Mac/Linux. Available on Windows (Git Bash/WSL). No GUI, but powerful for scripting.&quot;, &quot;examples&quot;: [&quot;curl https://api.example.com/contacts — GET request&quot;, &quot;curl -H \&quot;Authorization: Bearer token123\&quot; https://api.example.com/contacts — GET with headers&quot;, &quot;curl -X POST https://api.example.com/contacts -H \&quot;Content-Type: application/json\&quot; -H \&quot;Authorization: Bearer token123\&quot; -d &#39;{\&quot;firstName\&quot;: \&quot;Ahmed\&quot;}&#39; — POST with body&quot;]}, {&quot;name&quot;: &quot;VS Code REST Client Extension&quot;, &quot;description&quot;: &quot;Write .http files right in VS Code. Click to send requests. Great for developers.&quot;}, {&quot;name&quot;: &quot;Salesforce Workbench&quot;, &quot;url&quot;: &quot;workbench.developerforce.com&quot;, &quot;description&quot;: &quot;Test Salesforce REST API specifically. No setup needed — just log in with your Salesforce credentials.&quot;}, {&quot;name&quot;: &quot;Salesforce Developer Console&quot;, &quot;description&quot;: &quot;Execute Anonymous Apex for HTTP callouts. Built into Salesforce.&quot;}]}'>
+          <div class="entry-id">§26</div>
+          <div class="day-topic">🛠️ Tools to Test APIs</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">You don&#39;t need to write code to test an API. These tools let…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch5" data-color="#ff6b6b" data-id="27" data-title="Salesforce APIs (Your World)" data-icon="☁️" data-snippet="Salesforce has multiple APIs. Here&#39;s what each one does." data-sec='{&quot;id&quot;: 27, &quot;title&quot;: &quot;Salesforce APIs (Your World)&quot;, &quot;icon&quot;: &quot;☁️&quot;, &quot;description&quot;: &quot;Salesforce has multiple APIs. Here&#39;s what each one does.&quot;, &quot;apis&quot;: [{&quot;name&quot;: &quot;Salesforce REST API&quot;, &quot;protocol&quot;: &quot;HTTP/HTTPS&quot;, &quot;format&quot;: &quot;JSON or XML&quot;, &quot;bestFor&quot;: &quot;Integrations, mobile apps, web apps&quot;, &quot;youllUseItFor&quot;: &quot;CRUD on standard and custom objects&quot;, &quot;baseUrl&quot;: &quot;https://yourInstance.salesforce.com/services/data/v58.0/&quot;, &quot;commonEndpoints&quot;: [{&quot;method&quot;: &quot;GET&quot;, &quot;path&quot;: &quot;/sobjects/&quot;, &quot;description&quot;: &quot;List all objects&quot;}, {&quot;method&quot;: &quot;GET&quot;, &quot;path&quot;: &quot;/sobjects/Account/&quot;, &quot;description&quot;: &quot;Describe Account&quot;}, {&quot;method&quot;: &quot;GET&quot;, &quot;path&quot;: &quot;/sobjects/Account/{id}&quot;, &quot;description&quot;: &quot;Get Account by ID&quot;}, {&quot;method&quot;: &quot;POST&quot;, &quot;path&quot;: &quot;/sobjects/Account/&quot;, &quot;description&quot;: &quot;Create Account&quot;}, {&quot;method&quot;: &quot;PATCH&quot;, &quot;path&quot;: &quot;/sobjects/Account/{id}&quot;, &quot;description&quot;: &quot;Update Account&quot;}, {&quot;method&quot;: &quot;DELETE&quot;, &quot;path&quot;: &quot;/sobjects/Account/{id}&quot;, &quot;description&quot;: &quot;Delete Account&quot;}, {&quot;method&quot;: &quot;GET&quot;, &quot;path&quot;: &quot;/query/?q=SELECT+Id+FROM+Account&quot;, &quot;description&quot;: &quot;Run SOQL query&quot;}]}, {&quot;name&quot;: &quot;Salesforce SOAP API&quot;, &quot;protocol&quot;: &quot;HTTP with SOAP envelope (XML)&quot;, &quot;format&quot;: &quot;XML only&quot;, &quot;bestFor&quot;: &quot;Older enterprise integrations&quot;, &quot;note&quot;: &quot;Less common now — REST API preferred&quot;}, {&quot;name&quot;: &quot;Salesforce Bulk API&quot;, &quot;purpose&quot;: &quot;Loading or extracting large amounts of data (millions of records)&quot;, &quot;format&quot;: &quot;JSON, CSV, XML&quot;, &quot;bestFor&quot;: &quot;Data migrations, large ETL processes&quot;, &quot;note&quot;: &quot;Asynchronous — you submit a job and check back later&quot;}, {&quot;name&quot;: &quot;Salesforce Streaming API&quot;, &quot;purpose&quot;: &quot;Real-time notifications (Platform Events, PushTopics)&quot;, &quot;bestFor&quot;: &quot;When you want Salesforce to push changes TO you (not you polling)&quot;}, {&quot;name&quot;: &quot;Salesforce Metadata API&quot;, &quot;purpose&quot;: &quot;Deploy configuration and metadata (not data)&quot;, &quot;bestFor&quot;: &quot;CI/CD, deploying fields, page layouts, flows&quot;, &quot;note&quot;: &quot;What Salesforce CLI uses under the hood&quot;}, {&quot;name&quot;: &quot;Salesforce GraphQL API&quot;, &quot;note&quot;: &quot;Newer — available since API version 55.0. More flexible querying.&quot;}], &quot;versioning&quot;: &quot;Always see versions like v58.0, v59.0 in Salesforce API URLs. Use the latest stable version or match your org&#39;s API version.&quot;, &quot;authentication&quot;: {&quot;method&quot;: &quot;OAuth 2.0&quot;, &quot;usernamePasswordFlow&quot;: {&quot;description&quot;: &quot;Common flow for server integrations&quot;, &quot;endpoint&quot;: &quot;POST https://login.salesforce.com/services/oauth2/token&quot;, &quot;requiredParams&quot;: [&quot;grant_type=password&quot;, &quot;client_id=your_consumer_key&quot;, &quot;client_secret=your_consumer_secret&quot;, &quot;username=your_sf_username&quot;, &quot;password=your_sf_password+your_security_token&quot;], &quot;response&quot;: {&quot;access_token&quot;: &quot;00Dxx0000001gUT!AR8AQHZS...&quot;, &quot;instance_url&quot;: &quot;https://yourcompany.salesforce.com&quot;, &quot;token_type&quot;: &quot;Bearer&quot;}, &quot;nextStep&quot;: &quot;Use access_token as your Bearer token for all subsequent calls&quot;}}}'>
+          <div class="entry-id">§27</div>
+          <div class="day-topic">☁️ Salesforce APIs (Your Wor…</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">Salesforce has multiple APIs. Here&#39;s what each one does.</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #ff6b6b;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch5" data-color="#ff6b6b" data-id="28" data-title="Other API Types (SOAP, GraphQL, Webhooks)" data-icon="🌐" data-snippet="" data-sec='{&quot;id&quot;: 28, &quot;title&quot;: &quot;Other API Types (SOAP, GraphQL, Webhooks)&quot;, &quot;icon&quot;: &quot;🌐&quot;, &quot;types&quot;: [{&quot;name&quot;: &quot;SOAP API&quot;, &quot;fullName&quot;: &quot;Simple Object Access Protocol&quot;, &quot;era&quot;: &quot;2000s&quot;, &quot;format&quot;: &quot;XML exclusively&quot;, &quot;characteristics&quot;: [&quot;Very strict and verbose&quot;, &quot;Uses WSDL (Web Services Description Language) to define the contract&quot;, &quot;Still heavily used in enterprise, banking, government&quot;, &quot;Salesforce SOAP API is an example&quot;], &quot;note&quot;: &quot;Much more verbose than REST — this is why REST won.&quot;}, {&quot;name&quot;: &quot;GraphQL&quot;, &quot;creator&quot;: &quot;Facebook&quot;, &quot;year&quot;: 2015, &quot;description&quot;: &quot;An alternative to REST. Single endpoint /graphql — you specify EXACTLY what data you want.&quot;, &quot;keyDifference&quot;: {&quot;rest&quot;: &quot;Multiple endpoints, each returns fixed data&quot;, &quot;graphql&quot;: &quot;Single endpoint /graphql, you specify exactly what data you want&quot;}, &quot;benefits&quot;: [&quot;No over-fetching — don&#39;t get data you don&#39;t need&quot;, &quot;No under-fetching — don&#39;t need multiple calls to get related data&quot;, &quot;Strong typing — schema defines all possible queries&quot;], &quot;salesforceNote&quot;: &quot;Salesforce GraphQL API available since API v55.0&quot;}, {&quot;name&quot;: &quot;Webhooks&quot;, &quot;aka&quot;: &quot;Reverse APIs / Callbacks&quot;, &quot;description&quot;: &quot;Instead of you calling an API to get data, the server calls YOUR URL when something happens.&quot;, &quot;comparison&quot;: {&quot;polling&quot;: &quot;You ask &#39;Any new leads?&#39; every 5 minutes — inefficient&quot;, &quot;webhook&quot;: &quot;Salesforce tells you &#39;A new lead just came in!&#39; immediately — efficient&quot;}, &quot;requirement&quot;: &quot;To receive a webhook, you need a public URL (endpoint) on your server that accepts POST requests.&quot;, &quot;salesforceEquivalent&quot;: &quot;Salesforce Platform Events and Outbound Messages use a similar concept&quot;}, {&quot;name&quot;: &quot;gRPC&quot;, &quot;creator&quot;: &quot;Google&quot;, &quot;description&quot;: &quot;Newer, high-performance API protocol&quot;, &quot;format&quot;: &quot;Protocol Buffers (binary format, not JSON)&quot;, &quot;bestFor&quot;: &quot;Internal microservices&quot;, &quot;note&quot;: &quot;Less common in business integrations&quot;}]}'>
+          <div class="entry-id">§28</div>
+          <div class="day-topic">🌐 Other API Types (SOAP, Gr…</div>
+          <div class="phase-dot colored" style="--card-accent: #ff6b6b;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-block" id="block-ch6">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(247,127,0,0.12);color:#f77f00;">Chapter 6</span>
+      <span class="phase-title">📚 Advanced &amp; Reference</span>
+      <span class="phase-meta">5 sections</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Rate limiting, error handling, versioning, patterns, and the full glossary</div>
+    <div class="week-group" id="ch6">
+      <div class="day-grid">
+        <div class="day-card colored" style="--card-accent: #f77f00;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch6" data-color="#f77f00" data-id="29" data-title="Rate Limiting &amp; Throttling" data-icon="⏱️" data-snippet="APIs don&#39;t let you make unlimited requests. They enforce rat…" data-sec='{&quot;id&quot;: 29, &quot;title&quot;: &quot;Rate Limiting & Throttling&quot;, &quot;icon&quot;: &quot;⏱️&quot;, &quot;definition&quot;: &quot;APIs don&#39;t let you make unlimited requests. They enforce rate limits to prevent abuse and ensure fair usage.&quot;, &quot;whatIsRateLimit&quot;: &quot;A cap on how many requests you can make in a given time period.&quot;, &quot;examples&quot;: [&quot;Twitter API: 300 requests per 15 minutes per user&quot;, &quot;Salesforce REST API: 15,000 requests per day (for Enterprise)&quot;, &quot;GitHub API: 60 requests per hour (unauthenticated), 5,000 (authenticated)&quot;], &quot;howLimitsAreCommunicated&quot;: {&quot;description&quot;: &quot;Usually in response headers:&quot;, &quot;headers&quot;: [{&quot;header&quot;: &quot;X-RateLimit-Limit&quot;, &quot;meaning&quot;: &quot;Max allowed&quot;, &quot;example&quot;: &quot;100&quot;}, {&quot;header&quot;: &quot;X-RateLimit-Remaining&quot;, &quot;meaning&quot;: &quot;Calls left&quot;, &quot;example&quot;: &quot;23&quot;}, {&quot;header&quot;: &quot;X-RateLimit-Reset&quot;, &quot;meaning&quot;: &quot;Resets at this Unix timestamp&quot;, &quot;example&quot;: &quot;1746182400&quot;}]}, &quot;whenYouHitLimit&quot;: {&quot;statusCode&quot;: 429, &quot;errorResponse&quot;: {&quot;error&quot;: &quot;rate_limit_exceeded&quot;, &quot;message&quot;: &quot;Too many requests. Please retry after 60 seconds.&quot;, &quot;retry_after&quot;: 60}}, &quot;howToHandle&quot;: [&quot;Check headers — Monitor remaining calls before they run out&quot;, &quot;Implement retry logic — Wait and retry after the reset time&quot;, &quot;Exponential backoff — Wait 1s, then 2s, then 4s, then 8s before retrying&quot;, &quot;Cache responses — Don&#39;t call the same endpoint repeatedly for the same data&quot;, &quot;Batch requests — Use Bulk API for large volumes (Salesforce)&quot;], &quot;salesforceLimits&quot;: {&quot;formula&quot;: &quot;Daily API Calls = 15,000 × (number of full licenses) — or at least 1,000,000 for large orgs&quot;, &quot;checkUsage&quot;: &quot;Setup → Company Information → API Requests Last 24 Hours&quot;}}'>
+          <div class="entry-id">§29</div>
+          <div class="day-topic">⏱️ Rate Limiting &amp; Throttling</div>
+          <div class="phase-dot colored" style="--card-accent: #f77f00;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">APIs don&#39;t let you make unlimited requests. They enforce rat…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #f77f00;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch6" data-color="#f77f00" data-id="30" data-title="Error Handling in APIs" data-icon="⚠️" data-snippet="Errors will happen. Good APIs give you meaningful errors. He…" data-sec='{&quot;id&quot;: 30, &quot;title&quot;: &quot;Error Handling in APIs&quot;, &quot;icon&quot;: &quot;⚠️&quot;, &quot;description&quot;: &quot;Errors will happen. Good APIs give you meaningful errors. Here&#39;s how to read and handle them.&quot;, &quot;anatomyOfGoodError&quot;: {&quot;status&quot;: 400, &quot;errorCode&quot;: &quot;REQUIRED_FIELD_MISSING&quot;, &quot;message&quot;: &quot;Required fields are missing: [LastName]&quot;, &quot;fields&quot;: [&quot;LastName&quot;], &quot;documentationUrl&quot;: &quot;https://docs.example.com/errors/REQUIRED_FIELD_MISSING&quot;}, &quot;salesforceErrorExamples&quot;: [{&quot;type&quot;: &quot;Validation error&quot;, &quot;response&quot;: {&quot;message&quot;: &quot;Required fields are missing: [LastName]&quot;, &quot;errorCode&quot;: &quot;REQUIRED_FIELD_MISSING&quot;, &quot;fields&quot;: [&quot;LastName&quot;]}}, {&quot;type&quot;: &quot;Record doesn&#39;t exist&quot;, &quot;response&quot;: {&quot;message&quot;: &quot;The requested resource does not exist&quot;, &quot;errorCode&quot;: &quot;NOT_FOUND&quot;}}, {&quot;type&quot;: &quot;Authentication error&quot;, &quot;response&quot;: {&quot;error&quot;: &quot;invalid_client_id&quot;, &quot;error_description&quot;: &quot;client identifier invalid&quot;}}], &quot;bestPractices&quot;: [&quot;Always check the status code first&quot;, &quot;Log the full response — Never silently swallow errors&quot;, &quot;Handle 401 specially — Refresh the token and retry&quot;, &quot;Handle 429 — Back off and retry&quot;, &quot;Don&#39;t retry 400 errors — Your request is wrong, fix it first&quot;, &quot;Show meaningful messages to users — not raw API errors&quot;]}'>
+          <div class="entry-id">§30</div>
+          <div class="day-topic">⚠️ Error Handling in APIs</div>
+          <div class="phase-dot colored" style="--card-accent: #f77f00;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">Errors will happen. Good APIs give you meaningful errors. He…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #f77f00;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch6" data-color="#f77f00" data-id="31" data-title="Versioning" data-icon="🔖" data-snippet="APIs change over time. Versioning allows the provider to mak…" data-sec='{&quot;id&quot;: 31, &quot;title&quot;: &quot;Versioning&quot;, &quot;icon&quot;: &quot;🔖&quot;, &quot;description&quot;: &quot;APIs change over time. Versioning allows the provider to make breaking changes without breaking existing users.&quot;, &quot;versioningStrategies&quot;: [{&quot;type&quot;: &quot;URL Versioning (Most Common)&quot;, &quot;example&quot;: &quot;https://api.example.com/v1/contacts → https://api.example.com/v2/contacts&quot;}, {&quot;type&quot;: &quot;Header Versioning&quot;, &quot;example&quot;: &quot;GET /contacts with header: API-Version: 2024-01-01&quot;}, {&quot;type&quot;: &quot;Query Parameter Versioning&quot;, &quot;example&quot;: &quot;https://api.example.com/contacts?version=2&quot;}], &quot;semanticVersioning&quot;: {&quot;format&quot;: &quot;MAJOR.MINOR.PATCH (e.g., 2.4.1)&quot;, &quot;major&quot;: &quot;Breaking changes — you must update your code&quot;, &quot;minor&quot;: &quot;New features, backward compatible&quot;, &quot;patch&quot;: &quot;Bug fixes, backward compatible&quot;}, &quot;salesforceVersioning&quot;: {&quot;releaseSchedule&quot;: &quot;Salesforce releases 3 versions per year&quot;, &quot;current&quot;: &quot;v63.0 (Spring &#39;25 era)&quot;, &quot;examples&quot;: [&quot;/services/data/v58.0/ — Version 58 (Winter &#39;23)&quot;, &quot;/services/data/v63.0/ — Version 63 (latest)&quot;], &quot;policy&quot;: &quot;Salesforce maintains ALL old versions. Your old code still works even if they release new versions. Best practice: keep your integration at a relatively recent version.&quot;}}'>
+          <div class="entry-id">§31</div>
+          <div class="day-topic">🔖 Versioning</div>
+          <div class="phase-dot colored" style="--card-accent: #f77f00;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);">APIs change over time. Versioning allows the provider to mak…</div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #f77f00;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch6" data-color="#f77f00" data-id="32" data-title="Common API Patterns You&#39;ll Hear" data-icon="📚" data-snippet="" data-sec='{&quot;id&quot;: 32, &quot;title&quot;: &quot;Common API Patterns You&#39;ll Hear&quot;, &quot;icon&quot;: &quot;📚&quot;, &quot;patterns&quot;: [{&quot;name&quot;: &quot;Pagination&quot;, &quot;description&quot;: &quot;When an API has too many records, it doesn&#39;t return all of them at once. It returns a page at a time.&quot;, &quot;types&quot;: [{&quot;type&quot;: &quot;Offset-based pagination&quot;, &quot;examples&quot;: [&quot;GET /contacts?limit=50&offset=0 → Records 1-50&quot;, &quot;GET /contacts?limit=50&offset=50 → Records 51-100&quot;, &quot;GET /contacts?limit=50&offset=100 → Records 101-150&quot;]}, {&quot;type&quot;: &quot;Cursor-based pagination (more modern)&quot;, &quot;description&quot;: &quot;Response includes a nextCursor and hasMore flag. Next call uses the cursor value.&quot;, &quot;example&quot;: {&quot;data&quot;: &quot;...50 records...&quot;, &quot;nextCursor&quot;: &quot;eyJpZCI6MTAwfQ==&quot;, &quot;hasMore&quot;: true}}, {&quot;type&quot;: &quot;Salesforce pagination&quot;, &quot;example&quot;: {&quot;totalSize&quot;: 2500, &quot;done&quot;: false, &quot;nextRecordsUrl&quot;: &quot;/services/data/v58.0/query/01gxx0000002OK3AAM-2000&quot;, &quot;records&quot;: &quot;...&quot;}}]}, {&quot;name&quot;: &quot;Polling vs Webhooks&quot;, &quot;polling&quot;: &quot;You keep asking &#39;is it done yet?&#39; on a schedule&quot;, &quot;webhooks&quot;: &quot;The server tells YOU when it&#39;s done — more efficient&quot;}, {&quot;name&quot;: &quot;Idempotency&quot;, &quot;description&quot;: &quot;An operation is idempotent if doing it multiple times has the same result as doing it once.&quot;, &quot;idempotentMethods&quot;: [&quot;GET (always idempotent — no change)&quot;, &quot;DELETE (deleting twice = deleted)&quot;, &quot;PUT (replacing with same data = same result)&quot;], &quot;nonIdempotent&quot;: [&quot;POST — creating twice = two records&quot;], &quot;idempotencyKey&quot;: &quot;APIs handle this by accepting an Idempotency-Key header — you send a unique key per request. If the same request is sent twice with the same key, the server only processes it once.&quot;}, {&quot;name&quot;: &quot;Upsert (Update or Insert)&quot;, &quot;description&quot;: &quot;If the record exists → update it. If not → create it.&quot;, &quot;salesforceExample&quot;: {&quot;endpoint&quot;: &quot;PATCH /services/data/v58.0/sobjects/Account/External_ID__c/EXT-001&quot;, &quot;logic&quot;: &quot;If Account with External_ID__c = EXT-001 exists → Update. If not → Create.&quot;}}, {&quot;name&quot;: &quot;Async APIs&quot;, &quot;description&quot;: &quot;Some operations take too long (like generating a report). These APIs are asynchronous.&quot;, &quot;steps&quot;: [&quot;POST to start the job → Get a jobId&quot;, &quot;Poll GET /jobs/{jobId}/status until status = completed&quot;, &quot;GET the results&quot;], &quot;salesforceNote&quot;: &quot;Salesforce Bulk API works exactly this way.&quot;}]}'>
+          <div class="entry-id">§32</div>
+          <div class="day-topic">📚 Common API Patterns You&#39;l…</div>
+          <div class="phase-dot colored" style="--card-accent: #f77f00;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent: #f77f00;" onclick="openSection(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openSection(this)" data-filter="ch6" data-color="#f77f00" data-id="33" data-title="Glossary — Every Term Defined" data-icon="📖" data-snippet="" data-sec='{&quot;id&quot;: 33, &quot;title&quot;: &quot;Glossary — Every Term Defined&quot;, &quot;icon&quot;: &quot;📖&quot;, &quot;terms&quot;: [{&quot;term&quot;: &quot;API&quot;, &quot;definition&quot;: &quot;Application Programming Interface — rules for software-to-software communication&quot;}, {&quot;term&quot;: &quot;REST&quot;, &quot;definition&quot;: &quot;Representational State Transfer — an architectural style for APIs&quot;}, {&quot;term&quot;: &quot;RESTful&quot;, &quot;definition&quot;: &quot;An API that follows REST principles&quot;}, {&quot;term&quot;: &quot;HTTP&quot;, &quot;definition&quot;: &quot;HyperText Transfer Protocol — the communication protocol of the web&quot;}, {&quot;term&quot;: &quot;HTTPS&quot;, &quot;definition&quot;: &quot;HTTP + encryption (SSL/TLS)&quot;}, {&quot;term&quot;: &quot;Endpoint&quot;, &quot;definition&quot;: &quot;A specific URL that represents a resource or action&quot;}, {&quot;term&quot;: &quot;Method/Verb&quot;, &quot;definition&quot;: &quot;The action (GET, POST, PUT, PATCH, DELETE)&quot;}, {&quot;term&quot;: &quot;Request&quot;, &quot;definition&quot;: &quot;A message sent FROM client TO server&quot;}, {&quot;term&quot;: &quot;Response&quot;, &quot;definition&quot;: &quot;A message sent FROM server TO client&quot;}, {&quot;term&quot;: &quot;Status Code&quot;, &quot;definition&quot;: &quot;3-digit number indicating the result of a request&quot;}, {&quot;term&quot;: &quot;Header&quot;, &quot;definition&quot;: &quot;Key-value metadata sent with request or response&quot;}, {&quot;term&quot;: &quot;Body/Payload&quot;, &quot;definition&quot;: &quot;The actual data in a request or response&quot;}, {&quot;term&quot;: &quot;JSON&quot;, &quot;definition&quot;: &quot;JavaScript Object Notation — common data format for APIs&quot;}, {&quot;term&quot;: &quot;XML&quot;, &quot;definition&quot;: &quot;eXtensible Markup Language — older data format&quot;}, {&quot;term&quot;: &quot;Authentication&quot;, &quot;definition&quot;: &quot;Proving who you are&quot;}, {&quot;term&quot;: &quot;Authorization&quot;, &quot;definition&quot;: &quot;Proving what you&#39;re allowed to do&quot;}, {&quot;term&quot;: &quot;API Key&quot;, &quot;definition&quot;: &quot;A secret string that identifies an application to an API&quot;}, {&quot;term&quot;: &quot;Bearer Token&quot;, &quot;definition&quot;: &quot;A token sent in the Authorization header&quot;}, {&quot;term&quot;: &quot;JWT&quot;, &quot;definition&quot;: &quot;JSON Web Token — a compact, self-contained token format&quot;}, {&quot;term&quot;: &quot;OAuth 2.0&quot;, &quot;definition&quot;: &quot;Authorization framework for granting limited access&quot;}, {&quot;term&quot;: &quot;Access Token&quot;, &quot;definition&quot;: &quot;Short-lived credential for API access&quot;}, {&quot;term&quot;: &quot;Refresh Token&quot;, &quot;definition&quot;: &quot;Long-lived credential to obtain new access tokens&quot;}, {&quot;term&quot;: &quot;Scope&quot;, &quot;definition&quot;: &quot;Permission level granted by OAuth&quot;}, {&quot;term&quot;: &quot;Client ID&quot;, &quot;definition&quot;: &quot;Public identifier for an OAuth application&quot;}, {&quot;term&quot;: &quot;Client Secret&quot;, &quot;definition&quot;: &quot;Private password for an OAuth application&quot;}, {&quot;term&quot;: &quot;CRUD&quot;, &quot;definition&quot;: &quot;Create, Read, Update, Delete — the four basic data operations&quot;}, {&quot;term&quot;: &quot;Base URL&quot;, &quot;definition&quot;: &quot;The root URL all endpoints share&quot;}, {&quot;term&quot;: &quot;Path Parameter&quot;, &quot;definition&quot;: &quot;A variable embedded in the URL path&quot;}, {&quot;term&quot;: &quot;Query Parameter&quot;, &quot;definition&quot;: &quot;A variable added after ? in the URL&quot;}, {&quot;term&quot;: &quot;Rate Limiting&quot;, &quot;definition&quot;: &quot;Capping how many requests can be made per time period&quot;}, {&quot;term&quot;: &quot;Throttling&quot;, &quot;definition&quot;: &quot;Slowing down requests instead of blocking them&quot;}, {&quot;term&quot;: &quot;Pagination&quot;, &quot;definition&quot;: &quot;Splitting large results into pages&quot;}, {&quot;term&quot;: &quot;Idempotent&quot;, &quot;definition&quot;: &quot;An operation safe to repeat without side effects&quot;}, {&quot;term&quot;: &quot;Webhook&quot;, &quot;definition&quot;: &quot;A callback — server pushes data to your URL on events&quot;}, {&quot;term&quot;: &quot;SOAP&quot;, &quot;definition&quot;: &quot;Simple Object Access Protocol — older XML-based API style&quot;}, {&quot;term&quot;: &quot;GraphQL&quot;, &quot;definition&quot;: &quot;Facebook&#39;s query language for APIs — fetch exactly what you need&quot;}, {&quot;term&quot;: &quot;SDK&quot;, &quot;definition&quot;: &quot;Software Development Kit — code libraries to easily call APIs&quot;}, {&quot;term&quot;: &quot;SSL/TLS&quot;, &quot;definition&quot;: &quot;Encryption protocols that make HTTPS secure&quot;}, {&quot;term&quot;: &quot;Postman&quot;, &quot;definition&quot;: &quot;GUI tool for testing APIs&quot;}, {&quot;term&quot;: &quot;curl&quot;, &quot;definition&quot;: &quot;Command-line tool for making HTTP requests&quot;}, {&quot;term&quot;: &quot;WSDL&quot;, &quot;definition&quot;: &quot;Web Services Description Language — XML contract for SOAP APIs&quot;}, {&quot;term&quot;: &quot;Upsert&quot;, &quot;definition&quot;: &quot;Create if not exists, Update if exists&quot;}, {&quot;term&quot;: &quot;Async API&quot;, &quot;definition&quot;: &quot;An API that doesn&#39;t respond immediately — returns a job ID&quot;}, {&quot;term&quot;: &quot;Polling&quot;, &quot;definition&quot;: &quot;Repeatedly asking &#39;are you done yet?&#39;&quot;}, {&quot;term&quot;: &quot;Serialization&quot;, &quot;definition&quot;: &quot;Converting data to a transmittable format (like JSON)&quot;}, {&quot;term&quot;: &quot;Deserialization&quot;, &quot;definition&quot;: &quot;Converting received format (JSON) back to usable data&quot;}, {&quot;term&quot;: &quot;Instance URL&quot;, &quot;definition&quot;: &quot;Your specific Salesforce domain (e.g., na87.salesforce.com)&quot;}, {&quot;term&quot;: &quot;Connected App&quot;, &quot;definition&quot;: &quot;Salesforce&#39;s OAuth client configuration&quot;}, {&quot;term&quot;: &quot;Consumer Key&quot;, &quot;definition&quot;: &quot;Salesforce term for Client ID&quot;}, {&quot;term&quot;: &quot;Consumer Secret&quot;, &quot;definition&quot;: &quot;Salesforce term for Client Secret&quot;}, {&quot;term&quot;: &quot;SOQL&quot;, &quot;definition&quot;: &quot;Salesforce Object Query Language — used in API query param&quot;}, {&quot;term&quot;: &quot;Platform Event&quot;, &quot;definition&quot;: &quot;Salesforce&#39;s event-driven messaging (similar to Webhooks)&quot;}, {&quot;term&quot;: &quot;Bulk API&quot;, &quot;definition&quot;: &quot;Salesforce API for processing millions of records&quot;}, {&quot;term&quot;: &quot;Metadata API&quot;, &quot;definition&quot;: &quot;Salesforce API for deploying configuration (not data)&quot;}]}'>
+          <div class="entry-id">§33</div>
+          <div class="day-topic">📖 Glossary — Every Term Def…</div>
+          <div class="phase-dot colored" style="--card-accent: #f77f00;"></div>
+          <div class="entry-module" style="font-size:9.5px;line-height:1.3;margin-top:2px;color:var(--muted);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK REFERENCE CARD -->
+  <div class="phase-block" id="block-quick-ref">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(232,67,147,0.1);color:#e84393;">&#x26A1; Reference</span>
+      <span class="phase-title">Quick Reference Card</span>
+      <span class="phase-meta">Cheat sheet</span>
+      <div class="phase-line"></div>
+    </div>
+    <div class="week-goal">&#x27F6; Everything important on one card &mdash; HTTP methods, status codes, headers, parameters, Salesforce URLs</div>
+    <div class="week-group" id="quick-ref">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding:8px 0;">
+
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="font-size:11px;font-weight:700;color:#e84393;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">HTTP Methods</div>
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#06d6a0;min-width:52px;">GET</span>
+              <span style="font-size:11px;color:var(--muted);">Read data, no body, safe</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#7b61ff;min-width:52px;">POST</span>
+              <span style="font-size:11px;color:var(--muted);">Create new data, has body</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#ffd166;min-width:52px;">PUT</span>
+              <span style="font-size:11px;color:var(--muted);">Replace entire record, has body</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#00d4ff;min-width:52px;">PATCH</span>
+              <span style="font-size:11px;color:var(--muted);">Update part of record, has body</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#ff6b6b;min-width:52px;">DELETE</span>
+              <span style="font-size:11px;color:var(--muted);">Delete record, no body</span>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;">
+          <div style="font-size:11px;font-weight:700;color:#e84393;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px;">Status Codes</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 8px;border-radius:5px;background:var(--bg);border:1px solid var(--border);">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#06d6a0;">200</span>
+              <span style="font-size:10px;color:var(--muted);">OK - Success</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 8px;border-radius:5px;background:var(--bg);border:1px solid var(--border);">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#06d6a0;">201</span>
+              <span style="font-size:10px;color:var(--muted);">Created</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 8px;border-radius:5px;background:var(--bg);border:1px solid var(--border);">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#ff6b6b;">400</span>
+              <span style="font-size:10px;color:var(--muted);">Bad Request - Fix your data</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 8px;border-radius:5px;background:var(--bg);border:1px solid var(--border);">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#ff6b6b;">401</span>
+              <span style="font-size:10px;color:var(--muted);">Unauthorized - Check your token</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 8px;border-radius:5px;background:var(--bg);border:1px solid var(--border);">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#ff6b6b;">403</span>
+              <span style="font-size:10px;color:var(--muted);">Forbidden - Check permissions</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 8px;border-radius:5px;background:var(--bg);border:1px solid var(--border);">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#ff6b6b;">404</span>
+              <span style="font-size:10px;color:var(--muted);">Not Found - Check your URL</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 8px;border-radius:5px;background:var(--bg);border:1px solid var(--border);">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#ff6b6b;">429</span>
+              <span style="font-size:10px;color:var(--muted);">Rate Limited - Slow down</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:5px;padding:4px 8px;border-radius:5px;background:var(--bg);border:1px solid var(--border);">
+              <span style="font-family:var(--mono);font-size:10px;font-weight:700;color:#ff6b6b;">500</span>
+              <span style="font-size:10px;color:var(--muted);">Server Error - Not your fault</span>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:14px;">
+          <div>
+            <div style="font-size:11px;font-weight:700;color:#e84393;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Common Headers</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-bottom:3px;"><span style="color:var(--accent);">Authorization</span>: Bearer &lt;token&gt;</div>
+            <div style="font-family:var(--mono);font-size:10px;color:var(--muted);margin-bottom:3px;"><span style="color:var(--accent);">Content-Type</span>: application/json</div>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:#f77f00;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">SF Quick Ref</div>
+            <div style="font-size:10px;color:var(--muted);margin-bottom:3px;"><span style="color:var(--text);font-weight:600;">SF REST Base URL</span>: <span style="font-family:var(--mono);">/services/data/v58.0/</span></div>
+            <div style="font-size:10px;color:var(--muted);margin-bottom:3px;"><span style="color:var(--text);font-weight:600;">SF Auth URL</span>: <span style="font-family:var(--mono);">login.salesforce.com/services/oauth2/token</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /plan-body -->
+
+<div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div>
+      <div class="drawer-badge colored" id="d-badge"></div>
+      <div class="drawer-topic" id="d-topic"></div>
+      <div class="drawer-week-info" id="d-week"></div>
+    </div>
+    <div class="drawer-controls">
+      <button class="drawer-btn" id="btn-prev" title="Previous" onclick="nav(-1)">&#8249;</button>
+      <button class="drawer-btn" id="btn-next" title="Next"     onclick="nav(+1)">&#8250;</button>
+      <button class="drawer-btn close"          title="Close"   onclick="closeDrawer()">&#x2715;</button>
+    </div>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</div>
+
+<script src="daydeck-core.js"></script>
+<script>
+var currentCard = null;
+var activeFilter = 'all';
+var searchTerm   = '';
+
+function visibleCards() {
+  return Array.from(document.querySelectorAll('.day-card')).filter(function(c) {
+    return !c.classList.contains('dimmed');
+  });
+}
+
+/* buildAndShowDrawer removed — use showDrawer() + updateNavButtons() from daydeck-core.js */
+
+function openSection(card) {
+  currentCard = card;
+  document.querySelectorAll('.day-card.active').forEach(function(c){ c.classList.remove('active'); });
+  card.classList.add('active');
+
+  var color = card.dataset.color;
+  var sid   = card.dataset.id;
+  var title = card.dataset.title;
+  var icon  = card.dataset.icon;
+  var sec;
+  try { sec = JSON.parse(card.dataset.sec); } catch(e) { sec = {}; }
+
+  var badge = document.getElementById('d-badge');
+  badge.style.setProperty('--card-accent', color);
+  badge.style.setProperty('--card-accent-bg', hexToRgba(color, 0.1));
+  badge.textContent = '§' + String(sid).padStart(2,'0');
+  document.getElementById('d-topic').textContent = icon + ' ' + title;
+  document.getElementById('d-week').textContent  = 'API Complete Guide · Section ' + sid;
+
+  try {
+    document.getElementById('d-body').innerHTML = renderSection(sec, color);
+  } catch(err) {
+    document.getElementById('d-body').innerHTML =
+      '<div class="notes-block" style="color:var(--muted);font-size:11px;">Could not render section detail: ' + err.message + '</div>';
+  }
+  updateNavButtons(card);  /* from daydeck-core.js */
+  showDrawer();            /* from daydeck-core.js */
+}
+
+/* Allow daydeck-core.js nav() to call openDay() on this page */
+function openDay(card) { openSection(card); }
+
+function renderSection(sec, color) {
+  var html = '';
+
+  function esc(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+  function secTitle(t) {
+    return '<div class="drawer-section-title">' + esc(t) + '</div>';
+  }
+  function codeBlock(s) {
+    return '<div style="font-family:var(--mono);font-size:11px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px 12px;color:var(--text);line-height:1.7;white-space:pre-wrap;word-break:break-all;">' + esc(s) + '</div>';
+  }
+  function pill(label, bg, fg) {
+    return '<span style="font-family:var(--mono);font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;background:' + (bg||'var(--surface2)') + ';color:' + (fg||'var(--text)') + ';">' + esc(label) + '</span>';
+  }
+  function infoRow(label, val) {
+    return '<div style="display:flex;gap:10px;padding:6px 0;border-bottom:1px solid var(--border2);"><span style="font-size:11px;font-weight:600;color:var(--muted);min-width:110px;flex-shrink:0;">' + esc(label) + '</span><span style="font-size:12px;color:var(--text);">' + esc(val) + '</span></div>';
+  }
+
+  // definition / description / keyInsight / problem / rule / contract
+  ['definition','description','contract'].forEach(function(k) {
+    if (sec[k]) html += '<div>' + secTitle('Definition') + '<div class="scenario-block" style="font-style:normal;color:var(--text);">' + esc(sec[k]) + '</div></div>';
+  });
+  if (sec.wordBreakdown) {
+    html += '<div>' + secTitle('Word Breakdown') + '<div style="display:flex;flex-direction:column;gap:4px;">';
+    Object.keys(sec.wordBreakdown).forEach(function(k) {
+      html += infoRow(k, sec.wordBreakdown[k]);
+    });
+    html += '</div></div>';
+  }
+  if (sec.keyInsight || sec.keyPoint || sec.rule || sec.ruleOfThumb || sec.restfulRule || sec.memoryTrick) {
+    var insight = sec.keyInsight || sec.keyPoint || sec.rule || sec.ruleOfThumb || sec.restfulRule || sec.memoryTrick;
+    html += '<div>' + secTitle('Key Insight') + '<div class="notes-block" style="border-left:3px solid ' + color + ';background:var(--surface2);">' + esc(insight) + '</div></div>';
+  }
+  if (sec.problemItSolves || sec.problem) {
+    html += '<div>' + secTitle('Problem it solves') + '<div class="scenario-block" style="font-style:normal;color:var(--text);">' + esc(sec.problemItSolves || sec.problem) + '</div></div>';
+  }
+
+  // keyDifference (auth)
+  if (sec.keyDifference) {
+    html += '<div>' + secTitle('Key Difference') + '<div style="display:flex;gap:10px;">';
+    Object.values(sec.keyDifference).forEach(function(v) {
+      html += '<div style="flex:1;padding:10px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="font-weight:700;font-size:12px;color:' + color + ';margin-bottom:4px;">' + esc(v.term||'') + '</div>' +
+        '<div style="font-size:11px;color:var(--muted);margin-bottom:4px;">' + esc(v.questionItAnswers||'') + '</div>' +
+        '<div style="font-family:var(--mono);font-size:10px;color:var(--text);">' + esc(v.example||'') + '</div>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // Generic simple string arrays
+  ['realWorldExamples','inPractice','stepsWhenYouTypeAURL','securityRules','howToHandle','whatGoodDocsInclude','bestPractices'].forEach(function(k) {
+    if (!sec[k] || !sec[k].length) return;
+    var label = k.replace(/([A-Z])/g,' $1').replace(/^./,function(c){return c.toUpperCase();});
+    html += '<div>' + secTitle(label) + '<div class="learn-list">' +
+      sec[k].map(function(item,i){
+        var text = typeof item === 'string' ? item : (item.step ? (item.actor||'') + ' — ' + (item.action||'') : JSON.stringify(item));
+        return '<div class="learn-item"><span class="learn-num">'+String(i+1).padStart(2,'0')+'</span><span class="learn-text">'+esc(text)+'</span></div>';
+      }).join('') + '</div></div>';
+  });
+
+  // benefits
+  if (sec.benefits && sec.benefits.length) {
+    html += '<div>' + secTitle('Benefits') + '<div class="learn-list">' +
+      sec.benefits.map(function(b,i){
+        return '<div class="learn-item"><span class="learn-num">'+String(i+1).padStart(2,'0')+'</span><span class="learn-text"><strong>'+esc(b.benefit||b)+'</strong>'+(b.example?' — '+esc(b.example):'')+'</span></div>';
+      }).join('') + '</div></div>';
+  }
+
+  // analogies
+  if (sec.analogies) {
+    html += '<div>' + secTitle('Analogies') + '<div style="display:flex;flex-direction:column;gap:8px;">';
+    sec.analogies.forEach(function(a) {
+      html += '<div style="padding:10px 14px;border-radius:8px;background:var(--surface2);border-left:3px solid '+color+';">' +
+        '<div style="font-weight:700;font-size:12px;margin-bottom:4px;">'+esc(a.title||a.analogy||'')+'</div>' +
+        (a.api ? '<div style="font-size:11px;color:var(--muted);">API: '+esc(a.api)+'</div>' : '') +
+        (a.realWorld ? '<div style="font-size:11px;color:var(--muted);">Real world: '+esc(a.realWorld)+'</div>' : '') +
+        (a.explanation ? '<div style="font-size:11px;color:var(--muted);margin-top:4px;">'+esc(a.explanation)+'</div>' : '') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // roles
+  if (sec.roles) {
+    html += '<div>' + secTitle('Roles') + '<div style="display:flex;gap:10px;">';
+    sec.roles.forEach(function(r) {
+      html += '<div style="flex:1;padding:12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="font-size:13px;font-weight:700;margin-bottom:4px;">'+esc(r.role||r.name||r.term||'')+'</div>' +
+        '<div style="font-size:11px;color:var(--muted);">'+esc(r.description||r.does||r.definition||r.whatItIs||'')+'</div>' +
+        (r.examples ? '<div style="font-family:var(--mono);font-size:10px;color:var(--accent);margin-top:6px;">'+(Array.isArray(r.examples)?r.examples.map(esc).join(' · '):esc(r.examples))+'</div>' : '') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // keyTerms (array of {term,definition})
+  if (sec.keyTerms && sec.keyTerms.length) {
+    html += '<div>' + secTitle('Key Terms') + '<div style="display:flex;flex-direction:column;gap:4px;">';
+    sec.keyTerms.forEach(function(t) {
+      html += infoRow(t.term, t.definition||t.meaning||'');
+    });
+    html += '</div></div>';
+  }
+
+  // HTTP methods table (section 7)
+  if (sec.methods && sec.methods[0] && sec.methods[0].method) {
+    html += '<div>' + secTitle('Methods') + '<div style="display:flex;flex-direction:column;gap:6px;">';
+    sec.methods.forEach(function(m) {
+      var mc = {'GET':'#06d6a0','POST':'#7b61ff','PUT':'#ffd166','PATCH':'#00d4ff','DELETE':'#ff6b6b','API Key':'#06d6a0','Basic Auth':'#ffd166','Bearer Token':'#7b61ff','OAuth 2.0':'#ff6b6b','Session Cookies':'#00d4ff'}[m.method] || color;
+      html += '<div style="padding:10px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">' +
+        '<span style="font-family:var(--mono);font-size:10px;font-weight:700;color:'+mc+';">'+esc(m.method)+'</span>' +
+        (m.simplicity?'<span style="font-size:10px;color:var(--muted);">'+esc(m.simplicity)+'</span>':'') +
+        (m.changesData!==undefined?'<span style="font-size:10px;padding:2px 6px;border-radius:4px;background:'+(m.changesData?'rgba(255,107,107,0.15)':'rgba(6,214,160,0.15)')+';color:'+(m.changesData?'#ff6b6b':'#06d6a0')+'">'+(m.changesData?'mutates':'read-only')+'</span>':'') +
+        '</div>' +
+        (m.purpose?'<div style="font-size:12px;color:var(--text);margin-bottom:2px;">'+esc(m.purpose)+'</div>':'') +
+        (m.description?'<div style="font-size:11px;color:var(--muted);">'+esc(m.description)+'</div>':'') +
+        (m.analogy?'<div style="font-size:10px;color:var(--muted);margin-top:4px;font-style:italic;">&#x1F37D; '+esc(m.analogy)+'</div>':'') +
+        (m.example?codeBlock(m.example):'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // salesforceExamples
+  if (sec.salesforceExamples) {
+    html += '<div>' + secTitle('Salesforce Examples') + '<div style="display:flex;flex-direction:column;gap:6px;">';
+    sec.salesforceExamples.forEach(function(ex) {
+      var mc = {'GET':'#06d6a0','POST':'#7b61ff','PUT':'#ffd166','PATCH':'#00d4ff','DELETE':'#ff6b6b'}[ex.method]||color;
+      html += '<div style="display:flex;gap:8px;align-items:baseline;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;">' +
+        '<span style="font-family:var(--mono);font-size:10px;font-weight:700;color:'+mc+';flex-shrink:0;min-width:44px;">'+esc(ex.method)+'</span>' +
+        '<span style="font-size:11px;color:var(--muted);flex-shrink:0;min-width:130px;">'+esc(ex.action||ex.description||'')+'</span>' +
+        '<span style="font-family:var(--mono);font-size:10px;color:var(--text);">'+esc(ex.endpoint||ex.path||'')+'</span>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // Status code categories + most important
+  if (sec.categories) {
+    html += '<div>' + secTitle('Categories') + '<div style="display:flex;flex-direction:column;gap:5px;">';
+    sec.categories.forEach(function(c) {
+      var cc = c.range.startsWith('2')?'#06d6a0':c.range.startsWith('3')?'#ffd166':c.range.startsWith('4')?'#ff6b6b':c.range.startsWith('5')?'#f77f00':'#888';
+      html += '<div style="display:flex;gap:10px;align-items:center;">' +
+        '<span style="font-family:var(--mono);font-size:11px;font-weight:700;color:'+cc+';min-width:36px;">'+esc(c.range)+'</span>' +
+        '<span style="font-size:12px;font-weight:600;min-width:110px;">'+esc(c.category)+'</span>' +
+        '<span style="font-size:11px;color:var(--muted);">'+esc(c.meaning)+'</span>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+  if (sec.mostImportantCodes) {
+    html += '<div>' + secTitle('Most Important Codes') + '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
+    sec.mostImportantCodes.forEach(function(c) {
+      var cc = c.code<300?'#06d6a0':c.code<400?'#ffd166':c.code<500?'#ff6b6b':'#f77f00';
+      html += '<div style="padding:8px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);min-width:100px;">' +
+        '<div style="font-family:var(--mono);font-size:14px;font-weight:700;color:'+cc+';">'+esc(c.code)+'</div>' +
+        '<div style="font-size:11px;font-weight:600;margin-bottom:2px;">'+esc(c.meaning)+'</div>' +
+        '<div style="font-size:10px;color:var(--muted);">'+esc(c.example||c.action||'')+'</div>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // fourParts / threeParts (request/response anatomy)
+  ['fourParts','threeParts'].forEach(function(k) {
+    if (!sec[k]) return;
+    html += '<div>' + secTitle(k==='fourParts'?'Four Parts of a Request':'Three Parts of a Response') + '<div style="display:flex;flex-direction:column;gap:8px;">';
+    sec[k].forEach(function(p,i) {
+      html += '<div style="padding:12px;border-radius:8px;background:var(--surface2);border-left:3px solid '+color+';">' +
+        '<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">' +
+        '<span style="font-family:var(--mono);font-size:10px;font-weight:700;color:'+color+';">' + String(i+1) + '</span>' +
+        '<span style="font-size:12px;font-weight:700;">' + esc(p.part||p.name||'') + '</span>' +
+        (p.example?'<span style="font-family:var(--mono);font-size:10px;color:var(--muted);padding:2px 6px;background:var(--bg);border-radius:4px;">'+esc(p.example)+'</span>':'') +
+        '</div>' +
+        '<div style="font-size:11px;color:var(--muted);">'+esc(p.description||p.what||'')+'</div>' +
+        (p.salesforceExample?'<div style="margin-top:6px;font-family:var(--mono);font-size:10px;color:var(--accent);">SF: '+esc(p.salesforceExample)+'</div>':'') +
+        (p.options?'<div style="margin-top:4px;font-family:var(--mono);font-size:10px;color:var(--muted);">'+p.options.map(esc).join(' | ')+'</div>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  });
+
+  // principles (REST)
+  if (sec.principles) {
+    html += '<div>' + secTitle('Principles') + '<div style="display:flex;flex-direction:column;gap:8px;">';
+    sec.principles.forEach(function(p) {
+      html += '<div style="padding:10px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="font-size:12px;font-weight:700;margin-bottom:4px;">'+esc(p.principle||p.name||'')+'</div>' +
+        '<div style="font-size:11px;color:var(--muted);">'+esc(p.meaning||p.description||'')+'</div>' +
+        (p.example?'<div style="font-family:var(--mono);font-size:10px;color:var(--accent);margin-top:4px;">'+esc(p.example)+'</div>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // commonPatterns (endpoints)
+  if (sec.commonPatterns) {
+    html += '<div>' + secTitle('Common Endpoint Patterns') + '<div style="display:flex;flex-direction:column;gap:5px;">';
+    sec.commonPatterns.forEach(function(p) {
+      var mc = {'GET':'#06d6a0','POST':'#7b61ff','PUT':'#ffd166','PATCH':'#00d4ff','DELETE':'#ff6b6b'}[p.method]||color;
+      html += '<div style="display:flex;gap:8px;align-items:baseline;padding:7px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;">' +
+        '<span style="font-family:var(--mono);font-size:10px;font-weight:700;color:'+mc+';flex-shrink:0;min-width:44px;">'+esc(p.method)+'</span>' +
+        '<span style="font-family:var(--mono);font-size:10px;color:var(--text);flex-shrink:0;min-width:160px;">'+esc(p.pattern||p.endpoint||'')+'</span>' +
+        '<span style="font-size:11px;color:var(--muted);">'+esc(p.meaning||p.action||p.description||'')+'</span>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // Headers
+  ['requestHeaders','responseHeaders','contentTypeValues'].forEach(function(k) {
+    if (!sec[k] || !sec[k].length) return;
+    var label = {'requestHeaders':'Request Headers','responseHeaders':'Response Headers','contentTypeValues':'Content-Type Values'}[k];
+    html += '<div>' + secTitle(label) + '<div style="display:flex;flex-direction:column;gap:5px;">';
+    sec[k].forEach(function(h) {
+      html += '<div style="padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;">' +
+        '<div style="font-family:var(--mono);font-size:11px;font-weight:700;color:'+color+';margin-bottom:2px;">'+esc(h.header||h.contentType||h.name||'')+'</div>' +
+        '<div style="font-size:11px;color:var(--muted);">'+esc(h.purpose||h.description||h.meaning||h.use||'')+'</div>' +
+        (h.example?'<div style="font-family:var(--mono);font-size:10px;color:var(--accent);margin-top:3px;">'+esc(h.example)+'</div>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  });
+
+  // dataTypes (JSON)
+  if (sec.dataTypes) {
+    html += '<div>' + secTitle('JSON Data Types') + '<div style="display:flex;flex-wrap:wrap;gap:6px;">';
+    sec.dataTypes.forEach(function(d) {
+      html += '<div style="padding:8px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="font-family:var(--mono);font-size:11px;font-weight:700;color:'+color+';">'+esc(d.type||d.name||'')+'</div>' +
+        '<div style="font-size:10px;color:var(--muted);">'+esc(d.example||'')+'</div>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // OAuth flow
+  if (sec.flow) {
+    html += '<div>' + secTitle('OAuth Flow') + '<div style="display:flex;flex-direction:column;gap:4px;">';
+    sec.flow.forEach(function(step) {
+      html += '<div style="display:flex;gap:8px;align-items:flex-start;">' +
+        '<span style="font-family:var(--mono);font-size:10px;font-weight:700;color:'+color+';flex-shrink:0;padding-top:2px;">'+String(step.step||'').padStart(2,'0')+'</span>' +
+        '<div><span style="font-size:10px;font-weight:600;color:var(--muted);">'+esc(step.actor||'')+'</span>' +
+        '<span style="font-size:11px;color:var(--text);"> — '+esc(step.action||step.description||'')+'</span></div>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // grantTypes
+  if (sec.grantTypes) {
+    html += '<div>' + secTitle('Grant Types') + '<div style="display:flex;flex-direction:column;gap:6px;">';
+    sec.grantTypes.forEach(function(g) {
+      html += '<div style="padding:10px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="font-size:12px;font-weight:700;margin-bottom:2px;">'+esc(g.grantType||g.name||'')+'</div>' +
+        '<div style="font-size:11px;color:var(--muted);margin-bottom:2px;">'+esc(g.description||'')+'</div>' +
+        (g.useCase?'<div style="font-size:10px;color:var(--accent);">Use case: '+esc(g.useCase)+'</div>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // tokenTypes (JWT)
+  if (sec.tokenTypes) {
+    html += '<div>' + secTitle('Token Types') + '<div style="display:flex;flex-direction:column;gap:8px;">';
+    sec.tokenTypes.forEach(function(t) {
+      html += '<div style="padding:12px;border-radius:8px;background:var(--surface2);border-left:3px solid '+color+';">' +
+        '<div style="font-size:13px;font-weight:700;margin-bottom:4px;">'+esc(t.type||t.name||'')+'</div>' +
+        '<div style="font-size:11px;color:var(--muted);">'+esc(t.description||t.what||'')+'</div>' +
+        (t.example?'<div style="margin-top:6px;">'+codeBlock(t.example)+'</div>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // mapping (CRUD)
+  if (sec.mapping) {
+    html += '<div>' + secTitle('CRUD Mapping') + '<div style="display:flex;flex-direction:column;gap:5px;">';
+    sec.mapping.forEach(function(m) {
+      var mc = {'POST':'#7b61ff','GET':'#06d6a0','PUT / PATCH':'#ffd166','PUT':'#ffd166','PATCH':'#00d4ff','DELETE':'#ff6b6b'}[m.httpMethod]||color;
+      html += '<div style="display:flex;gap:8px;align-items:center;padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;">' +
+        '<span style="font-size:12px;font-weight:700;min-width:54px;">'+esc(m.crud)+'</span>' +
+        '<span style="font-family:var(--mono);font-size:10px;font-weight:700;color:'+mc+';min-width:74px;">'+esc(m.httpMethod)+'</span>' +
+        '<span style="font-family:var(--mono);font-size:10px;color:var(--muted);min-width:60px;">'+esc(m.sqlEquivalent||'')+'</span>' +
+        '<span style="font-size:11px;color:var(--text);">'+esc(m.example||'')+'</span>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // waysToHitAnAPI / youDecide / commonTechnologies
+  ['waysToHitAnAPI','youDecide','commonTechnologies'].forEach(function(k) {
+    if (!sec[k] || !sec[k].length) return;
+    var label = {'waysToHitAnAPI':'Ways to Hit an API','youDecide':'You Decide','commonTechnologies':'Common Technologies'}[k];
+    html += '<div>' + secTitle(label) + '<div style="display:flex;flex-direction:column;gap:8px;">';
+    sec[k].forEach(function(item) {
+      if (typeof item === 'string') {
+        html += '<div class="learn-item"><span class="learn-text">'+esc(item)+'</span></div>';
+      } else {
+        html += '<div style="padding:10px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+          '<div style="font-size:12px;font-weight:700;margin-bottom:2px;">'+esc(item.method||item.name||item.decision||item.language||item.technology||'')+'</div>' +
+          '<div style="font-size:11px;color:var(--muted);">'+esc(item.description||item.howToUse||item.whyChooseThis||item.useCase||item.bestFor||'')+'</div>' +
+          (item.example?'<div style="margin-top:4px;">'+codeBlock(item.example)+'</div>':'') +
+        '</div>';
+      }
+    });
+    html += '</div></div>';
+  });
+
+  // tools
+  if (sec.tools) {
+    html += '<div>' + secTitle('Tools') + '<div style="display:flex;flex-direction:column;gap:8px;">';
+    sec.tools.forEach(function(t) {
+      html += '<div style="padding:10px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;">' +
+        '<span style="font-size:12px;font-weight:700;">'+esc(t.name||t.tool||'')+'</span>' +
+        (t.type?'<span style="font-size:10px;padding:2px 6px;border-radius:4px;background:var(--bg);color:var(--muted);">'+esc(t.type)+'</span>':'') +
+        (t.free!==undefined?'<span style="font-size:10px;padding:2px 6px;border-radius:4px;background:'+(t.free?'rgba(6,214,160,0.15)':'rgba(255,107,107,0.15)')+';color:'+(t.free?'#06d6a0':'#ff6b6b')+'">'+(t.free?'free':'paid')+'</span>':'') +
+        '</div>' +
+        '<div style="font-size:11px;color:var(--muted);">'+esc(t.bestFor||t.description||'')+'</div>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // apis (Salesforce APIs)
+  if (sec.apis) {
+    html += '<div>' + secTitle('Salesforce APIs') + '<div style="display:flex;flex-direction:column;gap:10px;">';
+    sec.apis.forEach(function(a) {
+      html += '<div style="padding:12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="font-size:13px;font-weight:700;margin-bottom:4px;">'+esc(a.name||'')+'</div>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px;">' +
+        (a.protocol?'<span style="font-size:10px;padding:2px 8px;border-radius:4px;background:var(--bg);color:var(--muted);">'+esc(a.protocol)+'</span>':'') +
+        (a.format?'<span style="font-size:10px;padding:2px 8px;border-radius:4px;background:var(--bg);color:var(--muted);">'+esc(a.format)+'</span>':'') +
+        '</div>' +
+        (a.bestFor?'<div style="font-size:11px;color:var(--muted);">Best for: <span style="color:var(--text);">'+esc(a.bestFor)+'</span></div>':'') +
+        (a.youllUseItFor?'<div style="font-size:11px;color:var(--muted);margin-top:2px;">You\'ll use it for: <span style="color:var(--text);">'+esc(a.youllUseItFor)+'</span></div>':'') +
+        (a.baseUrl?'<div style="font-family:var(--mono);font-size:10px;color:var(--accent);margin-top:6px;">'+esc(a.baseUrl)+'</div>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // types (SOAP/GraphQL/Webhooks)
+  if (sec.types) {
+    html += '<div>' + secTitle('API Types') + '<div style="display:flex;flex-direction:column;gap:8px;">';
+    sec.types.forEach(function(t) {
+      html += '<div style="padding:10px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="font-size:12px;font-weight:700;margin-bottom:2px;">'+esc(t.type||t.name||'')+'</div>' +
+        '<div style="font-size:11px;color:var(--muted);margin-bottom:2px;">'+esc(t.description||t.what||'')+'</div>' +
+        (t.whenToUse?'<div style="font-size:10px;color:var(--accent);">Use when: '+esc(t.whenToUse)+'</div>':'') +
+        (t.salesforceNote?'<div style="font-size:10px;color:#f77f00;margin-top:3px;">SF: '+esc(t.salesforceNote)+'</div>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // examples (rate limits)
+  if (sec.examples && sec.examples.length && typeof sec.examples[0] === 'object' && sec.examples[0].platform) {
+    html += '<div>' + secTitle('Examples') + '<div style="display:flex;flex-direction:column;gap:6px;">';
+    sec.examples.forEach(function(ex) {
+      html += '<div style="padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;">' +
+        '<span style="font-size:12px;font-weight:600;">'+esc(ex.platform||ex.name||'')+'</span> ' +
+        '<span style="font-size:11px;color:var(--muted);">'+esc(ex.limit||ex.description||'')+'</span>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // patterns
+  if (sec.patterns) {
+    html += '<div>' + secTitle('Patterns') + '<div style="display:flex;flex-direction:column;gap:10px;">';
+    sec.patterns.forEach(function(p) {
+      html += '<div style="padding:12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="font-size:13px;font-weight:700;margin-bottom:4px;">'+esc(p.name||p.pattern||'')+'</div>' +
+        '<div style="font-size:11px;color:var(--muted);">'+esc(p.description||'')+'</div>' +
+        (p.types?'<div style="margin-top:6px;font-size:10px;color:var(--accent);">'+p.types.map(function(t){return esc(t.type||t);}).join(' · ')+'</div>':'') +
+        (p.example?'<div style="margin-top:6px;">'+codeBlock(typeof p.example==='object'?JSON.stringify(p.example,null,2):p.example)+'</div>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // terms (glossary)
+  if (sec.terms) {
+    html += '<div>' + secTitle('Glossary (' + sec.terms.length + ' terms)') + '<div style="display:flex;flex-direction:column;gap:4px;">';
+    sec.terms.forEach(function(t) {
+      html += '<div style="display:flex;gap:10px;padding:7px 0;border-bottom:1px solid var(--border2);">' +
+        '<span style="font-family:var(--mono);font-size:11px;font-weight:700;color:'+color+';flex-shrink:0;min-width:110px;">'+esc(t.term)+'</span>' +
+        '<span style="font-size:11px;color:var(--muted);">'+esc(t.definition)+'</span>' +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // versioningStrategies
+  if (sec.versioningStrategies) {
+    html += '<div>' + secTitle('Versioning Strategies') + '<div style="display:flex;flex-direction:column;gap:8px;">';
+    sec.versioningStrategies.forEach(function(v) {
+      html += '<div style="padding:10px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="font-size:12px;font-weight:700;margin-bottom:2px;">'+esc(v.strategy||v.name||'')+'</div>' +
+        '<div style="font-size:11px;color:var(--muted);margin-bottom:4px;">'+esc(v.description||'')+'</div>' +
+        (v.example?codeBlock(v.example):'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // howItWorks (API Keys)
+  if (sec.howItWorks && Array.isArray(sec.howItWorks)) {
+    html += '<div>' + secTitle('How It Works') + '<div class="learn-list">' +
+      sec.howItWorks.map(function(item,i){
+        var text = typeof item==='string' ? item : (item.step ? item.step+' — '+(item.description||item.action||'') : JSON.stringify(item));
+        return '<div class="learn-item"><span class="learn-num">'+String(i+1).padStart(2,'0')+'</span><span class="learn-text">'+esc(text)+'</span></div>';
+      }).join('') + '</div></div>';
+  }
+
+  // whereKeysGo
+  if (sec.whereKeysGo) {
+    html += '<div>' + secTitle('Where Keys Go') + '<div style="display:flex;flex-direction:column;gap:8px;">';
+    sec.whereKeysGo.forEach(function(w) {
+      html += '<div style="padding:10px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">' +
+        '<div style="font-size:12px;font-weight:700;margin-bottom:4px;">'+esc(w.location||w.name||'')+'</div>' +
+        (w.example?codeBlock(w.example):'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // JWT
+  if (sec.jwt) {
+    html += '<div>' + secTitle('JWT Structure') + '<div style="display:flex;flex-direction:column;gap:6px;">';
+    if (sec.jwt.structure) {
+      sec.jwt.structure.forEach(function(p) {
+        html += '<div style="padding:8px 12px;border-radius:6px;background:var(--surface2);border-left:3px solid '+color+';">' +
+          '<span style="font-family:var(--mono);font-size:11px;font-weight:700;color:'+color+';">'+esc(p.part||'')+'</span>' +
+          ' <span style="font-size:11px;color:var(--muted);">'+esc(p.contains||'')+'</span>' +
+        '</div>';
+      });
+    }
+    if (sec.jwt.rule) html += '<div style="font-size:11px;color:var(--muted);margin-top:6px;font-style:italic;">'+esc(sec.jwt.rule)+'</div>';
+    html += '</div></div>';
+  }
+
+  // comparisonTable (query vs path params)
+  if (sec.comparisonTable) {
+    html += '<div>' + secTitle('Comparison') + '<div style="display:flex;gap:10px;">';
+    sec.comparisonTable.forEach(function(col) {
+      var isPath = (col.aspect||'').toLowerCase().includes('path');
+      html += '<div style="flex:1;padding:12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);">';
+      html += '<div style="font-size:13px;font-weight:700;color:'+color+';margin-bottom:8px;">'+esc(col.aspect||col.type||'')+'</div>';
+      ['format','usage','example','useFor'].forEach(function(f){
+        if (col[f]) html += infoRow(f.charAt(0).toUpperCase()+f.slice(1), col[f]);
+      });
+      html += '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // query/path parameters
+  if (sec.queryParameters) {
+    html += '<div>' + secTitle('Query Parameters') + '<div style="font-size:11px;color:var(--muted);">';
+    if (sec.queryParameters.format) html += infoRow('Format', sec.queryParameters.format);
+    if (sec.queryParameters.examples) html += sec.queryParameters.examples.map(function(e){return codeBlock(e);}).join('');
+    html += '</div></div>';
+  }
+  if (sec.pathParameters) {
+    html += '<div>' + secTitle('Path Parameters') + '<div>';
+    if (sec.pathParameters.format) html += infoRow('Format', sec.pathParameters.format);
+    if (sec.pathParameters.example) html += codeBlock(sec.pathParameters.example);
+    html += '</div></div>';
+  }
+
+  // whatGoodDocsInclude / popularDocFormats / salesforceDocsLinks
+  if (sec.popularDocFormats) {
+    html += '<div>' + secTitle('Popular Doc Formats') + '<div style="display:flex;flex-direction:column;gap:6px;">';
+    sec.popularDocFormats.forEach(function(f) {
+      html += '<div style="padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;">' +
+        '<span style="font-size:12px;font-weight:700;">'+esc(f.format||f.name||'')+'</span>' +
+        (f.example?' <span style="font-size:11px;color:var(--muted);">— '+esc(f.example)+'</span>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+  if (sec.salesforceDocsLinks) {
+    html += '<div>' + secTitle('Salesforce Docs') + '<div style="display:flex;flex-direction:column;gap:5px;">';
+    sec.salesforceDocsLinks.forEach(function(l) {
+      html += '<div style="padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;">' +
+        '<div style="font-size:12px;font-weight:600;">'+esc(l.name||l.label||'')+'</div>' +
+        (l.url?'<div style="font-family:var(--mono);font-size:10px;color:var(--accent);margin-top:3px;">'+esc(l.url)+'</div>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // exampleRequest / exampleResponse / exampleAPI / exampleSalesforceJSON
+  ['exampleRequest','exampleResponse','exampleAPI','exampleSalesforceJSON','exampleDocsEntry'].forEach(function(k) {
+    if (!sec[k]) return;
+    var label = k.replace(/([A-Z])/g,' $1').trim();
+    html += '<div>' + secTitle(label) + codeBlock(typeof sec[k]==='object'?JSON.stringify(sec[k],null,2):sec[k]) + '</div>';
+  });
+
+  // postExample / patchExample
+  ['postExample','patchExample'].forEach(function(k) {
+    if (!sec[k]) return;
+    html += '<div>' + secTitle(k==='postExample'?'POST Example':'PATCH Example') + codeBlock(typeof sec[k]==='object'?JSON.stringify(sec[k],null,2):sec[k]) + '</div>';
+  });
+
+  // salesforceNote / salesforceConnection / salesforceLimits / salesforceVersioning
+  var sfNote = sec.salesforceNote || sec.salesforceConnection || sec.salesforceLimits || sec.salesforceVersioning;
+  if (sfNote) {
+    html += '<div>' + secTitle('Salesforce Note') +
+      '<div class="notes-block" style="border-left:3px solid #f77f00;background:rgba(247,127,0,0.07);color:var(--text);">&#x2601;&#xFE0F; '+esc(sfNote)+'</div></div>';
+  }
+
+  // anatomyOfGoodError
+  if (sec.anatomyOfGoodError) {
+    html += '<div>' + secTitle('Anatomy of a Good Error') + '<div style="display:flex;flex-direction:column;gap:4px;">';
+    Object.entries(sec.anatomyOfGoodError).forEach(function(e){
+      html += infoRow(e[0].charAt(0).toUpperCase()+e[0].slice(1), e[1]);
+    });
+    html += '</div></div>';
+  }
+
+  // errorExamples
+  if (sec.salesforceErrorExamples) {
+    html += '<div>' + secTitle('Salesforce Error Examples') + '<div style="display:flex;flex-direction:column;gap:6px;">';
+    sec.salesforceErrorExamples.forEach(function(ex) {
+      html += '<div style="padding:8px 12px;background:var(--surface2);border:1px solid var(--border);border-radius:6px;">' +
+        '<div style="font-family:var(--mono);font-size:11px;font-weight:700;color:#ff6b6b;">'+esc(ex.errorCode||ex.code||'')+'</div>' +
+        '<div style="font-size:11px;color:var(--muted);">'+esc(ex.meaning||ex.description||'')+'</div>' +
+        (ex.fix?'<div style="font-size:10px;color:#06d6a0;margin-top:3px;">Fix: '+esc(ex.fix)+'</div>':'') +
+      '</div>';
+    });
+    html += '</div></div>';
+  }
+
+  // urlStructureBreakdown
+  if (sec.urlStructureBreakdown) {
+    html += '<div>' + secTitle('URL Structure') + '<div style="display:flex;flex-direction:column;gap:4px;">';
+    Object.entries(sec.urlStructureBreakdown).forEach(function(e){
+      html += infoRow(e[0], e[1]);
+    });
+    html += '</div></div>';
+  }
+
+  // requestResponseCycle
+  if (sec.requestResponseCycle) {
+    html += '<div>' + secTitle('Request-Response Cycle') + '<div class="learn-list">';
+    sec.requestResponseCycle.forEach(function(step,i){
+      html += '<div class="learn-item"><span class="learn-num">'+String(i+1).padStart(2,'0')+'</span><span class="learn-text">'+esc(typeof step==='string'?step:step.step||JSON.stringify(step))+'</span></div>';
+    });
+    html += '</div></div>';
+  }
+
+  // https / history
+  if (sec.https) {
+    html += '<div>' + secTitle('HTTPS') + '<div class="notes-block" style="border-left:3px solid '+color+';background:var(--surface2);color:var(--text);">&#x1F512; ' + esc(typeof sec.https==='string'?sec.https:(sec.https.what||JSON.stringify(sec.https))) + '</div></div>';
+  }
+
+  if (sec.history) {
+    html += '<div>' + secTitle('History') + '<div class="scenario-block" style="font-style:normal;color:var(--text);">'+esc(sec.history)+'</div></div>';
+  }
+
+  // whatIsRateLimit / howLimitsAreCommunicated / whenYouHitLimit
+  if (sec.whatIsRateLimit) {
+    html += '<div>' + secTitle('What is Rate Limiting?') + '<div class="scenario-block" style="font-style:normal;color:var(--text);">'+esc(sec.whatIsRateLimit)+'</div></div>';
+  }
+  if (sec.howLimitsAreCommunicated) {
+    html += '<div>' + secTitle('How Limits are Communicated') + codeBlock(typeof sec.howLimitsAreCommunicated==='object'?JSON.stringify(sec.howLimitsAreCommunicated,null,2):sec.howLimitsAreCommunicated) + '</div>';
+  }
+  if (sec.whenYouHitLimit) {
+    html += '<div>' + secTitle('When You Hit the Limit') + '<div class="notes-block" style="border-left:3px solid #ff6b6b;background:rgba(255,107,107,0.07);color:var(--text);">'+esc(sec.whenYouHitLimit)+'</div></div>';
+  }
+
+  // semanticVersioning
+  if (sec.semanticVersioning) {
+    var sv = sec.semanticVersioning;
+    html += '<div>' + secTitle('Semantic Versioning') + '<div style="display:flex;gap:8px;flex-wrap:wrap;">';
+    if (sv.format) html += '<div style="padding:8px 14px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);font-family:var(--mono);font-size:12px;font-weight:700;color:'+color+';">'+esc(sv.format)+'</div>';
+    if (sv.breakdown) {
+      Object.entries(sv.breakdown).forEach(function(e){
+        html += '<div style="padding:8px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);font-size:11px;"><span style="font-weight:700;color:'+color+';">'+esc(e[0])+'</span> — '+esc(e[1])+'</div>';
+      });
+    }
+    html += '</div></div>';
+  }
+
+  if (!html) {
+    html = '<div class="notes-block">No additional detail available for this section.</div>';
+  }
+  return html;
+}
+
+/* closeDrawer() and nav() live in daydeck-core.js — do not redefine here */
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  applyFilters();
+}
+
+function handleSearch(val) {
+  searchTerm = val.trim().toLowerCase();
+  applyFilters();
+}
+
+function applyFilters() {
+  var visible = 0;
+  document.querySelectorAll('.day-card').forEach(function(c) {
+    var filterOk = activeFilter === 'all' || c.dataset.filter === activeFilter;
+    var searchOk = !searchTerm ||
+      c.dataset.title.toLowerCase().includes(searchTerm) ||
+      (c.dataset.snippet||'').toLowerCase().includes(searchTerm) ||
+      (c.dataset.sec||'').toLowerCase().includes(searchTerm);
+    var show = filterOk && searchOk;
+    c.classList.toggle('dimmed', !show);
+    if (show) visible++;
+  });
+  document.getElementById('search-count').textContent = visible + ' section' + (visible === 1 ? '' : 's');
+  document.querySelectorAll('.phase-block').forEach(function(block) {
+    if (block.id === 'block-quick-ref') return;
+    var any = Array.from(block.querySelectorAll('.day-card')).some(function(c){ return !c.classList.contains('dimmed'); });
+    block.style.display = any ? '' : 'none';
+  });
+}
+
+function jumpTo(id) {
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
+/* Escape / Arrow keys are already handled by daydeck-core.js keydown listener.
+   Only add the Ctrl+F search-focus shortcut that is unique to this page. */
+document.addEventListener('keydown', function(e) {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if ((e.key === 'f' || e.key === 'F') && (e.metaKey || e.ctrlKey)) {
+    e.preventDefault();
+    document.getElementById('search-input').focus();
+  }
+});
+</script>
+</body>
+</html>
