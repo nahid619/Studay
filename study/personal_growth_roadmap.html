@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Growth Roadmap — 6 Pillars</title>
+  <link rel="stylesheet" href="../index.css">
+  <style>
+    /* ── Personal Growth — 6 deep pillar colors ── */
+    .day-card[data-phase="p1"]:hover { border-color: rgba(29,109,181,0.45); }
+    .day-card[data-phase="p2"]:hover { border-color: rgba(10,124,86,0.45); }
+    .day-card[data-phase="p3"]:hover { border-color: rgba(184,92,26,0.45); }
+    .day-card[data-phase="p4"]:hover { border-color: rgba(107,60,170,0.45); }
+    .day-card[data-phase="p5"]:hover { border-color: rgba(160,25,62,0.45); }
+    .day-card[data-phase="p6"]:hover { border-color: rgba(26,74,122,0.45); }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-eyebrow">// Personal Roadmap &middot; Built For You</div>
+  <h1 class="hero-title">Personal Growth <span>6 Pillars</span></h1>
+  <p class="hero-desc">A clear, ordered, no-nonsense guide to what you should learn, when to start, and exactly how to approach each one.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">6</div><div class="stat-label">Pillars</div></div>
+    <div class="stat"><div class="stat-val">NOW</div><div class="stat-label">Start this week</div></div>
+    <div class="stat"><div class="stat-val">&#x1F4C5;</div><div class="stat-label">Year 1 Focus</div></div>
+    <div class="stat"><div class="stat-val">&#x1F3AF;</div><div class="stat-label">Irreplaceable</div></div>
+    <div class="stat"><div class="stat-val">&#x26A1;</div><div class="stat-label">High ROI</div></div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <span class="filter-label">pillar:</span>
+    <button class="filter-btn active" onclick="setFilter('all',this)"><span class="filter-dot dot-all"></span>all</button>
+    <button class="filter-btn" onclick="setFilter('p1',this)"><span class="filter-dot" style="background:#1d6db5"></span>Pillar 1</button>
+    <button class="filter-btn" onclick="setFilter('p2',this)"><span class="filter-dot" style="background:#0a7c56"></span>Pillar 2</button>
+    <button class="filter-btn" onclick="setFilter('p3',this)"><span class="filter-dot" style="background:#b85c1a"></span>Pillar 3</button>
+    <button class="filter-btn" onclick="setFilter('p4',this)"><span class="filter-dot" style="background:#6b3caa"></span>Pillar 4</button>
+    <button class="filter-btn" onclick="setFilter('p5',this)"><span class="filter-dot" style="background:#a0193e"></span>Pillar 5</button>
+    <button class="filter-btn" onclick="setFilter('p6',this)"><span class="filter-dot" style="background:#1a4a7a"></span>Pillar 6</button>
+</div>
+
+<div class="plan-body" id="plan-body">
+  <div class="phase-block">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(29,109,181,0.12);color:#1d6db5;">ROADMAP</span>
+      <span class="phase-title">&#x1F30F; Your 6 Growth Pillars</span>
+      <span class="phase-meta">6 pillars &middot; Year 1 Priority</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card colored" style="--card-accent:#1d6db5;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="1" data-phase="p1" data-week-label="Pillar 1" data-topic="Salesforce Architecture &amp; Development" data-topics='[&quot;Your current job, your fastest path to seniority, your highest ROI right now&quot;, &quot;Why this is #1: You are already being paid to work in Salesforce. Every hour you invest here makes you directly better at your current job tomorrow. The path from where you are → Salesforce Developer → Salesforce Architect is the clearest, most struc&quot;, &quot;Apex Programming Language&quot;, &quot;SOQL — Salesforce&#x27;s Database Query Language&quot;, &quot;LWC (Lightning Web Components) — Depth&quot;, &quot;Salesforce Data Model&quot;, &quot;Salesforce Integration Patterns&quot;, &quot;Salesforce Debug Logs&quot;, &quot;Salesforce Certifications Path&quot;]' data-practice='&quot;🟢 NOW&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Pillar 1</div>
+          <div class="day-topic">Salesforce Architecture &amp; Development</div>
+          <div class="phase-dot colored" style="background:#1d6db5;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#0a7c56;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="2" data-phase="p2" data-week-label="Pillar 2" data-topic="Debugging Techniques" data-topics='[&quot;The daily skill that closes your biggest current gap&quot;, &quot;Why this is #2: You identified this yourself as your biggest weakness. You hit it every week. Unlike system design — which you will not need for 3 more years — debugging is something you face tomorrow. Fixing this gap has the fastest impact on your d&quot;, &quot;Read the Full Error Message&quot;, &quot;Google Before AI — The Right Way&quot;, &quot;Rubber Duck Debugging&quot;, &quot;Data Flow Tracing&quot;]' data-practice='&quot;🟢 NOW&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Pillar 2</div>
+          <div class="day-topic">Debugging Techniques</div>
+          <div class="phase-dot colored" style="background:#0a7c56;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#b85c1a;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="3" data-phase="p3" data-week-label="Pillar 3" data-topic="Analytical &amp; Business Thinking" data-topics='[&quot;The human skill AI cannot replicate — your biggest differentiator&quot;, &quot;Why this is #3: You already have a head start here from your consulting year and your documentation work. The goal now is to make it deliberate and structured. The person who can take a messy business conversation and turn it into a clear technical p&quot;, &quot;Requirements Gathering&quot;, &quot;How Businesses Think — Revenue, Cost, Risk&quot;, &quot;Process Mapping — Drawing How a Business Works&quot;, &quot;Agile and Scrum Basics&quot;, &quot;Communicating Technical Things to Non-Technical People&quot;]' data-practice='&quot;🟡 NEXT — 3 months&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Pillar 3</div>
+          <div class="day-topic">Analytical &amp; Business Thinking</div>
+          <div class="phase-dot colored" style="background:#b85c1a;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#6b3caa;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="4" data-phase="p4" data-week-label="Pillar 4" data-topic="AI Engineering" data-topics='[&quot;Your 30-day roadmap is already built — run this in parallel&quot;, &quot;Why this is PARALLEL and not later: You already have the roadmap. The AI engineering space is moving so fast that waiting 6 months means falling behind. But it should not replace Pillar 1 and 2 — it runs alongside them. Even 30 to 45 minutes a day on&quot;]' data-practice='&quot;🔵 PARALLEL&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Pillar 4</div>
+          <div class="day-topic">AI Engineering</div>
+          <div class="phase-dot colored" style="background:#6b3caa;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#a0193e;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="5" data-phase="p5" data-week-label="Pillar 5" data-topic="System Design Basics" data-topics='[&quot;The long game — start building awareness now, depth comes with experience&quot;, &quot;Why this is #5 and not earlier: System design knowledge compounds with real project experience. Learning it too early — before you have built enough things — means the concepts do not stick because you have nothing to attach them to. In 6 months, aft&quot;, &quot;Scalability — What It Means&quot;, &quot;Load Balancer&quot;, &quot;Caching&quot;, &quot;Database — SQL vs NoSQL&quot;, &quot;APIs and Microservices&quot;, &quot;CAP Theorem — The Fundamental Trade-Off&quot;]' data-practice='&quot;🟡 NEXT — 6 months&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Pillar 5</div>
+          <div class="day-topic">System Design Basics</div>
+          <div class="phase-dot colored" style="background:#a0193e;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#1a4a7a;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="6" data-phase="p6" data-week-label="Pillar 6" data-topic="DevOps Awareness" data-topics='[&quot;You do not need to do it — you need to understand what it is&quot;, &quot;Why this is last: You correctly said DevOps is a separate field. You do not need to become a DevOps engineer. You need to know the vocabulary and concepts well enough to participate in conversations and understand what is happening in the systems aro&quot;, &quot;CI/CD — Continuous Integration / Continuous Deployment&quot;, &quot;Docker and Containers&quot;, &quot;Git Branching and Pull Requests&quot;, &quot;Salesforce DevOps — Specifically&quot;, &quot;Cloud Platforms — AWS, Azure, GCP Awareness&quot;]' data-practice='&quot;🟣 LATER — Year 2&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Pillar 6</div>
+          <div class="day-topic">DevOps Awareness</div>
+          <div class="phase-dot colored" style="background:#1a4a7a;"></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-top">
+      <div class="drawer-badge" id="d-badge"></div>
+      <div class="drawer-topic" id="d-topic"></div>
+      <div class="drawer-week-info" id="d-week"></div>
+    </div>
+    <div class="drawer-controls">
+      <button class="drawer-btn" id="btn-prev" title="Previous" onclick="nav(-1)">&#8249;</button>
+      <button class="drawer-btn" id="btn-next" title="Next"     onclick="nav(+1)">&#8250;</button>
+      <button class="drawer-btn close"          title="Close"    onclick="closeDrawer()">&#x2715;</button>
+    </div>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</div>
+
+<script src="daydeck-core.js"></script>
+<script>
+  function openDay(card) {
+    currentCard = card;
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    const topic  = card.dataset.topic;
+    const wLabel = card.dataset.weekLabel;
+    const color  = getComputedStyle(card).getPropertyValue('--card-accent').trim();
+    let topics, practice, gains;
+    try { topics   = JSON.parse(card.dataset.topics);   } catch(e) { topics   = []; }
+    try { practice = JSON.parse(card.dataset.practice); } catch(e) { practice = ''; }
+    try { gains    = JSON.parse(card.dataset.gains);    } catch(e) { gains    = []; }
+    const badge = document.getElementById('d-badge');
+    badge.style.background = hexToRgba(color, 0.15);
+    badge.style.color      = color;
+    badge.style.border     = '1px solid ' + hexToRgba(color, 0.3);
+    badge.textContent = wLabel;
+    document.getElementById('d-topic').textContent = topic;
+    document.getElementById('d-week').textContent  = practice || 'Personal Growth Roadmap';
+    updateNavButtons(card);
+    document.getElementById('d-body').innerHTML =
+      '<div><div class="drawer-section-title">Topics &amp; Priorities</div><div class="learn-list">' +
+      topics.map((item,i) => '<div class="learn-item"><span class="learn-num">' +
+        String(i+1).padStart(2,'0') + '</span><span class="learn-text">' +
+        decodeEntities(item) + '</span></div>').join('') + '</div></div>' +
+      (gains.length ? '<div><div class="drawer-section-title">Actions</div><div class="gain-tags">' +
+        gains.map(g => '<span class="gain-tag">' + decodeEntities(g) + '</span>').join('') +
+        '</div></div>' : '');
+    showDrawer();
+  }
+</script>
+</body>
+</html>

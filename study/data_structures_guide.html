@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Structures — Zero to Advanced</title>
+  <link rel="stylesheet" href="../index.css">
+  <style>
+    /* ── Data Structures — cyan/purple/orange/green/pink level palette ── */
+    .day-card[data-phase="ds-basic"]:hover  { border-color: rgba(34,211,238,0.4); }
+    .day-card[data-phase="ds-inter"]:hover  { border-color: rgba(167,139,250,0.4); }
+    .day-card[data-phase="ds-adv"]:hover    { border-color: rgba(251,146,60,0.4); }
+    .day-card[data-phase="ds-real"]:hover   { border-color: rgba(52,211,153,0.4); }
+    .day-card[data-phase="ds-interview"]:hover { border-color: rgba(244,114,182,0.4); }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-eyebrow">// Complete Guide &middot; 2026</div>
+  <h1 class="hero-title">Data Structures <span>Zero &rarr; Advanced</span></h1>
+  <p class="hero-desc">Every major data structure explained in plain words — with real-world analogies, system design uses, and what to search to go deeper.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">15</div><div class="stat-label">Structures</div></div>
+    <div class="stat"><div class="stat-val">5</div><div class="stat-label">Levels</div></div>
+    <div class="stat"><div class="stat-val">&#x1F3AF;</div><div class="stat-label">Interview</div></div>
+    <div class="stat"><div class="stat-val">&#x1F3D7;</div><div class="stat-label">System Design</div></div>
+    <div class="stat"><div class="stat-val">&#x1F310;</div><div class="stat-label">Real World</div></div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <span class="filter-label">level:</span>
+    <button class="filter-btn active" onclick="setFilter('all',this)"><span class="filter-dot dot-all"></span>all</button>
+    <button class="filter-btn" onclick="setFilter('ds-basic',this)"><span class="filter-dot" style="background:#22d3ee"></span>Basic</button>
+    <button class="filter-btn" onclick="setFilter('ds-inter',this)"><span class="filter-dot" style="background:#a78bfa"></span>Intermediate</button>
+    <button class="filter-btn" onclick="setFilter('ds-adv',this)"><span class="filter-dot" style="background:#fb923c"></span>Advanced</button>
+  <div class="week-jump">
+    <span class="week-jump-label">jump:</span>
+    <select onchange="jumpWeek(this.value)">
+      <option value="block-ds-basic">Basic Data Structures</option>
+      <option value="block-ds-inter">Intermediate Data Structures</option>
+      <option value="block-ds-adv">Advanced Data Structures</option>
+    </select>
+  </div>
+</div>
+
+<div class="plan-body" id="plan-body">
+  <div class="phase-block" id="block-ds-basic">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(34,211,238,0.12);color:#22d3ee;">Basic</span>
+      <span class="phase-title">🔷 Basic Data Structures</span>
+      <span class="phase-meta">6 entries</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card colored" style="--card-accent:#22d3ee;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="1" data-phase="ds-basic" data-week-label="Basic" data-topic="Big O Notation — &quot;How Fast Is It?&quot;" data-topics='[&quot;The language engineers use to measure speed and efficiency&quot;, &quot;Big O is a way to describe how much slower your code gets as your data grows bigger. It is not about exact seconds — it is about the pattern of growth. You will see it everywhere: in interviews, in code reviews, in system design discussions.&quot;, &quot;Big O is a way to describe how much slower your code gets as your data grows bigger. It is not about exact seconds — it is about the pattern of growth. You will see it everywhere: in interviews, in code reviews, in system design discussions.&quot;, &quot;O(1) | Constant | Always the same speed, no matter how big the data | ⚡ Fastest&quot;, &quot;O(log n) | Logarithmic | Gets slightly slower as data grows — barely noticeable | ✅ Very fast&quot;, &quot;O(n) | Linear | Twice as much data = twice as slow. Fair and predictable. | 🟡 OK&quot;, &quot;O(n²) | Quadratic | Twice as much data = 4x slower. Gets bad fast. | 🔴 Avoid&quot;]' data-practice='&quot;🌍 Real World Analogy Finding a name in a 10-page phone book vs a 10,000-page one. If you flip one by one — it takes 1000x longer with 1000x more pages. That is O(n). If you open the middle and keep halving — it takes barely longer. That is O(log n). Big O describes that difference.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">BASI</div>
+          <div class="day-topic">Big O Notation — &quot;How Fast Is It?&quot;</div>
+          <div class="phase-dot colored" style="background:#22d3ee;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#22d3ee;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="2" data-phase="ds-basic" data-week-label="Basic" data-topic="Array" data-topics='[&quot;A numbered list of items stored in a line — the most fundamental structure&quot;, &quot;An array stores items in a fixed order, one after the other in memory. Each item has a numbered position called an index, starting from 0. You can jump to any item instantly if you know its position number.&quot;, &quot;An array stores items in a fixed order, one after the other in memory. Each item has a numbered position called an index, starting from 0. You can jump to any item instantly if you know its position number.&quot;, &quot;Read by index (array[3]) | O(1) | Jump straight to the position&quot;, &quot;Search for a value | O(n) | May need to check every item&quot;, &quot;Add to end | O(1) | Just stick it at the end&quot;, &quot;Add/remove in middle | O(n) | Everything after it must shift&quot;, &quot;Storing a list of messages in a chat app&quot;]' data-practice='&quot;🌍 Real World Analogy A cinema row of seats. Every seat has a number. You can walk straight to seat 14 without checking every other seat. But if you want to add a new seat in the middle — you have to move everyone along.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">BASI</div>
+          <div class="day-topic">Array</div>
+          <div class="phase-dot colored" style="background:#22d3ee;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#22d3ee;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="3" data-phase="ds-basic" data-week-label="Basic" data-topic="String" data-topics='[&quot;Text — secretly just an array of characters&quot;, &quot;A string is just a list of characters stored in order. The word \&quot;hello\&quot; is an array of [&#x27;h&#x27;,&#x27;e&#x27;,&#x27;l&#x27;,&#x27;l&#x27;,&#x27;o&#x27;]. In most languages strings work almost exactly like arrays. Many interview problems that look like string problems are actually array problems in disguise.&quot;, &quot;A string is just a list of characters stored in order. The word \&quot;hello\&quot; is an array of [&#x27;h&#x27;,&#x27;e&#x27;,&#x27;l&#x27;,&#x27;l&#x27;,&#x27;o&#x27;]. In most languages strings work almost exactly like arrays. Many interview problems that look like string problems are actually array problems in disguise.&quot;]' data-practice='&quot;🌍 Real World Analogy A line of scrabble tiles on a rack. Each tile is one character. You can read the whole word, reverse it, find a specific letter, or count how many times a letter appears.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">BASI</div>
+          <div class="day-topic">String</div>
+          <div class="phase-dot colored" style="background:#22d3ee;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#22d3ee;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="4" data-phase="ds-basic" data-week-label="Basic" data-topic="Stack" data-topics='[&quot;Last in, first out — like a pile of plates&quot;, &quot;A stack only lets you add or remove from the TOP. The last thing you put in is the first thing you get out. This rule is called LIFO — Last In, First Out.&quot;, &quot;A stack only lets you add or remove from the TOP. The last thing you put in is the first thing you get out. This rule is called LIFO — Last In, First Out.&quot;, &quot;push(item) | Add item to top | O(1)&quot;, &quot;pop() | Remove and return top item | O(1)&quot;, &quot;peek() | Look at top item without removing | O(1)&quot;, &quot;Browser back/forward navigation history&quot;, &quot;Undo/redo in any text editor (Ctrl+Z)&quot;]' data-practice='&quot;🌍 Real World Analogy A stack of plates in a cafeteria. You always take from the top. You always add to the top. You never touch the bottom plate until everything above is gone. Your browser&#x27;s back button works exactly like a stack — each page you visit is \&quot;pushed\&quot;, and going back \&quot;pops\&quot; the last one&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">BASI</div>
+          <div class="day-topic">Stack</div>
+          <div class="phase-dot colored" style="background:#22d3ee;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#22d3ee;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="5" data-phase="ds-basic" data-week-label="Basic" data-topic="Queue" data-topics='[&quot;First in, first out — like a real queue at a shop&quot;, &quot;A queue is the opposite of a stack. You add to the BACK and remove from the FRONT. The first thing in is the first thing out. This rule is called FIFO — First In, First Out. Fair, like a real queue.&quot;, &quot;A queue is the opposite of a stack. You add to the BACK and remove from the FRONT. The first thing in is the first thing out. This rule is called FIFO — First In, First Out. Fair, like a real queue.&quot;, &quot;Task queues — background jobs waiting to be processed (e.g. sending emails)&quot;, &quot;Message queues — systems like Kafka, RabbitMQ (huge in real companies)&quot;, &quot;CPU task scheduling — which process runs next&quot;, &quot;Customer support ticket systems&quot;]' data-practice='&quot;🌍 Real World Analogy A queue at Starbucks. First person in line gets served first. New people join at the back. The barista always serves the person at the front. A printer queue works exactly this way — documents print in the order they were sent.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">BASI</div>
+          <div class="day-topic">Queue</div>
+          <div class="phase-dot colored" style="background:#22d3ee;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#22d3ee;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="6" data-phase="ds-basic" data-week-label="Basic" data-topic="Hash Table (Dictionary / HashMap)" data-topics='[&quot;The fastest way to find something by a name or key&quot;, &quot;A hash table stores data as key → value pairs. You give it a key (like a name), and it gives back the value almost instantly. You already use this in Python every time you use a dictionary {}. Under the hood, a \&quot;hash function\&quot; converts your key into a position number.&quot;, &quot;Sometimes two different keys end up at the same position — this is called a collision. Hash tables have ways to handle this, but too many collisions slow things down. 🔍 Google: \&quot;hash collision explained simply\&quot;&quot;, &quot;A hash table stores data as key → value pairs. You give it a key (like a name), and it gives back the value almost instantly. You already use this in Python every time you use a dictionary {}. Under the hood, a \&quot;hash function\&quot; converts your key into a position number.&quot;, &quot;Get value by key | O(1) | Hash function jumps directly to it&quot;, &quot;Insert key-value | O(1) | Same — direct position&quot;, &quot;Delete by key | O(1) | Same&quot;, &quot;Search for a value (not key) | O(n) | Must check everything&quot;]' data-practice='&quot;🌍 Real World Analogy A real dictionary. You want the meaning of \&quot;elephant.\&quot; You don&#x27;t start from page 1 — you jump straight to E. The hash function is like your brain knowing \&quot;E is near the front.\&quot; You get to the answer in almost zero steps.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">BASI</div>
+          <div class="day-topic">Hash Table (Dictionary / HashMap)</div>
+          <div class="phase-dot colored" style="background:#22d3ee;"></div>
+        </div>
+    </div>
+  </div>
+  <div class="phase-block" id="block-ds-inter">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(167,139,250,0.12);color:#a78bfa;">Intermediate</span>
+      <span class="phase-title">🔷 Intermediate Data Structures</span>
+      <span class="phase-meta">4 entries</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card colored" style="--card-accent:#a78bfa;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="1" data-phase="ds-inter" data-week-label="Intermediate" data-topic="Linked List" data-topics='[&quot;A chain of nodes — each one points to the next&quot;, &quot;A linked list is a chain of \&quot;nodes.\&quot; Each node holds a value AND a pointer to the next node. Unlike an array, items are not stored next to each other in memory — they are scattered around, connected only by these pointers. This makes inserting and deleting fast, but accessing by position slow.&quot;, &quot;A linked list is a chain of \&quot;nodes.\&quot; Each node holds a value AND a pointer to the next node. Unlike an array, items are not stored next to each other in memory — they are scattered around, connected only by these pointers. This makes inserting and deleting fast, but accessing by position slow.&quot;, &quot;Access item by position | O(1) ✅ | O(n) ❌&quot;, &quot;Insert/delete at start or middle | O(n) ❌ | O(1) ✅&quot;, &quot;Memory usage | Less | More (pointers)&quot;, &quot;Music/video playlists — next and previous buttons&quot;, &quot;Browser tab history (doubly linked)&quot;]' data-practice='&quot;🌍 Real World Analogy A treasure hunt. Each clue tells you the value AND where to find the next clue. You cannot skip to clue 7 directly — you must follow the chain from clue 1. But adding a new clue in the middle is easy — just change two \&quot;next clue\&quot; directions.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">INTE</div>
+          <div class="day-topic">Linked List</div>
+          <div class="phase-dot colored" style="background:#a78bfa;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#a78bfa;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="2" data-phase="ds-inter" data-week-label="Intermediate" data-topic="Tree" data-topics='[&quot;Hierarchical data — parent nodes with children below them&quot;, &quot;A tree is a structure where each item (called a node) can have child nodes below it. There is one top node called the root. Nodes with no children are called leaves. Trees are everywhere in software — your file system, your HTML page, and database indexes all use trees.&quot;, &quot;A tree is a structure where each item (called a node) can have child nodes below it. There is one top node called the root. Nodes with no children are called leaves. Trees are everywhere in software — your file system, your HTML page, and database indexes all use trees.&quot;, &quot;File systems — folders and files (every OS)&quot;, &quot;HTML/DOM — every webpage is a tree of elements&quot;, &quot;Database indexes (B-Trees) — how databases find data fast&quot;, &quot;Decision Trees in Machine Learning&quot;, &quot;Autocomplete suggestions in search boxes&quot;]' data-practice='&quot;🌍 Real World Analogy A company org chart. The CEO is at the top (root). Below are VPs (children). Below them are managers. Then employees at the bottom (leaves). Or think of your computer&#x27;s folders — a folder can contain subfolders, which contain more subfolders.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">INTE</div>
+          <div class="day-topic">Tree</div>
+          <div class="phase-dot colored" style="background:#a78bfa;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#a78bfa;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="3" data-phase="ds-inter" data-week-label="Intermediate" data-topic="Binary Search Tree (BST)" data-topics='[&quot;A sorted tree — left is smaller, right is bigger&quot;, &quot;A Binary Search Tree (BST) is a binary tree with one golden rule: every node&#x27;s left child is smaller than it, and every node&#x27;s right child is bigger than it. This rule makes searching incredibly fast because at every node, you immediately know which half to ignore.&quot;, &quot;A well-balanced BST can search, insert, and delete in O(log n) — much faster than scanning an array. But if you add items in sorted order (1, 2, 3, 4...) it degenerates into a straight line (O(n)). This is why \&quot;balanced\&quot; trees exist.&quot;, &quot;A Binary Search Tree (BST) is a binary tree with one golden rule: every node&#x27;s left child is smaller than it, and every node&#x27;s right child is bigger than it. This rule makes searching incredibly fast because at every node, you immediately know which half to ignore.&quot;, &quot;A well-balanced BST can search, insert, and delete in O(log n) — much faster than scanning an array. But if you add items in sorted order (1, 2, 3, 4...) it degenerates into a straight line (O(n)). This is why \&quot;balanced\&quot; trees exist.&quot;]' data-practice='&quot;🌍 Real World Analogy Guessing a number between 1 and 100. Someone says \&quot;higher\&quot; or \&quot;lower\&quot; each time. You always guess the middle. You never need more than 7 guesses for any number — that is O(log n) search, which is what a BST gives you.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">INTE</div>
+          <div class="day-topic">Binary Search Tree (BST)</div>
+          <div class="phase-dot colored" style="background:#a78bfa;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#a78bfa;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="4" data-phase="ds-inter" data-week-label="Intermediate" data-topic="Heap (Priority Queue)" data-topics='[&quot;Always gives you the smallest (or largest) item first&quot;, &quot;A heap is a special tree where the smallest (min-heap) or largest (max-heap) value is always at the top. Every time you remove the top, the next smallest/largest automatically bubbles up. It is the data structure that powers Priority Queues — where some items are more urgent than others.&quot;, &quot;A heap is a special tree where the smallest (min-heap) or largest (max-heap) value is always at the top. Every time you remove the top, the next smallest/largest automatically bubbles up. It is the data structure that powers Priority Queues — where some items are more urgent than others.&quot;, &quot;Get min/max | O(1) | Always at the top — just look&quot;, &quot;Remove min/max | O(log n) | Remove top, then re-sort tree&quot;, &quot;Insert new item | O(log n) | Add and bubble up to right place&quot;, &quot;Task schedulers — CPU decides which process runs next by priority&quot;, &quot;Dijkstra&#x27;s shortest path algorithm (navigation apps like Google Maps)&quot;]' data-practice='&quot;🌍 Real World Analogy A hospital emergency room. Patients are not treated in order of arrival — the most critical case always gets treated first. When that patient is done, the next most critical automatically moves to the front. That is a min-heap (smallest priority number = most urgent).&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">INTE</div>
+          <div class="day-topic">Heap (Priority Queue)</div>
+          <div class="phase-dot colored" style="background:#a78bfa;"></div>
+        </div>
+    </div>
+  </div>
+  <div class="phase-block" id="block-ds-adv">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(251,146,60,0.12);color:#fb923c;">Advanced</span>
+      <span class="phase-title">🔷 Advanced Data Structures</span>
+      <span class="phase-meta">5 entries</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card colored" style="--card-accent:#fb923c;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="1" data-phase="ds-adv" data-week-label="Advanced" data-topic="Graph" data-topics='[&quot;Nodes connected by relationships — the most powerful structure&quot;, &quot;A graph is a set of nodes (also called vertices) connected by edges (links). Unlike a tree, there is no single \&quot;root\&quot; — any node can connect to any other. This makes graphs the most flexible and powerful data structure for modelling real-world relationships.&quot;, &quot;A graph is a set of nodes (also called vertices) connected by edges (links). Unlike a tree, there is no single \&quot;root\&quot; — any node can connect to any other. This makes graphs the most flexible and powerful data structure for modelling real-world relationships.&quot;, &quot;Social networks — Facebook friends graph, LinkedIn connections&quot;, &quot;Google Maps / Uber — shortest path between locations&quot;, &quot;Google Search — the web is a directed graph of pages linked to pages (PageRank)&quot;, &quot;Recommendation systems — \&quot;people who bought X also bought Y\&quot;&quot;, &quot;Dependency management — npm packages depend on other packages (directed graph)&quot;]' data-practice='&quot;🌍 Real World Analogy A map of cities with roads between them. Each city is a node. Each road is an edge. Some roads are one-way (directed graph). Some have distances (weighted graph). Google Maps IS a graph problem — find the shortest path between two nodes.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">ADVA</div>
+          <div class="day-topic">Graph</div>
+          <div class="phase-dot colored" style="background:#fb923c;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#fb923c;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="2" data-phase="ds-adv" data-week-label="Advanced" data-topic="Trie (Prefix Tree)" data-topics='[&quot;A tree built letter by letter — powers autocomplete&quot;, &quot;A Trie (pronounced \&quot;try\&quot;) is a tree where each node represents one letter. Words are stored by following a path of letters from root to a leaf. The power: finding all words that start with \&quot;app\&quot; is instant — just navigate to the \&quot;a\&quot; → \&quot;p\&quot; → \&quot;p\&quot; node and every path below is a valid word.&quot;, &quot;A Trie (pronounced \&quot;try\&quot;) is a tree where each node represents one letter. Words are stored by following a path of letters from root to a leaf. The power: finding all words that start with \&quot;app\&quot; is instant — just navigate to the \&quot;a\&quot; → \&quot;p\&quot; → \&quot;p\&quot; node and every path below is a valid word.&quot;, &quot;Search autocomplete — Google, YouTube, phone keyboard suggestions&quot;, &quot;Spell checkers — is this a valid word? Walk the trie and check&quot;, &quot;IP routing tables in network routers&quot;, &quot;Contact search on your phone&quot;]' data-practice='&quot;🌍 Real World Analogy A phone book organized by letters as you type. When you type \&quot;app\&quot;, the phone instantly narrows to \&quot;apple\&quot;, \&quot;application\&quot;, \&quot;approve\&quot; — not by searching all words, but by walking a pre-built tree of letters. That is exactly how phone keyboards and search autocomplete work.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">ADVA</div>
+          <div class="day-topic">Trie (Prefix Tree)</div>
+          <div class="phase-dot colored" style="background:#fb923c;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#fb923c;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="3" data-phase="ds-adv" data-week-label="Advanced" data-topic="Dynamic Programming (DP)" data-topics='[&quot;Remembering past answers so you never solve the same problem twice&quot;, &quot;Dynamic Programming (DP) is a technique, not a single data structure. The idea is: break a big problem into smaller sub-problems, solve each small problem ONCE, store the answer, and reuse it instead of recalculating. It transforms solutions from impossibly slow to very fast.&quot;, &quot;Dynamic Programming (DP) is a technique, not a single data structure. The idea is: break a big problem into smaller sub-problems, solve each small problem ONCE, store the answer, and reuse it instead of recalculating. It transforms solutions from impossibly slow to very fast.&quot;, &quot;GPS navigation — finding the absolute shortest route across thousands of roads&quot;, &quot;DNA sequence alignment in bioinformatics&quot;, &quot;Spell checkers — calculating edit distance between two words&quot;, &quot;Video compression (codecs) — comparing frames to store only differences&quot;, &quot;Financial modelling — optimal stock trading strategies&quot;]' data-practice='&quot;🌍 Real World Analogy Calculating how many steps to reach the 10th stair if you can take 1 or 2 steps at a time. Without DP you recalculate the same sub-problems thousands of times. With DP, you write down the answer to each stair on a notepad as you go. When you need it again — just look at the note&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">ADVA</div>
+          <div class="day-topic">Dynamic Programming (DP)</div>
+          <div class="phase-dot colored" style="background:#fb923c;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#fb923c;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="4" data-phase="ds-adv" data-week-label="Advanced" data-topic="Balanced Trees — AVL &amp; B-Tree" data-topics='[&quot;Self-correcting trees that stay fast no matter how data is added&quot;, &quot;A regular BST gets \&quot;unbalanced\&quot; if data is added in a bad order — it becomes a long skinny line instead of a wide tree, making it as slow as a linked list. Balanced trees automatically rebalance themselves after every insert to stay wide and fast. You do not build these from scratch often — but you must know why databases use them.&quot;, &quot;A regular BST gets \&quot;unbalanced\&quot; if data is added in a bad order — it becomes a long skinny line instead of a wide tree, making it as slow as a linked list. Balanced trees automatically rebalance themselves after every insert to stay wide and fast. You do not build these from scratch often — but you must know why databases use them.&quot;]' data-practice='&quot;&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">ADVA</div>
+          <div class="day-topic">Balanced Trees — AVL &amp; B-Tree</div>
+          <div class="phase-dot colored" style="background:#fb923c;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#fb923c;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="5" data-phase="ds-adv" data-week-label="Advanced" data-topic="Bloom Filter" data-topics='[&quot;A space-saving structure that answers \&quot;have I seen this before?\&quot;&quot;, &quot;A Bloom filter is a memory-efficient way to check if something has been seen before. It can say \&quot;definitely NOT seen\&quot; or \&quot;probably seen.\&quot; It never misses something it has seen, but occasionally it falsely says it has seen something it has not. This trade-off (using tiny memory) is worth it in many systems.&quot;, &quot;A Bloom filter is a memory-efficient way to check if something has been seen before. It can say \&quot;definitely NOT seen\&quot; or \&quot;probably seen.\&quot; It never misses something it has seen, but occasionally it falsely says it has seen something it has not. This trade-off (using tiny memory) is worth it in many systems.&quot;, &quot;Chrome browser — checks if a URL is malicious before loading (using a bloom filter so it is fast)&quot;, &quot;Cassandra and HBase databases — check if a row exists before expensive disk lookup&quot;, &quot;CDN caches — \&quot;have we cached this content before?\&quot;&quot;, &quot;Password checkers — \&quot;is this password in the list of breached passwords?\&quot;&quot;]' data-practice='&quot;🌍 Real World Analogy A nightclub bouncer with a very small notebook. They jot down a shorthand code for each person who enters. Later, someone arrives and the bouncer checks the notebook. If the code is NOT there — they definitely have not been in. If the code IS there — they probably have, but ther&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">ADVA</div>
+          <div class="day-topic">Bloom Filter</div>
+          <div class="phase-dot colored" style="background:#fb923c;"></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-top">
+      <div class="drawer-badge" id="d-badge"></div>
+      <div class="drawer-topic" id="d-topic"></div>
+      <div class="drawer-week-info" id="d-week"></div>
+    </div>
+    <div class="drawer-controls">
+      <button class="drawer-btn" id="btn-prev" title="Previous" onclick="nav(-1)">&#8249;</button>
+      <button class="drawer-btn" id="btn-next" title="Next"     onclick="nav(+1)">&#8250;</button>
+      <button class="drawer-btn close"          title="Close"    onclick="closeDrawer()">&#x2715;</button>
+    </div>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</div>
+
+<script src="daydeck-core.js"></script>
+<script>
+  function openDay(card) {
+    currentCard = card;
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    const topic  = card.dataset.topic;
+    const wLabel = card.dataset.weekLabel;
+    const day    = card.dataset.day;
+    const color  = getComputedStyle(card).getPropertyValue('--card-accent').trim();
+    let topics, practice, gains, srcs;
+    try { topics   = JSON.parse(card.dataset.topics);   } catch(e) { topics   = []; }
+    try { practice = JSON.parse(card.dataset.practice); } catch(e) { practice = ''; }
+    try { gains    = JSON.parse(card.dataset.gains);    } catch(e) { gains    = []; }
+    try { srcs     = JSON.parse(card.dataset.sources);  } catch(e) { srcs     = []; }
+    const badge = document.getElementById('d-badge');
+    badge.style.background = hexToRgba(color, 0.15);
+    badge.style.color      = color;
+    badge.style.border     = '1px solid ' + hexToRgba(color, 0.3);
+    badge.textContent = wLabel + ' · #' + day;
+    document.getElementById('d-topic').textContent = topic;
+    document.getElementById('d-week').textContent  = wLabel + ' Data Structures';
+    updateNavButtons(card);
+    document.getElementById('d-body').innerHTML =
+      '<div><div class="drawer-section-title">What it is</div><div class="learn-list">' +
+      topics.map((item,i) => '<div class="learn-item"><span class="learn-num">' +
+        String(i+1).padStart(2,'0') + '</span><span class="learn-text">' +
+        decodeEntities(item) + '</span></div>').join('') + '</div></div>' +
+      (practice ? '<div><div class="drawer-section-title">Real-World Analogy</div>' +
+        '<div class="practice-block"><p class="practice-text">' + decodeEntities(practice) + '</p></div></div>' : '') +
+      (gains.length ? '<div><div class="drawer-section-title">Search to Go Deeper</div><div class="gain-tags">' +
+        gains.map(g => '<span class="gain-tag">' + decodeEntities(g) + '</span>').join('') +
+        '</div></div>' : '');
+    showDrawer();
+  }
+</script>
+</body>
+</html>

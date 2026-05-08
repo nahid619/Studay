@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Fundamentals Everyone Should Know</title>
+  <link rel="stylesheet" href="../index.css">
+  <style>
+    /* ── AI Fundamentals — familiarity-level color palette ── */
+    .day-card[data-phase="ai-must"]:hover     { border-color: rgba(229,115,115,0.4); }
+    .day-card[data-phase="ai-good"]:hover     { border-color: rgba(102,187,106,0.4); }
+    .day-card[data-phase="ai-new"]:hover      { border-color: rgba(232,167,48,0.4); }
+    .day-card[data-phase="ai-partial"]:hover  { border-color: rgba(112,72,232,0.4); }
+    .day-card[data-phase="ai-familiar"]:hover { border-color: rgba(46,139,90,0.4); }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-eyebrow">&#x1F9E0; Reference Guide &middot; 2026</div>
+  <h1 class="hero-title">AI Fundamentals <span>Everyone Should Know</span></h1>
+  <p class="hero-desc">The core concepts that sit underneath everything in AI — before frameworks, before code, before tools.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">10</div><div class="stat-label">Sections</div></div>
+    <div class="stat"><div class="stat-val">3</div><div class="stat-label">Categories</div></div>
+    <div class="stat"><div class="stat-val">5</div><div class="stat-label">Levels</div></div>
+    <div class="stat"><div class="stat-val">&#x1F916;</div><div class="stat-label">AI / ML</div></div>
+    <div class="stat"><div class="stat-val">&#x1F4A1;</div><div class="stat-label">Beginner</div></div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <span class="filter-label">familiarity:</span>
+    <button class="filter-btn active" onclick="setFilter('all',this)"><span class="filter-dot dot-all"></span>all</button>
+    <button class="filter-btn" onclick="setFilter('ai-must',this)"><span class="filter-dot" style="background:#e57373"></span>Must Know</button>
+    <button class="filter-btn" onclick="setFilter('ai-good',this)"><span class="filter-dot" style="background:#66bb6a"></span>Good to Know</button>
+    <button class="filter-btn" onclick="setFilter('ai-new',this)"><span class="filter-dot" style="background:#e8a730"></span>New</button>
+    <button class="filter-btn" onclick="setFilter('ai-partial',this)"><span class="filter-dot" style="background:#7048e8"></span>Partial</button>
+    <button class="filter-btn" onclick="setFilter('ai-familiar',this)"><span class="filter-dot" style="background:#2e8b5a"></span>Likely Familiar</button>
+  <div class="week-jump">
+    <span class="week-jump-label">jump:</span>
+    <select onchange="jumpWeek(this.value)">
+      <option value="block-concepts">Concepts</option>
+      <option value="block-neural-networks-llms">Neural Networks &amp; LLMs</option>
+      <option value="block-engineering-side">Engineering Side</option>
+    </select>
+  </div>
+</div>
+
+<div class="plan-body" id="plan-body">
+  <div class="phase-block" id="block-concepts">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(112,72,232,0.12);color:#7048e8;">CATEGORY</span>
+      <span class="phase-title">Concepts</span>
+      <span class="phase-meta">3 sections</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card colored" style="--card-accent:#7048e8;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="1" data-phase="ai-partial" data-week-label="Partial" data-topic="What AI Actually Is (and Is Not)" data-topics='[&quot;The real definitions behind the buzzwords&quot;, &quot;AI vs Machine Learning vs Deep Learning — These three words are often used interchangeably but they are not the same. AI is the big idea. ML is one way to do AI. Deep Learning is one type of M&quot;, &quot;Narrow AI vs General AI (AGI) — Every AI tool today is \&quot;Narrow AI\&quot; — it does one thing well. AGI (Artificial General Intelligence) is the theoretical AI that can do anything. It does&quot;, &quot;Supervised, Unsupervised, Reinforcement Learning — Three ways a model can learn. Supervised = learning from examples with answers. Unsupervised = finding patterns with no answers given. Reinforcement =&quot;, &quot;What a \&quot;Model\&quot; Is — A model is a mathematical function that takes input data and produces a prediction or output. When people say \&quot;train a model\&quot; they mean: feed it data &quot;]' data-practice='&quot;Partial&quot;' data-gains='[&quot;AI vs Machine Learning vs Deep Learning&quot;, &quot;Narrow AI vs General AI (AGI)&quot;, &quot;Supervised, Unsupervised, Reinforcement Learning&quot;, &quot;What a \&quot;Model\&quot; Is&quot;]' data-sources='[{&quot;t&quot;: &quot;AI vs Machine Learning vs Deep Learning explained&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;difference between AI ML deep learning simple explanation&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;narrow AI vs AGI difference explained&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Supervised vs Unsupervised vs Reinforcement Learning&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;what is a machine learning model explained simply&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Partial</div>
+          <div class="day-topic">What AI Actually Is (and Is Not)</div>
+          <div class="phase-dot colored" style="background:#7048e8;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#7048e8;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="2" data-phase="ai-partial" data-week-label="Partial" data-topic="Data Fundamentals" data-topics='[&quot;AI runs on data — you must understand data before models&quot;, &quot;What is Training Data? — Training data is the set of examples you use to teach a model. The quality and size of this data directly determines how good your model will be. \&quot;Gar&quot;, &quot;Features and Labels — Features = the inputs to the model (e.g., age, height, income). Labels = the answer the model is trying to predict (e.g., \&quot;will this person buy?\&quot; → ye&quot;, &quot;Train / Validation / Test Split — You split your data into 3 buckets: training (to learn), validation (to tune), test (to check the final result). You must never let the model \&quot;see\&quot; te&quot;, &quot;Data Cleaning and Preprocessing — Real data is messy — missing values, wrong formats, duplicates. Before feeding data into a model, you must clean it. This takes up 60–80% of an AI eng&quot;, &quot;Structured vs Unstructured Data — Structured data = neat tables (like Excel). Unstructured data = free text, images, audio, video. Most modern AI — especially LLMs — works with unstruc&quot;]' data-practice='&quot;Partial&quot;' data-gains='[&quot;What is Training Data?&quot;, &quot;Features and Labels&quot;, &quot;Train / Validation / Test Split&quot;, &quot;Data Cleaning and Preprocessing&quot;, &quot;Structured vs Unstructured Data&quot;]' data-sources='[{&quot;t&quot;: &quot;what is training data in machine learning beginner&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;features and labels machine learning explained&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;train validation test split explained simply&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;why do we split data in machine learning&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;data preprocessing for machine learning beginners&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;data cleaning steps machine learning checklist&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Partial</div>
+          <div class="day-topic">Data Fundamentals</div>
+          <div class="phase-dot colored" style="background:#7048e8;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#e8a730;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="3" data-phase="ai-new" data-week-label="New" data-topic="Core ML Concepts" data-topics='[&quot;The vocabulary that appears in every ML conversation&quot;, &quot;Overfitting and Underfitting — Overfitting = model memorises training data but fails on new data (too specific). Underfitting = model is too simple to learn anything useful. The goa&quot;, &quot;Model Accuracy, Precision, Recall — Accuracy alone is not enough. A model that says \&quot;no cancer\&quot; for every patient is 99% accurate if only 1% of patients have cancer — but it is useless. &quot;, &quot;Parameters and Hyperparameters — Parameters = values the model learns by itself during training. Hyperparameters = settings YOU control before training starts (like how many layers, h&quot;, &quot;Loss Function and Gradient Descent — Loss = how wrong your model currently is. Gradient descent = the method the model uses to become less wrong over time by adjusting its parameters. You&quot;, &quot;Classification vs Regression — Classification = predicting a category (is this email spam or not?). Regression = predicting a number (what will this house sell for?). Almost every M&quot;]' data-practice='&quot;New&quot;' data-gains='[&quot;Overfitting and Underfitting&quot;, &quot;Model Accuracy, Precision, Recall&quot;, &quot;Parameters and Hyperparameters&quot;, &quot;Loss Function and Gradient Descent&quot;, &quot;Classification vs Regression&quot;]' data-sources='[{&quot;t&quot;: &quot;overfitting and underfitting explained visually&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;precision vs recall explained simply&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;what is F1 score machine learning simple&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;parameters vs hyperparameters machine learning difference&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;gradient descent explained visually&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;classification vs regression machine learning examples&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">New</div>
+          <div class="day-topic">Core ML Concepts</div>
+          <div class="phase-dot colored" style="background:#e8a730;"></div>
+        </div>
+    </div>
+  </div>
+  <div class="phase-block" id="block-neural-networks-llms">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(232,167,48,0.12);color:#e8a730;">CATEGORY</span>
+      <span class="phase-title">Neural Networks &amp; LLMs</span>
+      <span class="phase-meta">2 sections</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card colored" style="--card-accent:#e8a730;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="4" data-phase="ai-new" data-week-label="New" data-topic="Neural Networks &amp; Deep Learning" data-topics='[&quot;The engine behind most modern AI&quot;, &quot;How a Neural Network Works — Data goes in → passes through layers of \&quot;neurons\&quot; that each do a small calculation → an answer comes out. More layers = \&quot;deeper\&quot; network = \&quot;deep learn&quot;, &quot;Activation Functions — After each layer&#x27;s calculation, an activation function decides how much of that signal passes through. The most common one is called ReLU. Without act&quot;, &quot;Backpropagation — After making a wrong prediction, the network works backwards through its layers and adjusts all its weights to be slightly less wrong next time. This &quot;, &quot;CNN, RNN, Transformer — The Main Architectures — CNN (Convolutional Neural Network) = for images. RNN (Recurrent Neural Network) = for sequences like text or time data. Transformer = the modern archi&quot;, &quot;What \&quot;Training\&quot; Actually Involves — Training = feeding data through the network thousands or millions of times, each time adjusting the weights using backpropagation. Large models like G&quot;]' data-practice='&quot;New&quot;' data-gains='[&quot;How a Neural Network Works&quot;, &quot;Activation Functions&quot;, &quot;Backpropagation&quot;, &quot;CNN, RNN, Transformer — The Main Architectures&quot;, &quot;What \&quot;Training\&quot; Actually Involves&quot;]' data-sources='[{&quot;t&quot;: &quot;But what is a neural network?&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;what is ReLU activation function explained simply&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;activation functions neural network beginner&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;backpropagation explained visually&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;CNN RNN Transformer difference explained&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;when to use CNN vs RNN vs Transformer&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">New</div>
+          <div class="day-topic">Neural Networks &amp; Deep Learning</div>
+          <div class="phase-dot colored" style="background:#e8a730;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#e8a730;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="5" data-phase="ai-new" data-week-label="New" data-topic="Large Language Models (LLMs)" data-topics='[&quot;The technology behind ChatGPT, Claude, Gemini — your daily tools&quot;, &quot;What is a Token? — LLMs do not read words — they read \&quot;tokens.\&quot; A token is roughly 3/4 of a word (or about 4 characters). The word \&quot;cooking\&quot; is 1 token. \&quot;ChatGPT\&quot; is 3 t&quot;, &quot;Context Window — The context window is how much text an LLM can \&quot;see\&quot; at once. It is like the model&#x27;s working memory. If your conversation goes beyond this limit, the &quot;, &quot;Temperature and Top-P (Sampling Settings) — Temperature controls how creative or random the model&#x27;s output is. Low temperature (0.1) = very consistent, predictable answers. High temperature (1.0&quot;, &quot;System Prompt vs User Prompt — System prompt = the hidden instruction you give the AI at the start to set its behaviour (e.g., \&quot;you are a helpful cooking assistant, only answer cook&quot;, &quot;Hallucination — When an LLM makes up facts confidently — this is called hallucination. It is the most dangerous problem with LLMs. The model does not know it is wrong&quot;, &quot;Fine-tuning vs Prompt Engineering vs RAG — Three ways to make an LLM better for your use case. Prompt engineering = write better instructions (cheapest, no training needed). RAG = give the mode&quot;, &quot;Embeddings and Vector Search — An embedding converts text into a list of numbers (a vector) that captures the meaning of that text. Similar meaning = similar numbers. This allows AI&quot;]' data-practice='&quot;New&quot;' data-gains='[&quot;What is a Token?&quot;, &quot;Context Window&quot;, &quot;Temperature and Top-P (Sampling Settings)&quot;, &quot;System Prompt vs User Prompt&quot;, &quot;Hallucination&quot;, &quot;Fine-tuning vs Prompt Engineering vs RAG&quot;]' data-sources='[{&quot;t&quot;: &quot;what is a token in LLM explained&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;platform.openai.com/tokenizer&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;LLM context window explained simply&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;LLM temperature parameter explained for developers&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;temperature in language models explained&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;system prompt vs user prompt OpenAI API difference&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">New</div>
+          <div class="day-topic">Large Language Models (LLMs)</div>
+          <div class="phase-dot colored" style="background:#e8a730;"></div>
+        </div>
+    </div>
+  </div>
+  <div class="phase-block" id="block-engineering-side">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(229,115,115,0.12);color:#e57373;">CATEGORY</span>
+      <span class="phase-title">Engineering Side</span>
+      <span class="phase-meta">5 sections</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card colored" style="--card-accent:#e57373;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="6" data-phase="ai-must" data-week-label="Must Know" data-topic="APIs, Integrations &amp; System Design" data-topics='[&quot;How AI connects to the rest of the world&quot;, &quot;What is an API? (AI-Specific Context) — You likely know APIs from your tech year. In AI engineering, you will call AI model APIs (OpenAI, Anthropic, Hugging Face) from your code. The key add&quot;, &quot;REST API vs SDK — REST API = you make raw HTTP requests to the AI service. SDK = a pre-built library that wraps those requests nicely (like the openai Python library). &quot;, &quot;Streaming Responses — When you ask ChatGPT something, the answer appears word by word — that is streaming. Instead of waiting for the full response, tokens come back one by&quot;, &quot;Latency, Throughput, Cost Management — AI API calls are slow and expensive compared to normal code. Latency = how long it takes to get a response. Throughput = how many requests you can han&quot;]' data-practice='&quot;Must Know&quot;' data-gains='[&quot;What is an API? (AI-Specific Context)&quot;, &quot;REST API vs SDK&quot;, &quot;Streaming Responses&quot;, &quot;Latency, Throughput, Cost Management&quot;]' data-sources='[{&quot;t&quot;: &quot;OpenAI API request response format explained&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;platform.openai.com/docs&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;REST API vs SDK difference explained simply&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;OpenAI API streaming response Python example&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;how to reduce OpenAI API costs for production apps&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;latency vs throughput explained simply&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Must Kno</div>
+          <div class="day-topic">APIs, Integrations &amp; System Design</div>
+          <div class="phase-dot colored" style="background:#e57373;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#e8a730;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="7" data-phase="ai-new" data-week-label="New" data-topic="Prompt Engineering Fundamentals" data-topics='[&quot;The most practical skill for junior AI roles right now&quot;, &quot;Zero-Shot, One-Shot, Few-Shot Prompting — Zero-shot = ask the AI with no examples. One-shot = give 1 example. Few-shot = give 2–5 examples. Giving examples dramatically improves the output qua&quot;, &quot;Chain of Thought (CoT) Prompting — Adding \&quot;think step by step\&quot; to your prompt makes the model reason through the problem before answering. This dramatically improves accuracy on complex&quot;, &quot;Role Prompting — Telling the AI to act as a specific role changes its output dramatically. \&quot;You are a senior Python developer reviewing code for security issues\&quot; gives&quot;, &quot;Prompt Injection and Safety — Prompt injection = when a user tricks your AI app into ignoring its instructions. Like SQL injection, but for prompts. Example: user types \&quot;Ignore all&quot;]' data-practice='&quot;New&quot;' data-gains='[&quot;Zero-Shot, One-Shot, Few-Shot Prompting&quot;, &quot;Chain of Thought (CoT) Prompting&quot;, &quot;Role Prompting&quot;, &quot;Prompt Injection and Safety&quot;]' data-sources='[{&quot;t&quot;: &quot;zero shot one shot few shot prompting examples&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;learnprompting.org&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;chain of thought prompting explained with example&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;role prompting examples for developers&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;prompt injection attack explained simply&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;how to prevent prompt injection in AI apps&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">New</div>
+          <div class="day-topic">Prompt Engineering Fundamentals</div>
+          <div class="phase-dot colored" style="background:#e8a730;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#e8a730;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="8" data-phase="ai-new" data-week-label="New" data-topic="AI Tools &amp; Ecosystem (The Landscape)" data-topics='[&quot;Know what exists — you don&#x27;t need to master all of it&quot;, &quot;LLM Providers — OpenAI, Anthropic, Google, Meta — OpenAI makes GPT-4. Anthropic makes Claude. Google makes Gemini. Meta released Llama (open source, free to use). You must know the main players, their&quot;, &quot;Hugging Face — Hugging Face is GitHub for AI models. It hosts thousands of free, open-source models you can download and use. It is the most important website in AI.&quot;, &quot;LangChain and LlamaIndex — LangChain = a framework for building applications that chain together AI tasks, tools, and memory. LlamaIndex = specialises in connecting LLMs to your&quot;, &quot;Vector Databases — Pinecone, Chroma, FAISS — Vector databases store embeddings so you can search by meaning. Pinecone = cloud-hosted, easy to start. Chroma = local, free, great for beginners. FAI&quot;, &quot;PyTorch vs TensorFlow — The two main deep learning frameworks. PyTorch = more popular, used in most research and by Hugging Face. TensorFlow = made by Google, used in product&quot;]' data-practice='&quot;New&quot;' data-gains='[&quot;LLM Providers — OpenAI, Anthropic, Google, Meta&quot;, &quot;Hugging Face&quot;, &quot;LangChain and LlamaIndex&quot;, &quot;Vector Databases — Pinecone, Chroma, FAISS&quot;, &quot;PyTorch vs TensorFlow&quot;]' data-sources='[{&quot;t&quot;: &quot;GPT-4 vs Claude vs Gemini comparison 2025&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Meta Llama 3 open source LLM explained&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;huggingface.co&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;LangChain vs LlamaIndex what&#x27;s the difference&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;Chroma vs Pinecone vs FAISS beginner comparison&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;PyTorch vs TensorFlow 2025 which to learn first&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">New</div>
+          <div class="day-topic">AI Tools &amp; Ecosystem (The Landscape)</div>
+          <div class="phase-dot colored" style="background:#e8a730;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#e8a730;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="9" data-phase="ai-new" data-week-label="New" data-topic="AI Ethics, Bias &amp; Safety" data-topics='[&quot;Increasingly tested in interviews — do not skip this&quot;, &quot;What is Bias in AI? — If your training data reflects past human biases (e.g., more men than women in leadership roles), your model will learn and repeat those biases. This &quot;, &quot;Responsible AI and Guardrails — Guardrails = safety rules placed around an LLM to stop it doing harmful things (e.g., refusing to help with violence). Every production AI app needs g&quot;, &quot;Privacy and Data Protection in AI — When users interact with your AI app, their data may be sent to third-party APIs. You must know the basics of what data can be shared, what cannot, an&quot;]' data-practice='&quot;New&quot;' data-gains='[&quot;What is Bias in AI?&quot;, &quot;Responsible AI and Guardrails&quot;, &quot;Privacy and Data Protection in AI&quot;]' data-sources='[{&quot;t&quot;: &quot;AI bias explained with examples&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;real examples of AI bias causing harm&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;LLM guardrails AI safety what are they&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;responsible AI principles explained simply&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;data privacy in AI applications GDPR basics&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;can I send user data to OpenAI API legally&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">New</div>
+          <div class="day-topic">AI Ethics, Bias &amp; Safety</div>
+          <div class="phase-dot colored" style="background:#e8a730;"></div>
+        </div>
+        <div class="day-card colored" style="--card-accent:#7048e8;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-day="10" data-phase="ai-partial" data-week-label="Partial" data-topic="AI in Production (MLOps Basics)" data-topics='[&quot;How AI moves from notebook to real product&quot;, &quot;What is MLOps? — MLOps = DevOps but for Machine Learning. It covers: packaging your model, deploying it, monitoring it, and keeping it updated. You do not need deep ML&quot;, &quot;Model Deployment — What It Means — Deployment = putting your trained model on a server so other people or apps can use it via an API. A model that lives only in your notebook is useless&quot;, &quot;Model Monitoring and Drift — Once deployed, a model can get worse over time because the real world changes but the model does not. This is called \&quot;data drift\&quot; or \&quot;model drift.\&quot; Pr&quot;, &quot;Docker Basics for AI — Docker packages your AI app and all its dependencies into a container so it runs the same way on any machine. Many companies require this for deployin&quot;]' data-practice='&quot;Partial&quot;' data-gains='[&quot;What is MLOps?&quot;, &quot;Model Deployment — What It Means&quot;, &quot;Model Monitoring and Drift&quot;, &quot;Docker Basics for AI&quot;]' data-sources='[{&quot;t&quot;: &quot;MLOps explained for beginners&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;how to deploy a machine learning model for beginners&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;deploy ML model with FastAPI beginner tutorial&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;what is model drift in machine learning simple explanation&quot;, &quot;u&quot;: &quot;https://google.com&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Docker for beginners in 15 minutes&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}]'>
+          <div class="day-num">Partial</div>
+          <div class="day-topic">AI in Production (MLOps Basics)</div>
+          <div class="phase-dot colored" style="background:#7048e8;"></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-top">
+      <div class="drawer-badge" id="d-badge"></div>
+      <div class="drawer-topic" id="d-topic"></div>
+      <div class="drawer-week-info" id="d-week"></div>
+    </div>
+    <div class="drawer-controls">
+      <button class="drawer-btn" id="btn-prev" title="Previous" onclick="nav(-1)">&#8249;</button>
+      <button class="drawer-btn" id="btn-next" title="Next"     onclick="nav(+1)">&#8250;</button>
+      <button class="drawer-btn close"          title="Close"    onclick="closeDrawer()">&#x2715;</button>
+    </div>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</div>
+
+<script src="daydeck-core.js"></script>
+<script>
+  function openDay(card) {
+    currentCard = card;
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    const topic  = card.dataset.topic;
+    const wLabel = card.dataset.weekLabel;
+    const color  = getComputedStyle(card).getPropertyValue('--card-accent').trim();
+    let topics, practice, gains, srcs;
+    try { topics   = JSON.parse(card.dataset.topics);   } catch(e) { topics   = []; }
+    try { practice = JSON.parse(card.dataset.practice); } catch(e) { practice = ''; }
+    try { gains    = JSON.parse(card.dataset.gains);    } catch(e) { gains    = []; }
+    try { srcs     = JSON.parse(card.dataset.sources);  } catch(e) { srcs     = []; }
+    const badge = document.getElementById('d-badge');
+    badge.style.background = hexToRgba(color, 0.15);
+    badge.style.color      = color;
+    badge.style.border     = '1px solid ' + hexToRgba(color, 0.3);
+    badge.textContent = wLabel;
+    document.getElementById('d-topic').textContent = topic;
+    document.getElementById('d-week').textContent  = wLabel + ' level';
+    updateNavButtons(card);
+    document.getElementById('d-body').innerHTML =
+      '<div><div class="drawer-section-title">What to understand</div><div class="learn-list">' +
+      topics.map((item,i) => '<div class="learn-item"><span class="learn-num">' +
+        String(i+1).padStart(2,'0') + '</span><span class="learn-text">' +
+        decodeEntities(item) + '</span></div>').join('') + '</div></div>' +
+      (gains.length ? '<div><div class="drawer-section-title">Key Concepts</div><div class="gain-tags">' +
+        gains.map(g => '<span class="gain-tag">' + decodeEntities(g) + '</span>').join('') +
+        '</div></div>' : '') +
+      (srcs.length ? '<div><div class="drawer-section-title">What to Search</div><div class="source-list">' +
+        srcs.map(s => '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener noreferrer">' +
+          '<span class="source-badge badge-' + s.b + '">' + s.b + '</span>' +
+          '<span class="source-name">' + s.t + '</span><span class="source-arrow">&#8599;</span></a>'
+        ).join('') + '</div></div>' : '');
+    showDrawer();
+  }
+</script>
+</body>
+</html>

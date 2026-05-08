@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30-Day Junior AI Engineer Roadmap</title>
+  <link rel="stylesheet" href="../index.css">
+  <style>
+    /* ── AI Engineer — blue/green/amber/pink week palette ── */
+    .day-card.w1:hover { border-color: rgba(59,130,246,0.4); }
+    .day-card.w2:hover { border-color: rgba(16,185,129,0.4); }
+    .day-card.w3:hover { border-color: rgba(245,158,11,0.4); }
+    .day-card.w4:hover { border-color: rgba(236,72,153,0.4); }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-eyebrow">🤖 30-Day Study Plan &middot; 1&ndash;2 hours/day</div>
+  <h1 class="hero-title">Junior AI Engineer <span>Roadmap</span></h1>
+  <p class="hero-desc">Built specifically for your level, your time, and what companies are actually hiring for in 2026.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-val">30</div><div class="stat-label">Total days</div></div>
+    <div class="stat"><div class="stat-val">4</div><div class="stat-label">Weeks</div></div>
+    <div class="stat"><div class="stat-val">1&ndash;2h</div><div class="stat-label">Per day</div></div>
+    <div class="stat"><div class="stat-val">&#x1F40D;</div><div class="stat-label">Python</div></div>
+    <div class="stat"><div class="stat-val">&#x1F916;</div><div class="stat-label">AI / ML</div></div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <span class="filter-label">week:</span>
+    <button class="filter-btn active" onclick="setFilter('all',this)"><span class="filter-dot dot-all"></span>all</button>
+    <button class="filter-btn" onclick="setFilter('w1',this)"><span class="filter-dot" style="background:#3b82f6"></span>Week 1</button>
+    <button class="filter-btn" onclick="setFilter('w2',this)"><span class="filter-dot" style="background:#10b981"></span>Week 2</button>
+    <button class="filter-btn" onclick="setFilter('w3',this)"><span class="filter-dot" style="background:#f59e0b"></span>Week 3</button>
+    <button class="filter-btn" onclick="setFilter('w4',this)"><span class="filter-dot" style="background:#ec4899"></span>Week 4</button>
+  <div class="week-jump">
+    <span class="week-jump-label">jump:</span>
+    <select onchange="jumpWeek(this.value)">
+      <option value="block-w1">Week 1 · Days 1–7 — Strengthen Your Python Foundation</option>
+      <option value="block-w2">Week 2 · Days 8–14 — Intro to Machine Learning (No Heavy Maths)</option>
+      <option value="block-w3">Week 3 · Days 15–21 — AI APIs, LLMs &amp; Prompt Engineering</option>
+      <option value="block-w4">Week 4 · Days 22–30 — Build Real Projects + Job-Ready Portfolio</option>
+    </select>
+  </div>
+</div>
+
+<div class="plan-body" id="plan-body">
+  <div class="phase-block" id="block-w1">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(59,130,246,0.12);color:#3b82f6;">W1</span>
+      <span class="phase-title">Strengthen Your Python Foundation</span>
+      <span class="phase-meta">7 days · 🐍 Python Core</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card w1 colored" style="--card-accent:#3b82f6;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="1" data-phase="w1" data-week-label="Week 1 · Days 1–7" data-topic="Review Python Basics — Variables, Lists, Loops" data-topics='[&quot;Spend 30 min reviewing: variables, strings, integers, lists, and print statements&quot;, &quot;Spend 30 min reviewing: for loops, while loops, and if/else conditions&quot;, &quot;Write a small program: print all numbers from 1–20 and say if they are \&quot;even\&quot; or \&quot;odd\&quot;&quot;, &quot;Write another program: create a list of 5 names, loop through and print each one&quot;]' data-practice='&quot;Don&#x27;t try to memorise everything. Just get comfortable running code and fixing small errors. That skill matters more than memorisation. Practice: python.org/shell (free browser Python)&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;\&quot;Python for Beginners - Full Course\&quot; by freeCodeCamp&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}]'>
+          <div class="day-num">Day 01</div>
+          <div class="day-topic">Review Python Basics — Variables, Lists, Loops</div>
+          <div class="phase-dot colored" style="background:#3b82f6;"></div>
+        </div>
+        <div class="day-card w1 colored" style="--card-accent:#3b82f6;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="2" data-phase="w1" data-week-label="Week 1 · Days 1–7" data-topic="Python Functions + Dictionaries" data-topics='[&quot;Learn how to write a function using def — functions are reusable blocks of code&quot;, &quot;Practice writing 3–4 small functions (e.g., one that adds two numbers, one that says hello)&quot;, &quot;Learn dictionaries — these are like labelled boxes: {\&quot;name\&quot;: \&quot;John\&quot;, \&quot;age\&quot;: 25}&quot;, &quot;Write a program that stores info about a person in a dictionary and prints each value&quot;]' data-practice='&quot;&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;\&quot;Python Functions\&quot; by Corey Schafer&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;Google: \&quot;Python dictionary examples for beginners\&quot;&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 02</div>
+          <div class="day-topic">Python Functions + Dictionaries</div>
+          <div class="phase-dot colored" style="background:#3b82f6;"></div>
+        </div>
+        <div class="day-card w1 colored" style="--card-accent:#3b82f6;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="3" data-phase="w1" data-week-label="Week 1 · Days 1–7" data-topic="Python Libraries — How to Install and Use Them" data-topics='[&quot;Learn what a \&quot;library\&quot; is — it is extra code someone else wrote that you can use for free&quot;, &quot;Learn how to install libraries using pip (the Python package installer)&quot;, &quot;Install and use the \&quot;requests\&quot; library to pull data from a website&quot;, &quot;Try: import requests, then fetch a public API like wttr.in/London?format=3 (weather)&quot;]' data-practice='&quot;Use Google Colab for everything. It is a free tool from Google where you write and run Python in your browser — no setup needed. This is a huge time saver. ⚠️ Complex term: \&quot;pip\&quot; and \&quot;package manager\&quot; 🔍 Google: \&quot;what is pip in Python explained simply\&quot; — this is very important to understand before Week 3&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;\&quot;How to install Python packages with pip\&quot;&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;Free tool: Use Google Colab (colab.google.com) — no install needed, runs in browser&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 03</div>
+          <div class="day-topic">Python Libraries — How to Install and Use Them</div>
+          <div class="phase-dot colored" style="background:#3b82f6;"></div>
+        </div>
+        <div class="day-card w1 colored" style="--card-accent:#3b82f6;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="4" data-phase="w1" data-week-label="Week 1 · Days 1–7" data-topic="Pandas — Working With Data Tables" data-topics='[&quot;Install pandas (pip install pandas) — this is the #1 library for handling data&quot;, &quot;Learn how to load a CSV file (a table of data) into pandas using pd.read_csv()&quot;, &quot;Learn how to view the first 5 rows using .head()&quot;, &quot;Learn how to check for missing values using .isnull().sum()&quot;, &quot;Practice on any free CSV from Kaggle.com (search \&quot;beginner datasets\&quot;)&quot;]' data-practice='&quot;⚠️ Complex term: \&quot;DataFrame\&quot; ▶ YouTube: \&quot;Pandas DataFrame explained for beginners\&quot; — a DataFrame is just a table of data inside Python. Think of it like an Excel spreadsheet you can code with.&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;Free datasets: kaggle.com/datasets&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;\&quot;Pandas Tutorial for Beginners\&quot; by Keith Galli&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}]'>
+          <div class="day-num">Day 04</div>
+          <div class="day-topic">Pandas — Working With Data Tables</div>
+          <div class="phase-dot colored" style="background:#3b82f6;"></div>
+        </div>
+        <div class="day-card w1 colored" style="--card-accent:#3b82f6;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="5" data-phase="w1" data-week-label="Week 1 · Days 1–7" data-topic="NumPy — Working With Numbers in Bulk" data-topics='[&quot;Install numpy (pip install numpy) — this handles large groups of numbers very fast&quot;, &quot;Learn numpy arrays: they are like lists but much faster for maths&quot;, &quot;Practice: create an array of 10 numbers, calculate their average using np.mean()&quot;, &quot;Learn what a \&quot;shape\&quot; means in numpy (e.g., shape (3, 2) means 3 rows and 2 columns)&quot;]' data-practice='&quot;You don&#x27;t need to master NumPy today. Just get comfortable creating arrays and doing basic operations. You will learn it more as you use it. ⚠️ Complex term: \&quot;array\&quot; and \&quot;dimensions\&quot; 🔍 Google: \&quot;numpy array vs Python list — what&#x27;s the difference\&quot; — you don&#x27;t need deep maths here, just the concept of organising numbers in rows and columns.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 05</div>
+          <div class="day-topic">NumPy — Working With Numbers in Bulk</div>
+          <div class="phase-dot colored" style="background:#3b82f6;"></div>
+        </div>
+        <div class="day-card w1 colored" style="--card-accent:#3b82f6;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="6" data-phase="w1" data-week-label="Week 1 · Days 1–7" data-topic="Visualisation — Matplotlib + Seaborn" data-topics='[&quot;Install matplotlib and seaborn (pip install matplotlib seaborn)&quot;, &quot;Learn how to make a simple bar chart and line chart using matplotlib&quot;, &quot;Learn how to make a heatmap using seaborn — useful for showing data patterns&quot;, &quot;Take the Kaggle CSV from Day 4 and make at least 2 charts from it&quot;]' data-practice='&quot;Practice: Try the \&quot;Iris dataset\&quot; — it is the most classic beginner AI dataset&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;\&quot;Matplotlib Tutorial for Beginners\&quot; by Sentdex&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}]'>
+          <div class="day-num">Day 06</div>
+          <div class="day-topic">Visualisation — Matplotlib + Seaborn</div>
+          <div class="phase-dot colored" style="background:#3b82f6;"></div>
+        </div>
+        <div class="day-card w1 colored" style="--card-accent:#3b82f6;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="7" data-phase="w1" data-week-label="Week 1 · Days 1–7" data-topic="Git + GitHub — Save and Show Your Work" data-topics='[&quot;Create a free account on GitHub.com — this is where you will store all your projects&quot;, &quot;Learn the 4 basic Git commands: git init, git add, git commit, git push&quot;, &quot;Create your first repository (a folder on GitHub) called \&quot;ai-journey\&quot;&quot;, &quot;Upload your code from Days 1–6 into this repository&quot;]' data-practice='&quot;Your GitHub profile is your CV as an AI engineer. Every day you push code, it shows up as a green dot. Recruiters love seeing active profiles. ⚠️ Complex term: \&quot;Git\&quot; and \&quot;version control\&quot; ▶ YouTube: \&quot;Git and GitHub for Beginners - Crash Course\&quot; by freeCodeCamp — Git is basically a save-history tool for your code. Employers CHECK your GitHub. Th&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 07</div>
+          <div class="day-topic">Git + GitHub — Save and Show Your Work</div>
+          <div class="phase-dot colored" style="background:#3b82f6;"></div>
+        </div>
+    </div>
+  </div>
+  <div class="phase-block" id="block-w2">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(16,185,129,0.12);color:#10b981;">W2</span>
+      <span class="phase-title">Intro to Machine Learning (No Heavy Maths)</span>
+      <span class="phase-meta">7 days · 🤖 ML Basics</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card w2 colored" style="--card-accent:#10b981;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="8" data-phase="w2" data-week-label="Week 2 · Days 8–14" data-topic="What Is Machine Learning? — The Big Picture" data-topics='[&quot;Watch a beginner explanation of Machine Learning (see resource below)&quot;, &quot;Understand the difference between: supervised learning, unsupervised learning, and reinforcement learning&quot;, &quot;Understand what \&quot;training data\&quot; and \&quot;model\&quot; mean in simple terms&quot;, &quot;Write a short note in plain English explaining ML to yourself — this helps it stick&quot;]' data-practice='&quot;⚠️ Complex terms: \&quot;supervised\&quot;, \&quot;unsupervised\&quot;, \&quot;reinforcement\&quot; ▶ YouTube: \&quot;Machine Learning for Everybody\&quot; by freeCodeCamp — only watch the first 30 minutes today. These concepts will click once you see&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 08</div>
+          <div class="day-topic">What Is Machine Learning? — The Big Picture</div>
+          <div class="phase-dot colored" style="background:#10b981;"></div>
+        </div>
+        <div class="day-card w2 colored" style="--card-accent:#10b981;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="9" data-phase="w2" data-week-label="Week 2 · Days 8–14" data-topic="Scikit-learn — Your First ML Model" data-topics='[&quot;Install scikit-learn (pip install scikit-learn) — this is the easiest ML library to start with&quot;, &quot;Load the built-in \&quot;iris\&quot; dataset: from sklearn.datasets import load_iris&quot;, &quot;Split data into training and testing sets using train_test_split&quot;, &quot;Train your very first model: a Decision Tree&quot;, &quot;Check your model&#x27;s accuracy using accuracy_score&quot;]' data-practice='&quot;Copy-paste the code first to make it work, then try to understand each line. Getting it running first is more important than understanding every detail. ⚠️ Complex terms: \&quot;training set\&quot;, \&quot;test set\&quot;, \&quot;accuracy score\&quot; 🔍 Google: \&quot;train test split explained simply for beginners\&quot; — think of it like studying for an exam with some practice questions (training) &quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;\&quot;Scikit-learn Crash Course\&quot; by AssemblyAI&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;Free: scikit-learn.org has beginner tutorials built-in&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 09</div>
+          <div class="day-topic">Scikit-learn — Your First ML Model</div>
+          <div class="phase-dot colored" style="background:#10b981;"></div>
+        </div>
+        <div class="day-card w2 colored" style="--card-accent:#10b981;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="10" data-phase="w2" data-week-label="Week 2 · Days 8–14" data-topic="Key ML Concepts — Overfitting, Features, Labels" data-topics='[&quot;Learn what \&quot;features\&quot; are — inputs to the model (e.g., height, weight)&quot;, &quot;Learn what \&quot;labels\&quot; are — the answer we are trying to predict (e.g., \&quot;cat\&quot; or \&quot;dog\&quot;)&quot;, &quot;Learn what \&quot;overfitting\&quot; means — when a model memorises instead of learning&quot;, &quot;Re-run the Day 9 model but try adjusting the Decision Tree depth and see what changes&quot;]' data-practice='&quot;⚠️ Complex term: \&quot;overfitting\&quot; ▶ YouTube: \&quot;Overfitting and Underfitting explained\&quot; by StatQuest — use the analogy: overfitting is like memorising exam answers instead of learning the topic. You pass the &quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 10</div>
+          <div class="day-topic">Key ML Concepts — Overfitting, Features, Labels</div>
+          <div class="phase-dot colored" style="background:#10b981;"></div>
+        </div>
+        <div class="day-card w2 colored" style="--card-accent:#10b981;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="11" data-phase="w2" data-week-label="Week 2 · Days 8–14" data-topic="Try 3 Different ML Models — Compare Them" data-topics='[&quot;Using the same iris dataset, train 3 different models: Decision Tree, Random Forest, and Logistic Regression&quot;, &quot;Print the accuracy score for each model and compare them in a table&quot;, &quot;Write a comment in your code explaining which one was best and why you think that is&quot;]' data-practice='&quot;The goal of today is NOT to understand all the maths. It is to see that swapping one model for another is literally just changing one word in your code. That is the power of scikit-learn. ⚠️ Complex term: \&quot;Random Forest\&quot; and \&quot;Logistic Regression\&quot; 🔍 Google: \&quot;random forest explained like I&#x27;m 5\&quot; and \&quot;logistic regression explained simply\&quot; — for now, just think of them as different tools. You &quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 11</div>
+          <div class="day-topic">Try 3 Different ML Models — Compare Them</div>
+          <div class="phase-dot colored" style="background:#10b981;"></div>
+        </div>
+        <div class="day-card w2 colored" style="--card-accent:#10b981;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="12" data-phase="w2" data-week-label="Week 2 · Days 8–14" data-topic="Intro to Neural Networks — The Concept" data-topics='[&quot;Watch a beginner video on neural networks (see resource below) — concepts only, no code today&quot;, &quot;Understand the idea of: inputs → hidden layers → output&quot;, &quot;Understand what \&quot;weights\&quot; and \&quot;training\&quot; mean in a neural network&quot;, &quot;Draw a simple diagram of a neural network by hand — this really helps&quot;]' data-practice='&quot;⚠️ Complex terms: \&quot;neurons\&quot;, \&quot;weights\&quot;, \&quot;backpropagation\&quot; ▶ YouTube: \&quot;But what IS a neural network?\&quot; by 3Blue1Brown — this is the BEST video on the internet for this topic. Very visual, no heavy maths. W&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 12</div>
+          <div class="day-topic">Intro to Neural Networks — The Concept</div>
+          <div class="phase-dot colored" style="background:#10b981;"></div>
+        </div>
+        <div class="day-card w2 colored" style="--card-accent:#10b981;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="13" data-phase="w2" data-week-label="Week 2 · Days 8–14" data-topic="Basic Stats Concepts You Actually Need" data-topics='[&quot;Learn mean (average), median (middle value), and standard deviation (spread of data)&quot;, &quot;Learn what a \&quot;distribution\&quot; is — how data is spread out&quot;, &quot;Learn what \&quot;correlation\&quot; means — when two things move together&quot;, &quot;Use numpy and pandas to calculate all of these on your Kaggle dataset from Day 4&quot;]' data-practice='&quot;You don&#x27;t need university-level stats. You need just enough to understand your data before feeding it into a model. These 3–4 concepts cover 80% of what you&#x27;ll use daily. ⚠️ Complex term: \&quot;standard deviation\&quot; and \&quot;normal distribution\&quot; ▶ YouTube: \&quot;Statistics for Data Science\&quot; by StatQuest — StatQuest is the best channel for friendly stats. The videos are short and use simp&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 13</div>
+          <div class="day-topic">Basic Stats Concepts You Actually Need</div>
+          <div class="phase-dot colored" style="background:#10b981;"></div>
+        </div>
+        <div class="day-card w2 colored" style="--card-accent:#10b981;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="14" data-phase="w2" data-week-label="Week 2 · Days 8–14" data-topic="Mini Project — Predict House Prices" data-topics='[&quot;Go to Kaggle.com and download the \&quot;House Prices\&quot; beginner dataset&quot;, &quot;Load it with pandas, clean it (remove blank rows), and explore the data&quot;, &quot;Pick 3–4 features (e.g., size, bedrooms, location) and train a simple model&quot;, &quot;Print the accuracy and push the code to your GitHub repository&quot;]' data-practice='&quot;&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;Free dataset: kaggle.com/c/house-prices-advanced-regression-techniques&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Google: \&quot;house prices Kaggle beginner solution walkthrough\&quot;&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 14</div>
+          <div class="day-topic">Mini Project — Predict House Prices</div>
+          <div class="phase-dot colored" style="background:#10b981;"></div>
+        </div>
+    </div>
+  </div>
+  <div class="phase-block" id="block-w3">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(245,158,11,0.12);color:#f59e0b;">W3</span>
+      <span class="phase-title">AI APIs, LLMs &amp; Prompt Engineering</span>
+      <span class="phase-meta">7 days · 🧠 GenAI &amp; APIs</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card w3 colored" style="--card-accent:#f59e0b;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="15" data-phase="w3" data-week-label="Week 3 · Days 15–21" data-topic="What Are LLMs? — GPT, Claude, Gemini Explained" data-topics='[&quot;Learn what an LLM (Large Language Model) is — a model trained on massive amounts of text&quot;, &quot;Understand the difference between: GPT-4 (OpenAI), Claude (Anthropic), Gemini (Google)&quot;, &quot;Learn what an \&quot;API\&quot; is — it is a way to talk to another program using code&quot;, &quot;Learn what a \&quot;token\&quot; is in the context of LLMs&quot;]' data-practice='&quot;⚠️ Complex terms: \&quot;LLM\&quot;, \&quot;tokens\&quot;, \&quot;API\&quot; ▶ YouTube: \&quot;Large Language Models explained briefly\&quot; by Google DeepMind — also 🔍 Google: \&quot;what is an API explained simply\&quot; — these two concepts are the foundation&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 15</div>
+          <div class="day-topic">What Are LLMs? — GPT, Claude, Gemini Explained</div>
+          <div class="phase-dot colored" style="background:#f59e0b;"></div>
+        </div>
+        <div class="day-card w3 colored" style="--card-accent:#f59e0b;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="16" data-phase="w3" data-week-label="Week 3 · Days 15–21" data-topic="OpenAI API — Make Your First AI-Powered Program" data-topics='[&quot;Create a free account at platform.openai.com and get a free API key&quot;, &quot;Install the openai library: pip install openai&quot;, &quot;Write a Python program that sends a question to GPT and prints the answer&quot;, &quot;Try asking it different things and see how the output changes&quot;]' data-practice='&quot;This is one of the most important days. Once you can call an AI API from code, you can build almost anything. Take your time and make sure it works. ⚠️ Complex term: \&quot;API key\&quot; 🔍 Google: \&quot;OpenAI API key beginner tutorial 2025\&quot; — an API key is like a password that lets your code access OpenAI&#x27;s AI. Never share it publicly. Never put it in your GitHub c&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;Free tier: OpenAI gives free credits to start&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;\&quot;OpenAI API Tutorial for Beginners\&quot; by Tech With Tim&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}]'>
+          <div class="day-num">Day 16</div>
+          <div class="day-topic">OpenAI API — Make Your First AI-Powered Program</div>
+          <div class="phase-dot colored" style="background:#f59e0b;"></div>
+        </div>
+        <div class="day-card w3 colored" style="--card-accent:#f59e0b;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="17" data-phase="w3" data-week-label="Week 3 · Days 15–21" data-topic="Prompt Engineering — How to Talk to AI Well" data-topics='[&quot;Learn what \&quot;prompt engineering\&quot; means — it is the skill of writing instructions to get the best AI output&quot;, &quot;Learn these 4 techniques: Zero-shot, Few-shot, Chain of Thought, and Role prompting&quot;, &quot;Practice by writing 5 different prompts for the same task and comparing the outputs&quot;, &quot;Learn the difference between \&quot;system prompt\&quot; and \&quot;user prompt\&quot; in the API&quot;]' data-practice='&quot;⚠️ Complex terms: \&quot;zero-shot\&quot;, \&quot;few-shot\&quot;, \&quot;chain of thought\&quot; 🔍 Google: \&quot;prompt engineering techniques explained simply\&quot; — also check out learnprompting.org — it is a completely free website dedicated to&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;Free resource: learnprompting.org (full free course)&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;Google: \&quot;OpenAI prompt engineering guide\&quot;&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 17</div>
+          <div class="day-topic">Prompt Engineering — How to Talk to AI Well</div>
+          <div class="phase-dot colored" style="background:#f59e0b;"></div>
+        </div>
+        <div class="day-card w3 colored" style="--card-accent:#f59e0b;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="18" data-phase="w3" data-week-label="Week 3 · Days 15–21" data-topic="Build a Simple Chatbot Using the API" data-topics='[&quot;Build a Python chatbot that keeps track of the conversation (chat history)&quot;, &quot;The chatbot should remember what was said earlier in the conversation&quot;, &quot;Give it a personality using a system prompt (e.g., \&quot;You are a friendly cooking assistant\&quot;)&quot;, &quot;Push it to GitHub with a README explaining what it does&quot;]' data-practice='&quot;This chatbot is a real, working AI project. Put it on your GitHub and LinkedIn profile. Even a simple chatbot shows employers you can build with AI. ⚠️ Complex term: \&quot;message history\&quot; and \&quot;context window\&quot; ▶ YouTube: \&quot;Build a ChatGPT chatbot with Python\&quot; by Tech With Tim — the key concept is that LLMs don&#x27;t have memory by default. You have to send the&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 18</div>
+          <div class="day-topic">Build a Simple Chatbot Using the API</div>
+          <div class="phase-dot colored" style="background:#f59e0b;"></div>
+        </div>
+        <div class="day-card w3 colored" style="--card-accent:#f59e0b;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="19" data-phase="w3" data-week-label="Week 3 · Days 15–21" data-topic="LangChain — The Framework for Building AI Apps" data-topics='[&quot;Install LangChain: pip install langchain langchain-openai&quot;, &quot;Learn what LangChain is — it is a toolkit that makes building AI apps easier and faster&quot;, &quot;Redo your Day 18 chatbot using LangChain instead of raw API calls&quot;, &quot;Notice how much simpler the code becomes&quot;]' data-practice='&quot;⚠️ Complex term: \&quot;LangChain\&quot;, \&quot;chains\&quot;, \&quot;agents\&quot; ▶ YouTube: \&quot;LangChain Explained in 13 Minutes\&quot; by AssemblyAI — LangChain is mentioned in almost every junior AI job description. It helps you chain togeth&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;Free docs: python.langchain.com/docs&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;\&quot;LangChain Crash Course for Beginners\&quot; by freeCodeCamp&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}]'>
+          <div class="day-num">Day 19</div>
+          <div class="day-topic">LangChain — The Framework for Building AI Apps</div>
+          <div class="phase-dot colored" style="background:#f59e0b;"></div>
+        </div>
+        <div class="day-card w3 colored" style="--card-accent:#f59e0b;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="20" data-phase="w3" data-week-label="Week 3 · Days 15–21" data-topic="Embeddings — How AI Understands Text as Numbers" data-topics='[&quot;Learn what an \&quot;embedding\&quot; is — it converts text into a list of numbers that represent meaning&quot;, &quot;Use OpenAI&#x27;s embedding API to convert a sentence to a vector (list of numbers)&quot;, &quot;Understand why similar sentences produce similar numbers (this is how AI \&quot;searches\&quot; meaning)&quot;, &quot;Read about \&quot;vector databases\&quot; — they store embeddings so AI can search them&quot;]' data-practice='&quot;⚠️ Complex terms: \&quot;embedding\&quot;, \&quot;vector\&quot;, \&quot;vector database\&quot; ▶ YouTube: \&quot;What are Embeddings?\&quot; by Vicki Boykis — also 🔍 Google: \&quot;vector database explained simply 2025\&quot; — this concept is key for RAG systems&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 20</div>
+          <div class="day-topic">Embeddings — How AI Understands Text as Numbers</div>
+          <div class="phase-dot colored" style="background:#f59e0b;"></div>
+        </div>
+        <div class="day-card w3 colored" style="--card-accent:#f59e0b;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="21" data-phase="w3" data-week-label="Week 3 · Days 15–21" data-topic="Review + Clean Up Projects + Update GitHub" data-topics='[&quot;Review everything from Week 3 — go back over any part that felt confusing&quot;, &quot;Clean up your chatbot code and add comments explaining each line&quot;, &quot;Write a proper README file for each GitHub project (description + how to run it)&quot;, &quot;Update your LinkedIn with \&quot;Python | Machine Learning | OpenAI API | LangChain\&quot; in your skills&quot;]' data-practice='&quot;A clean GitHub project with a good README looks 10x more professional. Recruiters read README files. Spend time making yours clear and easy to understand.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 21</div>
+          <div class="day-topic">Review + Clean Up Projects + Update GitHub</div>
+          <div class="phase-dot colored" style="background:#f59e0b;"></div>
+        </div>
+    </div>
+  </div>
+  <div class="phase-block" id="block-w4">
+    <div class="phase-header">
+      <span class="phase-tag" style="background:rgba(236,72,153,0.12);color:#ec4899;">W4</span>
+      <span class="phase-title">Build Real Projects + Job-Ready Portfolio</span>
+      <span class="phase-meta">9 days · 🚀 Portfolio &amp; Jobs</span>
+    </div>
+    <div class="day-grid">
+        <div class="day-card w4 colored" style="--card-accent:#ec4899;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="22" data-phase="w4" data-week-label="Week 4 · Days 22–30" data-topic="RAG — Making AI Answer Questions From Your Own Documents" data-topics='[&quot;Learn what RAG means: Retrieval-Augmented Generation&quot;, &quot;Simple version: you give the AI your own documents, it reads them, then answers questions about them&quot;, &quot;Install: pip install langchain faiss-cpu&quot;, &quot;Build a simple RAG system that can answer questions from a PDF or text file you provide&quot;]' data-practice='&quot;⚠️ Complex term: \&quot;RAG\&quot; (Retrieval-Augmented Generation) and \&quot;FAISS\&quot; ▶ YouTube: \&quot;Build a RAG chatbot with LangChain\&quot; by Sam Witteveen — RAG is one of the most in-demand skills for junior AI jobs right now&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;\&quot;LangChain RAG Tutorial\&quot; by Pixegami&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;Google: \&quot;LangChain RAG beginner example 2025\&quot;&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 22</div>
+          <div class="day-topic">RAG — Making AI Answer Questions From Your Own Documents</div>
+          <div class="phase-dot colored" style="background:#ec4899;"></div>
+        </div>
+        <div class="day-card w4 colored" style="--card-accent:#ec4899;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="23" data-phase="w4" data-week-label="Week 4 · Days 22–30" data-topic="Capstone Project — Build a Document Q&amp;A App" data-topics='[&quot;Build a complete app: user uploads a PDF, asks questions, AI answers using only that PDF&quot;, &quot;Use LangChain + OpenAI API + FAISS vector store&quot;, &quot;Add a simple web interface using Streamlit (see below)&quot;, &quot;This is your MAIN portfolio project — invest time in making it work well&quot;]' data-practice='&quot;This project is your interview showcase. When asked \&quot;have you built anything with AI?\&quot; — this is your answer. Make sure you can explain it clearly in simple words. ⚠️ Complex term: \&quot;Streamlit\&quot; 🔍 Google: \&quot;Streamlit Python tutorial beginner\&quot; — Streamlit turns your Python code into a web app with almost no extra code. It is used heavily in AI projects and is very begi&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;Free: streamlit.io (install with pip install streamlit)&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;\&quot;Build AI apps with Streamlit\&quot; by Misra Turp&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}]'>
+          <div class="day-num">Day 23</div>
+          <div class="day-topic">Capstone Project — Build a Document Q&amp;A App</div>
+          <div class="phase-dot colored" style="background:#ec4899;"></div>
+        </div>
+        <div class="day-card w4 colored" style="--card-accent:#ec4899;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="24" data-phase="w4" data-week-label="Week 4 · Days 22–30" data-topic="AI Agents — The Most In-Demand Skill Right Now" data-topics='[&quot;Learn what an \&quot;AI agent\&quot; is — an AI that can take actions, not just answer questions&quot;, &quot;Example: an agent that can search the web, run code, and send emails automatically&quot;, &quot;Build a simple agent using LangChain that can search Wikipedia and answer questions&quot;, &quot;Understand what \&quot;tools\&quot; are in the context of AI agents&quot;]' data-practice='&quot;⚠️ Complex terms: \&quot;AI agent\&quot;, \&quot;tool use\&quot;, \&quot;agentic workflow\&quot; ▶ YouTube: \&quot;LangChain Agents for Beginners\&quot; by Greg Kamradt — agents are the biggest trend in AI engineering right now. Even a basic understan&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 24</div>
+          <div class="day-topic">AI Agents — The Most In-Demand Skill Right Now</div>
+          <div class="phase-dot colored" style="background:#ec4899;"></div>
+        </div>
+        <div class="day-card w4 colored" style="--card-accent:#ec4899;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="25" data-phase="w4" data-week-label="Week 4 · Days 22–30" data-topic="Hugging Face — Free Open-Source AI Models" data-topics='[&quot;Create a free account at huggingface.co — this is like GitHub but for AI models&quot;, &quot;Install: pip install transformers&quot;, &quot;Use a free pre-trained model to do sentiment analysis (does text sound positive or negative?)&quot;, &quot;Browse the model hub and understand the difference between model types&quot;]' data-practice='&quot;⚠️ Complex terms: \&quot;pre-trained model\&quot;, \&quot;transformer\&quot;, \&quot;inference\&quot; 🔍 Google: \&quot;Hugging Face transformers tutorial for beginners\&quot; — Hugging Face is the most important website in AI. \&quot;Pre-trained\&quot; just means&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;Free: huggingface.co/models — thousands of free models&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;\&quot;Hugging Face Tutorial for Beginners\&quot; by Andrej Karpathy&#x27;s students&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}]'>
+          <div class="day-num">Day 25</div>
+          <div class="day-topic">Hugging Face — Free Open-Source AI Models</div>
+          <div class="phase-dot colored" style="background:#ec4899;"></div>
+        </div>
+        <div class="day-card w4 colored" style="--card-accent:#ec4899;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="26" data-phase="w4" data-week-label="Week 4 · Days 22–30" data-topic="Cloud Basics — What Junior AI Jobs Expect" data-topics='[&quot;Learn what \&quot;cloud computing\&quot; means at a high level — computers you rent over the internet&quot;, &quot;Understand the three main platforms: AWS (Amazon), Azure (Microsoft), GCP (Google)&quot;, &quot;Create a free AWS account and explore the AWS Free Tier&quot;, &quot;Read about what \&quot;deploying a model\&quot; means — putting your model on a server so others can use it&quot;]' data-practice='&quot;For most junior AI roles, the cloud requirement is just \&quot;familiarity.\&quot; You do not need to be an expert. Knowing what S3, EC2, and Lambda are is enough for now. ⚠️ Complex terms: \&quot;cloud deployment\&quot;, \&quot;serverless\&quot;, \&quot;EC2\&quot;, \&quot;S3\&quot; ▶ YouTube: \&quot;AWS Cloud in 5 minutes\&quot; by TechWorld with Nana — you don&#x27;t need deep cloud skills yet for junior roles. You just need to know t&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 26</div>
+          <div class="day-topic">Cloud Basics — What Junior AI Jobs Expect</div>
+          <div class="phase-dot colored" style="background:#ec4899;"></div>
+        </div>
+        <div class="day-card w4 colored" style="--card-accent:#ec4899;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="27" data-phase="w4" data-week-label="Week 4 · Days 22–30" data-topic="Polish Your GitHub Profile + Write Project READMEs" data-topics='[&quot;Create a GitHub profile README — this is a special file that shows on your profile page&quot;, &quot;Make sure each project has: a title, description, what it does, and how to run it&quot;, &quot;Add screenshots to your project READMEs if possible&quot;, &quot;Pin your 3 best projects to your GitHub profile&quot;, &quot;Make sure you have at least 30 \&quot;green dots\&quot; (commits) to show activity&quot;]' data-practice='&quot;&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;\&quot;How to create a GitHub profile README\&quot; — it takes 30 minutes and makes your profile look 10x more professional&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}, {&quot;t&quot;: &quot;Google: \&quot;GitHub profile README ideas for AI engineers\&quot;&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}]'>
+          <div class="day-num">Day 27</div>
+          <div class="day-topic">Polish Your GitHub Profile + Write Project READMEs</div>
+          <div class="phase-dot colored" style="background:#ec4899;"></div>
+        </div>
+        <div class="day-card w4 colored" style="--card-accent:#ec4899;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="28" data-phase="w4" data-week-label="Week 4 · Days 22–30" data-topic="Build Your AI Resume + LinkedIn" data-topics='[&quot;Write a \&quot;Projects\&quot; section on your resume — list your chatbot, RAG app, and ML mini-project&quot;, &quot;For each project, use this format: \&quot;Built X using Y that does Z\&quot; (e.g., \&quot;Built a document Q&amp;A app using LangChain and OpenAI API that answers questions from uploaded PDFs\&quot;)&quot;, &quot;Add these skills to your resume: Python, Pandas, NumPy, Scikit-learn, OpenAI API, LangChain, Prompt Engineering, Git/GitHub&quot;, &quot;Update LinkedIn to match — connect with at least 5 AI engineers or recruiters&quot;]' data-practice='&quot;Use a clean, single-page resume template. Avoid heavy design. ATS systems (automated resume scanners) prefer simple formats. 🔍 Google: \&quot;free ATS-friendly resume template\&quot; ⚠️ Resume tip: If you have no work experience in AI, your projects ARE your experience. Describe them with impact (what it does, what tech you used). 🔍 Google: \&quot;AI engineer resume no experience examples &quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 28</div>
+          <div class="day-topic">Build Your AI Resume + LinkedIn</div>
+          <div class="phase-dot colored" style="background:#ec4899;"></div>
+        </div>
+        <div class="day-card w4 colored" style="--card-accent:#ec4899;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="29" data-phase="w4" data-week-label="Week 4 · Days 22–30" data-topic="Practice Interview Questions — AI Edition" data-topics='[&quot;\&quot;What is the difference between machine learning and deep learning?\&quot;&quot;, &quot;\&quot;Explain what a RAG system is and when you would use it\&quot;&quot;, &quot;\&quot;What is overfitting and how do you prevent it?\&quot;&quot;, &quot;\&quot;How does the OpenAI API work? What is a token?\&quot;&quot;, &quot;\&quot;Walk me through a project you built\&quot;&quot;, &quot;\&quot;What is LangChain and why would you use it?\&quot;&quot;, &quot;\&quot;What is the difference between supervised and unsupervised learning?\&quot;&quot;, &quot;Answer each question out loud, as if in an interview — not just in your head&quot;, &quot;Use the simple explanation style: \&quot;In simple terms, [X] is like…\&quot;&quot;, &quot;Record yourself on your phone and listen back — this is uncomfortable but very effective&quot;]' data-practice='&quot;&quot;' data-gains='[]' data-sources='[{&quot;t&quot;: &quot;Google: \&quot;Junior AI engineer interview questions 2025\&quot;&quot;, &quot;u&quot;: &quot;#&quot;, &quot;b&quot;: &quot;article&quot;}, {&quot;t&quot;: &quot;\&quot;Machine Learning Interview Questions for Beginners\&quot;&quot;, &quot;u&quot;: &quot;https://youtube.com&quot;, &quot;b&quot;: &quot;video&quot;}]'>
+          <div class="day-num">Day 29</div>
+          <div class="day-topic">Practice Interview Questions — AI Edition</div>
+          <div class="phase-dot colored" style="background:#ec4899;"></div>
+        </div>
+        <div class="day-card w4 colored" style="--card-accent:#ec4899;" onclick="openDay(this)" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')openDay(this)" data-effort="normal" data-day="30" data-phase="w4" data-week-label="Week 4 · Days 22–30" data-topic="🎉 Apply + Keep Going — Your Launch Day" data-topics='[&quot;Search for junior AI engineer jobs on LinkedIn, Indeed, and Wellfound (startup jobs)&quot;, &quot;Filter for: \&quot;Junior AI Engineer\&quot;, \&quot;AI Developer\&quot;, \&quot;ML Engineer\&quot;, \&quot;Junior GenAI\&quot;, \&quot;AI Prompt Engineer\&quot;&quot;, &quot;Apply to at least 5 jobs today — do not wait until you feel \&quot;ready\&quot;&quot;, &quot;Send a connection request to the hiring manager or recruiter with a short personalised message&quot;, &quot;Start a learning journal — write 1 thing you learned each day going forward&quot;, &quot;LinkedIn Jobs — search \&quot;junior AI engineer\&quot;&quot;, &quot;Wellfound.com — best for AI startup jobs&quot;, &quot;Indeed.com — broad search&quot;, &quot;Otta.com — curated tech jobs&quot;, &quot;RemoteOK.com — for remote AI roles&quot;]' data-practice='&quot;You will not feel 100% ready. That is normal. Apply anyway. Most junior jobs expect you to still be learning. The 30 days you just completed puts you ahead of many applicants who have never actually built anything.&quot;' data-gains='[]' data-sources='[]'>
+          <div class="day-num">Day 30</div>
+          <div class="day-topic">🎉 Apply + Keep Going — Your Launch Day</div>
+          <div class="phase-dot colored" style="background:#ec4899;"></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="drawer-scrim" id="drawer-scrim" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-top">
+      <div class="drawer-badge" id="d-badge"></div>
+      <div class="drawer-topic" id="d-topic"></div>
+      <div class="drawer-week-info" id="d-week"></div>
+    </div>
+    <div class="drawer-controls">
+      <button class="drawer-btn" id="btn-prev" title="Previous" onclick="nav(-1)">&#8249;</button>
+      <button class="drawer-btn" id="btn-next" title="Next"     onclick="nav(+1)">&#8250;</button>
+      <button class="drawer-btn close"          title="Close"    onclick="closeDrawer()">&#x2715;</button>
+    </div>
+  </div>
+  <div class="drawer-body" id="d-body"></div>
+</div>
+
+<script src="daydeck-core.js"></script>
+<script>
+  function openDay(card) {
+    currentCard = card;
+    document.querySelectorAll('.day-card.active').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    const phase  = card.dataset.phase;
+    const topic  = card.dataset.topic;
+    const wLabel = card.dataset.weekLabel;
+    const day    = card.dataset.day;
+    const color  = getComputedStyle(card).getPropertyValue('--card-accent').trim();
+    let topics, practice, gains, srcs;
+    try { topics   = JSON.parse(card.dataset.topics);   } catch(e) { topics   = []; }
+    try { practice = JSON.parse(card.dataset.practice); } catch(e) { practice = ''; }
+    try { gains    = JSON.parse(card.dataset.gains);    } catch(e) { gains    = []; }
+    try { srcs     = JSON.parse(card.dataset.sources);  } catch(e) { srcs     = []; }
+    const badge = document.getElementById('d-badge');
+    badge.style.background = hexToRgba(color, 0.15);
+    badge.style.color      = color;
+    badge.style.border     = '1px solid ' + hexToRgba(color, 0.3);
+    badge.textContent = 'Day ' + day + ' · ' + wLabel;
+    document.getElementById('d-topic').textContent = topic;
+    document.getElementById('d-week').textContent  = wLabel;
+    updateNavButtons(card);
+    document.getElementById('d-body').innerHTML =
+      '<div><div class="drawer-section-title">What to learn today</div><div class="learn-list">' +
+      topics.map((item,i) => '<div class="learn-item"><span class="learn-num">' +
+        String(i+1).padStart(2,'0') + '</span><span class="learn-text">' +
+        decodeEntities(item) + '</span></div>').join('') + '</div></div>' +
+      (practice ? '<div><div class="drawer-section-title">Tips &amp; Notes</div>' +
+        '<div class="practice-block"><p class="practice-text">' + decodeEntities(practice) + '</p></div></div>' : '') +
+      (srcs.length ? '<div><div class="drawer-section-title">Resources</div><div class="source-list">' +
+        srcs.map(s => '<a class="source-link" href="' + s.u + '" target="_blank" rel="noopener noreferrer">' +
+          '<span class="source-badge badge-' + s.b + '">' + s.b + '</span>' +
+          '<span class="source-name">' + s.t + '</span><span class="source-arrow">&#8599;</span></a>'
+        ).join('') + '</div></div>' : '');
+    showDrawer();
+  }
+</script>
+</body>
+</html>
